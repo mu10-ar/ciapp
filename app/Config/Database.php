@@ -33,7 +33,7 @@ class Database extends Config
     public $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => 'roor',
+        'username' => 'root',
         'password' => '',
         'database' => 'ciapp',
         'DBDriver' => 'MySQLi',
