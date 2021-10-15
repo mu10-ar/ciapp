@@ -1,0 +1,1163 @@
+<html lang="en"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Dashboard - He</title>
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="https://bhospital.bdtask.com/assets_web/images/icons/cea89bb004a4ceb09ff61af3e6ac8d54.png">
+
+        <!-- jquery ui css -->
+        <link href="https://bhospital.bdtask.com/assets/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+
+        <!-- Bootstrap --> 
+        <link href="https://bhospital.bdtask.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+                <!-- Font Awesome 4.7.0 -->
+        <link href="https://bhospital.bdtask.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- semantic css -->
+        <link href="https://bhospital.bdtask.com/assets/css/semantic.min.css" rel="stylesheet" type="text/css"> 
+        <!-- sliderAccess css -->
+        <link href="https://bhospital.bdtask.com/assets/css/jquery-ui-timepicker-addon.min.css" rel="stylesheet" type="text/css"> 
+        <!-- slider  -->
+        <link href="https://bhospital.bdtask.com/assets/css/select2.min.css" rel="stylesheet" type="text/css"> 
+        <!-- DataTables CSS -->
+        <link href="https://bhospital.bdtask.com/assets/datatables/css/dataTables.min.css" rel="stylesheet" type="text/css"> 
+        <!-- pe-icon-7-stroke -->
+        <link href="https://bhospital.bdtask.com/assets/css/pe-icon-7-stroke.css" rel="stylesheet" type="text/css"> 
+        <!-- themify icon css -->
+        <link href="https://bhospital.bdtask.com/assets/css/themify-icons.css" rel="stylesheet" type="text/css"> 
+        <!-- Pace css -->
+        <link href="https://bhospital.bdtask.com/assets/css/flash.css" rel="stylesheet" type="text/css">
+        <!-- Theme style -->
+        <link href="https://bhospital.bdtask.com/assets/css/custom.css" rel="stylesheet" type="text/css">
+        <!-- jstree view -->
+        <link rel="stylesheet" href="https://bhospital.bdtask.com/assets/vakata-jstree/dist/themes/default/style.min.css">
+                <!-- jQuery  -->
+        <script src="https://bhospital.bdtask.com/assets/js/jquery.min.js" type="text/javascript"></script>
+    <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+    <body class="sidebar-mini fixed  pace-done"><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+        <div class="se-pre-con" style="display: none;"></div>
+
+        <!-- Site wrapper -->
+        <div class="wrapper">
+            <header class="main-header"> 
+                                <a href="https://bhospital.bdtask.com/dashboard/home" class="logo"> <!-- Logo -->
+                    <span class="logo-mini">
+                        <img class="img-fluid"> src="https://bhospital.bdtask.com/assets_web/images/icons/9c35f91b10dec555f2006a741384abc5.png" alt=""&gt;
+                    </span>
+                    <span class="logo-lg">
+                        <img class="img-fluid" src="https://bhospital.bdtask.com/assets_web/images/icons/9c35f91b10dec555f2006a741384abc5.png" alt="">
+                    </span>
+                </a>
+
+                <!-- Header Navbar -->
+                <nav class="navbar navbar-static-top" style="">
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> <!-- Sidebar toggle button-->
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="pe-7s-keypad"></span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- settings -->
+                            <li class="dropdown dropdown-user">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="pe-7s-settings"></i></a>
+                                <ul class="dropdown-menu">
+                                                                        <li><a href="https://bhospital.bdtask.com/dashboard/profile"><i class="pe-7s-users"></i> Profile</a></li>
+                                                                        
+                                                                        <li><a href="https://bhospital.bdtask.com/dashboard/form"><i class="pe-7s-settings"></i> Edit Profile</a></li>
+                                    
+                                    <li><a href="https://bhospital.bdtask.com/logout"><i class="pe-7s-key"></i> Log Out</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- =============================================== -->
+            <!-- Left side column. contains the sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar -->
+                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 685px;"><div class="sidebar" style="height: 685px; overflow: hidden; width: auto;"> 
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel text-center">
+                                                <div class="image">
+                            <img src="https://bhospital.bdtask.com/assets/images/human_resources/e71539823e0746982fa3b60c2d292ed3.jpg" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="info">
+                            <p>Jhon Doei</p>
+                            <a href="#"><i class="fa fa-circle text-success"></i>
+                                                    </a>
+                        </div>
+                    </div>
+
+                    <!-- sidebar menu -->
+    <ul class="sidebar-menu">
+
+    <li class="active">
+        <a href="https://bhospital.bdtask.com/dashboard/home"><i class="fa fa ti-home"></i> Dashboard</a>
+    </li> 
+
+        <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-sitemap"></i> <span>Department</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+                         <li class=""><a href="https://bhospital.bdtask.com/main_department/">Main Department</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/department/create">Add Department</a></li>
+            
+
+                        <li class=""><a href="https://bhospital.bdtask.com/department">Department List</a></li> 
+            
+
+        </ul>
+    </li>
+     
+        <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-user-md"></i> <span>Doctor</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="https://bhospital.bdtask.com/doctor/create">Add Doctor</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/doctor">Doctor List</a></li> 
+            
+                         <li class=""><a href="https://bhospital.bdtask.com/portfolio">Add Portfolio</a></li> 
+            <li class=""><a href="https://bhospital.bdtask.com/doctor/create_language">Language</a></li> 
+                    </ul>
+    </li>
+     
+
+
+        <li class="treeview ">
+    <a href="#">
+        <i class="fa fa-wheelchair"></i> <span>Patient</span>
+        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+    </a>
+    <ul class="treeview-menu">
+
+                <li class=""><a href="https://bhospital.bdtask.com/patient/create">Add Patient</a></li>
+       
+
+                <li class=""><a href="https://bhospital.bdtask.com/patient">Patient List</a></li> 
+        
+                 <li class=""><a href="https://bhospital.bdtask.com/patient/import_csv_data">Import CSV Data</a></li> 
+        
+                <li class=""><a href="https://bhospital.bdtask.com/patient/document_form">Add Document</a></li> 
+        
+                <li class=""><a href="https://bhospital.bdtask.com/patient/document">Document List</a></li> 
+        
+        </ul>
+    </li> 
+    
+<!-- schedule two for testing purpose -->
+
+    <li class="treeview ">
+    <a href="#">
+    <i class="fa fa ti-calendar"></i> <span>schedule</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+    </a>
+    <ul class="treeview-menu">
+
+                   <li class=""><a href="https://bhospital.bdtask.com/schedule/create_slot">Add Time Slot</a></li>
+      
+                  <li class=""><a href="https://bhospital.bdtask.com/schedule/create">Add Schedule</a></li>
+      
+                 <li class=""><a href="https://bhospital.bdtask.com/schedule">Schedule List</a></li>
+     
+    </ul>
+</li>
+    </li> 
+    
+
+
+        <li class="treeview ">
+        <a href="#">
+        <i class="fa fa ti-calendar"></i> <span>Schedule</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+                       <li class=""><a href="https://bhospital.bdtask.com/schedule/create_slot">Add Time Slot</a></li>
+          
+                      <li class=""><a href="https://bhospital.bdtask.com/schedule/create">Add Schedule</a></li>
+          
+                     <li class=""><a href="https://bhospital.bdtask.com/schedule">Schedule List</a></li>
+         
+        </ul>
+    </li>
+    
+
+    
+    <li class="treeview ">
+       <a href="#">
+        <i class="fa fa ti-pencil-alt"></i> <span>Appointment</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu">
+
+                 <li class=""><a href="https://bhospital.bdtask.com/appointment/create">Add Appointment</a></li>
+        
+                 <li class=""><a href="https://bhospital.bdtask.com/appointment">Appointment List</a></li> 
+        
+                <li class=""><a href="https://bhospital.bdtask.com/report/assign_to_me"> Assign to Me</a></li> 
+        
+                 <li class=""><a href="https://bhospital.bdtask.com/report/assign_by_me"> Assign by Me </a></li>
+        
+                 <li class=""><a href="https://bhospital.bdtask.com/report/assign_by_all"> Assign by All </a></li>
+        
+                <li class=""><a href="https://bhospital.bdtask.com/report/assign_by_all_doctor">Assign by Doctor </a></li>  
+        
+                <li class=""><a href="https://bhospital.bdtask.com/report/assign_to_all_doctor"> Assign to Doctor</a></li> 
+        
+               <li class=""><a href="https://bhospital.bdtask.com/report/assign_by_all_representative"> Assign by Representative  </a></li>
+        
+      </ul>
+    </li> 
+    
+
+    
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-arrow-circle-right"></i> <span>Pharmacy </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+                        <li class=""><a href="https://bhospital.bdtask.com/pharmacy/category/form"> Add Medicine Category</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/pharmacy/category/index">Medicine Category List</a></li>
+             
+
+
+                        <li class=""><a href="https://bhospital.bdtask.com/pharmacy/medicine/form"> Add Medicine</a></li>
+            
+
+                        <li class=""><a href="https://bhospital.bdtask.com/pharmacy/medicine/index">Medicine List</a></li>
+            
+        </ul>
+    </li> 
+    
+      
+    
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa ti-book"></i><span>Prescription</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+                        <li class=""><a href="https://bhospital.bdtask.com/prescription/case_study/create">Add Patient Case Study</a></li>
+            
+
+                       <li class=""><a href="https://bhospital.bdtask.com/prescription/case_study">Patient Case Study List</a></li> 
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/prescription/prescription/create">Add Prescription</a></li> 
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/prescription/prescription">Prescription List</a></li>
+            
+        </ul>
+    </li>
+    
+        <li class="treeview ">
+        <a href="#">
+            <i class="fa ti-bag"></i> <span>Account Manager</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/show_tree">Chart Of Account</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/debit_voucher">Debit Voucher</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/credit_voucher">Credit Voucher</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/contra_voucher">Contra Voucher</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/journal_voucher">Journal Voucher</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/aprove_v">Voucher Approval</a></li>
+            
+                        <li class="treeview ">
+                <a href="#">
+                    <span>Account Report</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+
+                                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/voucher_report">Voucher Report</a></li>
+                    
+                                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/cash_book">Cash Book</a></li>
+                    
+                                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/bank_book">Bank Book</a></li>
+                    
+                                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/general_ledger">General Ledger</a></li>
+                    
+                                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/trial_balance">Trial Balance</a></li>
+                    
+                                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/profit_loss_report">Profit Loss</a></li>
+                    
+                                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/cash_flow_report">Cash Flow</a></li>
+                    
+                                        <li class=""><a href="https://bhospital.bdtask.com/accounts/accounts/coa_print">Chart Of Account Print</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+    </li>
+    
+
+
+        <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-shield"></i> <span>Insurance </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="https://bhospital.bdtask.com/insurance/insurance/form">Add Insurance</a></li> 
+            
+
+                        <li class=""><a href="https://bhospital.bdtask.com/insurance/insurance">Insurance List</a></li>  
+            
+
+
+                        <li class=""><a href="https://bhospital.bdtask.com/insurance/limit_approval/form">Add Limit Approval</a></li> 
+            
+
+
+                        <li class=""><a href="https://bhospital.bdtask.com/insurance/limit_approval">Limit Approval List</a></li>  
+            
+        </ul>
+    </li>
+    
+        <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-edit"></i> <span>Billing </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="https://bhospital.bdtask.com/billing/service/form">Add Service</a></li> 
+            
+
+                        <li class=""><a href="https://bhospital.bdtask.com/billing/service/index">Service List</a></li> 
+            
+
+
+                        <li class=""><a href="https://bhospital.bdtask.com/billing/package/form">Add Package</a></li>  
+            
+
+                        <li class=""><a href="https://bhospital.bdtask.com/billing/package/index">Package List</a></li>   
+            
+
+                        <li class=""><a href="https://bhospital.bdtask.com/billing/admission/form">Add Patient Admission</a></li> 
+            
+
+
+
+                        <li class=""><a href="https://bhospital.bdtask.com/billing/admission">Patient Admission List</a></li> 
+            
+
+                       <li class=""><a href="https://bhospital.bdtask.com/billing/advance/form">Add Advance Payment</a></li> 
+            
+
+                       <li class=""><a href="https://bhospital.bdtask.com/billing/advance">Advance Payment List</a></li>  
+            
+
+                        <li class=""><a href="https://bhospital.bdtask.com/billing/bill/form">Add Bill</a></li> 
+            
+
+                       <li class=""><a href="https://bhospital.bdtask.com/billing/bill">Bill List</a></li> 
+            
+        </ul>
+    </li>
+    
+    
+    <li class="treeview  ">
+        <a href="#">
+            <i class="fa fa-users"></i> <span>Human Resources</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+                        <li class=""><a href="https://bhospital.bdtask.com/human_resources/employee/form">Add Employee</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/human_resources/employee">Employee List</a></li>
+                        
+        </ul>
+    </li> 
+    
+
+    
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-bed"></i> <span>Bed Manager </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="https://bhospital.bdtask.com/bed_manager/room/form">Add Room</a></li> 
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/bed_manager/room">Room List</a></li> 
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/bed_manager/bed/form">Add Bed</a></li> 
+            
+
+                        <li class=""><a href="https://bhospital.bdtask.com/bed_manager/bed">Bed List</a></li> 
+            
+
+                         <li class=""><a href="https://bhospital.bdtask.com/bed_manager/bed_assign/create">Bed Assign</a></li> 
+            
+
+                          <li class=""><a href="https://bhospital.bdtask.com/bed_manager/bed_assign">Bed Assign List</a></li> 
+           
+
+                        <li class=""><a href="https://bhospital.bdtask.com/bed_manager/report">Report</a></li> 
+            
+                        <li><a href="https://bhospital.bdtask.com/bed_manager/bed_assign/bed_transfer_list">Bed Transfer List</a></li> 
+            
+
+        </ul>
+    </li>
+    
+
+        <li class="treeview ">
+        <a href="#">
+        <i class="fa fa-hospital-o"></i> <span>Medications and Visits</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                      <li class=""><a href="https://bhospital.bdtask.com/medication_visit/medications/create">Add Patient Medication</a></li>
+          
+                     <li class=""><a href="https://bhospital.bdtask.com/medication_visit/medications">Patient Medication List</a></li>
+         
+                     <li class=""><a href="https://bhospital.bdtask.com/medication_visit/visits/create">Add Patient Visit</a></li>
+          
+                     <li class=""><a href="https://bhospital.bdtask.com/medication_visit/visits">Patient Visit List</a></li>
+         
+                     <li class=""><a href="https://bhospital.bdtask.com/medication_visit/medications/report">Medication Reports</a></li>
+         
+                     <li class=""><a href="https://bhospital.bdtask.com/medication_visit/visits/report">Visiting Reports</a></li>
+         
+                      <li class=""><a href="https://bhospital.bdtask.com/medication_visit/medications/filtering">Report</a></li>
+         
+
+        </ul>
+    </li>
+    
+
+        <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-bell"></i> <span>Noticeboard </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+                <li class=""><a href="https://bhospital.bdtask.com/noticeboard/notice/form">Add Notice</a></li>
+
+                <li class=""><a href="https://bhospital.bdtask.com/noticeboard/notice">Notice List</a></li>
+        
+
+        </ul>
+    </li>
+    
+
+    
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-heartbeat"></i> <span>Case Manager </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                    <li class=""><a href="https://bhospital.bdtask.com/case_manager/patient/form">Add Patient</a></li> 
+        
+
+                    <li class=""><a href="https://bhospital.bdtask.com/case_manager/patient">Patient List</a></li>  
+        
+
+        </ul>
+    </li>
+    
+
+    
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-hospital-o"></i> <span>Hospital Activities </span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+                        <li class=""><a href="https://bhospital.bdtask.com/hospital_activities/birth/form"> Add Birth Report</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/hospital_activities/birth/index">Birth Report</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/hospital_activities/death/form"> Add Death Report</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/hospital_activities/death/index">Death Report</a></li>
+            
+                       <li class=""><a href="https://bhospital.bdtask.com/hospital_activities/operation/form"> Add Operation Report</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/hospital_activities/operation/index">Operation Report</a></li>
+             
+                        <li class=""><a href="https://bhospital.bdtask.com/hospital_activities/investigation/form"> Add Investigation Report</a></li>
+            
+                       <li class=""><a href="https://bhospital.bdtask.com/hospital_activities/investigation/index">Investigation Report</a></li>
+                  
+        </ul>
+    </li> 
+    
+
+        <li class="">
+        <a href="https://bhospital.bdtask.com/enquiry">
+            <i class="fa fa ti-help-alt"></i> <span>Enquiry</span> 
+        </a>
+    </li>
+    
+
+        <li class="treeview ">
+        <a href="#">
+            <i class="fa fa ti-settings"></i> <span>Setting</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="https://bhospital.bdtask.com/setting"> App Setting </a></li> 
+            
+
+                        <li class=""><a href="https://bhospital.bdtask.com/language"> Language Setting </a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/autoupdate"> Auto Update </a></li>
+                    </ul>
+    </li>
+    
+
+    
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-commenting-o"></i> <span>SMS</span>
+                <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a> 
+        <ul class="treeview-menu">
+                        <li class=""><a href="https://bhospital.bdtask.com/sms/sms_setup_controller/sms_gateway"> Gateway Setting </a></li>
+            
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/sms/sms_setup_controller/sms_template"> SMS Template </a></li>
+             
+
+                        <li class=""><a href="https://bhospital.bdtask.com/sms/sms_setup_controller/sms_scheduler"> SMS Schedule </a></li>
+             
+
+                        <li class=""><a href="https://bhospital.bdtask.com/sms/sms_setup_controller/custom_sms">Send Custom SMS </a></li>
+             
+
+                        <li class=""><a href="https://bhospital.bdtask.com/sms/sms_report_controller/custom_sms_list">Custom SMS List </a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/sms/sms_report_controller/auto_sms_list">Auto SMS Report </a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/sms/sms_report_controller/user_sms_list">User SMS List </a></li>
+             
+        </ul>
+     </li>
+    
+
+    
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa fa-comments-o"></i> <span>Messages</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a> 
+        <ul class="treeview-menu">
+                        <li class=""><a href="https://bhospital.bdtask.com/messages/message/new_message"> New Message </a></li> 
+            
+
+                          <li class=""><a href="https://bhospital.bdtask.com/messages/message"> Inbox </a></li> 
+            
+
+
+                          <li class=""><a href="https://bhospital.bdtask.com/messages/message/sent">Sent </a></li>
+             
+
+        </ul>
+    </li>
+    
+
+                       
+    <li class="treeview ">
+        <a href="#">
+            <i class="fa fa ti-email"></i> <span>Mail</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="https://bhospital.bdtask.com/mail/email">Send Mail </a></li>
+                        <li class=""><a href="https://bhospital.bdtask.com/mail/setting">Mail Setting </a></li>
+            
+        </ul>
+    </li>
+    
+
+     
+    <li class="treeview ">
+        <a href="#">
+            <i class="pe-7s-global"></i> <span>Website</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+                        <li class=""><a href="https://bhospital.bdtask.com/website/setting">Setting</a></li>
+            
+                         <li class=""><a href="https://bhospital.bdtask.com/website/menu">Menu</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/website/template_assign">Template Assign</a></li>
+            
+                        <li class=""><a href="https://bhospital.bdtask.com/website/about">About</a></li>
+                        <li class=""><a href="https://bhospital.bdtask.com/website/slider">Slider</a></li>
+                        <li class=""><a href="https://bhospital.bdtask.com/website/banner_sliders/create">Add Banner Slider</a></li>
+                        <li class=""><a href="https://bhospital.bdtask.com/website/testimonials">Testimonial</a></li> 
+            
+                         <li class=""><a href="https://bhospital.bdtask.com/website/appoint_instruction/instructions">Appointment Instruction</a></li>
+             
+                          <li class=""><a href="https://bhospital.bdtask.com/website/partners/create">Add Partner</a></li>
+             
+                          <li class=""><a href="https://bhospital.bdtask.com/website/news/create">Add News</a></li> 
+             
+
+                        <li class=""><a href="https://bhospital.bdtask.com/website/section">Section</a></li> 
+             
+                        <li class=""><a href="https://bhospital.bdtask.com/website/services/create">Add Service</a></li> 
+                        <li><a href="http://forum.bdtask.com/" target="_blank">Support?</a></li> 
+        </ul>
+    </li>  
+    
+
+     
+    <li class="treeview ">
+        <a href="#">
+            <i class="ti-lock"></i> <span>Permission</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+
+                        <li class=""><a href="https://bhospital.bdtask.com/permission_assign/rolecreate">Add Role</a></li>  
+            
+                          <li class=""><a href="https://bhospital.bdtask.com/permission_assign/createpermission">Role Permission</a></li>    
+            
+
+                        <li class=""><a href="https://bhospital.bdtask.com/permission_assign/permassign">Assign Role To User</a></li>
+            
+        </ul>
+    </li>
+             
+    </ul>
+ </div><div class="slimScrollBar" style="background: rgb(114, 112, 120); width: 8px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 389.398px;"></div><div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div> <!-- /.sidebar -->
+</aside>
+
+            <!-- =============================================== -->
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper" style="min-height: 696px;">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+
+                    <div class="p-l-30 p-r-30">
+                        <div class="header-icon"><i class="pe-7s-world"></i></div>
+                        <div class="header-title">
+                            <h1>Dashboard</h1>
+                            <small>Home</small> 
+                        </div>
+                    </div>
+                </section>
+                <!-- Main content -->
+                <div class="content"> 
+                    <div id="demoModeEnable"></div>
+                    <!-- alert message -->
+                                        
+                                        
+                                        
+
+                    <!-- content -->
+                    <div class="row">
+    <!-- welcome message -->
+        <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        Welcome back! Jhon Doei    </div> 
+    
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="info-box bg-olive">
+            <span class="info-box-icon"><i class="fa fa-edit"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Appointment</span>
+              <span class="info-box-number">1</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 50%"></div>
+              </div>
+              <span class="progress-description">
+                    12 October, 2021                  </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+    </div>
+    
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" "="">
+        <div class="info-box bg-blue">
+            <span class="info-box-icon"><i class="fa fa-wheelchair"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Patient</span>
+              <span class="info-box-number">3</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 50%"></div>
+              </div>
+              <span class="progress-description">
+                    12 October, 2021                  </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+    </div>
+     
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" "="">
+        <div class="info-box bg-yellow">
+            <span class="info-box-icon"><i class="ti-book"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Prescription</span>
+              <span class="info-box-number">0</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 50%"></div>
+              </div>
+              <span class="progress-description">
+                    12 October, 2021                  </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+    </div>
+   
+       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="info-box bg-green">
+            <span class="info-box-icon"><i class="fa fa-user-md"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Doctor</span>
+              <span class="info-box-number">0</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 50%"></div>
+              </div>
+              <span class="progress-description">
+                   12 October, 2021                  </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+    </div>
+    
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="info-box bg-navy-blue">
+            <span class="info-box-icon"><i class="fa fa-bed"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Free bed list</span>
+              <span class="info-box-number">6</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 50%"></div>
+              </div>
+              <span class="progress-description">
+                   12 October, 2021              </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+    </div>
+    
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="info-box bg-light-green">
+            <span class="info-box-icon"><i class="fa fa-sign-out"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Discharged</span>
+              <span class="info-box-number">0</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 50%"></div>
+              </div>
+              <span class="progress-description">
+                   12 October, 2021              </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+    </div>
+    </div>
+ 
+<div class="row">
+    <!-- Total Product Sales area -->
+        <div class="col-lg-8">
+         <div class="panel panel-default" id="js-timer">
+            <div class="panel-body"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; inset: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" __idm_frm__="150"></iframe>
+                <div class="widget-title">
+                    <h3>Demo Hospital Limited Total Progress</h3>
+                    <span>Showing status from the last year</span>
+                    
+                </div>
+                <canvas id="lineChart" height="543" width="961" style="display: block; height: 435px; width: 769px;"></canvas>
+             
+            </div> <!-- /.panel-body -->
+         </div>
+    </div>
+    
+    <!-- Message area -->
+         <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Enquiry</h3>
+                <span>Latest Enquiry</span>
+            </div>
+            <div class="panel-body"> 
+                <div class="message_inner">
+                                                                    <a href="https://bhospital.bdtask.com/enquiry/view/2">
+                            <div class="inbox-item">
+                                <strong class="inbox-item-author">Meckalam JSS</strong>
+                                <span class="inbox-item-date"></span>
+                                <p class="inbox-item-text">Elderly services: Covers and assists with a wide range of issues associated…</p>
+                            </div>
+                        </a>
+                                                <a href="https://bhospital.bdtask.com/enquiry/view/1">
+                            <div class="inbox-item">
+                                <strong class="inbox-item-author">Marks Joie</strong>
+                                <span class="inbox-item-date"></span>
+                                <p class="inbox-item-text">Anesthetics: Doctors in this department give anesthetic for operations…</p>
+                            </div>
+                        </a>
+                                                            </div> 
+            </div>
+        </div>
+    </div>
+        <!-- /.row --> 
+</div> <!-- /.row -->
+
+<div class="row">
+    <!-- Total Product Sales area -->
+        <div class="col-lg-8">
+         <div class="panel panel-default" style="height: 505px !important;">
+            <div class="panel-body">
+                <div class="widget-title">
+                    <h3>Today patient list</h3>
+                </div>
+                <div class="table-wrapper-scroll-y">
+                    <!-- today patient list -->
+                    <table width="100%" class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID No.</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Mobile No</th>
+                                <th>Sex</th>
+                                <th>Blood Group</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                                                                                                <tr class="odd gradeX">
+                                        <td>PGAI7IVW</td>
+                                        <td>ugur</td>
+                                        <td>karadaş</td>
+                                        <td>05446869933</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="center">
+                                            <a href="https://bhospital.bdtask.com/patient/profile/494" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                        </td>
+                                   
+                                    </tr>
+                                                                                                        <tr class="even gradeC">
+                                        <td>PAJTDR48</td>
+                                        <td>fdfd</td>
+                                        <td>sad</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="center">
+                                            <a href="https://bhospital.bdtask.com/patient/profile/493" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                        </td>
+                                   
+                                    </tr>
+                                                                                                        <tr class="odd gradeX">
+                                        <td>PTC76RHV</td>
+                                        <td>dfghj</td>
+                                        <td>ghfj</td>
+                                        <td>70000000</td>
+                                        <td>Male</td>
+                                        <td></td>
+                                        <td class="center">
+                                            <a href="https://bhospital.bdtask.com/patient/profile/492" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a> 
+                                        </td>
+                                   
+                                    </tr>
+                                                                     
+                             
+                        </tbody>
+                    </table>  <!-- /.table-responsive -->
+                </div>
+            </div> <!-- /.panel-body -->
+         </div>
+    </div>
+    
+    <!-- Message area -->
+            <div class="col-lg-4">
+           <div class="panel panel-default">
+                <div class="panel-body"> 
+                    <div class="widget-title">
+                      <h3>Quick Links</h3>
+                    </div>
+                    <div class="fancy-collapse-panel">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#billing" aria-expanded="true" aria-controls="billing">Billing                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="billing" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                       <ul class="quick-menu">
+                                                                                        <li><a class="btn bg-green btn-block" href="https://bhospital.bdtask.com/billing/service/index">Service List</a></li> 
+                                            
+                                                                                        <li><a class="btn bg-olive btn-block" href="https://bhospital.bdtask.com/billing/package/index">Package List</a></li>   
+                                            
+
+                                                                                        <li><a class="btn bg-blue btn-block" href="https://bhospital.bdtask.com/billing/admission">Patient Admission List</a></li> 
+                                            
+                                                                                       <li><a class="btn bg-primary btn-block" href="https://bhospital.bdtask.com/billing/bill">Bill List</a></li> 
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-info">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#hactivity" aria-expanded="false" aria-controls="hactivity">Hospital Activities                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="hactivity" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        <ul class="quick-menu">
+                                                                                        <li><a class="btn bg-green btn-block" href="https://bhospital.bdtask.com/hospital_activities/birth/index">Birth Report</a></li>
+                                                                                                                                    <li><a class="btn bg-red btn-block" href="https://bhospital.bdtask.com/hospital_activities/death/index">Death Report</a></li>
+                                            
+                                                                                        <li><a class="btn bg-yellow btn-block" href="https://bhospital.bdtask.com/hospital_activities/operation/index">Operation Report</a></li>
+                                             
+                                                                                         <li><a class="btn bg-primary btn-block" href="https://bhospital.bdtask.com/hospital_activities/investigation/index">Investigation Report</a></li>
+                                                                                     </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-success">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#account" aria-expanded="false" aria-controls="account">Account Manager                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="account" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        <ul class="quick-menu">
+                                                                                        <li><a class="btn bg-primary btn-block" href="https://bhospital.bdtask.com/accounts/accounts/show_tree">Chart Of Account</a></li>
+                                            
+                                                                                         <li><a class="btn bg-olive btn-block" href="https://bhospital.bdtask.com/accounts/accounts/general_ledger">General Ledger</a></li>
+                                            
+                                                                                         <li><a class="btn bg-blue btn-block" href="https://bhospital.bdtask.com/accounts/accounts/trial_balance">Trial Balance</a></li>
+                                            
+                                                                                        <li><a class="btn bg-green btn-block" href="https://bhospital.bdtask.com/accounts/accounts/profit_loss_report">Profit Loss</a></li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-warning">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#insurance" aria-expanded="false" aria-controls="insurance">Insurance                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="insurance" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        <ul class="quick-menu">
+                                                                                        <li><a class="btn bg-green btn-block" href="https://bhospital.bdtask.com/insurance/insurance/form">Add Insurance</a></li> 
+                                            
+
+                                                                                        <li><a class="btn bg-blue btn-block" href="https://bhospital.bdtask.com/insurance/insurance">Insurance List</a></li>  
+                                            
+
+
+                                                                                        <li><a class="btn bg-olive btn-block" href="https://bhospital.bdtask.com/insurance/limit_approval/form">Add Limit Approval</a></li> 
+                                            
+
+
+                                                                                        <li><a class="btn bg-yellow btn-block" href="https://bhospital.bdtask.com/insurance/limit_approval">Limit Approval List</a></li>  
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+        <!-- /.row --> 
+    
+<script type="text/javascript"> 
+$(window).on('load', function(){
+    //line chart
+    var ctx = document.getElementById("lineChart");
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Nov-20","Dec-20","Jan-21","Feb-21","Mar-21","Apr-21","May-21","Jun-21","Jul-21","Aug-21","Sep-21","Oct-21"],
+            datasets: [
+                {
+                    label: "Patient",
+                    borderColor: "#3498DB",
+                    borderWidth: "1",
+                    //backgroundColor: "rgba(0,0,0,.07)",
+                    pointHighlightStroke: "rgba(52,152,219)",
+                    data: [0,0,0,0,20,49,54,46,47,36,73,16]
+                },
+                {
+                    label: "Appointment",
+                    borderColor: "#37a000",
+                    borderWidth: "1",
+                    //backgroundColor: "#73BC4D",
+                    pointHighlightStroke: "rgba(55,160,0)",
+                    data: [0,0,0,0,8,20,21,4,24,23,24,11]
+                },
+                {
+                    label: "Prescription",
+                    borderColor: "#FFB61E",
+                    borderWidth: "1",
+                    //backgroundColor: "#1ABC9C",
+                    pointHighlightStroke: "rgba(130, 224, 170,1)",
+                    data: [0,0,0,0,4,14,14,15,16,19,18,0]
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            tooltips: {
+                mode: 'index',
+                intersect: false
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            }
+
+        }
+    });
+
+});
+
+</script>
+ 
+ 
+                </div> <!-- /.content -->
+            </div> /.content-wrapper
+
+            <footer class="main-footer">
+                2017Â©Copyright            </footer>
+        </div> <!-- ./wrapper -->
+ 
+        <!-- jquery-ui js -->
+        <script src="https://bhospital.bdtask.com/assets/js/jquery-ui.min.js" type="text/javascript"></script> 
+        <!-- bootstrap js -->
+        <script src="https://bhospital.bdtask.com/assets/js/bootstrap.min.js" type="text/javascript"></script>  
+        <!-- pace js -->
+        <script src="https://bhospital.bdtask.com/assets/js/pace.min.js" type="text/javascript"></script>  
+        <!-- SlimScroll -->
+        <script src="https://bhospital.bdtask.com/assets/js/jquery.slimscroll.min.js" type="text/javascript"></script>  
+
+        <!-- bootstrap timepicker -->
+        <script src="https://bhospital.bdtask.com/assets/js/jquery-ui-sliderAccess.js" type="text/javascript"></script> 
+        <script src="https://bhospital.bdtask.com/assets/js/jquery-ui-timepicker-addon.min.js" type="text/javascript"></script> 
+        <!-- select2 js -->
+        <script src="https://bhospital.bdtask.com/assets/js/select2.min.js" type="text/javascript"></script>
+
+        <script src="https://bhospital.bdtask.com/assets/js/sparkline.min.js" type="text/javascript"></script> 
+        <!-- Counter js -->
+        <script src="https://bhospital.bdtask.com/assets/js/waypoints.js" type="text/javascript"></script>
+        <script src="https://bhospital.bdtask.com/assets/js/jquery.counterup.min.js" type="text/javascript"></script>
+
+        <!-- ChartJs JavaScript -->
+        <script src="https://bhospital.bdtask.com/assets/js/Chart.min.js" type="text/javascript"></script>
+        
+        <!-- semantic js -->
+        <script src="https://bhospital.bdtask.com/assets/js/semantic.min.js" type="text/javascript"></script>
+        <!-- DataTables JavaScript -->
+        <script src="https://bhospital.bdtask.com/assets/datatables/js/dataTables.min.js"></script>
+        <!-- tinymce texteditor -->
+        <script src="https://bhospital.bdtask.com/assets/tinymce/tinymce.min.js" type="text/javascript"></script> 
+        <!-- Table Head Fixer -->
+        <script src="https://bhospital.bdtask.com/assets/js/tableHeadFixer.js" type="text/javascript"></script> 
+
+        <!-- Admin Script -->
+        <script src="https://bhospital.bdtask.com/assets/js/frame.js" type="text/javascript"></script> 
+
+        <!-- Custom Theme JavaScript -->
+        <script src="https://bhospital.bdtask.com/assets/js/custom.js?v=1" type="text/javascript"></script>
+        <!-- jstree view -->
+        <script src="https://bhospital.bdtask.com/assets/vakata-jstree/dist/jstree.min.js"></script>
+    
+<div class="html-scan-info" style="position: fixed; margin-right: 2rem; right: 20px; top: 5px; z-index: 2147483647;"><button class="run" style="color: rgb(255, 255, 255); white-space: pre-wrap; margin-left: 10px; background: rgb(43, 43, 43) !important; padding: 12px !important; font-weight: 400 !important; box-shadow: rgb(0, 0, 0) 1px 1px 1px 1px !important; border-radius: 2px !important; z-index: 2147483647 !important; font-size: 15px !important;">Close</button><button class="change-btn" style="color: rgb(255, 255, 255); white-space: pre-wrap; margin-left: 10px; background: rgb(43, 43, 43) !important; padding: 12px !important; font-weight: 400 !important; box-shadow: rgb(0, 0, 0) 1px 1px 1px 1px !important; border-radius: 2px !important; z-index: 2147483647 !important; font-size: 15px !important;">Change to TEXT</button><button class="copy-btn" style="color: rgb(255, 255, 255); white-space: pre-wrap; margin-left: 10px; background: rgb(43, 43, 43) !important; padding: 12px !important; font-weight: 400 !important; box-shadow: rgb(0, 0, 0) 1px 1px 1px 1px !important; border-radius: 2px !important; z-index: 2147483647 !important; font-size: 15px !important;">Copied</button></div><div class="html-scan-block" style="color: rgb(255, 255, 255); white-space: pre-wrap; margin-left: 10px; display: none; top: 49px; left: 980px; max-width: 400px; max-height: 400px; text-overflow: ellipsis; overflow: hidden; border: 1px solid transparent; position: absolute; background: rgb(43, 43, 43) !important; padding: 12px !important; font-weight: 400 !important; box-shadow: rgb(0, 0, 0) 1px 1px 1px 1px !important; z-index: 2147483647 !important; font-size: 13px; border-radius: 3px !important; line-height: 1.5;"></div></body></html>
