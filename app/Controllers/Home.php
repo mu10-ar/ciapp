@@ -9,18 +9,15 @@ class Home extends BaseController
      
     public function index()
     {
-         echo view('createdoctor');
+         echo view('dashboard');
       
        
        
       
     }
-    public function createdocter()
+    public function createdoctor()
     {
-         if (isset($POST['submit'])) {
-             echo "great";
-         }
-      echo " not great";
+         echo view('adddoctor');
        
        
       
