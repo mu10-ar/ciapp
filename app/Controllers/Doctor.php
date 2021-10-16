@@ -74,8 +74,55 @@ class Doctor extends BaseController
             
 
     }
-    public function message($param){
-        echo $param;
+
+
+
+
+
+
+    public function updateuser($id)
+    
+    {
+                $data=[];
+                helper('form');
+                $model= new DoctorModel ();
+                $user=$model->getRow($id);
+                $data['user']=$user;
+               
+
+        if( $this->request->getMethod()=='post'){
+               $input=$this->validate([
+               'firstname'=> 'required',
+               'lastname'=> 'required',
+               'email'=> 'required|valid_email',
+                
+
+           ]);
+           var_dump($input);
+        
+             
+           if ($input==true) {
+               
+                    $model= new DoctorModel();
+                    $model->update($id,[
+                        'firstname'=> $this->request->getPost('firstname'),
+                        'lastname' => $this->request->getPost('lastname'),
+                        'email' => $this->request->getPost('email'),
+                    
+                        'address' => $this->request->getPost('address')
+                    ]);
+                    // $session->setFlashdata('success','winner winner chicken dinner , record updated');
+                    return  redirect()->to(base_url('/doctorslist'));
+                    
+               
+           }
+        }
+        
+
+
+        echo view('partials/sidebar',$data);
+         echo view('doctor/updatedoctor');
+         echo view('partials/footer');
 
       
         
@@ -83,5 +130,5 @@ class Doctor extends BaseController
 
     }
 
-
+    
 }
