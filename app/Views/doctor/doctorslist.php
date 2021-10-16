@@ -3,48 +3,32 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Department</th>
+                <th scope="col">firstname</th>
+                <th scope="col">lastname</th>
+                <th scope="col">email</th>
+                <th scope="col">address</th>
                 <th scope="col">action</th>
             </tr>
         </thead>
         <tbody>
+            <?php
+            
+            $id=1;
+            foreach($users as $user){?>
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td> <a href="" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="" class="btn btn-danger btn-sm">Delete</a>
-                    <a href="" class="btn btn-warning btn-sm">profile</a>
+
+                <th scope="row"><?=$id?></th>
+                <td><?=$user['firstname']?></td>
+                <td><?=$user['lastname']?></td>
+                <td><?=$user['email']?></td>
+                <td><?=$user['address']?></td>
+                <td> <a href="message" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="delete/<?=$user['id']?>" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="doctorprofile/<?=$user['id']?>" class="btn btn-warning btn-sm">profile</a>
                 </td>
             </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td> <a href="" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="" class="btn btn-danger btn-sm">Delete</a>
-                    <a href="" class="btn btn-warning btn-sm">profile</a>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td> <a href="" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="" class="btn btn-danger btn-sm">Delete</a>
-                    <a href="" class="btn btn-warning btn-sm">profile</a>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td> <a href="" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="" class="btn btn-danger btn-sm">Delete</a>
-                    <a href="" class="btn btn-warning btn-sm">profile</a>
-                </td>
-            </tr>
+            <?php $id++;}?>
+
 
         </tbody>
     </table>

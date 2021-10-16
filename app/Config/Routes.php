@@ -34,6 +34,9 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->add('/createdoctor', 'doctor::index');
 $routes->add('/doctorslist', 'doctor::doctorslist');
+$routes->add('/message/(:num)', 'doctor::message/$1');
+$routes->add('/delete/(:num)', 'doctor::deleteuser/$1');
+
 
 
 /*
