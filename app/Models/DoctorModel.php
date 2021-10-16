@@ -24,6 +24,8 @@ class DoctorModel extends Model{
     public function deleteUser($id){
         return $this->delete($id);
     }
+
+   
     
 }
 
