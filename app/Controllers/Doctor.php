@@ -14,24 +14,14 @@ class Doctor extends BaseController
          echo view('doctor/adddoctor');
          echo view('partials/footer');
       
-       
-       
-      
     }
-
-
-
 
      public function doctorslist()
     {
          echo view('partials/sidebar');
          echo view('doctor/doctorslist');
          echo view('partials/footer');
-         
-      
-       
-       
-      
+
     }
 
     
