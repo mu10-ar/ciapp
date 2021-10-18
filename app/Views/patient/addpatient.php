@@ -1,5 +1,5 @@
 <div class="row">
-      <!-- Form For Adding Doctor -->
+      <!-- Form For Adding Nurse -->
       <div class="container">
           <form action="createdoctor" method="post">
               <div class="form-row">
@@ -26,7 +26,10 @@
                   <label for="inputAddress">Address</label>
                   <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St">
               </div>
-              
+              <!-- <div class="form-group">
+                  <label for="inputspecialist">Specialist</label>
+                  <input type="text" class="form-control" id="inputspeaclist" name="Specialist" placeholder="ENT(asddf)">
+              </div> -->
 
               <!-- <div class="form-group">
                   <label for="inputcareertitle">Career title</label>
@@ -37,17 +40,17 @@
                   <input type="mobile" class="form-control" id="mobile" name="mobile" placeholder="0300-1234567" pattern="[0-9]{4}-[0-9]{7}">
               </div>
               <div class="form-group">
-                  <label for="mobile">Enter a emergency contact number:</label>
-                  <input type="mobile" class="form-control" id="mobile" name="mobile" placeholder="0300-1234567" pattern="[0-9]{4}-[0-9]{7}">
-              </div>
-              <div class="form-group">
                   Sex: <br>
               <input type="radio" name="gender" value="male"> Male<br>
               <input type="radio" name="gender" value="female"> Female<br>
               <input type="radio" name="gender" value="other"> Other.
               </div>
 
-              
+              <div class="form-row">
+                  <!-- <div class="form-group col-md-6">
+                      <label for="inputdesignation">Designation</label>
+                      <input type="text" class="form-control" id="inputdesignation">
+                  </div> -->
                   <div class="form-group col-md-4">
                       <label for="inputdepartment">Department</label>
                       <select id="inputdepartment" class="form-control">
@@ -74,18 +77,7 @@
                   </div>
               </div>
              
-              <!-- <label for="edu">Education</label>
-              <div class="form-group">
-                  <textarea name="edu" class="form-contorl" rows="10" cols="30"> </textarea>
-              </div> -->
-              <!-- <div class="form-group">
-                  <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="gridCheck">
-                      <label class="form-check-label" for="gridCheck">
-                          Check me out
-                      </label>
-                  </div>
-              </div> -->
+              
 
               <button type="submit" class="btn btn-primary">Add</button>
           </form>
