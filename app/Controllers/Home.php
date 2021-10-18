@@ -28,13 +28,6 @@ class Home extends BaseController
 
     public function login()
     {
-        $session=session();
-        if ($session->get('logged_in')) {
-            // var_dump( $session->get('logged_in'));
-             
-        }else {
-            return redirect()->to(base_url().'/login');
-        }
        
          echo view('login/login');
        
