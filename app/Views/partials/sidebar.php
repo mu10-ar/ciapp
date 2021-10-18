@@ -305,7 +305,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">logout</a>
+                                <a class="nav-link" href="<?=base_url()?>/logout">logout</a>
                             </li>
                             <!-- <li class="nav-item">
                                 <a class="nav-link" href="#">Page</a>

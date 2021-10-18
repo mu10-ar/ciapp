@@ -33,6 +33,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');
+$routes->add('/auth', 'Login::index');
+$routes->add('/logout', 'Login::logout');
 $routes->add('/createdoctor', 'doctor::index');
 $routes->add('/department', 'departmentController::index');
 $routes->add('/createdepartment', 'departmentController::createDepartment');

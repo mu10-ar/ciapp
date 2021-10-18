@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\models\DoctorModel;
+use App\models\UserModel;
 
 class Doctor extends BaseController
 {
@@ -14,7 +14,7 @@ class Doctor extends BaseController
         
         helper('form');
         if ($this->request->getMethod()=='post') {
-            $users=new DoctorModel();
+            $users=new UserModel();
 
         $input=$this->validate([
                'firstname'=> 'required',
@@ -55,7 +55,7 @@ class Doctor extends BaseController
      public function doctorslist()
     {
         
-        $users=new DoctorModel();
+        $users=new UserModel();
          $data['users']=$users->getRecord();
          echo view('partials/sidebar',$data);
          echo view('doctor/doctorslist');
@@ -68,7 +68,7 @@ class Doctor extends BaseController
     public function deleteuser($id){
        
 
-        $users=new DoctorModel();
+        $users=new UserModel();
         $users->deleteUser($id);
          return  redirect()->to('doctorslist');
             
@@ -85,7 +85,7 @@ class Doctor extends BaseController
     {
                 $data=[];
                 helper('form');
-                $model= new DoctorModel ();
+                $model= new UserModel ();
                 $user=$model->getRow($id);
                 $data['user']=$user;
                
@@ -103,7 +103,7 @@ class Doctor extends BaseController
              
            if ($input==true) {
                
-                    $model= new DoctorModel();
+                    $model= new UserModel();
                     $model->update($id,[
                         'firstname'=> $this->request->getPost('firstname'),
                         'lastname' => $this->request->getPost('lastname'),
@@ -132,7 +132,7 @@ class Doctor extends BaseController
 
     public function userprofile($id)
     {
-        $users=new DoctorModel();
+        $users=new UserModel();
         $data['user']=$users->getRow($id);
         
          

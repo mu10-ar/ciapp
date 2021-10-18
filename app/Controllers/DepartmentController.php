@@ -10,7 +10,14 @@ class DepartmentController extends BaseController
      
        public function index()
     {
-        
+        $session=session();
+         if ($session->get('logged_in')) {
+                
+            }
+            else {
+            return redirect()->to(base_url());
+            }
+
         $department=new DepartmentModel();
          $data['department']=$department->getDepartmentRecord();
          echo view('partials/sidebar',$data);

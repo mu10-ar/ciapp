@@ -1,7 +1,7 @@
 <?php
 namespace App\models;
 use CodeIgniter\Model;
-class DoctorModel extends Model{
+class UserModel extends Model{
     protected $table ='users';
     protected $primaryKey ='id';
     protected $allowedFields=[
@@ -23,6 +23,10 @@ class DoctorModel extends Model{
     
     public function deleteUser($id){
         return $this->delete($id);
+    }
+    public function auth($email,$password)
+    {
+       return $this->where('email',$email)->where('password',$password)->first();
     }
 
    
