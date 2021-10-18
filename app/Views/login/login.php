@@ -145,7 +145,7 @@ a {
 
             <div class="container" style="background-color:#00C49A">
 
-                <span class="psw">Forgot <a href="#">password?</a></span>
+                <p class="psw"><a href="#">Forgotpassword?</a></p>
             </div>
         </form>
 
