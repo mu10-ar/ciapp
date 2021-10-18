@@ -108,7 +108,7 @@ a {
 
 <body>
     <div class="container  center">
-        <form class="col-md-3 center" action="action_page.php" method="post">
+        <form class="col-md-3 center" action="<?=base_url('/auth')?>" method="post">
 
             <h1 class="h">Login Here!</h1>
             <div class="imgcontainer">
