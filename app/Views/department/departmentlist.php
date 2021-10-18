@@ -25,8 +25,9 @@ if (empty($department)) {
                 <td><?=$department['department_name']?></td>
                 <td><?=$department['department_description']?></td>
 
-                <td> <a href="editdepartment/<?=$department['department_id']?>" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="deletedepartment/<?=$department['department_id']?>"
+                <td> <a href="<?=base_url()?>/editdepartment/<?=$department['department_id']?>"
+                        class="btn btn-primary btn-sm">Edit</a>
+                    <a href="<?=base_url()?>/deletedepartment/<?=$department['department_id']?>"
                         class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>

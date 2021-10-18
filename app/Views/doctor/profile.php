@@ -7,7 +7,7 @@
             <div class="row">
 
                 <div class="col-sm-12" align="center">
-                    <h1>Doctor Information</h1>
+                    <h1>User Information</h1>
                     <br>
                 </div>
 
