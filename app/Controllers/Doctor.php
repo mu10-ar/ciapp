@@ -11,6 +11,13 @@ class Doctor extends BaseController
     public function index()
     
     { 
+        $session=session();
+        if ($session->get('logged_in')) {
+            // var_dump( $session->get('logged_in'));
+             
+        }else {
+            return redirect()->to(base_url().'/login');
+        }
         
         helper('form');
         if ($this->request->getMethod()=='post') {
@@ -54,6 +61,14 @@ class Doctor extends BaseController
 
      public function doctorslist()
     {
+
+        $session=session();
+        if ($session->get('logged_in')) {
+            // var_dump( $session->get('logged_in'));
+             
+        }else {
+            return redirect()->to(base_url().'/login');
+        }
         
         $users=new UserModel();
          $data['users']=$users->getRecord();
@@ -66,6 +81,14 @@ class Doctor extends BaseController
 
 
     public function deleteuser($id){
+
+        $session=session();
+        if ($session->get('logged_in')) {
+            // var_dump( $session->get('logged_in'));
+             
+        }else {
+            return redirect()->to(base_url().'/login');
+        }
        
 
         $users=new UserModel();
@@ -83,6 +106,14 @@ class Doctor extends BaseController
     public function updateuser($id)
     
     {
+
+        $session=session();
+        if ($session->get('logged_in')) {
+            // var_dump( $session->get('logged_in'));
+             
+        }else {
+            return redirect()->to(base_url().'/login');
+        }
                 $data=[];
                 helper('form');
                 $model= new UserModel ();
@@ -132,6 +163,14 @@ class Doctor extends BaseController
 
     public function userprofile($id)
     {
+
+        $session=session();
+        if ($session->get('logged_in')) {
+            // var_dump( $session->get('logged_in'));
+             
+        }else {
+            return redirect()->to(base_url().'/login');
+        }
         $users=new UserModel();
         $data['user']=$users->getRow($id);
         
