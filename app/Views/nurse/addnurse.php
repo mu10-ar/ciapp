@@ -1,4 +1,4 @@
-  <div class="row">
+<div class="row">
       <!-- Form For Adding Doctor -->
       <div class="container">
           <form action="createdoctor" method="post">

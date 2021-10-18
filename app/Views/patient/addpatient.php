@@ -1,4 +1,4 @@
-  <div class="row">
+<div class="row">
       <!-- Form For Adding Doctor -->
       <div class="container">
           <form action="createdoctor" method="post">
@@ -26,17 +26,18 @@
                   <label for="inputAddress">Address</label>
                   <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St">
               </div>
-              <div class="form-group">
-                  <label for="inputspecialist">Specialist</label>
-                  <input type="text" class="form-control" id="inputspeaclist" name="Specialist" placeholder="ENT(asddf)">
-              </div>
+              
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                   <label for="inputcareertitle">Career title</label>
                   <input type="text" class="form-control" id="inputcareertitle" name="CareerTitle">
-              </div>
+              </div> -->
               <div class="form-group">
                   <label for="mobile">Enter a mobile number:</label>
+                  <input type="mobile" class="form-control" id="mobile" name="mobile" placeholder="0300-1234567" pattern="[0-9]{4}-[0-9]{7}">
+              </div>
+              <div class="form-group">
+                  <label for="mobile">Enter a emergency contact number:</label>
                   <input type="mobile" class="form-control" id="mobile" name="mobile" placeholder="0300-1234567" pattern="[0-9]{4}-[0-9]{7}">
               </div>
               <div class="form-group">
@@ -46,11 +47,7 @@
               <input type="radio" name="gender" value="other"> Other.
               </div>
 
-              <div class="form-row">
-                  <div class="form-group col-md-6">
-                      <label for="inputdesignation">Designation</label>
-                      <input type="text" class="form-control" id="inputdesignation">
-                  </div>
+              
                   <div class="form-group col-md-4">
                       <label for="inputdepartment">Department</label>
                       <select id="inputdepartment" class="form-control">
