@@ -66,7 +66,7 @@ class Doctor extends BaseController
 
 
     public function deleteuser($id){
-        echo "hello";
+       
 
         $users=new DoctorModel();
         $users->deleteUser($id);
@@ -128,6 +128,17 @@ class Doctor extends BaseController
         
             
 
+    }
+
+    public function userprofile($id)
+    {
+        $users=new DoctorModel();
+        $data['user']=$users->getRow($id);
+        
+         
+        echo view('partials/sidebar',$data);
+         echo view('doctor/profile.php');
+         echo view('partials/footer');
     }
 
     

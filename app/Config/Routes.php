@@ -39,7 +39,7 @@ $routes->add('/doctorslist', 'doctor::doctorslist');
 // $routes->add('/message/(:num)', 'doctor::message/$1');
 $routes->add('/delete/(:num)', 'doctor::deleteuser/$1');
 $routes->add('/update/(:num)', 'doctor::updateuser/$1');
-$routes->add('/profile/(:num)', 'doctor::docterprofile/$1');
+$routes->add('/profile/(:num)', 'doctor::userprofile/$1');
 $routes->add('/editdepartment/(:num)', 'departmentController::updatedepartment/$1');
 $routes->add('/deletedepartment/(:num)', 'departmentController::deletedepartment/$1');
 
