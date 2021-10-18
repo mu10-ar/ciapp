@@ -56,10 +56,10 @@
                     </a>
                     <ul class="collapse list-unstyled" id="departmentSubmenu">
                         <li>
-                            <a href="createdepartment">Add Department</a>
+                            <a href="<?=base_url()?>/createdepartment">Add Department</a>
                         </li>
                         <li>
-                            <a href="department">Department List</a>
+                            <a href="<?=base_url()?>/createdepartment">Department List</a>
                         </li>
                     </ul>
                 </li>

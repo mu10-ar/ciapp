@@ -32,6 +32,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/login', 'Home::login');
 $routes->add('/createdoctor', 'doctor::index');
 $routes->add('/department', 'departmentController::index');
 $routes->add('/createdepartment', 'departmentController::createDepartment');
