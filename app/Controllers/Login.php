@@ -28,6 +28,8 @@ class Login extends BaseController
 
 
                 var_dump($session->get('logged_in'));          
+            }else {
+                echo "Wrong password";
             }
             if ($session->get('logged_in')==true) {
                 return redirect()->to(base_url());
