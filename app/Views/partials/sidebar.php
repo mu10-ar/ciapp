@@ -55,10 +55,10 @@
                     </a>
                     <ul class="collapse list-unstyled" id="departmentSubmenu">
                         <li>
-                            <a href="#">Add Department</a>
+                            <a href="createdepartment">Add Department</a>
                         </li>
                         <li>
-                            <a href="#">Department List</a>
+                            <a href="department">Department List</a>
                         </li>
                     </ul>
                 </li>

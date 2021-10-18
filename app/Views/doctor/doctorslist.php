@@ -24,7 +24,7 @@
                 <td><?=$user['address']?></td>
                 <td> <a href="update/<?=$user['id']?>" class="btn btn-primary btn-sm">Edit</a>
                     <a href="delete/<?=$user['id']?>" class="btn btn-danger btn-sm">Delete</a>
-                    <a href="doctorprofile/<?=$user['id']?>" class="btn btn-warning btn-sm">profile</a>
+                    <a href="profile/<?=$user['id']?>" class="btn btn-warning btn-sm">profile</a>
                 </td>
             </tr>
             <?php $id++;}?>

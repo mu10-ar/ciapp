@@ -98,7 +98,7 @@ class Doctor extends BaseController
                 
 
            ]);
-           var_dump($input);
+           
         
              
            if ($input==true) {
