@@ -27,6 +27,7 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
+
 /* Set a style for all buttons */
 button {
   background-color: #00C49A;
@@ -112,7 +113,22 @@ a{
       
           <label for="psw"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="psw" required>
-      
+          
+          <label for="contorl"><b>Control Access</b></label>
+          <!-- <div class="container"> -->
+          <input  list="browsers" name="browser" required>
+          <datalist id="browsers">
+          <option value="Admin">
+          <option value="Doctor">
+          <option value="Nurse">
+          <option value="Accountant">
+            <option value="Pharmacist">
+            <option value="Pateint">
+              <option value="Bed Manager">
+          </datalist> 
+  <!-- <input type="submit"> -->
+  
+  
           <button type="submit">Login</button>
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
