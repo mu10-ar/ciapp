@@ -133,11 +133,12 @@ a{
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
+          
         </div>
       
-        <div class="container" style="background-color:#00C49A">
-          <button type="button" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#">password?</a></span>
+        <div class=" cancelbtn" style="background-color:#00C49A">
+          <p class="psw">  <a href="#">Forgotpassword?</a></p>
+          
         </div>
       </form>
 
