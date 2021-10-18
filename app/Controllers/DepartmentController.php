@@ -2,21 +2,19 @@
 
 namespace App\Controllers;
 use App\models\DepartmentModel;
-
+use CodeIgniter\Session\Session;
 
 class DepartmentController extends BaseController
 {
 
-     
        public function index()
     {
-        $session=session();
-         if ($session->get('logged_in')) {
-                
-            }
-            else {
-            return redirect()->to(base_url());
-            }
+         $session=session();
+        if (!$session->get('logged_in')) {
+           return redirect()->to(base_url().'/login');
+             
+        }
+            
 
         $department=new DepartmentModel();
          $data['department']=$department->getDepartmentRecord();
@@ -31,6 +29,11 @@ class DepartmentController extends BaseController
     public function createDepartment()
     {
 
+       $session=session();
+        if (!$session->get('logged_in')) {
+           return redirect()->to(base_url().'/login');
+             
+        }
 
 
 
@@ -58,6 +61,12 @@ class DepartmentController extends BaseController
 
 
     public function updatedepartment($id){
+
+       $session=session();
+        if (!$session->get('logged_in')) {
+           return redirect()->to(base_url().'/login');
+             
+        }
 
             $departments= new DepartmentModel;
             $data['department']= $departments->getDeparmentRow($id);
@@ -95,6 +104,12 @@ class DepartmentController extends BaseController
 
     public function deleteDepartment($id)
     {
+       $session=session();
+        if (!$session->get('logged_in')) {
+           return redirect()->to(base_url().'/login');
+             
+        }
+    
       $department = new DepartmentModel();
       $deleted= $department->delete($id);
       if ($deleted) {

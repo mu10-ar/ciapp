@@ -25,25 +25,23 @@
                         <dt>Email Address</dt>
                         <dd><?=$user['email']?></dd>
                         <dt>Designation</dt>
-                        <dd>Snr. Manager</dd>
+                        <dd><?=$user['designation']?></dd>
                         <dt>Department</dt>
-                        <dd>Neurology</dd>
+                        <dd><?=$user['department_name']?></dd>
                         <dt>Address</dt>
                         <dd><?=$user['address']?></dd>
-                        <dt>Phone No</dt>
-                        <dd>922223146</dd>
+
                         <dt>Mobile No</dt>
-                        <dd>922223146</dd>
+                        <dd><?=$user['mobile_no']?></dd>
                         <dt>Specialist</dt>
                         <dd></dd>
                         <dt>Date of Birth</dt>
-                        <dd>1992-10-10</dd>
+                        <dd><?=$user['birthday']?></dd>
                         <dt>Sex</dt>
-                        <dd>Male</dd>
-                        <dt>Create Date</dt>
-                        <dd>2021-10-18</dd>
-                        <dt>Update Date</dt>
-                        <dd></dd>
+                        <dd><?=$user['sex']?></dd>
+                        <dt>joined Date</dt>
+                        <dd><?=$user['created_at']?></dd>
+
                         <dt>Status</dt>
                         <dd>Active</dd>
                     </dl>

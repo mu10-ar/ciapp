@@ -9,7 +9,15 @@ class UserModel extends Model{
         'lastname',
         'email',
         'password',
-        'address'
+        'address',
+        'specialist',
+        'mobile_no',
+        'sex',
+        'designation',
+        'birthday',
+        'blood_group',
+        'user_role'
+
     ];
     public function getRecord(){
         return $this->orderBy('id','DESC')->findAll();

@@ -11,6 +11,13 @@ class Doctor extends BaseController
     public function index()
     
     { 
+        $data=[];
+        $session=session();
+        $session=session();
+        if (!$session->get('logged_in')) {
+           return redirect()->to(base_url().'/login');
+             
+        }
         
         helper('form');
         if ($this->request->getMethod()=='post') {
@@ -20,22 +27,37 @@ class Doctor extends BaseController
                'firstname'=> 'required',
                'lastname'=> 'required',
                'email'=> 'required|valid_email',
-               'password'=> 'required|min_length[10]'
+               'password'=> 'required|min_length[10]',
+               
 
            ]);
 
-           
+
+           var_dump($input);
            
            if ($input==true) {
+               
                $users->save([
                 'firstname'=> $this->request->getPost('firstname'),
                 'lastname' => $this->request->getPost('lastname'),
                 'email' => $this->request->getPost('email'),
                 'password' => $this->request->getPost('password'),
-                'address' => $this->request->getPost('address')
+                'address' => $this->request->getPost('address'),
+                'specialist' => $this->request->getPost('specialist'),
+                'mobile_no' => $this->request->getPost('mobile_no'),
+                'sex' => $this->request->getPost('sex'),
+                'designation' => $this->request->getPost('designation'),
+                'department' => $this->request->getPost('department'),
+                'birthday' => $this->request->getPost('birthday'),
+                'blood_group' => $this->request->getPost('blood_group'),
+                'user_role'=>  $this->request->getPost('user_role')
+                
             ]);
              $success =true;
               return  redirect()->to('doctorslist');
+           }
+           else {
+                  $data['validation']=$this->validator;
            }
            
 
@@ -43,10 +65,11 @@ class Doctor extends BaseController
            
 
         }
+        
 
 
 
-          echo view('partials/sidebar');
+          echo view('partials/sidebar',$data);
          echo view('doctor/adddoctor');
          echo view('partials/footer');
       
@@ -54,6 +77,11 @@ class Doctor extends BaseController
 
      public function doctorslist()
     {
+         $session=session();
+        if (!$session->get('logged_in')) {
+           return redirect()->to(base_url().'/login');
+             
+        }
         
         $users=new UserModel();
          $data['users']=$users->getRecord();
@@ -66,6 +94,11 @@ class Doctor extends BaseController
 
 
     public function deleteuser($id){
+        $session=session();
+        if (!$session->get('logged_in')) {
+           return redirect()->to(base_url().'/login');
+             
+        }
        
 
         $users=new UserModel();
@@ -83,6 +116,11 @@ class Doctor extends BaseController
     public function updateuser($id)
     
     {
+        $session=session();
+        if (!$session->get('logged_in')) {
+           return redirect()->to(base_url().'/login');
+             
+        }
                 $data=[];
                 helper('form');
                 $model= new UserModel ();
@@ -132,6 +170,12 @@ class Doctor extends BaseController
 
     public function userprofile($id)
     {
+
+        $session=session();
+        if (!$session->get('logged_in')) {
+           return redirect()->to(base_url().'/login');
+             
+        }
         $users=new UserModel();
         $data['user']=$users->getRow($id);
         

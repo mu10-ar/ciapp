@@ -91,14 +91,12 @@
                     </a>
                     <ul class="collapse list-unstyled" id="nurseSubmenu">
                         <li>
-                            <a href="#">Add Nurse</a>
+                            <a href="<?= base_url()?>/addnurse">Add Nurse</a>
                         </li>
                         <li>
                             <a href="#">Nurses List</a>
                         </li>
-                        <li>
-                            <a href="#">Alot Bed</a>
-                        </li>
+
                     </ul>
                 </li>
                 <li>

@@ -3,11 +3,11 @@
 namespace App\Controllers;
 
 
-class Home extends BaseController
+class Nurse extends BaseController
 {
 
      
-    public function index()
+    public function addnurse()
     {
         $session=session();
         if (!$session->get('logged_in')) {
@@ -16,7 +16,7 @@ class Home extends BaseController
         }
         
           echo view('partials/sidebar');
-         echo view('doctor/dashboard');
+         echo view('nurse/addnurse');
          echo view('partials/footer');
       
        
