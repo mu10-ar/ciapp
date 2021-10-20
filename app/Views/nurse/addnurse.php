@@ -34,11 +34,11 @@
                   <label for="inputspecialist">Specialist</label>
                   <input type="text" class="form-control" id="inputspeaclist" name="Specialist" placeholder="ENT(asddf)">
               </div>
-
+<!-- 
               <div class="form-group">
                   <label for="inputcareertitle">Career title</label>
                   <input type="text" class="form-control" id="inputcareertitle" name="CareerTitle">
-              </div>
+              </div> -->
               <div class="form-group">
                   <label for="mobile">Enter a mobile number:</label>
                   <input type="mobile" class="form-control" id="mobile" name="mobile" placeholder="0300-1234567" pattern="[0-9]{4}-[0-9]{7}">
