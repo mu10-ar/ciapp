@@ -94,6 +94,6 @@
 
 
 
-              <button type="submit" class="btn btn-primary">Add</button>
+              <button type="submit" class=" md-col-12 btn btn-primary">Add</button>
           </form>
       </div>

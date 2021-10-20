@@ -121,7 +121,7 @@
                     </a>
                     <ul class="collapse list-unstyled" id="patientSubmenu">
                         <li>
-                            <a href="#">Add Patient</a>
+                            <a href="<?=base_url()?>/addpatient">Add Patient</a>
                         </li>
                         <li>
                             <a href="#">Patient List</a>
