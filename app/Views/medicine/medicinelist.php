@@ -1,4 +1,7 @@
- <div class="container">
+<div style="text-align: center;">
+<h1>Medicine List</h1>
+</div>
+<div class="container">
      <table class="table">
          <thead>
              <tr>

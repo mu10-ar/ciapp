@@ -1,4 +1,7 @@
 <!-- Doctor Information Page -->
+<div style="text-align: center;">
+    <h2> Medicine View</h2>
+</div>   
 <div class="col-sm-12" id="PrintMe">
     <div class="panel panel-default thumbnail">
 

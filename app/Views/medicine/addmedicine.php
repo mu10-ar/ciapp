@@ -1,4 +1,5 @@
-<h1 style="text-align: center;">Add Medicine !</h1>
+
+<h1 style="text-align: center;  color:brown">Add Medicine !</h1>
 <div class="container">
 
     <form method="POST" action="">
