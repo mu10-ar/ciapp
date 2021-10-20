@@ -1,7 +1,7 @@
 <div style="text-align: center; margin:  4px;">
     <h2>Add Appointment</h2>
 </div> 
-<div class="row">
+
       <!-- Form For Adding Appointment -->
       <div class="container" style="display: flex;">
           <form action="createdoctor" method="post">
