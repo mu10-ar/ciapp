@@ -30,10 +30,10 @@
                   <label for="inputAddress">Address</label>
                   <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St">
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                   <label for="inputspecialist">Specialist</label>
                   <input type="text" class="form-control" id="inputspeaclist" name="Specialist" placeholder="ENT(asddf)">
-              </div>
+              </div> -->
 <!-- 
               <div class="form-group">
                   <label for="inputcareertitle">Career title</label>
