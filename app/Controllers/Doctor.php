@@ -102,7 +102,13 @@ class Doctor extends BaseController
        
 
         $users=new UserModel();
+        $data['checking']=$users->getUserRecord($id);
         $users->deleteUser($id);
+        
+
+
+        
+        return redirect()->to(base_url());
             
 
     }
