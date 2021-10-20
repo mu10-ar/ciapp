@@ -103,7 +103,6 @@ class Doctor extends BaseController
 
         $users=new UserModel();
         $users->deleteUser($id);
-         return  redirect()->to('doctorslist');
             
 
     }
