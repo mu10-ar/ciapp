@@ -21,7 +21,7 @@ if (empty($department)) {
             foreach($department as $department)
             {
                 ?>
-                <th scope="row">1</th>
+                <th scope="row"><?=$id?></th>
                 <td><?=$department['department_name']?></td>
                 <td><?=$department['department_description']?></td>
 

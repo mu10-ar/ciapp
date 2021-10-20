@@ -97,6 +97,7 @@
                     </select>
                 </div>
             </div>
+            <input type="hidden" name="user_role" value="<?=$user['user_role']?>">
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
