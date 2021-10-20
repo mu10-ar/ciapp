@@ -1,4 +1,4 @@
-<div style="text-align: center;">
+<div style="text-align: center; margin:  4px;">
     <h2>Add Appointment</h2>
 </div> 
 <div class="row">

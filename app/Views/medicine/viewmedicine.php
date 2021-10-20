@@ -1,5 +1,5 @@
 <!-- Doctor Information Page -->
-<div style="text-align: center;">
+<div style="text-align: center; margin:  4px;">
     <h2> Medicine View</h2>
 </div>   
 <div class="col-sm-12" id="PrintMe">

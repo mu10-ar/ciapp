@@ -1,4 +1,4 @@
-<h1 style="text-align: center;"> Add Department</h1>
+<h1 style="text-align: center; margin:  4px;"> Add Department</h1>
   <div class="row">
 
 

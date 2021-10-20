@@ -1,4 +1,4 @@
- 
+ <h1 style="text-align: center; margin:  4px;">Appointment List</h1>
          <div class="container">
             <table class="table">
                 <thead>

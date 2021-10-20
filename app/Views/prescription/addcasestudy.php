@@ -1,5 +1,5 @@
 <!--Add CaseStudy -->
-<div style="text-align: center;">
+<div style="text-align: center; margin:  4px;">
 <h1 >Case Study!</h1>
 </div>     
 <div class="container">
