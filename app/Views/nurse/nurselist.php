@@ -1,3 +1,6 @@
+<div style="text-align: center;">
+    <h2>Nurse List </h2>
+</div>   
 <div class="container">
     <table id="mytable" class="table table-striped">
         <thead>

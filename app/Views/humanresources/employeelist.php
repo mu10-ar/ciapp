@@ -1,3 +1,7 @@
+<!-- employees list -->
+<div style="text-align: center;">
+    <h2>Employees List </h2>
+</div>   
 <div class="container">
     <table id="myTable" class="table table-striped">
         <thead>
