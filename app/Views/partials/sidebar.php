@@ -149,7 +149,7 @@
                     </a>
                     <ul class="collapse list-unstyled" id="employeeSubmenu">
                         <li>
-                            <a href="<?=base_url()?>/adduser">Add Employeet</a>
+                            <a href="<?=base_url()?>/adduser">Add Employee</a>
                         </li>
                         <li>
                             <a href="#">Employee List</a>

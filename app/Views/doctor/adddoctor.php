@@ -1,4 +1,7 @@
-  <div class="row">
+<div class="" style="text-align: center;">
+    <h2><u>Add Doctor  </u></h2>
+</div>  
+ <div class="row">
       <!-- Form For Adding Doctor -->
       <div class="container">
           <form action="createdoctor" method="post">
