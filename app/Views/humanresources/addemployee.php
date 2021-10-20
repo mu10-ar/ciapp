@@ -1,11 +1,22 @@
 <div style="text-align: center;">
-    <h2><u>Add User </u></h2>
+    <h2>Add User </h2>
 </div>   
    <div class="row">
         <!-- Form For Adding Employee -->
         <div class="container">
             <form action="createdoctor" method="post">
-                <div class="form-row">
+            <div class="form-group ">
+                    <label for="inputemployee">User Role</label>
+                    <select id="inputemployee" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>Accountant</option>
+                        <option>Bed Manager</option>                        
+                        <option>Receptionist</option>
+                        
+                        <option>...</option>
+                    </select>
+                </div>
+            <div class="form-row">
                     <div class="col">
                         <label for="Firstname">First Name</label>
                         <input type="text" name="firstname" class="form-control" placeholder="First name">
@@ -46,19 +57,8 @@
                     <input type="radio" name="gender" value="other"> Other.
                 </div>
 
-                <div class="form-group ">
-                    <label for="inputemployee">Employee</label>
-                    <select id="inputemployee" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>Electrion</option>
-                        <option>Drivers</option>
-                        <option>CLerk</option>
-                        <option>Swippers</option>
-                        <option>...</option>
-                    </select>
-                </div>
-
-
+                
+                <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputdepartment">Department</label>
                     <select id="inputdepartment" class="form-control">
