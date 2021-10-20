@@ -35,7 +35,7 @@ class User extends BaseController
         }
         
           echo view('partials/sidebar');
-         echo view('patient/adduser');
+         echo view('humanresources/addemployee');
          echo view('partials/footer');
       
        
