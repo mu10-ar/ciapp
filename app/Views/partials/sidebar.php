@@ -61,7 +61,7 @@
                             <a href="<?=base_url()?>/createdepartment">Add Department</a>
                         </li>
                         <li>
-                            <a href="<?=base_url()?>/createdepartment">Department List</a>
+                            <a href="<?=base_url()?>/department">Department List</a>
                         </li>
                     </ul>
                 </li>

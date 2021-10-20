@@ -150,9 +150,12 @@ class Doctor extends BaseController
                     
                         'address' => $this->request->getPost('address')
                     ]);
+                    $userrole=$this->request->getVar('user_role');
                     // $session->setFlashdata('success','winner winner chicken dinner , record updated');
-                   
-                    return  redirect()->to(base_url('doctorlist'));
+                   if ($userrole==3) {
+                       return  redirect()->to(base_url('nurselist'));
+                   }
+                    return  redirect()->to(base_url('doctorslist'));
                     
                
            }
