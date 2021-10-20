@@ -59,7 +59,10 @@
                       <label for="inputdepartment">Department</label>
                       <select id="inputdepartment" class="form-control">
                           <option selected>Choose...</option>
-                          <option>...</option>
+                          <option>Department 1</option>
+                          <option>Department 2</option>
+                          <option>Department 3</option>
+                          <option>Department 4</option>
                       </select>
                   </div>
                   <div class="form-group col-md-2">
@@ -75,8 +78,15 @@
                   <div class="form-group col-md-6">
                       <label for="inputbloodgroup">BloodGroup</label>
                       <select id="inputbloodgroup" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>...</option>
+                      <option selected>Choose...</option>
+                          <option>A+</option>
+                          <option>A-</option>
+                          <option>B+</option>
+                          <option>B-</option>
+                          <option>AB+</option>
+                          <option>AB-</option>
+                          <option>O+</option>
+                          <option>O-</option>
                       </select>
                   </div>
               </div>

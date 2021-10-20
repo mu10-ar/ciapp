@@ -75,8 +75,15 @@
                   <div class="form-group col-md-6">
                       <label for="inputbloodgroup">BloodGroup</label>
                       <select id="inputbloodgroup" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>...</option>
+                      <option selected>Choose...</option>
+                          <option>A+</option>
+                          <option>A-</option>
+                          <option>B+</option>
+                          <option>B-</option>
+                          <option>AB+</option>
+                          <option>AB-</option>
+                          <option>O+</option>
+                          <option>O-</option>
                       </select>
                   </div>
               </div>
