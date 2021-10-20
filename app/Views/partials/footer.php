@@ -10,36 +10,25 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
     integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
 </script>
-<script src="/cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-<link rel="stylesheet" href="cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
 <script>
 $(document).ready(function() {
-    $('#myTable').DataTable();
+    $('#mytable').DataTable();
 });
 </script>
 
 <script type="text/javascript">
 $(document).ready(function() {
-
+    var show = 1;
     $('#sidebarCollapse').on('click', function() {
         $('#sidebar').toggleClass('active');
 
 
 
-
-        if (show == 1) {
-            $('#showhide').html("hide")
-            show = 0;
-
-        } else {
-            $('#showhide').html("Show")
-            var show = 1;
-
-
-        }
     });
 });
 </script>
+
 </body>
 
 </html>

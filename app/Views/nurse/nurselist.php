@@ -1,5 +1,5 @@
 <div class="container">
-    <table id="myTable" class="table table-striped">
+    <table id="mytable" class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">#</th>
