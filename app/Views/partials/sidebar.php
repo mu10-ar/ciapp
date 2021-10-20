@@ -141,14 +141,15 @@
                             <a href="#">Appointment List</a>
                         </li>
                     </ul>
-                </li> <li>
+                </li>
+                <li>
                     <a href="#employeeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
                         Human Resources
                     </a>
                     <ul class="collapse list-unstyled" id="employeeSubmenu">
                         <li>
-                            <a href="#">Add Employeet</a>
+                            <a href="<?=base_url()?>/adduser">Add Employeet</a>
                         </li>
                         <li>
                             <a href="#">Employee List</a>

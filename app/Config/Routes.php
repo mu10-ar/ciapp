@@ -48,6 +48,7 @@ $routes->add('/profile/(:num)', 'doctor::userprofile/$1');
 $routes->add('/editdepartment/(:num)', 'departmentController::updatedepartment/$1');
 $routes->add('/deletedepartment/(:num)', 'departmentController::deletedepartment/$1');
 $routes->add('/addpatient', 'patient::addpatient');
+$routes->add('/adduser', 'user::adduser');
 
 
 

@@ -19,7 +19,8 @@
                   </div>
                   <div class="form-group col-md-6">
                       <label for="inputPassword4">Password</label>
-                      <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Password">
+                      <input type="password" class="form-control" id="inputPassword4" name="password"
+                          placeholder="Password">
                   </div>
               </div>
               <div class="form-group">
@@ -28,7 +29,8 @@
               </div>
               <div class="form-group">
                   <label for="inputspecialist">Specialist</label>
-                  <input type="text" class="form-control" id="inputspeaclist" name="specialist" placeholder="ENT(asddf)">
+                  <input type="text" class="form-control" id="inputspeaclist" name="specialist"
+                      placeholder="ENT(asddf)">
               </div>
 
               <div class="form-group">
@@ -37,13 +39,14 @@
               </div>
               <div class="form-group">
                   <label for="mobile">Enter a mobile number:</label>
-                  <input type="mobile" class="form-control" id="mobile" name="mobile" placeholder="0300-1234567" pattern="[0-9]{4}-[0-9]{7}">
+                  <input type="mobile" class="form-control" id="mobile" name="mobile" placeholder="0300-1234567"
+                      pattern="[0-9]{4}-[0-9]{7}">
               </div>
               <div class="form-group">
                   Sex: <br>
-              <input type="radio" name="gender" value="male"> Male<br>
-              <input type="radio" name="gender" value="female"> Female<br>
-              <input type="radio" name="gender" value="other"> Other.
+                  <input type="radio" name="gender" value="male"> Male<br>
+                  <input type="radio" name="gender" value="female"> Female<br>
+                  <input type="radio" name="gender" value="other"> Other.
               </div>
 
               <div class="form-row">
@@ -76,19 +79,6 @@
                       </select>
                   </div>
               </div>
-             
-              <!-- <label for="edu">Education</label>
-              <div class="form-group">
-                  <textarea name="edu" class="form-contorl" rows="10" cols="30"> </textarea>
-              </div> -->
-              <!-- <div class="form-group">
-                  <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="gridCheck">
-                      <label class="form-check-label" for="gridCheck">
-                          Check me out
-                      </label>
-                  </div>
-              </div> -->
 
               <button type="submit" class="btn btn-primary">Add</button>
           </form>
