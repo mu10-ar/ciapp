@@ -1,3 +1,4 @@
+<h1 style="text-align: center; margin:  4px;">Update Department </h1>
   <div class="row">
 
 
