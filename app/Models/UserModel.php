@@ -17,7 +17,8 @@ class UserModel extends Model{
         'birthday',
         'blood_group',
         'user_role',
-        'specialist'
+        'specialist',
+        'department_name'
 
     ];
     public function getDoctorRecord(){

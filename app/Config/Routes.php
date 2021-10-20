@@ -53,6 +53,8 @@ $routes->add('/viewmedicine/(:num)', 'medicinecontroller::viewmedicine/$1');
 $routes->add('/addpatient', 'patient::addpatient');
 $routes->add('/adduser', 'user::adduser');
 $routes->add('/nurselist', 'nurse::nurselist');
+$routes->add('/addappointment', 'appointment::addappointment');
+$routes->add('/appointments', 'appointment::appointments');
 $routes->add('/addmedicine', 'medicinecontroller::addmedicine');
 $routes->add('/medicinelist', 'medicinecontroller::medicinelist');
 
