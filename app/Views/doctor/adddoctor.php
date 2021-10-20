@@ -1,5 +1,5 @@
 <div class="" style="text-align: center;">
-    <h2><u>Add Doctor  </u></h2>
+    <h2>Add Doctor </h2>
 </div>  
  <div class="row">
       <!-- Form For Adding Doctor -->

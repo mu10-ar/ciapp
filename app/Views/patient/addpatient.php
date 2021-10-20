@@ -1,6 +1,6 @@
 
 <div style="text-align: center;">
-    <h2><u>Add Pateint </u></h2>
+    <h2>Add Pateint</h2>
 </div> 
 <div class="row">
       <!-- Form For Adding Nurse -->
