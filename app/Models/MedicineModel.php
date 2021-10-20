@@ -1,7 +1,7 @@
 <?php
 namespace App\models;
 use CodeIgniter\Model;
-class UserModel extends Model{
+class MedicineModel extends Model{
     protected $table ='users';
     protected $primaryKey ='id';
     protected $allowedFields=[
