@@ -72,7 +72,7 @@
                     </a>
                     <ul class="collapse list-unstyled" id="doctorSubmenu">
                         <li>
-                            <a href="<?php  echo base_url();?>/createdoctor">Add Doctor</a>
+                            <a href="<?php  echo base_url();?>/createuser">Add Doctor</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url()?>/doctorslist">Doctors List</a>
