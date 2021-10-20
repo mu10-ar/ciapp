@@ -41,12 +41,12 @@
             </div>
             <div class="form-group">
                 <label for="mobile">Enter a mobile number:</label>
-                <input type="mobile" class="form-control" id="mobile" name="mobile" placeholder="0300-1234567"
+                <input type="mobile" class="form-control" id="mobile" name="mobile_no" placeholder="0300-1234567"
                     pattern="[0-9]{4}-[0-9]{7}">
             </div>
             <div class="form-group">
                 Sex: <br>
-                <input type="radio" name="sex" value="male"> Male<br>
+                <input type="radio" checked name="sex" value="male"> Male<br>
                 <input type="radio" name="sex" value="female"> Female<br>
                 <input type="radio" name="sex" value="other"> Other.
             </div>
@@ -75,25 +75,16 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputbloodgroup">BloodGroup</label>
-                    <select id="inputbloodgroup" class="form-control">
+                    <select id="inputbloodgroup" class="form-control" name="blood_group">
                         <option selected>Choose...</option>
-                        <option>...</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="o">o</option>
                     </select>
                 </div>
             </div>
 
-            <!-- <label for="edu">Education</label>
-              <div class="form-group">
-                  <textarea name="edu" class="form-contorl" rows="10" cols="30"> </textarea>
-              </div> -->
-            <!-- <div class="form-group">
-                  <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="gridCheck">
-                      <label class="form-check-label" for="gridCheck">
-                          Check me out
-                      </label>
-                  </div>
-              </div> -->
+            <input type="hidden" name="user_role" value="3">
 
             <button type="submit" class="btn btn-primary">Add</button>
         </form>

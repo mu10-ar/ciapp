@@ -47,7 +47,7 @@
             </div>
             <div class="form-group">
                 Sex: <br>
-                <input type="radio" name="sex" value="male"> Male<br>
+                <input type="radio" checked name="sex" value="male"> Male<br>
                 <input type="radio" name="sex" value="female"> Female<br>
                 <input type="radio" name="sex" value="other"> Other.
             </div>

@@ -49,6 +49,7 @@ $routes->add('/editdepartment/(:num)', 'departmentController::updatedepartment/$
 $routes->add('/deletedepartment/(:num)', 'departmentController::deletedepartment/$1');
 $routes->add('/addpatient', 'patient::addpatient');
 $routes->add('/adduser', 'user::adduser');
+$routes->add('/nurselist', 'nurse::nurselist');
 
 
 

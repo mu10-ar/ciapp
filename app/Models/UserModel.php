@@ -20,8 +20,12 @@ class UserModel extends Model{
         'specialist'
 
     ];
-    public function getRecord(){
-        return $this->orderBy('id','DESC')->findAll();
+    public function getDoctorRecord(){
+        return $this->where('user_role',2)->findall();
+    }
+
+     public function getNurseRecord(){
+        return $this->where('user_role',3)->findall();
     }
 
 

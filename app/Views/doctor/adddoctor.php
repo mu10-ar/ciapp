@@ -45,7 +45,7 @@
             </div>
             <div class="form-group">
                 Sex: <br>
-                <input type="radio" name="sex" selected value="male"> Male<br>
+                <input type="radio" checked name="sex" selected value="male"> Male<br>
                 <input type="radio" name="sex" value="female"> Female<br>
                 <input type="radio" name="sex" value="other"> Other.
             </div>
@@ -75,7 +75,7 @@
                 <div class="form-group col-md-6">
                     <label for="inputbloodgroup">BloodGroup</label>
                     <select id="inputbloodgroup" class="form-control" name="blood_group">
-                        <option selected>Choose...</option>
+                        <option value='abo' selected>Choose...</option>
                         <option value="a">a</option>
                         <option value="b">b</option>
                         <option value="o">o</option>

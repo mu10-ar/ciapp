@@ -69,4 +69,24 @@ class Nurse extends BaseController
                
       
     }
+
+
+
+
+     public function nurselist()
+    {
+         $session=session();
+        if (!$session->get('logged_in')) {
+           return redirect()->to(base_url().'/login');
+             
+        }
+        
+        $users=new UserModel();
+         $data['users']=$users->getNurseRecord();
+         echo view('partials/sidebar',$data);
+         echo view('nurse/nurselist');
+         echo view('partials/footer');
+                
+
+    }
 }

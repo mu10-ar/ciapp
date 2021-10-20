@@ -84,7 +84,7 @@ class Doctor extends BaseController
         }
         
         $users=new UserModel();
-         $data['users']=$users->getRecord();
+         $data['users']=$users->getDoctorRecord();
          echo view('partials/sidebar',$data);
          echo view('doctor/doctorslist');
          echo view('partials/footer');
@@ -150,7 +150,7 @@ class Doctor extends BaseController
                         'address' => $this->request->getPost('address')
                     ]);
                     // $session->setFlashdata('success','winner winner chicken dinner , record updated');
-                    return  redirect()->to(base_url('/doctorslist'));
+                    // return  redirect()->to(base_url(''));
                     
                
            }

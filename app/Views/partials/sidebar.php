@@ -94,7 +94,7 @@
                             <a href="<?= base_url()?>/addnurse">Add Nurse</a>
                         </li>
                         <li>
-                            <a href="#">Nurses List</a>
+                            <a href="<?= base_url()?>/nurselist">Nurses List</a>
                         </li>
 
                     </ul>
