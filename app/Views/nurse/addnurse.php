@@ -30,7 +30,7 @@
                 <label for="inputAddress">Address</label>
                 <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St">
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="inputspecialist">Specialist</label>
                 <input type="text" class="form-control" id="inputspeaclist" name="Specialist" placeholder="ENT(asddf)">
             </div>
@@ -38,7 +38,7 @@
             <div class="form-group">
                 <label for="inputcareertitle">Career title</label>
                 <input type="text" class="form-control" id="inputcareertitle" name="CareerTitle">
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="mobile">Enter a mobile number:</label>
                 <input type="mobile" class="form-control" id="mobile" name="mobile_no" placeholder="0300-1234567"
@@ -60,7 +60,9 @@
                     <label for="inputdepartment">Department</label>
                     <select id="inputdepartment" class="form-control">
                         <option selected>Choose...</option>
-                        <option>...</option>
+                        <option>D3</option>
+                        <option>D2</option>
+                        <option>D1</option>
                     </select>
                 </div>
                 <div class="form-group col-md-2">
