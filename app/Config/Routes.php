@@ -35,7 +35,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');
 $routes->add('/auth', 'Login::index');
 $routes->add('/logout', 'Login::logout');
-$routes->add('/createdoctor', 'doctor::index');
+$routes->add('/createuser', 'doctor::index');
 $routes->add('/addnurse', 'nurse::addnurse');
 $routes->add('/nurselist', 'nurse::nurselist');
 $routes->add('/department', 'departmentController::index');

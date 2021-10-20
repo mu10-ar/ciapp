@@ -135,7 +135,9 @@ class Doctor extends BaseController
                'email'=> 'required|valid_email',
                 
 
-           ]);
+               ]);
+
+               
            
         
              
@@ -150,7 +152,8 @@ class Doctor extends BaseController
                         'address' => $this->request->getPost('address')
                     ]);
                     // $session->setFlashdata('success','winner winner chicken dinner , record updated');
-                    // return  redirect()->to(base_url(''));
+                   
+                    return  redirect()->to(base_url('doctorlist'));
                     
                
            }

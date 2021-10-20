@@ -4,7 +4,7 @@
 <div class="row">
     <!-- Form For Adding Nurse -->
     <div class="container">
-        <form action="createdoctor" method="post">
+        <form action="" method="post">
             <div class="form-row">
                 <div class="col">
                     <label for="Firstname">First Name</label>
