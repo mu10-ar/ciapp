@@ -1,3 +1,4 @@
+<h1 style="text-align: center;"> Department List</h1>
 <div class="container">
     <table id="myTable" class="table table-striped">
         <thead>
