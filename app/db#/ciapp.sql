@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2021 at 07:44 AM
+-- Generation Time: Oct 20, 2021 at 08:09 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -39,7 +39,8 @@ CREATE TABLE `departments` (
 --
 
 INSERT INTO `departments` (`department_id`, `department_name`, `department_description`, `created_at`) VALUES
-(4, 'medical', 'this is a department related to medical', '2021-10-18 10:40:23');
+(4, 'medical', 'this is a department related to medical', '2021-10-18 10:40:23'),
+(6, 'medical', '123', '2021-10-20 11:02:09');
 
 -- --------------------------------------------------------
 
@@ -103,15 +104,35 @@ CREATE TABLE `users` (
   `lastname` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
-  `address` varchar(200) NOT NULL
+  `address` varchar(200) NOT NULL,
+  `specialist` varchar(200) DEFAULT NULL,
+  `mobile_no` int(11) NOT NULL,
+  `sex` varchar(200) NOT NULL,
+  `designation` varchar(255) DEFAULT NULL,
+  `department_name` varchar(250) DEFAULT NULL,
+  `department_id` varchar(99) DEFAULT NULL,
+  `birthday` date DEFAULT NULL,
+  `blood_group` varchar(21) NOT NULL,
+  `user_role` int(99) NOT NULL,
+  `career_title` varchar(200) DEFAULT NULL,
+  `created_at` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `address`) VALUES
-(8, 'mudassar', 'hussain', 'mudassar.hussain0544@gmail.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum pakistan');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `address`, `specialist`, `mobile_no`, `sex`, `designation`, `department_name`, `department_id`, `birthday`, `blood_group`, `user_role`, `career_title`, `created_at`) VALUES
+(13, 'mudassar', 'hussain', 'admin@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 0, '', NULL, NULL, NULL, NULL, '', 0, NULL, '2021-10-18'),
+(14, 'sohaib ', 'abdullah', 'so0haib@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 0, '', NULL, NULL, NULL, NULL, '', 0, NULL, '2021-10-18'),
+(16, 'sohaib', 'hussain', 'mudassar.hussain0544@gmail.com', 'adminadmin', '', '', 2147483647, 'female', '', NULL, NULL, '0000-00-00', 'Choose...', 0, NULL, '2021-10-18'),
+(19, 'mudassar ', 'hussain', 'mudassar.hussain0544@gmail.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'none', 2147483647, 'male', 'senior doctor', NULL, NULL, '0000-00-00', 'O+', 2, NULL, '2021-10-18'),
+(22, 'nurse bv', 'nurse', 'admin@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 300, 'male', NULL, NULL, NULL, '0000-00-00', 'b', 3, NULL, '2021-10-20'),
+(23, 'mudassar', 'hussain', 'admin@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 300, 'male', NULL, NULL, NULL, '0000-00-00', 'b', 3, NULL, '2021-10-20'),
+(24, 'mudassar', 'hussain', 'admin@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 300, 'male', NULL, NULL, NULL, '0000-00-00', 'a', 3, NULL, '2021-10-20'),
+(25, 'mudassaraa ', 'hussain', 'admin@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 300, 'male', NULL, NULL, NULL, '0000-00-00', 'b', 3, NULL, '2021-10-20'),
+(26, 'mudassar nu', 'hussain', 'admin@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 444, 'male', NULL, NULL, NULL, '0000-00-00', 'b', 3, NULL, '2021-10-20'),
+(28, 'nurse12', 'hussain', 'admin@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 300, 'male', NULL, NULL, NULL, '0000-00-00', 'a', 3, NULL, '2021-10-20');
 
 --
 -- Indexes for dumped tables
@@ -149,7 +170,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `department_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `department_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `docters`
@@ -167,7 +188,7 @@ ALTER TABLE `testing`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
