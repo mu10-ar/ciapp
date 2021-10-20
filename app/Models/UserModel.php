@@ -16,7 +16,8 @@ class UserModel extends Model{
         'designation',
         'birthday',
         'blood_group',
-        'user_role'
+        'user_role',
+        'specialist'
 
     ];
     public function getRecord(){
