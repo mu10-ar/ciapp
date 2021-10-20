@@ -170,7 +170,7 @@
                     </a>
                     <ul class="collapse list-unstyled" id="prescriptionSubmenu">
                         <li>
-                            <a href="#">Add Patient Case Study</a>
+                            <a href="<?=base_url()?>/addcasestudy">Add Patient Case Study</a>
                         </li>
                         <li>
                             <a href="#">Patient Case Study list</a>
