@@ -1,5 +1,5 @@
 <div class="row">
-      <!-- Form For Adding Doctor -->
+      <!-- Form For Adding Nurse -->
       <div class="container">
           <form action="createdoctor" method="post">
               <div class="form-row">
