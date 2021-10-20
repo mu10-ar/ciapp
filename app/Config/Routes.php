@@ -35,7 +35,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');
 $routes->add('/auth', 'Login::index');
 $routes->add('/logout', 'Login::logout');
-$routes->add('/createuser', 'doctor::index');
+$routes->add('/createuser', '   x');
 $routes->add('/addnurse', 'nurse::addnurse');
 $routes->add('/nurselist', 'nurse::nurselist');
 $routes->add('/department', 'departmentController::index');
@@ -50,6 +50,8 @@ $routes->add('/deletedepartment/(:num)', 'departmentController::deletedepartment
 $routes->add('/addpatient', 'patient::addpatient');
 $routes->add('/adduser', 'user::adduser');
 $routes->add('/nurselist', 'nurse::nurselist');
+$routes->add('/addmedicine', 'medicine::createmedicie');
+$routes->add('/medicinelist', 'medicine::medicinelist');
 
 
 

@@ -24,6 +24,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="/cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 
@@ -106,10 +108,10 @@
                     </a>
                     <ul class="collapse list-unstyled" id="pharmacySubmenu">
                         <li>
-                            <a href="#">Add Medicine</a>
+                            <a href="<?=base_url()?>/addmedicine">Add Medicine</a>
                         </li>
                         <li>
-                            <a href="#">Medicine List</a>
+                            <a href="<?=base_url()?>/medicinelist">Medicine List</a>
                         </li>
 
                     </ul>
@@ -306,7 +308,7 @@
 
                     <button href=" " type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-align-left"></i>
-                        <span id="showhide">Hide </span>
+                        <span id="showhide">Hide/Show </span>
                     </button>
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
