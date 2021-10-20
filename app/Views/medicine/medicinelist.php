@@ -9,6 +9,7 @@
                         <th scope="col">Quantity</th>
                         <th scope="col">Price</th>
                         <th scope="col">Manufactured By</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,23 +20,9 @@
                         <td>4 </td>
                         <td>40</td>
                         <td>Pharmacity</td>
+                        <td>Edit/DElete/View</td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Panadol</td>
-                        <td>Painkiller</td>
-                        <td>4 </td>
-                        <td>40</td>
-                        <td>Pharmacity</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Panadol</td>
-                        <td>Painkiller</td>
-                        <td>4 </td>
-                        <td>40</td>
-                        <td>Pharmacity</td>
-                    </tr>
+                   
                 </tbody>
             </table>
 </div>
