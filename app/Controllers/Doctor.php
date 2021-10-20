@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\models\UserModel;
+use App\models\DepartmentModel;
 
 class Doctor extends BaseController
 {
@@ -22,12 +23,13 @@ class Doctor extends BaseController
         helper('form');
         if ($this->request->getMethod()=='post') {
             $users=new UserModel();
+            
 
         $input=$this->validate([
                'firstname'=> 'required',
                'lastname'=> 'required',
-               'email'=> 'required|valid_email',
-               'password'=> 'required|min_length[10]',
+                'email'=> 'required|valid_email|is_unique[users.email]',
+                'password'=> 'required|min_length[10]',
                
 
            ]);
@@ -47,7 +49,7 @@ class Doctor extends BaseController
                 'mobile_no' => $this->request->getPost('mobile_no'),
                 'sex' => $this->request->getPost('sex'),
                 'designation' => $this->request->getPost('designation'),
-                'department' => $this->request->getPost('department'),
+                'department_name' => $this->request->getPost('department_name'),
                 'birthday' => $this->request->getPost('birthday'),
                 'blood_group' => $this->request->getPost('blood_group'),
                 'user_role'=>  $this->request->getPost('user_role')
@@ -65,12 +67,16 @@ class Doctor extends BaseController
            
 
         }
+        $department=new DepartmentModel();
+        $data['department']=$department->getDepartmentRecord();
+        
         
 
 
 
           echo view('partials/sidebar',$data);
          echo view('doctor/adddoctor');
+         
          echo view('partials/footer');
       
     }
@@ -150,23 +156,36 @@ class Doctor extends BaseController
                
                     $model= new UserModel();
                     $model->update($id,[
-                        'firstname'=> $this->request->getPost('firstname'),
-                        'lastname' => $this->request->getPost('lastname'),
-                        'email' => $this->request->getPost('email'),
-                    
-                        'address' => $this->request->getPost('address')
+                         'firstname'=> $this->request->getPost('firstname'),
+                'lastname' => $this->request->getPost('lastname'),
+                'email' => $this->request->getPost('email'),
+                'password' => $this->request->getPost('password'),
+                'address' => $this->request->getPost('address'),
+                'specialist' => $this->request->getPost('specialist'),
+                'mobile_no' => $this->request->getPost('mobile_no'),
+                'sex' => $this->request->getPost('sex'),
+                'designation' => $this->request->getPost('designation'),
+                'department_name' => $this->request->getPost('department_name'),
+                'birthday' => $this->request->getPost('birthday'),
+                'blood_group' => $this->request->getPost('blood_group'),
+                'user_role'=>  $this->request->getPost('user_role')
                     ]);
                     $userrole=$this->request->getVar('user_role');
                     // $session->setFlashdata('success','winner winner chicken dinner , record updated');
-                   if ($userrole==3) {
-                       return  redirect()->to(base_url('nurselist'));
-                   }
-                    return  redirect()->to(base_url('doctorslist'));
+                //    if ($userrole==3) {
+                //        return  redirect()->to(base_url('nurselist'));
+                //    }
+                    
                     
                
            }
+           else {
+                         $data['validation']=$this->validator;
+                    }
         }
         
+        $department=new DepartmentModel();
+        $data['department']=$department->getDepartmentRecord();
 
 
         echo view('partials/sidebar',$data);

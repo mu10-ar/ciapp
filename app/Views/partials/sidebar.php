@@ -28,7 +28,11 @@
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="/cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-
+    <style>
+    .red {
+        color: red;
+    }
+    </style>
 
 </head>
 
@@ -137,10 +141,10 @@
                     </a>
                     <ul class="collapse list-unstyled" id="appointmentSubmenu">
                         <li>
-                            <a href="#">Add Appointment</a>
+                            <a href="<?=base_url()?>/addappointment">Add Appointment</a>
                         </li>
                         <li>
-                            <a href="#">Appointment List</a>
+                            <a href="<?=base_url()?>/appointments">">Appointment List</a>
                         </li>
                     </ul>
                 </li>
@@ -166,7 +170,7 @@
                     </a>
                     <ul class="collapse list-unstyled" id="prescriptionSubmenu">
                         <li>
-                            <a href="#">Add Patient Case Study</a>
+                            <a href="<?=base_url()?>/addcasestudy">Add Patient Case Study</a>
                         </li>
                         <li>
                             <a href="#">Patient Case Study list</a>

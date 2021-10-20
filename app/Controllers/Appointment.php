@@ -3,10 +3,11 @@
 namespace App\Controllers;
 
 
-class Patient extends BaseController
+class Appointment extends BaseController
 {
 
-       public function addpatient()
+     
+    public function addappointment()
     {
         $session=session();
         if (!$session->get('logged_in')) {
@@ -15,7 +16,7 @@ class Patient extends BaseController
         }
         
           echo view('partials/sidebar');
-         echo view('patient/addpatient');
+         echo view('appointment/addappointment');
          echo view('partials/footer');
       
        
@@ -24,8 +25,7 @@ class Patient extends BaseController
     }
 
 
-
-     public function patientlist()
+     public function appointments()
     {
         $session=session();
         if (!$session->get('logged_in')) {
@@ -34,13 +34,11 @@ class Patient extends BaseController
         }
         
           echo view('partials/sidebar');
-         echo view('patient/patientlist');
+         echo view('appointment/appointmentlist');
          echo view('partials/footer');
       
        
        
       
     }
-
-   
 }

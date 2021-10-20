@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\models\UserModel;
+use App\models\DepartmentModel;
 
 class Nurse extends BaseController
 {
@@ -51,6 +52,7 @@ class Nurse extends BaseController
                 'department' => $this->request->getPost('department'),
                 'birthday' => $this->request->getPost('birthday'),
                 'blood_group' => $this->request->getPost('blood_group'),
+                'department_name' => $this->request->getPost('department_name'),
                 'user_role'=>  $this->request->getPost('user_role')
                 
             ]);
@@ -67,7 +69,8 @@ class Nurse extends BaseController
 
         }
         
-
+ $department=new DepartmentModel();
+        $data['department']=$department->getDepartmentRecord();
 
 
           echo view('partials/sidebar',$data);
@@ -86,6 +89,8 @@ class Nurse extends BaseController
            return redirect()->to(base_url().'/login');
              
         }
+         $department=new DepartmentModel();
+        $data['department']=$department->getDepartmentRecord();
         
         $users=new UserModel();
          $data['users']=$users->getNurseRecord();

@@ -51,10 +51,14 @@ $routes->add('/editmedicine/(:num)', 'medicinecontroller::editmedicine/$1');
 $routes->add('/deletemedicine/(:num)', 'medicinecontroller::deletemedicine/$1');
 $routes->add('/viewmedicine/(:num)', 'medicinecontroller::viewmedicine/$1');
 $routes->add('/addpatient', 'patient::addpatient');
+$routes->add('/patientlist', 'patient::patientlist');
 $routes->add('/adduser', 'user::adduser');
 $routes->add('/nurselist', 'nurse::nurselist');
+$routes->add('/addappointment', 'appointment::addappointment');
+$routes->add('/appointments', 'appointment::appointments');
 $routes->add('/addmedicine', 'medicinecontroller::addmedicine');
 $routes->add('/medicinelist', 'medicinecontroller::medicinelist');
+$routes->add('/addcasestudy', 'prescription::addcasestudy');
 
 
 
