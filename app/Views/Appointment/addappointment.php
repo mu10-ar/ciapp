@@ -10,6 +10,15 @@
                 <label for="doctorname">patient Name</label>
                 <select id="doctorname" name="id" class="form-control">
                     <option selected>Choose...</option>
+                    <?php
+                        
+                        foreach ($patient as $patient) {?>
+
+
+
+                    <option value="<?=$patient['id']?>"><?=$patient['firstname'].' '.$patient['lastname']?>
+                    </option>
+                    <?php ;}?>
 
                 </select>
             </div>
@@ -18,6 +27,15 @@
                 <label for="inputdepartmentname">Department Name</label>
                 <select id="inputdepartmentname" name="department_name" class="form-control">
                     <option selected>Choose...</option>
+                    <?php
+                        
+                        foreach ($department as $department) {?>
+
+
+
+                    <option value="<?=$department['department_name']?>"><?=$department['department_name']?>
+                    </option>
+                    <?php ;}?>
 
                 </select>
             </div>
@@ -25,6 +43,16 @@
                 <label for="doctorname">Doctor Name</label>
                 <select name="doctor_name" id="doctorname" class="form-control">
                     <option selected>Choose...</option>
+                    <?php
+                        
+                        foreach ($doctor as $doctor) {?>
+
+
+
+                    <option value="<?=$doctor['firstname'].''.$doctor['lastname']?>">
+                        <?=$doctor['firstname'].' '.$doctor['lastname']?>
+                    </option>
+                    <?php ;}?>
 
                 </select>
             </div>
