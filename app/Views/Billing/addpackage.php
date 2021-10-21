@@ -18,7 +18,7 @@
                                 <th>Service</th>
                                 <th>Quantity</th>
                                 <th>Rate</th>
-                                <th>Add / Remove</th>
+                                <!-- <th>Add / Remove</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -33,12 +33,12 @@
                                 <td>
                                     <input name="amount[]" class="form-control amount" type="text" placeholder="Amount">
                                 </td>
-                                <td>
+                                <!-- <td>
                                     <div class="btn btn-group">
                                         <button type="button" class="addMore btn btn-sm btn-success">+</button>
                                         <button type="button" class="remove btn btn-sm btn-danger">-</button>
                                     </div>
-                                </td>
+                                </td> -->
                             </tr>  
                         </tbody>
                     </table>
