@@ -54,13 +54,12 @@
         </div>
         <div class="form-group">
             <label for="guardiancontact">Guardian Contact</label>
-            <input type="number" class="form-control" id="guardiancontact" name="guardiancontact" placeholder="Guardian Contact">
+            <input type="number" class="form-control" id="guardiancontact" name="guardiancontact" placeholder="0300-1212123">
         </div>
         <div class="form-group">
             <label for="guardianaddress">Guardian Address</label>
             <input type="text" class="form-control" id="Guardianaddress" name="guardianaddress" placeholder="Guardian Address">
         </div>
-        
         
         <button type="submit" class="btn btn-primary">Add</button>
     </form>

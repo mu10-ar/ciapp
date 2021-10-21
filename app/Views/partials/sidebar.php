@@ -232,12 +232,6 @@
                             <a href="#">Patient Admission List</a>
                         </li>
                         <li>
-                            <a href="#">Add Advance Payment</a>
-                        </li>
-                        <li>
-                            <a href="#">Advance Payment List</a>
-                        </li>
-                        <li>
                             <a href="#">Add Bill</a>
                         </li>
                         <li>
