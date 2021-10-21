@@ -20,6 +20,9 @@ class AppointmentModel extends Model{
    public function getDoctorRecord(){
         return $this->where('user_role',2)->findall();
     }
+   public function getappointment($id){
+        return $this->where('appointment_id',$id)->findall();
+    }
 
     
      public function getpatientRecord(){

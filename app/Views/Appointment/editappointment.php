@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-    <h2>Add Appointment</h2>
+    <h2>update Appointment</h2>
 </div>
 <div class="row">
     <!-- Form For Adding Appointment -->
@@ -81,7 +81,7 @@
 
             <div class="form-group ">
                 <label for="appointmentdate">Appointment Date:</label>
-                <input type="datetime-local" class="form-control" id="appointmentdate" name="appointment_date">
+                <input type="datetime-local" class="form-control" value="" id="appointmentdate" name="appointment_date">
                 <span class="red">
                     <?php 
                                 if (isset($validation)&& $validation->hasError('appintment_date')) {

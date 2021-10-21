@@ -52,6 +52,8 @@ $routes->add('/deletemedicine/(:num)', 'medicinecontroller::deletemedicine/$1');
 $routes->add('/viewmedicine/(:num)', 'medicinecontroller::viewmedicine/$1');
 $routes->add('/updatepatient/(:num)', 'patient::updatepatient/$1');
 $routes->add('/deletepatient/(:num)', 'patient::deletepatient/$1');
+$routes->add('/editappointment/(:num)', 'appointment::editappointment/$1');
+$routes->add('/deleteappointment/(:num)', 'appointment::deleteappointment/$1');
 $routes->add('/addpatient', 'patient::addpatient');
 $routes->add('/patientlist', 'patient::patientlist');
 $routes->add('/adduser', 'user::adduser');
