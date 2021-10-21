@@ -39,7 +39,7 @@
 <body>
 
 
-    <div class="wrapper">
+    <div style="word-wrap: break-word;" class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
@@ -56,7 +56,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#departmentSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <a style="word-wrap: break-word;" href="#departmentSubmenu" data-toggle="collapse"
+                        aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
                         Department
                     </a>
