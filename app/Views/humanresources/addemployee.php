@@ -13,6 +13,7 @@
                     <option value="5">Accountant</option>
                     <option value="6">Bed Manager</option>
                     <option value="7">pharmacist</option>
+                    <option value="8">lab Technician</option>
 
                 </select>
                 <div class="form-row">

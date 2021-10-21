@@ -36,6 +36,9 @@
                 }elseif ($user['user_role']=="7") {
                     echo "pharmacist";
                 }
+                elseif ($user['user_role']=="8") {
+                    echo "Lab technician";
+                }
                 
                 
                 

@@ -170,7 +170,7 @@ class Doctor extends BaseController
                 'blood_group' => $this->request->getPost('blood_group'),
                 'user_role'=>  $this->request->getPost('user_role')
                     ]);
-                    $userrole=$this->request->getVar('user_role');
+                    
                  
                     
                     
