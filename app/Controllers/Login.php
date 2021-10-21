@@ -16,7 +16,8 @@ class Login extends BaseController
         if ($this->request->getMethod()=='post') {
              $email = $this->request->getVar('email');
              $password = $this->request->getVar('password');
-            $data= $user->auth($email,$password);
+             $userrole = $this->request->getVar('user_role');
+            $data= $user->auth($email,$password,$userrole);
             // var_dump($data);
             if ($data) {
                 $session=session();

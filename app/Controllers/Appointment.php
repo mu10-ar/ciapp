@@ -175,7 +175,7 @@ class Appointment extends BaseController
     {
         $appointment= new AppointmentModel();
         $appointment->delete($id);
-        return redirect()->to(base_url('/appointments'));
+        return redirect()->to(base_url('/appointments')); 
     }
 
 

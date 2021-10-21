@@ -125,16 +125,17 @@ a {
 
                 <label for="contorl"><b>Role</b></label>
                 <!-- <div class="container"> -->
-                <input list="browsers" name="user_role" required>
-                <datalist id="browsers">
-                    <option value="Admin">
-                    <option value="Doctor">
-                    <option value="Nurse">
-                    <option value="Accountant">
-                    <option value="Pharmacist">
-                    <option value="Pateint">
-                    <option value="Bed Manager">
-                </datalist>
+                <select id="inputemployee" name="user_role" class="form-control">
+
+                    <option value="1">admin</option>
+                    <option value="2">doctor</option>
+                    <option value="3">nurse</option>
+                    <option value="4">patient</option>
+                    <option value="5">Accountant</option>
+                    <option value="6">Bed Manager</option>
+                    <option value="7">pharmacist</option>
+
+                </select>
                 <!-- <input type="submit"> -->
 
 

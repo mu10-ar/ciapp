@@ -34,6 +34,12 @@ class UserModel extends Model{
      public function getUserRecord($id){
         return $this->where('user_role',$id)->findall();
     }
+    //  public function getAlluser(){
+    //     return $this->where('user_role',6)->findall();
+    // }
+     public function getAlluser(){
+        return $this->where('user_role',6)->orWhere('user_role',7)->orWhere('user_role',5)->findall();
+    }
 
 
 
@@ -44,9 +50,9 @@ class UserModel extends Model{
     public function deleteUser($id){
         return $this->delete($id);
     }
-    public function auth($email,$password)
+    public function auth($email,$password,$userrole)
     {
-       return $this->where('email',$email)->where('password',$password)->first();
+       return $this->where('email',$email)->where('password',$password)->where('user_role',$userrole)->first();
     }
 
    
