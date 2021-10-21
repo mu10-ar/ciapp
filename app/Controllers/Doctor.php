@@ -114,7 +114,7 @@ class Doctor extends BaseController
 
 
         
-        return redirect()->to(base_url());
+        return redirect()->to(base_url('/doctorslist'));
             
 
     }
