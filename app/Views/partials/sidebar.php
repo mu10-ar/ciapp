@@ -202,9 +202,9 @@
                         <li>
                             <a href="#">Bed Assign List</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#">Bed Transfer List</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
                 <li>
