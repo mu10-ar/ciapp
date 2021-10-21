@@ -50,6 +50,8 @@ $routes->add('/deletedepartment/(:num)', 'departmentController::deletedepartment
 $routes->add('/editmedicine/(:num)', 'medicinecontroller::editmedicine/$1');
 $routes->add('/deletemedicine/(:num)', 'medicinecontroller::deletemedicine/$1');
 $routes->add('/viewmedicine/(:num)', 'medicinecontroller::viewmedicine/$1');
+$routes->add('/updatepatient/(:num)', 'patient::updatepatient/$1');
+$routes->add('/deletepatient/(:num)', 'patient::deletepatient/$1');
 $routes->add('/addpatient', 'patient::addpatient');
 $routes->add('/patientlist', 'patient::patientlist');
 $routes->add('/adduser', 'user::adduser');

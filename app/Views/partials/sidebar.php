@@ -130,7 +130,7 @@
                             <a href="<?=base_url()?>/addpatient">Add Patient</a>
                         </li>
                         <li>
-                            <a href="#">Patient List</a>
+                            <a href="<?=base_url()?>/patientlist">Patient List</a>
                         </li>
                     </ul>
                 </li>
@@ -144,7 +144,7 @@
                             <a href="<?=base_url()?>/addappointment">Add Appointment</a>
                         </li>
                         <li>
-                            <a href="<?=base_url()?>/appointments">">Appointment List</a>
+                            <a href="<?=base_url()?>/appointments">Appointment List</a>
                         </li>
                     </ul>
                 </li>

@@ -1,5 +1,5 @@
-<div style="text-align: center; margin-bottom:  6px; color:brown">
-    <h2>Nurse Form </h2>
+<div style="text-align: center; margin:  4px;">
+    <h2 class="my-4">update Pateint</h2>
 </div>
 <div class="row">
     <!-- Form For Adding Nurse -->
@@ -8,19 +8,20 @@
             <div class="form-row">
                 <div class="col">
                     <label for="Firstname">First Name</label>
-                    <input type="text" name="firstname" class="form-control" placeholder="First name">
+                    <input type="text" name="firstname" class="form-control" placeholder="First name"
+                        value="<?=$user['firstname']?>">
                     <span class="red">
                         <?php 
-                                                    if (isset($validation)&& $validation->hasError('firstname')) {
+                                if (isset($validation)&& $validation->hasError('firstname,')) {
 
-                                                        echo $validation->getError('firstname');
-                                                    }?>
+                                    echo $validation->getError('firstname');
+                                }?>
                     </span>
-
                 </div>
                 <div class="col">
                     <label for="Firstname">Last Name</label>
-                    <input type="text" name="lastname" class="form-control" placeholder="Last name">
+                    <input type="text" name="lastname" class="form-control" placeholder="Last name"
+                        value="<?=$user['lastname']?>">
                     <span class="red">
                         <?php 
                                 if (isset($validation)&& $validation->hasError('lastname')) {
@@ -33,7 +34,8 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email">
+                    <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email"
+                        value="<?=$user['email']?>">
                     <span class="red">
                         <?php 
                                 if (isset($validation)&& $validation->hasError('email')) {
@@ -42,22 +44,12 @@
                                 }?>
                     </span>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="inputPassword4">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4" name="password"
-                        placeholder="Password">
-                    <span class="red">
-                        <?php 
-                                if (isset($validation)&& $validation->hasError('password')) {
 
-                                    echo $validation->getError('password');
-                                }?>
-                    </span>
-                </div>
             </div>
             <div class="form-group">
                 <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St">
+                <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St"
+                    value="<?=$user['address']?>">
                 <span class="red">
                     <?php 
                                 if (isset($validation)&& $validation->hasError('address')) {
@@ -66,19 +58,12 @@
                                 }?>
                 </span>
             </div>
-            <!-- <div class="form-group">
-                <label for="inputspecialist">Specialist</label>
-                <input type="text" class="form-control" id="inputspeaclist" name="Specialist" placeholder="ENT(asddf)">
-            </div>
 
             <div class="form-group">
-                <label for="inputcareertitle">Career title</label>
-                <input type="text" class="form-control" id="inputcareertitle" name="CareerTitle">
-            </div> -->
-            <div class="form-group">
                 <label for="mobile">Enter a mobile number:</label>
-                <input type="mobile" class="form-control" id="mobile" name="mobile_no" placeholder="0300-1234567"> <span
-                    class="red">
+                <input type="mobile" class="form-control" id="mobile" name="mobile_no" placeholder="0300-1234567"
+                    value="<?=$user['mobile_no']?>">
+                <span class="red">
                     <?php 
                                 if (isset($validation)&& $validation->hasError('mobile_no')) {
 
@@ -101,20 +86,21 @@
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputdesignation">Designation</label>
-                    <input type="text" class="form-control" id="inputdesignation">
-                    <span class="red">
-                        <?php 
-                                if (isset($validation)&& $validation->hasError('designation')) {
-
-                                    echo $validation->getError('designation');
-                                }?>
-                    </span>
-                </div>
+                <!-- <div class="form-group col-md-6">
+                      <label for="inputdesignation">Designation</label>
+                      <input type="text" class="form-control" id="inputdesignation">
+                  </div> -->
                 <div class="form-group col-md-4">
                     <label for="inputdepartment">Department</label>
-                    <select id="inputdepartment" class="form-control" name="department_name">
+                    <select id="inputdepartment" class="form-control" name="department_name"
+                        value="<?=$user['department_name']?>">
+                        <span class="red">
+                            <?php 
+                                if (isset($validation)&& $validation->hasError('department_name')) {
+
+                                    echo $validation->getError('department_name');
+                                }?>
+                        </span>
                         <option selected>Choose...</option>
                         <?php
                         
@@ -124,25 +110,25 @@
 
                         <option value="<?=$department['department_name']?>"><?=$department['department_name']?></option>
                         <?php ;}?>
-                        <span class="red">
-                            <?php 
-                                if (isset($validation)&& $validation->hasError('department_name')) {
-
-                                    echo $validation->getError('department_name');
-                                }?>
-                        </span>
-
                     </select>
                 </div>
                 <div class="form-group col-md-2">
                     <label for="picture">Picture</label>
                     <input type="file" id="myFile" name="filename">
+                    <span class="red">
+                        <?php 
+                                if (isset($validation)&& $validation->hasError('filename')) {
+
+                                    echo $validation->getError('filename');
+                                }?>
+                    </span>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="birthday">Birthday:</label>
-                    <input type="date" class="form-control" id="birthday" name="birthday">
+                    <input type="date" class="form-control" id="birthday" name="birthday"
+                        value="<?=$user['birthday']?>">
                     <span class="red">
                         <?php 
                                 if (isset($validation)&& $validation->hasError('birthday')) {
@@ -153,9 +139,15 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputbloodgroup">BloodGroup</label>
-                    <select id="inputbloodgroup" class="form-control" name="blood_group">
-                        <option selected>Choose...</option>
+                    <select id="inputbloodgroup" name="blood_group" class="form-control" value="<?=$user['birthday']?>">
+                        <span class="red">
+                            <?php 
+                                if (isset($validation)&& $validation->hasError('blood_group')) {
 
+                                    echo $validation->getError('blood_group');
+                                }?>
+                        </span>
+                        <option selected>Choose...</option>
                         <option value="a+">A+</option>
                         <option value="a-">A-</option>
                         <option value="b+">B+</option>
@@ -165,17 +157,11 @@
                         <option value="o+">O+</option>
                         <option value="o-">O-</option>
                     </select>
-                    <span class="red">
-                        <?php 
-                                if (isset($validation)&& $validation->hasError('blood_group')) {
-
-                                    echo $validation->getError('blood_group');
-                                }?>
-                    </span>
                 </div>
             </div>
+            <input type="hidden" name="user_role" value="4">
 
-            <input type="hidden" name="user_role" value="3">
+
 
             <button type="submit" class="btn btn-primary">Add</button>
         </form>
