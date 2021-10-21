@@ -144,7 +144,7 @@
                             <a href="<?=base_url()?>/addappointment">Add Appointment</a>
                         </li>
                         <li>
-                            <a href="<?=base_url()?>/appointments">Appointment List</a>
+                            <a href="<?=base_url()?>/appointments"> Appointment List</a>
                         </li>
                     </ul>
                 </li>
