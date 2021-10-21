@@ -7,7 +7,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Appointment</span>
-                <span class="info-box-number">0</span>
+                <span class="info-box-number">2</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 50%"></div>
@@ -39,7 +39,7 @@
 
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
     <div class="info-box bg-yellow">
-        <span class="info-box-icon"><i class="ti-book"></i></span>
+        <span class="info-box-icon"><i class="fa fa-ti-book"></i></span>
 
         <div class="info-box-content">
             <span class="info-box-text">Prescription</span>
@@ -61,7 +61,7 @@
 
         <div class="info-box-content">
             <span class="info-box-text">Doctor</span>
-            <span class="info-box-number">0</span>
+            <span class="info-box-number">2</span>
 
             <div class="progress">
                 <div class="progress-bar" style="width: 50%"></div>
@@ -79,7 +79,7 @@
 
         <div class="info-box-content">
             <span class="info-box-text">Free bed list</span>
-            <span class="info-box-number">6</span>
+            <span class="info-box-number">9</span>
 
             <div class="progress">
                 <div class="progress-bar" style="width: 50%"></div>
