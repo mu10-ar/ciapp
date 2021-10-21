@@ -7,8 +7,8 @@
         <form action="" method="post">
 
             <div class="form-group">
-                <label for="doctorname">patient Name</label>
-                <select id="doctorname" name="id" class="form-control">
+                <label for="patientname">Patient Name</label>
+                <select id="patientname" name="id" class="form-control">
                     <option selected>Choose...</option>
 
                 </select>
@@ -28,7 +28,7 @@
 
                 </select>
             </div>
-    </div>
+    
 
     <div class="form-group ">
         <label for="appointmentdate">Appointment Date:</label>
@@ -47,4 +47,5 @@
 
     <button type="submit" class="btn btn-primary">Add</button>
     </form>
+</div>
 </div>
