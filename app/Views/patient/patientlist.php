@@ -15,18 +15,23 @@
         </thead>
         <tbody>
 
+            <?php
+            
+            $id=1;
+            foreach($users as $user){?>
             <tr>
 
-                <th scope="row">1</th>
-                <td>mudassar</td>
-                <td>husain</td>
-                <td>email@email.com</td>
-                <td>house.no 23 mmm st jhelum</td>
-                <td> <a href="" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="" class="btn btn-danger btn-sm">Delete</a>
-                    <a href="" class="btn btn-warning btn-sm">profile</a>
+                <th scope="row"><?=$id?></th>
+                <td><?=$user['firstname']?></td>
+                <td><?=$user['lastname']?></td>
+                <td><?=$user['email']?></td>
+                <td><?=$user['address']?></td>
+                <td> <a href="<?=base_url()?>/updatepatient/<?=$user['id']?>" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="<?=base_url()?>/deletepatient/<?=$user['id']?>" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="<?=base_url()?>/profile/<?=$user['id']?>" class="btn btn-warning btn-sm">profile</a>
                 </td>
             </tr>
+            <?php $id++;}?>
 
 
 

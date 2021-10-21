@@ -169,10 +169,15 @@
                 <div class="form-group col-md-6">
                     <label for="inputbloodgroup">BloodGroup</label>
                     <select id="inputbloodgroup" class="form-control" name="blood_group">
-                        <option value='abo' selected>Choose...</option>
-                        <option value="a">a</option>
-                        <option value="b">b</option>
-                        <option value="o">o</option>
+                        <option selected>Choose...</option>
+                        <option value="a+">A+</option>
+                        <option value="a-">A-</option>
+                        <option value="b+">B+</option>
+                        <option value="b-">B-</option>
+                        <option value="ab+">AB+</option>
+                        <option value="ab-">AB-</option>
+                        <option value="o+">O+</option>
+                        <option value="o-">O-</option>
                     </select>
                     <span class="red">
                         <?php 

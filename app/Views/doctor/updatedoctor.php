@@ -168,14 +168,14 @@
                     <select value="<?php echo $user['blood_group']; ?> id=" inputbloodgroup" name="blood_group"
                         class="form-control">
                         <option selected>Choose...</option>
-                        <option>A+</option>
-                        <option>A-</option>
-                        <option>B+</option>
-                        <option>B-</option>
-                        <option>AB-</option>
-                        <option>AB+</option>
-                        <option>O+</option>
-                        <option>O-</option>
+                        <option value="a+">A+</option>
+                        <option value="a-">A-</option>
+                        <option value="b+">B+</option>
+                        <option value="b-">B-</option>
+                        <option value="ab+">AB+</option>
+                        <option value="ab-">AB-</option>
+                        <option value="o+">O+</option>
+                        <option value="o-">O-</option>
                     </select>
                     <span class="red">
                         <?php 
