@@ -174,7 +174,7 @@
                             <a href="<?=base_url()?>/addcasestudy">Add Patient Case Study</a>
                         </li>
                         <li>
-                            <a href="#">Patient Case Study list</a>
+                            <a href="<?=base_url()?>/casestudylist">Patient Case Study list</a>
                         </li>
                         <li>
                             <a href="#">Add Prescription</a>

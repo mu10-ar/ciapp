@@ -25,19 +25,15 @@ class CaseStudyModel extends Model{
                  
         
     ];
-    public function getDepartmentRecord(){
-        return $this->orderBy('department_id','DESC')->findAll();
+    public function getCaseStudy(){
+        return $this->join('users','id=patient_id')->findall();
     }
+    public function getCaseStudySingle($id){
+        return $this->join('users','id=patient_id')->where('case_study_id',$id)->first();
+    }
+  
 
 
-
-     public function getDeparmentRow($id){
-        return $this->where('department_id',$id)->first();
-    }
-    
-    public function deleteDepartment($id){
-        return $this->delete($id);
-    }
 
    
     

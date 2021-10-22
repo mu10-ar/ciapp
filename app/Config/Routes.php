@@ -54,6 +54,8 @@ $routes->add('/updatepatient/(:num)', 'patient::updatepatient/$1');
 $routes->add('/deletepatient/(:num)', 'patient::deletepatient/$1');
 $routes->add('/editappointment/(:num)', 'appointment::editappointment/$1');
 $routes->add('/deleteappointment/(:num)', 'appointment::deleteappointment/$1');
+$routes->add('/editcasestudy/(:num)', 'prescription::editcasestudy/$1');
+$routes->add('/deletecasestudy/(:num)', 'prescription::deletecasestudy/$1');
 $routes->add('/updateemployee/(:num)', 'user::updateemployee/$1');
 $routes->add('/deleteemployee/(:num)', 'user::deleteemployee/$1');
 $routes->add('/addpatient', 'patient::addpatient');
