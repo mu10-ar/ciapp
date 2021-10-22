@@ -32,6 +32,9 @@
     .red {
         color: red;
     }
+    .c{
+        text-shadow: 4px 4px 10px black;
+    }
     </style>
 
 </head>
@@ -42,7 +45,7 @@
     <div style="word-wrap: break-word;" class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
-            <div class="sidebar-header">
+            <div class="sidebar-header c">
                 <h3>Arkham Asylum</h3>
                 <strong>AS</strong>
             </div>
@@ -271,7 +274,7 @@
                 </li>
                 <li>
                     <a href="#MessageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-info"></i>
                         Message
                     </a>
                     <ul class="collapse list-unstyled" id="MessageSubmenu">
