@@ -6,8 +6,8 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">firstname</th>
-                <th scope="col">lastname</th>
+                <th scope="col">name</th>
+                <th scope="col">patient id</th>
                 <th scope="col">email</th>
                 <th scope="col">address</th>
                 <th scope="col">action</th>
@@ -22,8 +22,8 @@
             <tr>
 
                 <th scope="row"><?=$id?></th>
-                <td><?=$user['firstname']?></td>
-                <td><?=$user['lastname']?></td>
+                <td><?=$user['firstname'].' '.$user['lastname']?></td>
+                <td><?=$user['id']?></td>
                 <td><?=$user['email']?></td>
                 <td><?=$user['address']?></td>
                 <td> <a href="<?=base_url()?>/updatepatient/<?=$user['id']?>" class="btn btn-primary btn-sm">Edit</a>

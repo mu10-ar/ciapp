@@ -66,6 +66,7 @@ $routes->add('/appointments', 'appointment::appointments');
 $routes->add('/addmedicine', 'medicinecontroller::addmedicine');
 $routes->add('/medicinelist', 'medicinecontroller::medicinelist');
 $routes->add('/addcasestudy', 'prescription::addcasestudy');
+$routes->add('/casestudylist', 'prescription::casestudylist');
 
 
 
