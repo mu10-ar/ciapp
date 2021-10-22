@@ -1,4 +1,7 @@
 <div class="container">
+    <!-- Prescriptoin View -->
+
+<div class="container" style="background-color: rgb(248, 248, 248);">
     <div style="text-align: center; margin:  4px;">
     <h1>PrescriptionS Here!</h1>
     </div>
@@ -42,6 +45,7 @@
                     </tbody>
                 </table>
     </div>
+    <div class="container" style="background-color: rgb(248, 248, 248);">
     <table>
                            
         <div style="float:left;width:65%;padding-left:10px">
@@ -99,3 +103,4 @@
     </div>
         </table>
 </div>
+</div>  
