@@ -21,7 +21,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-$routes->setAutoRoute(true);
+$routes->setAutoRoute(false);
 
 /*
  * --------------------------------------------------------------------
@@ -56,6 +56,7 @@ $routes->add('/editappointment/(:num)', 'appointment::editappointment/$1');
 $routes->add('/deleteappointment/(:num)', 'appointment::deleteappointment/$1');
 $routes->add('/editcasestudy/(:num)', 'prescription::editcasestudy/$1');
 $routes->add('/deletecasestudy/(:num)', 'prescription::deletecasestudy/$1');
+$routes->add('/viewcasestudy/(:num)', 'prescription::casestudyinfo/$1');
 $routes->add('/updateemployee/(:num)', 'user::updateemployee/$1');
 $routes->add('/deleteemployee/(:num)', 'user::deleteemployee/$1');
 $routes->add('/addpatient', 'patient::addpatient');

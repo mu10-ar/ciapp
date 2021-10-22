@@ -168,4 +168,29 @@ class Prescription extends BaseController
      $casestudy=new CaseStudyModel();
      $casestudy->delete($id);
      return redirect()->to(base_url().'/scasestudylist');}
+
+
+
+
+
+
+
+
+
+
+
+     public function casestudyinfo($id)
+     {
+         
+        $data=[];
+        $casestudy= new CaseStudyModel();
+        $data['casestudy']=$casestudy->getCaseStudySingle($id);
+
+
+
+       
+         echo view('partials/sidebar',$data);
+         echo view('prescription/casestudyinfo');
+         echo view('partials/footer');
+     }
 }

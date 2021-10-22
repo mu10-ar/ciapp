@@ -39,7 +39,7 @@
 
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
     <div class="info-box bg-yellow">
-        <span class="info-box-icon"><i class="fa fa-ti-book"></i></span>
+        <span class="info-box-icon"><i class="fas fa-capsules"></i></span>
 
         <div class="info-box-content">
             <span class="info-box-text">Prescription</span>
@@ -93,7 +93,7 @@
 
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
     <div class="info-box bg-light-green">
-        <span class="info-box-icon"><i class="fa fa-sign-out"></i></span>
+        <span class="info-box-icon"><i class="fab fa-accessible-icon"></i></span>
 
         <div class="info-box-content">
             <span class="info-box-text">Discharged</span>
