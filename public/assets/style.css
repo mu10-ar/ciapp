@@ -299,7 +299,6 @@ a.article:hover {
     text-align: center;
     margin-left: -100px !important;
     overflow: hidden;
-   
   }
   .dropdown-toggle::after {
     top: auto;
@@ -343,4 +342,3 @@ a.article:hover {
     display: none;
   }
 }
-
