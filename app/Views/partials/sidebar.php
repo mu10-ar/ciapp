@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-
+    <link rel="stylesheet" href="<?php echo base_url();?>/assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.css">
     <!-- Font Awesome JS -->
@@ -24,14 +24,12 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="<?=base_url()?>/assets/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="/cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
     <style>
     .red {
         color: red;
@@ -40,13 +38,6 @@
     .c {
         text-shadow: 4px 4px 10px black;
     }
-
-    @media (max-width: 768px) {
-        #sidebar {
-
-            margin-left: -100px !important;
-
-        }
     </style>
 
 </head>
@@ -166,11 +157,6 @@
                 </li>
 
                 <?php ;endif?>
-
-                <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
                 <li>
                     <a href="#pharmacySubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -186,13 +172,6 @@
 
                     </ul>
                 </li>
-                <?php ;endif?>
-
-
-                <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
                 <li>
                     <a href="#patientSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -207,12 +186,6 @@
                         </li>
                     </ul>
                 </li>
-                <?php ;endif?>
-
-                <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)||($userrole==4)):
-                     
-                    ?>
                 <li>
                     <a href="#appointmentSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -222,21 +195,12 @@
                         <li>
                             <a href="<?=base_url()?>/addappointment">Add Appointment</a>
                         </li>
-
                         <li>
                             <a href="<?=base_url()?>/appointments"> Appointment List</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <?php ;endif?>
-
-
-                    <?php
-                    if ($userrole==1):
-                     
-                    ?>
-
                     <a href="#employeeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-solid fa-user"></i>
                         HR
@@ -250,13 +214,6 @@
                         </li>
                     </ul>
                 </li>
-                <?php ;endif?>
-
-                <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
-
 
                 <li>
                     <a href="#prescriptionSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -278,13 +235,6 @@
                         </li>
                     </ul>
                 </li>
-                <?php ;endif?>
-
-                <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
-
 
                 <li>
                     <a href="#bedSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -307,14 +257,6 @@
 
                     </ul>
                 </li>
-                <?php ;endif?>
-
-                <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                        
-                     
-                    ?>
-
                 <li>
                     <a href="#billSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -347,13 +289,6 @@
                         </li>
                     </ul>
                 </li>
-                <?php ;endif?>
-
-                <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                        
-                     
-                    ?>
                 <li>
                     <a href="#AMSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -383,7 +318,6 @@
                         </li>
                     </ul>
                 </li>
-                <?php ;endif?>
                 <li>
                     <a href="#MessageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-info"></i>
