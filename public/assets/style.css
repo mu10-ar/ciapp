@@ -298,7 +298,8 @@ a.article:hover {
     max-width: 100px;
     text-align: center;
     margin-left: -80px !important;
-    overflow: auto;
+    overflow: hidden;
+   
   }
   .dropdown-toggle::after {
     top: auto;
@@ -342,3 +343,4 @@ a.article:hover {
     display: none;
   }
 }
+
