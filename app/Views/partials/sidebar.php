@@ -43,6 +43,13 @@
 </head>
 
 <body>
+    <?php
+    $session=session();
+    $userrole=$session->get('user_role');
+    ?>
+
+
+
 
 
     <div style="word-wrap: break-word;" class="wrapper">
@@ -56,27 +63,42 @@
             <ul class="list-unstyled components">
 
                 <li>
-                    <a href="#">
+                    <a href="<?=base_url()?>">
                         <i class="fas fa-image"></i>
-                        Admin
+
+                        Dashboard
                     </a>
                 </li>
                 <li>
+                    <?php
+                    if (($userrole==1)||($userrole==2)||($userrole==3)||($userrole==4)):
+                     
+                    ?>
                     <a style="word-wrap: break-word;" href="#departmentSubmenu" data-toggle="collapse"
                         aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
                         Department
                     </a>
                     <ul class="collapse list-unstyled" id="departmentSubmenu">
+                        <?php
+                    if (($userrole==1)||($userrole==2)||($userrole==3)):
+                     
+                    ?>
                         <li>
                             <a href="<?=base_url()?>/createdepartment">Add Department</a>
                         </li>
+                        <?php ;endif?>
                         <li>
                             <a href="<?=base_url()?>/department">Department List</a>
                         </li>
                     </ul>
                 </li>
+                <?php ;endif?>
 
+                <?php
+                   if (($userrole==1)||($userrole==2)||($userrole==3)||($userrole==4)):
+                     
+                    ?>
 
                 <li>
                     <a href="#doctorSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -84,9 +106,15 @@
                         Doctors
                     </a>
                     <ul class="collapse list-unstyled" id="doctorSubmenu">
+
+                        <?php
+                    if (($userrole==1)||($userrole==2)||($userrole==3)):
+                     
+                    ?>
                         <li>
                             <a href="<?php  echo base_url();?>/createuser">Add Doctor</a>
                         </li>
+                        <?php ;endif?>
                         <li>
                             <a href="<?php echo base_url()?>/doctorslist">Doctors List</a>
                         </li>
@@ -95,6 +123,14 @@
                         </li> -->
                     </ul>
                 </li>
+                <?php ;endif?>
+
+
+
+                <?php
+                    if (($userrole==1)||($userrole==2)||($userrole==3)||($userrole==4)):
+                     
+                    ?>
 
 
                 <li>
@@ -103,15 +139,24 @@
                         Nurse
                     </a>
                     <ul class="collapse list-unstyled" id="nurseSubmenu">
+
+                        <?php
+                    if (($userrole==1)||($userrole==2)||($userrole==3)):
+                     
+                    ?>
+
                         <li>
                             <a href="<?= base_url()?>/addnurse">Add Nurse</a>
                         </li>
+                        <?php ;endif?>
                         <li>
                             <a href="<?= base_url()?>/nurselist">Nurses List</a>
                         </li>
 
                     </ul>
                 </li>
+
+                <?php ;endif?>
                 <li>
                     <a href="#pharmacySubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>

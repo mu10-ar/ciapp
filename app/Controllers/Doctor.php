@@ -28,15 +28,17 @@ class Doctor extends BaseController
         $input=$this->validate([
                
         'firstname'=> [
-                   'rules'=>'required',
+                   'rules'=>'required|alpha_space',
                    'errors'=>[ 
-                       'required'=>'first name must be filled'
+                       'required'=>'name must be filled',
+                       'alpha_space'=>'name can contain only letters'
                    ]],
         'lastname'=> [
-                   'rules'=>'required',
+                   'rules'=>'required|alpha_space',
                    'errors'=>[ 
-                       'required'=>'last name must be filled'
-                   ]],
+                       'required'=>'last name must be filled',
+                       'alpha_space'=>'name can contain only letters'
+                 ]],
         'email'=> [
                    'rules'=>'required|valid_email|is_unique[users.email]',
                    'errors'=>[ 
@@ -46,13 +48,59 @@ class Doctor extends BaseController
 
                    ]],
         'password'=> [
-                   'rules'=>'required|min_length[10]|',
+                   'rules'=>'required|min_length[10]',
                    'errors'=>[ 
                        'required'=>'Create an Passwrod',
                        'min_length'=>'Your Password is too Shot'
                       
 
-                   ]]
+                   ]],
+        'address'=> [
+                   'rules'=>'required|max_length[255]|alpha_numeric_space',
+                   'errors'=>[ 
+                       'required'=>'Please provide your address',
+                       'max_length'=>'Your Password is too Shot',
+                       'alpha_numeric_space'=>"Address Can't Contain Special Characters`"
+                      
+
+                   ]],
+        'specialist'=> [
+                   'rules'=>'alpha_numeric_space',
+                   'errors'=>[ 
+                       'alpha_numeric_space'=>"please insert your specialization"
+                   ]],
+        'career_title'=> [
+                   'rules'=>'alpha_numeric_space',
+                   'errors'=>[ 
+                       'alpha_numeric_space'=>"please insert career title"
+                   ]],
+        'designation'=> [
+                   'rules'=>'alpha_numeric_space',
+                   'errors'=>[ 
+                       'alpha_numeric_space'=>"please insert your designation"
+                   ]],
+        'sex'=> [
+                   'rules'=>'required',
+                   'errors'=>[ 
+                       'required'=>"Please select your gender"
+                   ]],
+         'department_name'=> [
+                   'rules'=>'required',
+                   'errors'=>[ 
+                       'required'=>"Please select your department"
+                   ]],
+        'birthday'=> [
+                   'rules'=>'required',
+                   'errors'=>[ 
+                       'required'=>"Please select your Date od Birth"
+                   ]],
+        'blood_group '=> [
+                   'rules'=>'required',
+                   'errors'=>[ 
+                       'required'=>"Please select your blood group"
+                   ]],
+
+
                 ]);
 
 
