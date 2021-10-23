@@ -201,7 +201,7 @@
                             <a href="<?=base_url()?>/addbed">Add Bed</a>
                         </li>
                         <li>
-                            <a href="<?=base_url()?>/besdlist">Bed List</a>
+                            <a href="<?=base_url()?>/bedlist">Bed List</a>
                         </li>
                         <li>
                             <a href="assignbed">Bed Assign</a>
@@ -276,7 +276,7 @@
                 <li>
                     <a href="#MessageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-info"></i>
-                        
+
                         Message
                     </a>
                     <ul class="collapse list-unstyled" id="MessageSubmenu">

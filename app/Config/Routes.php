@@ -71,6 +71,10 @@ $routes->add('/medicinelist', 'medicinecontroller::medicinelist');
 $routes->add('/addcasestudy', 'prescription::addcasestudy');
 $routes->add('/casestudylist', 'prescription::casestudylist');
 $routes->add('/addprescription', 'prescription::addprescription');
+$routes->add('/addbed', 'BedController::addbed');
+$routes->add('/bedlist', 'bedcontroller::bedlist');
+$routes->add('/assignbed', 'bedcontroller::assignbed');
+$routes->add('/assignedbed', 'bedcontroller::assignedbed');
 
 
 
