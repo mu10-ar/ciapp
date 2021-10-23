@@ -10,6 +10,10 @@ class bedModel extends Model{
         'status'
        
     ];
+    public function getAvailableBeds()
+    {
+       return $this->join('departments','department_id=department_id')->where('status',1)->orderBy('bed_id', 'desc')->findall();
+    }
 
 
 

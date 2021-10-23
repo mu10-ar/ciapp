@@ -42,7 +42,7 @@ class BedController extends BaseController
                 
             ]);
              $success =true;
-              return  redirect()->to('casestudylist');
+              return  redirect()->to('bedlists');
            }
            else {
                   $data['validation']=$this->validator;
@@ -64,7 +64,12 @@ class BedController extends BaseController
 
     public function bedlist()
     {
-          echo view('partials/sidebar');
+
+        $data=[];
+        $bed= new bedModel();
+        $data['bed']= $bed->getAvailableBeds();
+        var_dump($data);
+          echo view('partials/sidebar',$data);
          echo view('bedmanager/bedlist');
          echo view('partials/footer'); 
     }
