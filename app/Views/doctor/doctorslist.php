@@ -14,32 +14,31 @@
     </thead>
     <tbody>
         <?php
-            $session=session();
-            $userrole=$session->get('user_role');
-            
-            $id=1;
-            foreach($users as $user){?>
-        <tr>
+        $session = session();
+        $userrole = $session->get('user_role');
 
-            <th scope="row"><?=$id?></th>
-            <td><?=$user['firstname']?></td>
-            <td><?=$user['lastname']?></td>
-            <td><?=$user['email']?></td>
-            <td><?=$user['address']?></td>
+        $id = 1;
+        foreach ($users as $user) { ?>
+            <tr>
+
+                <th scope="row"><?= $id ?></th>
+                <td><?= $user['firstname'] ?></td>
+                <td><?= $user['lastname'] ?></td>
+                <td><?= $user['email'] ?></td>
+                <td><?= $user['address'] ?></td>
 
 
-            <td>
-                <?php if (!(($userrole==4)||($userrole==5)||($userrole==6)||($userrole==7)||($userrole==8))):
-              ?> <a href="<?=base_url()?>/update/<?=$user['id']?>" class="btn btn-primary btn-sm">Edit</a>
-                <a href="<?=base_url()?>/delete/<?=$user['id']?>" class="btn btn-danger btn-sm">Delete</a>
-                <?php
-            endif; ?>
-                <a href="<?=base_url()?>/profile/<?=$user['id']?>" class="btn btn-warning btn-sm">profile</a>
-            </td>
-        </tr>
+                <td>
+                    <?php if (!(($userrole == 4) || ($userrole == 5) || ($userrole == 6) || ($userrole == 7) || ($userrole == 8))) :
+                    ?> <a href="<?= base_url() ?>/update/<?= $user['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="<?= base_url() ?>/delete/<?= $user['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
+                    <?php
+                    endif; ?>
+                    <a href="<?= base_url() ?>/profile/<?= $user['id'] ?>" class="btn btn-warning btn-sm">profile</a>
+                </td>
+            </tr>
         <?php
-             $id++;}?>
-
-
-    </tbody>
+            $id++;
+        } ?>
+   </tbody>
 </table>
