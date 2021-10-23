@@ -62,6 +62,7 @@ span {
   background: #2c3136;
   color: #fff;
   transition: all 0.3s;
+  overflow: auto;
 }
 
 #sidebar.active {
@@ -297,6 +298,7 @@ a.article:hover {
     max-width: 100px;
     text-align: center;
     margin-left: -80px !important;
+    overflow: auto;
   }
   .dropdown-toggle::after {
     top: auto;
@@ -334,6 +336,7 @@ a.article:hover {
   }
   #sidebar {
     margin-left: 0;
+    overflow: hidden;
   }
   #sidebarCollapse span {
     display: none;

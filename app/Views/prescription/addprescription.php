@@ -7,6 +7,7 @@
         <div class="form-row">
             <div class="col-md-4">
                 <div class="form-group mt-3 mb-3">
+                <i class="text-danger">*</i>
                     <!-- <label for="patient_id">Patient ID</label> -->
                     <input type="text" class="form-control" id="patient_id" name="patient_id" placeholder="patient_id">
                 </div>
@@ -15,6 +16,7 @@
 
 
                 <div class="form-group mb-3">
+                <i class="text-danger">*</i>
                     <!-- <label for="bp">Blood Pressure</label> -->
                     <input type="text" class="form-control" id="bp" name="bp" placeholder="Blood Pressure">
                 </div>
@@ -27,6 +29,7 @@
                     <input type="text" class="form-control" id="refference" name="refference" placeholder="Refference">
                 </div>
                 <div class="form-group mb-3">
+                    <i class="text-danger">*</i>
                     <label for="type">Type</label>
                     Old <input type="radio" name="type" value="new">
                     New<input type="radio" name="type" value="old">
@@ -35,6 +38,7 @@
 
                 <div class="form-group mb-3">
                     <!-- <label for="appointment_id">Appointment Id</label> -->
+                    <i class="text-danger">*</i>
                     <input type="text" class="form-control" id="appointment_id" name="appointment_id" placeholder="Appointment Id">
                 </div>
                 <div class="form-group mb-3">
@@ -74,7 +78,7 @@
             <hr>
 
             <div class="form-group col-md-4 mb-3 mt-3">
-                <label for="fees">Visiting Fees</label>
+                <label for="fees">Visiting Fees<i class="text-danger">*</i></label>
                 <input type="text" class="form-control" id="fees" name="fees" placeholder="Visiting Fees">
             </div>
             <div class="form-group col-md-4 mb-3">
