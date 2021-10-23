@@ -13,6 +13,8 @@
         </thead>
         <tbody>
             <?php
+            $session=session();
+            $userrole=$session->get('user_role');
             
             $id=1;
             foreach($users as $user){?>
@@ -23,12 +25,19 @@
                 <td><?=$user['lastname']?></td>
                 <td><?=$user['email']?></td>
                 <td><?=$user['address']?></td>
-                <td> <a href="<?=base_url()?>/update/<?=$user['id']?>" class="btn btn-primary btn-sm">Edit</a>
+
+
+                <td>
+                    <?php if (!(($userrole==4)||($userrole==5)||($userrole==6)||($userrole==7)||($userrole==8))):
+              ?> <a href="<?=base_url()?>/update/<?=$user['id']?>" class="btn btn-primary btn-sm">Edit</a>
                     <a href="<?=base_url()?>/delete/<?=$user['id']?>" class="btn btn-danger btn-sm">Delete</a>
+                    <?php
+            endif; ?>
                     <a href="<?=base_url()?>/profile/<?=$user['id']?>" class="btn btn-warning btn-sm">profile</a>
                 </td>
             </tr>
-            <?php $id++;}?>
+            <?php
+             $id++;}?>
 
 
         </tbody>
