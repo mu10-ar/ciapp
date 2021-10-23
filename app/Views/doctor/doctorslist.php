@@ -1,3 +1,4 @@
+<!-- Doctors List -->
 <h1 style="text-align: center; margin:  4px;"> Doctors List</h1>
 <div class="container">
     <table id="myTable" class="table table-striped" style="overflow-x:auto;">
