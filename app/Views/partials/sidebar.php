@@ -183,10 +183,10 @@
                             <a href="<?=base_url()?>/casestudylist">Patient Case Study list</a>
                         </li>
                         <li>
-                            <a href="#">Add Prescription</a>
+                            <a href="<?=base_url()?>/addprescription">Add Prescription</a>
                         </li>
                         <li>
-                            <a href="#">Prescription List</a>
+                            <a href=" <?=base_url()?>/prescriptionlist">Prescription List</a>
                         </li>
                     </ul>
                 </li>
@@ -198,20 +198,18 @@
                     </a>
                     <ul class="collapse list-unstyled" id="bedSubmenu">
                         <li>
-                            <a href="#">Add Bed</a>
+                            <a href="<?=base_url()?>/addbed">Add Bed</a>
                         </li>
                         <li>
-                            <a href="#">Bed List</a>
+                            <a href="<?=base_url()?>/besdlist">Bed List</a>
                         </li>
                         <li>
-                            <a href="#">Bed Assign</a>
+                            <a href="assignbed">Bed Assign</a>
                         </li>
                         <li>
-                            <a href="#">Bed Assign List</a>
+                            <a href="assignedbed">Bed Assign List</a>
                         </li>
-                        <!-- <li>
-                            <a href="#">Bed Transfer List</a>
-                        </li> -->
+
                     </ul>
                 </li>
                 <li>

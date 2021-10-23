@@ -21,7 +21,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-$routes->setAutoRoute(false);
+$routes->setAutoRoute(true);
 
 /*
  * --------------------------------------------------------------------
@@ -70,6 +70,7 @@ $routes->add('/addmedicine', 'medicinecontroller::addmedicine');
 $routes->add('/medicinelist', 'medicinecontroller::medicinelist');
 $routes->add('/addcasestudy', 'prescription::addcasestudy');
 $routes->add('/casestudylist', 'prescription::casestudylist');
+$routes->add('/addprescription', 'prescription::addprescription');
 
 
 
