@@ -193,4 +193,26 @@ class Prescription extends BaseController
          echo view('prescription/casestudyinfo');
          echo view('partials/footer');
      }
+
+
+
+
+
+
+
+
+      public function addprescription()
+     {
+         
+        
+        
+      
+
+
+
+       
+         echo view('partials/sidebar',);
+         echo view('prescription/addprescription');
+         echo view('partials/footer');
+     }
 }

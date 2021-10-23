@@ -1,9 +1,9 @@
 <div style="text-align: center;">
-    <h2>Add Appointment</h2>
+    <h2 class="my-4">Add Appointment</h2>
 </div>
 <div class="row">
     <!-- Form For Adding Appointment -->
-    <div class="container" style="display: flex;">
+    <div class="container" style="display: flex; justify-content:center">
         <form action="" method="post">
 
             <div class="form-group">
