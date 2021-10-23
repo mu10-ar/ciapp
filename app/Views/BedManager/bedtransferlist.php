@@ -1,1 +1,0 @@
-<h1 style="text-align: center; margin:  4px; color:brown">Bed Transfer List!</h1>
