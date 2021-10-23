@@ -157,7 +157,7 @@
                 </li>
                 <li>
                     <a href="#employeeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-solid fa-user"></i>
                         Human Resources
                     </a>
                     <ul class="collapse list-unstyled" id="employeeSubmenu">
@@ -276,6 +276,7 @@
                 <li>
                     <a href="#MessageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-info"></i>
+                        
                         Message
                     </a>
                     <ul class="collapse list-unstyled" id="MessageSubmenu">
