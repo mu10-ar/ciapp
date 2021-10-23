@@ -3,10 +3,11 @@
     <div style="text-align: center; margin: 4px;">
         <h1>Add Prescription!</h1>
     </div>
-    <form>
+    <form id="form_id">
         <div class="form-row">
             <div class="col-md-4">
                 <div class="form-group mt-3 mb-3">
+                <i class="text-danger">*</i>
                     <!-- <label for="patient_id">Patient ID</label> -->
                     <input type="text" class="form-control" id="patient_id" name="patient_id" placeholder="patient_id">
                 </div>
@@ -15,6 +16,7 @@
 
 
                 <div class="form-group mb-3">
+                <i class="text-danger">*</i>
                     <!-- <label for="bp">Blood Pressure</label> -->
                     <input type="text" class="form-control" id="bp" name="bp" placeholder="Blood Pressure">
                 </div>
@@ -27,74 +29,56 @@
                     <input type="text" class="form-control" id="refference" name="refference" placeholder="Refference">
                 </div>
                 <div class="form-group mb-3">
+                    <i class="text-danger">*</i>
                     <label for="type">Type</label>
                     Old <input type="radio" name="type" value="new">
                     New<input type="radio" name="type" value="old">
                     <span class="red">
                 </div>
 
-
-
-
                 <div class="form-group mb-3">
                     <!-- <label for="appointment_id">Appointment Id</label> -->
+                    <i class="text-danger">*</i>
                     <input type="text" class="form-control" id="appointment_id" name="appointment_id" placeholder="Appointment Id">
                 </div>
                 <div class="form-group mb-3">
                     <!-- <label for="date">Date</label> -->
                     <input type="date" class="form-control" id="date" name="date" placeholder="Date">
                 </div>
-                <div class="form-group mb-3">
-                    <!-- <label for="hospital_name">Hospital Name</label> -->
-                    <input type="text" class="form-control" id="hospital_name" name="hopspital_name" placeholder="Hospital
-                                    Name">
-                </div>
+
                 <div class="form-group mb-3">
                     <!-- <label for="address">Address</label> -->
                     <input type="text" class="form-control" id="address" name="address" placeholder="Address">
                 </div>
             </div>
-            <div class="form-group col-md-6">
-                <table class="table table-striped mt-3">
-                    <thead>
-                        <tr class="bg-primary">
-                            <th width="160">Medicine Name</th>
-                            <th width="160">Medicine Type</th>
-                            <th>Instruction</th>
-                            <th width="80">Days</th>
-
-                        </tr>
-                    </thead>
-                    <tbody id="medicine">
-                        <tr>
-                            <td><input type="text" name="medicine_name[]" autocomplete="off" class="medicine form-control" placeholder="Medicine Name"></td>
-                            <td><input type="text" name="medicine_type[]" autocomplete="off" class="form-control" placeholder="Medicine Type"></td>
-                            <td><textarea name="medicine_instruction[]" class="form-control" placeholder="Instruction"></textarea></td>
-                            <td><input type="text" name="medicine_days[]" autocomplete="off" class="form-control" placeholder="Days"></td>
-
-
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-striped">
-                    <thead>
-                        <tr class="bg-danger">
-                            <th width="230">Diagnosis</th>
-                            <th>Instruction</th>
-
-                        </tr>
-                    </thead>
-                    <tbody id="diagnosis">
-                        <tr>
-                            <td><input type="text" name="diagnosis_name[]" autocomplete="off" class="form-control" placeholder="Diagnosis"></td>
-                            <td><textarea name="diagnosis_instruction[]" class="form-control" placeholder="Instruction"></textarea></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <hr>
+            <h3>Medicine</h3>
+            <div class="forn-group col-md-4 mb3">
+                <label for="medicine">Add Medicine </label>
+                <input type="text" class="form-control" name="medicine" placeholder="Add medicine here!">
             </div>
+            <div class="forn-group col-md-4 mb3">
+                <label for="medicine_c">Medicine Category </label>
+                <input type="text" class="form-control" name="medicine_c" placeholder="medicine  category here!">
+            </div>
+            <div class="forn-group col-md-4 mb3">
+                <label for="medicine_d">Medicine Days</label>
+                <input type="text" class="form-control" name="medicine_d" placeholder="how many days?">
+            </div>
+            <hr>
+            <h3>Diagnosis</h3>
+            <div class="forn-group col-md-4 mb3">
+                <label for="diagnosis">Diagnosis</label>
+                <input type="text" class="form-control" name="diagnosis" placeholder="diagnosis here!">
+            </div>
+            <div class="forn-group col-md-4 mb3">
+                <label for="diagnosis_instruc">Diagnosis Instruction</label>
+                <input type="text" class="form-control" name="diagnosis_instruc" placeholder="Diagnosis Instructions here!">
+            </div>
+            <hr>
 
             <div class="form-group col-md-4 mb-3 mt-3">
-                <label for="fees">Visiting Fees</label>
+                <label for="fees">Visiting Fees<i class="text-danger">*</i></label>
                 <input type="text" class="form-control" id="fees" name="fees" placeholder="Visiting Fees">
             </div>
             <div class="form-group col-md-4 mb-3">

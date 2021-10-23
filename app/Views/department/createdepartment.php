@@ -7,7 +7,7 @@
           <form action="createdepartment" method="post">
               <div class="form-row">
                   <div class="col">
-                      <label for="department_name">Department Name</label>
+                      <label for="department_name">Department Name<i class="text-danger">*</i></label>
                       <input type="text" name="department_name" class="form-control" required
                           placeholder="department name">
                   </div>
@@ -15,7 +15,7 @@
               </div>
 
               <div class="form-group">
-                  <label for="department_description">Department decription</label>
+                  <label for="department_description">Department decription<i class="text-danger">*</i></label>
                   <input type="text" class="form-control" required id="department_description" value=""
                       name="department_description" placeholder="department description">
               </div>
