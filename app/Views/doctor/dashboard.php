@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row">
     <!-- welcome message -->
 
@@ -108,6 +109,7 @@
         </div>
         <!-- /.info-box-content -->
     </div>
+</div>
 </div>
 </div>
 <div class="container">
