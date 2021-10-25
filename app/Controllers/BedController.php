@@ -6,6 +6,9 @@ use App\models\AppointmentModel;
 use App\models\bedModel;
 use App\models\DepartmentModel;
 use App\models\UserModel;
+use CodeIgniter\Database\Query;
+
+$db = db_connect();
 
 class BedController extends BaseController
 {
@@ -42,7 +45,7 @@ class BedController extends BaseController
                 
             ]);
              $success =true;
-              return  redirect()->to('casestudylist');
+              return  redirect()->to('bedlists');
            }
            else {
                   $data['validation']=$this->validator;
@@ -64,7 +67,20 @@ class BedController extends BaseController
 
     public function bedlist()
     {
-          echo view('partials/sidebar');
+
+        $data=[];
+        $bed= new bedModel();
+        // $data['bed']= $bed->getAvailableBeds();
+        $query='SELECT * FROM beds  INNER JOIN departments ON beds.department_id=departments.department_id WHERE status = "1"';
+        $db = db_connect();
+        $results=$db->query($query);
+        $data['beds']=$results->getResultArray();
+        
+
+
+
+        
+          echo view('partials/sidebar',$data);
          echo view('bedmanager/bedlist');
          echo view('partials/footer'); 
     }

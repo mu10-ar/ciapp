@@ -29,7 +29,6 @@ $routes->setAutoRoute(true);
  * --------------------------------------------------------------------
  */
 
-// We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');
@@ -52,8 +51,8 @@ $routes->add('/deletemedicine/(:num)', 'medicinecontroller::deletemedicine/$1');
 $routes->add('/viewmedicine/(:num)', 'medicinecontroller::viewmedicine/$1');
 $routes->add('/updatepatient/(:num)', 'patient::updatepatient/$1');
 $routes->add('/deletepatient/(:num)', 'patient::deletepatient/$1');
-$routes->add('/editappointment/(:num)', 'appointment::editappointment/$1');
-$routes->add('/deleteappointment/(:num)', 'appointment::deleteappointment/$1');
+$routes->add('/approve/(:num)', 'appointment::approve/$1');
+$routes->add('/decline/(:num)', 'appointment::decline/$1');
 $routes->add('/editcasestudy/(:num)', 'prescription::editcasestudy/$1');
 $routes->add('/deletecasestudy/(:num)', 'prescription::deletecasestudy/$1');
 $routes->add('/viewcasestudy/(:num)', 'prescription::casestudyinfo/$1');

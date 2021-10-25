@@ -8,7 +8,7 @@
 
             <div class="form-group">
                 <label for="patientname">Patient Name</label>
-                <select id="patientname" name="id" class="form-control">
+                <select id="patientname" name="patient_id" class="form-control">
                     <option selected>Choose...</option>
                     <span class="red">
                         <?php 
@@ -55,12 +55,12 @@
             </div>
             <div class="form-group">
                 <label for="doctorname">Doctor Name</label>
-                <select name="doctor_name" id="doctorname" class="form-control">
+                <select name="doctor_id" id="doctorname" class="form-control">
                     <span class="red">
                         <?php 
-                                if (isset($validation)&& $validation->hasError('doctor_name')) {
+                                if (isset($validation)&& $validation->hasError('doctor_id')) {
 
-                                    echo $validation->getError('docote_name');
+                                    echo $validation->getError('docote_id');
                                 }?>
                     </span>
                     <option selected>Choose...</option>
@@ -70,7 +70,8 @@
 
 
 
-                    <option value="<?=$doctor['firstname'].''.$doctor['lastname']?>">
+
+                    <option value=" <?=$doctor['id']?>">
                         <?=$doctor['firstname'].' '.$doctor['lastname']?>
                     </option>
                     <?php ;}?>
@@ -105,10 +106,11 @@
                     </span>
                 </div>
             </div>
+            <input type="hidden" name="status" value="0">
 
 
 
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary">Request</button>
         </form>
     </div>
 </div>
