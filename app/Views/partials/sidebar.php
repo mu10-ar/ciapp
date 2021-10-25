@@ -72,7 +72,7 @@
 
 
                 <li>
-                    <a href="<?=base_url()?>/notification">
+                    <a href="<?=base_url()?>/notifications">
                         <i class="fas fa-info"></i>
 
                         Notifications

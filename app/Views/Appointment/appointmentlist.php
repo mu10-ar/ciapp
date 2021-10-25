@@ -27,7 +27,7 @@
                  <td><?=$appointment['appointment_date']?></td>
                  <td><?=$appointment['appointment_id']?></td>
                  <td><?=$appointment['problem']?></td>
-                 <td> <a href="<?=base_url()?>/approve/<?=$appointment['appointment_id']?>"
+                 <td> <a href="<?=base_url()?>/approve/<?=$appointment['appointment_id']?>/<?=$appointment['patient_id']?>"
                          class="btn btn-primary btn-sm">approve</a>
                      <a href="<?=base_url()?>/decline/<?=$appointment['appointment_id']?>"
                          class="btn btn-danger btn-sm">decline</a>

@@ -7,14 +7,16 @@
         <form action="" method="post">
 
             <div class="form-group">
+                <?php
+            $session=session(); if($session->get('user_role'!=4)):?>
                 <label for="patientname">Patient Name</label>
                 <select id="patientname" name="patient_id" class="form-control">
                     <option selected>Choose...</option>
                     <span class="red">
                         <?php 
-                                if (isset($validation)&& $validation->hasError('id')) {
+                                if (isset($validation)&& $validation->hasError('patient_id')) {
 
-                                    echo $validation->getError('id');
+                                    echo $validation->getError('patient_id');
                                 }?>
                     </span>
                     <?php
@@ -25,7 +27,9 @@
 
                     <option value="<?=$patient['id']?>"><?=$patient['firstname'].' '.$patient['lastname']?>
                     </option>
-                    <?php ;}?>
+                    <?php ;} 
+                    endif;?>
+
 
                 </select>
             </div>
@@ -98,7 +102,7 @@
                     <label for="problem">Problem</label>
                     <input type="text" name="problem" class="form-control" placeholder="Problems Here!">
                     <span class="red">
-                        <?php 
+                        <?php $session =session();
                                 if (isset($validation)&& $validation->hasError('problem')) {
 
                                     echo $validation->getError('problem');
@@ -107,6 +111,11 @@
                 </div>
             </div>
             <input type="hidden" name="status" value="0">
+
+            <?php if($session->get('user_role')==4):?>
+            <input type="hidden" name="patient_id" value="<?= $session->get('user_id')?>">
+
+            <?php ; endif ?>
 
 
 
