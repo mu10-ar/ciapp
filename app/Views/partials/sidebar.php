@@ -157,6 +157,11 @@
                 </li>
 
                 <?php ;endif?>
+
+                <?php
+                    if (($userrole==1)||($userrole==2)||($userrole==3)):
+                     
+                    ?>
                 <li>
                     <a href="#pharmacySubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -172,6 +177,9 @@
 
                     </ul>
                 </li>
+
+
+                <?php ;endif?>
                 <?php
                     if (($userrole==1)||($userrole==2)||($userrole==3)):
                      
