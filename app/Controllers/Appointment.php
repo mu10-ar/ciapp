@@ -52,93 +52,93 @@ class Appointment extends BaseController
                 
             ]);
              $success =true;
-              return  redirect()->to('appointments');
-           }
-           else {
-                  $data['validation']=$this->validator;
-           }
-           
-
-            
-           
-
-        }
-        $department=new DepartmentModel();
-        $data['department']=$department->getDepartmentRecord();
-        $doctor=new UserModel();
-        $data['doctor']=$doctor->getDoctorRecord();
-        $patient= new UserModel();
-        $data['patient']=$patient->getpatientRecord();
-       
-
-        
-        
+              return  redirect()->to(base_url());
+}
+else {
+$data['validation']=$this->validator;
+}
 
 
 
-          echo view('partials/sidebar',$data);
-         echo view('appointment/addappointment');
-         
-         echo view('partials/footer');
-       
-       
-      
-    }
 
 
-     public function appointments()
-    {
-        $session=session();
-        if (!$session->get('logged_in')) {
-            return redirect()->to(base_url().'/login');
-             
-        }
-        $appointment= new AppointmentModel();
-        $data['appointment']=$appointment->getAppointmentrecord();
-        
-          echo view('partials/sidebar',$data);
-         echo view('appointment/appointmentlist');
-         echo view('partials/footer');
-      
-       
-       
-      
-    }
-
-    public function approve($id)
-    {
-
-         
-         $data=[];
-        $session=session();
-        
-        if (!$session->get('logged_in')) {
-           return redirect()->to(base_url().'/login');
-             
-        }
-         
-        helper('form');
-
-            $appointment=new AppointmentModel();
-            
-
-       
-               
-               $appointment->update($id,[
-                'status'=> '1'   
-            ]);
-             $success =true;
-              return  redirect()->to('appointments');
-           
-    }
+}
+$department=new DepartmentModel();
+$data['department']=$department->getDepartmentRecord();
+$doctor=new UserModel();
+$data['doctor']=$doctor->getDoctorRecord();
+$patient= new UserModel();
+$data['patient']=$patient->getpatientRecord();
 
 
-     public function decline($id)
-    {
-        $appointment= new AppointmentModel();
-        $appointment->delete($id);
-        return redirect()->to(base_url('/appointments')); 
-    }
+
+
+
+
+
+echo view('partials/sidebar',$data);
+echo view('appointment/addappointment');
+
+echo view('partials/footer');
+
+
+
+}
+
+
+public function appointments()
+{
+$session=session();
+if (!$session->get('logged_in')) {
+return redirect()->to(base_url().'/login');
+
+}
+$appointment= new AppointmentModel();
+$data['appointment']=$appointment->getAppointmentrecord();
+
+echo view('partials/sidebar',$data);
+echo view('appointment/appointmentlist');
+echo view('partials/footer');
+
+
+
+
+}
+
+public function approve($id)
+{
+
+
+$data=[];
+$session=session();
+
+if (!$session->get('logged_in')) {
+return redirect()->to(base_url().'/login');
+
+}
+
+helper('form');
+
+$appointment=new AppointmentModel();
+
+
+
+
+$appointment->update($id,[
+'status'=> '1'
+]);
+$success =true;
+return redirect()->to('appointments');
+
+}
+
+
+public function decline($id)
+{
+$appointment= new AppointmentModel();
+$appointment->delete($id);
+return redirect()->to(base_url('/appointments'));
+}
 
 
 }

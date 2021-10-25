@@ -69,6 +69,19 @@
                         Dashboard
                     </a>
                 </li>
+
+
+                <li>
+                    <a href="<?=base_url()?>/notification">
+                        <i class="fas fa-info"></i>
+
+                        Notifications
+                    </a>
+
+                </li>
+
+
+
                 <li>
                     <?php
                     if (($userrole==1)||($userrole==2)||($userrole==3)||($userrole==4)):
