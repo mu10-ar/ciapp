@@ -6,14 +6,16 @@ class AppointmentModel extends Model{
     protected $primaryKey ='appointment_id';
     protected $allowedFields=[
         'department_name',
-        'doctor_name',
         'appointment_date',
-        'id',
+        'patient_id',
         'problem',
+        'status',
+        'doctor_id'
     ];
 
     public function getAppointmentrecord(){
-        return $this->orderBy('appointment_id','DESC')->findAll();
+        $session=session();
+        return $this->orderBy('appointment_id','DESC')->Where('status','0')->where('doctor_id',$session->get('user_id'))->findAll();
     }
 
 

@@ -172,6 +172,10 @@
 
                     </ul>
                 </li>
+                <?php
+                    if (($userrole==1)||($userrole==2)||($userrole==3)):
+                     
+                    ?>
                 <li>
                     <a href="#patientSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -186,6 +190,7 @@
                         </li>
                     </ul>
                 </li>
+                <?php ;endif?>
                 <li>
                     <a href="#appointmentSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -195,11 +200,20 @@
                         <li>
                             <a href="<?=base_url()?>/addappointment">Add Appointment</a>
                         </li>
+                        <?php
+                    if (($userrole==1)||($userrole==2)||($userrole==3)):
+                     
+                    ?>
                         <li>
                             <a href="<?=base_url()?>/appointments"> Appointment List</a>
                         </li>
+                        <?php ; endif?>
                     </ul>
                 </li>
+                <?php
+                    if (($userrole==1)||($userrole==2)||($userrole==3)):
+                     
+                    ?>
                 <li>
                     <a href="#employeeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-solid fa-user"></i>
@@ -214,6 +228,12 @@
                         </li>
                     </ul>
                 </li>
+                <?php ; endif?>
+
+                <?php
+                    if (($userrole==1)||($userrole==2)||($userrole==3)):
+                     
+                    ?>
 
                 <li>
                     <a href="#prescriptionSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -235,7 +255,12 @@
                         </li>
                     </ul>
                 </li>
+                <?php ; endif?>
 
+                <?php
+                    if (($userrole==1)||($userrole==2)||($userrole==3)):
+                     
+                    ?>
                 <li>
                     <a href="#bedSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -256,7 +281,12 @@
                         </li>
 
                     </ul>
-                </li>
+                </li> <?php ; endif?>
+
+                <?php
+                    if (($userrole==1)||($userrole==2)||($userrole==3)):
+                     
+                    ?>
                 <li>
                     <a href="#billSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -289,6 +319,12 @@
                         </li>
                     </ul>
                 </li>
+                <?php ; endif?>
+
+                <?php
+                    if (($userrole==1)||($userrole==2)||($userrole==3)):
+                     
+                    ?>
                 <li>
                     <a href="#AMSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -317,7 +353,9 @@
                             <a href="#">Account Report</a>
                         </li>
                     </ul>
-                </li>
+                </li> <?php ; endif?>
+
+
                 <li>
                     <a href="#MessageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-info"></i>

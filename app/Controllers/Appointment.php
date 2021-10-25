@@ -27,8 +27,8 @@ class Appointment extends BaseController
             
 
         $input=$this->validate([
-               'doctor_name'=> 'required',
-               'id'=> 'required',
+               'doctor_id'=> 'required',
+               'patient_id'=> 'required',
                 'appointment_date'=> 'required',
                 'problem'=> 'required',
                 'department_name'=> 'required',
@@ -42,8 +42,9 @@ class Appointment extends BaseController
            if ($input==true) {
                
                $appointment->save([
-                'doctor_name'=> $this->request->getPost('doctor_name'),
-                'id' => $this->request->getPost('id'),
+                'doctor_id'=> $this->request->getPost('doctor_id'),
+                'patient_id' => $this->request->getPost('patient_id'),
+                'status' => $this->request->getPost('status'),
                 'department_name' => $this->request->getPost('department_name'),
                 'appointment_date' => $this->request->getPost('appointment_date'),
                 'problem' => $this->request->getPost('problem'),
@@ -104,7 +105,7 @@ class Appointment extends BaseController
       
     }
 
-    public function editappointment($id)
+    public function approve($id)
     {
 
          
@@ -117,61 +118,22 @@ class Appointment extends BaseController
         }
          
         helper('form');
-        if ($this->request->getMethod()=='post') {
+
             $appointment=new AppointmentModel();
             
 
-        $input=$this->validate([
-               'doctor_name'=> 'required',
-               'id'=> 'required',
-                'appointment_date'=> 'required',
-                'problem'=> 'required',
-                'department_name'=> 'required',
-               
-
-           ]);
-
-
-           
-           
-           if ($input==true) {
+       
                
                $appointment->update($id,[
-                'doctor_name'=> $this->request->getPost('doctor_name'),
-                'id' => $this->request->getPost('id'),
-                'department_name' => $this->request->getPost('department_name'),
-                'appointment_date' => $this->request->getPost('appointment_date'),
-                'problem' => $this->request->getPost('problem'),
-                
-                
+                'status'=> '1'   
             ]);
              $success =true;
               return  redirect()->to('appointments');
-           }
-           else {
-                  $data['validation']=$this->validator;
-           }
-        }
            
-
-         $appointment= new AppointmentModel();
-         $data['appointment']=$appointment->getappointment($id);
-           $department=new DepartmentModel();
-        $data['department']=$department->getDepartmentRecord();
-        $doctor=new UserModel();
-        $data['doctor']=$doctor->getDoctorRecord();
-        $patient= new UserModel();
-        $data['patient']=$patient->getpatientRecord();
-        
-        
-
-          echo view('partials/sidebar',$data);
-         echo view('appointment/editappointment');
-         echo view('partials/footer');
     }
 
 
-     public function deleteappointment($id)
+     public function decline($id)
     {
         $appointment= new AppointmentModel();
         $appointment->delete($id);

@@ -24,7 +24,8 @@ class Login extends BaseController
                 
                 $userdata=[
                     'logged_in'=>true,
-                    'user_role'=>$userrole
+                    'user_role'=>$userrole,
+                    'user_id'=>$data['id']
                 ];
                 $session->set($userdata);
 
