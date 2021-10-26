@@ -3,8 +3,10 @@
 namespace App\Controllers;
 
 use App\models\AppointmentModel;
+use App\models\AssignBedmodel;
 use App\models\bedModel;
 use App\models\DepartmentModel;
+use App\models\NotificationModel;
 use App\models\UserModel;
 use CodeIgniter\Database\Query;
 
@@ -88,8 +90,71 @@ class BedController extends BaseController
 
 
     public function assignbed()
-    {
-          echo view('partials/sidebar');
+    {   $session=session();
+        if (!$session->get('logged_in')) {
+           return redirect()->to(base_url().'/login');
+             
+        }
+
+        
+         helper('form');
+        if ($this->request->getMethod()=='post') {
+            $assignbed=new AssignBedmodel();
+
+        $input=$this->validate([
+               'patient_id'=> 'required',
+               'assigned_bed'=> 'required',
+               
+               
+
+           ]);
+
+
+           
+           
+           if ($input==true) {
+               
+               $assignbed->save([
+                'patient_id'=> $this->request->getPost('patient_id'),
+                'assigned_bed' => $this->request->getPost('assigned_bed'),
+                'description' => $this->request->getPost('description')
+            
+                
+                
+            ]);
+            $bed_id = $this->request->getVar('assigned_bed');
+
+            $notification= new NotificationModel();
+            $notification->save([
+                'message' => 'bed No'.$bed_id.' has been assigned to you',
+                    'user_id' => $this->request->getPost('patient_id')
+
+            ]);
+
+            $updatestatus= new bedModel();
+           
+            $updatestatus->update($bed_id,[
+                'status' => '0'
+            ]);
+             
+              return  redirect()->to('assignbed');
+           
+           }
+           else {
+                  $data['validation']=$this->validator;
+              
+           }
+        }
+
+
+
+
+        $patient= new UserModel();
+        $data['patient']=$patient->getpatientRecord();
+        $bed = new bedModel();
+        $data['bed']=$bed->getAvailableBeds();
+
+          echo view('partials/sidebar',$data);
          echo view('bedmanager/bedassign');
          echo view('partials/footer'); 
     }
@@ -98,9 +163,24 @@ class BedController extends BaseController
 
     public function assignedbed()
     {
-          echo view('partials/sidebar');
+        $data=[];
+        $bed= new AssignBedmodel();
+        $data['bed']=$bed->getAssignedBed();
+          echo view('partials/sidebar',$data);
          echo view('bedmanager/bedassignlist');
          echo view('partials/footer'); 
+    }
+
+    
+    public function discharge($id)
+    {
+          $bed = new AssignBedmodel();
+          $bed->where('assigned_bed',$id)->delete();
+          $updatebed= new bedModel();
+          $updatebed->update($id,[
+              'status'=>'1'
+          ]);
+          return redirect()->to(base_url().'/assignedbed');
     }
 
 

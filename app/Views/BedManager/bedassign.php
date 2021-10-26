@@ -1,39 +1,71 @@
 <h1 style="text-align: center; margin:  4px; color:brown">Assign Bed!</h1>
 
 <div class="container">
-    <form action="" method="">
+    <form action="" method="post">
 
         <div class="mb-3">
-            <label for="patient_id" class="form-label">Patient Id:</label>
-            <input type="text" class="form-control" id="patient_id" placeholder="P0QR4L6">
+        <?php
+            $session=session();?>
+                <label for="patientname">Patient Name</label>
+                <select id="patientname" name="patient_id" class="form-control">
+                    
+                    <span class="red">
+                        <?php 
+                                if (isset($validation)&& $validation->hasError('patient_id')) {
+
+                                    echo $validation->getError('patient_id');
+                                }?>
+                    </span>
+                    <?php
+                        
+                        foreach ($patient as $patient) {?>
+
+
+
+                    <option value="<?=$patient['id']?>"><?=$patient['firstname'].' '.$patient['lastname']?>
+                    </option>
+                    <?php ;} 
+                    ?>
+
+
+                </select>
         </div>
         <div class="mb-3">
-            <label for="roomname" class="form-label">Room Name:</label>
-            <input type="text" class="form-control" id="roomname" placeholder="Cardiac-Ward-01">
+        <?php
+            $session=session();?>
+                <label for="patientname">Bed No</label>
+                <select id="patientname" name="assigned_bed" class="form-control">
+                    
+                    <span class="red">
+                        <?php 
+                                if (isset($validation)&& $validation->hasError('patient_id')) {
+
+                                    echo $validation->getError('patient_id');
+                                }?>
+                    </span>
+                    <?php
+                        
+                        foreach ($bed as $bed) {?>
+
+
+
+                    <option value="<?=$bed['bed_id']?>"> bed no <?=$bed['bed_id']?>
+                    </option>
+                    <?php ;} 
+                    ?>
+
+
+                </select>
         </div>
-        <div class="mb-3">
-            <label for="bednumber" class="form-label">Bed Number:</label>
-            <input type="number" class="form-control" id="bednumber" placeholder="Bed Number">
-        </div>
-        <div class="mb-3">
-            <label for="assigndate" class="form-label">Assign Date:</label>
-            <input type="date" class="form-control" id="assigndate" placeholder="01-10-2001">
-        </div>
-        <div class="mb-3">
-            <label for="dischargedate" class="form-label">Discharge Date:</label>
-            <input type="date" class="form-control" id=dischargedate" placeholder="01-10-2001">
-        </div>
+      
+        
+        
 
         <div class="mb-3">
             <label for="description" class="form-label">Description:</label>
-            <textarea class="form-control" id="description" rows="3"></textarea>
+            <textarea name="description" class="form-control" id="description" rows="3"></textarea>
         </div>
-        <div class="">
-            <label for="status" class="form-label">Status: </label>
-
-            Active <input type="radio" class="" id="radio-inline">
-            Inavtive <input type="radio" class="" id="radio-inline">
-        </div>
-        <button type="button" class="btn btn-primary">Add</button>
+     
+        <button type="submit" class="btn btn-primary">Add</button>
     </form>
 </div>
