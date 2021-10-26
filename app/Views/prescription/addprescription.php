@@ -8,7 +8,7 @@
             <div class="col-md-4">
                 <div class="form-group mt-3 mb-3">
                 <i class="text-danger">*</i>
-                    <!-- <label for="patient_id">Patient ID</label> -->
+                    <label for="patient_id">Patient ID</label>
                     <input type="text" class="form-control" id="patient_id" name="patient_id" placeholder="patient_id">
                 </div>
 
@@ -17,15 +17,15 @@
 
                 <div class="form-group mb-3">
                 <i class="text-danger">*</i>
-                    <!-- <label for="bp">Blood Pressure</label> -->
+                    <label for="bp">Blood Pressure</label>
                     <input type="text" class="form-control" id="bp" name="bp" placeholder="Blood Pressure">
                 </div>
                 <div class="form-group mb-3">
-                    <!-- <label for="Weight">Weight</label> -->
+                    <label for="Weight">Weight</label>
                     <input type="text" class="form-control" id="weight" name="weight" placeholder="Weight">
                 </div>
                 <div class="form-group mb-3">
-                    <!-- <label for="refference">Refference</label> -->
+                    <label for="refference">Refference</label>
                     <input type="text" class="form-control" id="refference" name="refference" placeholder="Refference">
                 </div>
                 <div class="form-group mb-3">
@@ -37,17 +37,17 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <!-- <label for="appointment_id">Appointment Id</label> -->
+                    <label for="appointment_id">Appointment Id</label>
                     <i class="text-danger">*</i>
                     <input type="text" class="form-control" id="appointment_id" name="appointment_id" placeholder="Appointment Id">
                 </div>
                 <div class="form-group mb-3">
-                    <!-- <label for="date">Date</label> -->
+                    <label for="date">Date</label>
                     <input type="date" class="form-control" id="date" name="date" placeholder="Date">
                 </div>
 
                 <div class="form-group mb-3">
-                    <!-- <label for="address">Address</label> -->
+                    <label for="address">Address</label>
                     <input type="text" class="form-control" id="address" name="address" placeholder="Address">
                 </div>
             </div>

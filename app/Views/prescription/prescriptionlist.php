@@ -18,7 +18,7 @@
                             <th scope="col">Medicine Category</th>
                             <th scope="col">Medicine Days</th>
                             <th scope="col">Diagnosis</th>
-                            <th scope="col">Diagnosis Instructions</tr>
+                            <th scope="col">Diagnosis Instructions</th>
                             <th scope="col">Visiting Fees</th>
                             <th scope="col"> Patient Notes</th>
                             <th scope="col">Action</th>
