@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\models\CaseStudyModel;
+use App\models\NotificationModel;
 use App\models\PrescriptionModel;
 use App\models\UserModel;
 
@@ -26,7 +27,13 @@ class Prescription extends BaseController
             
 
         $input=$this->validate([
-               'patient_id'=> 'required|is_unique[case_study.patient_id]'
+            'patient_id'=> [
+                'rules'=>'required|is_unique[case_study.patient_id]',
+                'errors'=>[ 
+                    'required'=>'please select the patient',
+                    'is_unique'=>'case study for this user already exists'
+                    
+                ]]
                
                
 
@@ -60,6 +67,13 @@ class Prescription extends BaseController
                 
                 
             ]);
+            $patient=$this->request->getPost('patient_id');
+
+            $notification = new NotificationModel();
+                $notification->save([
+                    'message' => 'A case study has Benn Addes to your Profile <a class="text-primary" href="mycasestudy/'.$patient.'"> click to view</a>',
+                    'user_id' => $this->request->getPost('patient_id')
+                ]);
              $success =true;
               return  redirect()->to('casestudylist');
            }
@@ -184,7 +198,7 @@ class Prescription extends BaseController
         }
      $casestudy=new CaseStudyModel();
      $casestudy->delete($id);
-     return redirect()->to(base_url().'/scasestudylist');}
+     return redirect()->to(base_url().'/casestudylist');}
 
 
 
@@ -323,7 +337,7 @@ class Prescription extends BaseController
         $data=[];
         $prescrption= new PrescriptionModel();
         $data['prescription']=$prescrption->getSinglePrescription($id);
-        if (!$data) {
+        if ($data['prescription']==null) {
             return redirect()->to(base_url()."/norecord");
         }
     
@@ -336,6 +350,16 @@ class Prescription extends BaseController
 
      public function mycasestudy($id)
      {
-         
+         $casestudy = new CaseStudyModel();
+         $data['casestudy']= $casestudy->mycasestudy($id);
+         if ($data['casestudy']==null) {
+            return redirect()->to(base_url()."/norecord");
+        }
+        
+         echo view('partials/sidebar',$data);
+         echo view('prescription/casestudyinfo');
+         echo view('partials/footer');
+
+
      }
 }

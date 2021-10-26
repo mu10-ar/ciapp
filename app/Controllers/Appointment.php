@@ -53,7 +53,7 @@ class Appointment extends BaseController
                 ]);
                 $notification = new NotificationModel();
                 $notification->save([
-                    'message' => 'you have an appointment to approve <a class=\"text-primary\" href=\"appointments\"> click to view</a>',
+                    'message' => 'you have an appointment to approve <a class="text-primary" href="appointments"> click to view</a>',
                     'user_id' => $this->request->getPost('doctor_id')
                 ]);
                 $success = true;

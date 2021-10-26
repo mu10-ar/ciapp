@@ -406,9 +406,9 @@
                         <li>
                             <a href="<?=base_url()?>/inbox">Inbox</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="<?=base_url()?>/sent">Sent</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
 
