@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 style="text-align: center; margin:  4px; color:brown">Inbox!</h1>
+    <h1 style="text-align: center; margin:  4px; color:brown">Sent items!</h1>
 
             <table class="table">
                 <thead>
@@ -27,3 +27,4 @@
                 </tbody>
             </table>
 </div>
+ 

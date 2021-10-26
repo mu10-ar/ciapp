@@ -41,9 +41,21 @@
                         <dd><?=$user['sex']?></dd>
                         <dt>joined Date</dt>
                         <dd><?=$user['created_at']?></dd>
-
-                        <dt>Status</dt>
-                        <dd>Active</dd>
+                       
+    
+                        <?php
+                        $session=session();
+                        if ($session->get('user_role')==4) {
+                            echo  '<a href="'.base_url().'/myprescription/'.$user["id"].'" class="btn btn-primary">My Prescription</a>';
+                        }
+                        if ($session->get('user_role')==2) {
+                            echo  '<a href="'.base_url().'/viewcasestudy/'.$user["id"].'" class="btn btn-primary">case study</a>';
+                        }
+                        if ($session->get('user_role')==5) {
+                            echo  '<a href="'.base_url().'/printbill/'.$user["id"].'" class="btn btn-primary">Print Bill</a>';
+                        }
+                        
+                        ?>
                     </dl>
                 </div>
             </div>

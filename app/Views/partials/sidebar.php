@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="<?php echo base_url();?>/assets/style.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/style.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.css"> -->
     <!-- Font Awesome JS -->
@@ -44,8 +44,8 @@
 
 <body>
     <?php
-    $session=session();
-    $userrole=$session->get('user_role');
+    $session = session();
+    $userrole = $session->get('user_role');
     ?>
 
 
@@ -63,7 +63,7 @@
             <ul class="list-unstyled components">
 
                 <li>
-                    <a href="<?=base_url()?>">
+                    <a href="<?= base_url() ?>">
                         <i class="fas fa-image"></i>
 
                         Dashboard
@@ -72,7 +72,7 @@
 
 
                 <li>
-                    <a href="<?=base_url()?>/notifications">
+                    <a href="<?= base_url() ?>/notifications">
                         <i class="fas fa-info"></i>
 
                         Notifications
@@ -84,8 +84,8 @@
 
                 <li>
                     <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)||($userrole==4)):
-                     
+                    if (($userrole == 1) || ($userrole == 2) || ($userrole == 3) || ($userrole == 4)) :
+
                     ?>
                     <a style="word-wrap: break-word;" href="#departmentSubmenu" data-toggle="collapse"
                         aria-expanded="false" class="dropdown-toggle">
@@ -94,24 +94,26 @@
                     </a>
                     <ul class="collapse list-unstyled" id="departmentSubmenu">
                         <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
+                            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+
+                            ?>
                         <li>
-                            <a href="<?=base_url()?>/createdepartment">Add Department</a>
+                            <a href="<?= base_url() ?>/createdepartment">Add Department</a>
                         </li>
-                        <?php ;endif?>
+                        <?php ;
+                            endif ?>
                         <li>
-                            <a href="<?=base_url()?>/department">Department List</a>
+                            <a href="<?= base_url() ?>/department">Department List</a>
                         </li>
                     </ul>
                 </li>
-                <?php ;endif?>
+                <?php ;
+                    endif ?>
 
                 <?php
-                   if (($userrole==1)||($userrole==2)||($userrole==3)||($userrole==4)):
-                     
-                    ?>
+            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3) || ($userrole == 4)) :
+
+            ?>
 
                 <li>
                     <a href="#doctorSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -121,29 +123,31 @@
                     <ul class="collapse list-unstyled" id="doctorSubmenu">
 
                         <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
+                        if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+
+                        ?>
                         <li>
-                            <a href="<?php  echo base_url();?>/createuser">Add Doctor</a>
+                            <a href="<?php echo base_url(); ?>/createuser">Add Doctor</a>
                         </li>
-                        <?php ;endif?>
+                        <?php ;
+                        endif ?>
                         <li>
-                            <a href="<?php echo base_url()?>/doctorslist">Doctors List</a>
+                            <a href="<?php echo base_url() ?>/doctorslist">Doctors List</a>
                         </li>
                         <!-- <li>
                             <a href="#">Page 3</a>
                         </li> -->
                     </ul>
                 </li>
-                <?php ;endif?>
+                <?php ;
+            endif ?>
 
 
 
                 <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)||($userrole==4)):
-                     
-                    ?>
+            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3) || ($userrole == 4)) :
+
+            ?>
 
 
                 <li>
@@ -154,27 +158,29 @@
                     <ul class="collapse list-unstyled" id="nurseSubmenu">
 
                         <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
+                        if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+
+                        ?>
 
                         <li>
-                            <a href="<?= base_url()?>/addnurse">Add Nurse</a>
+                            <a href="<?= base_url() ?>/addnurse">Add Nurse</a>
                         </li>
-                        <?php ;endif?>
+                        <?php ;
+                        endif ?>
                         <li>
-                            <a href="<?= base_url()?>/nurselist">Nurses List</a>
+                            <a href="<?= base_url() ?>/nurselist">Nurses List</a>
                         </li>
 
                     </ul>
                 </li>
 
-                <?php ;endif?>
+                <?php ;
+            endif ?>
 
                 <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
+            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+
+            ?>
                 <li>
                     <a href="#pharmacySubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -182,21 +188,22 @@
                     </a>
                     <ul class="collapse list-unstyled" id="pharmacySubmenu">
                         <li>
-                            <a href="<?=base_url()?>/addmedicine">Add Medicine</a>
+                            <a href="<?= base_url() ?>/addmedicine">Add Medicine</a>
                         </li>
                         <li>
-                            <a href="<?=base_url()?>/medicinelist">Medicine List</a>
+                            <a href="<?= base_url() ?>/medicinelist">Medicine List</a>
                         </li>
 
                     </ul>
                 </li>
 
 
-                <?php ;endif?>
+                <?php ;
+            endif ?>
                 <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
+            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+
+            ?>
                 <li>
                     <a href="#patientSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -204,14 +211,15 @@
                     </a>
                     <ul class="collapse list-unstyled" id="patientSubmenu">
                         <li>
-                            <a href="<?=base_url()?>/addpatient">Add Patient</a>
+                            <a href="<?= base_url() ?>/addpatient">Add Patient</a>
                         </li>
                         <li>
-                            <a href="<?=base_url()?>/patientlist">Patient List</a>
+                            <a href="<?= base_url() ?>/patientlist">Patient List</a>
                         </li>
                     </ul>
                 </li>
-                <?php ;endif?>
+                <?php ;
+            endif ?>
                 <li>
                     <a href="#appointmentSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -219,22 +227,23 @@
                     </a>
                     <ul class="collapse list-unstyled" id="appointmentSubmenu">
                         <li>
-                            <a href="<?=base_url()?>/addappointment">Add Appointment</a>
+                            <a href="<?= base_url() ?>/addappointment">Add Appointment</a>
                         </li>
                         <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
+                    if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+
                     ?>
                         <li>
-                            <a href="<?=base_url()?>/appointments"> Appointment List</a>
+                            <a href="<?= base_url() ?>/appointments"> Appointment List</a>
                         </li>
-                        <?php ; endif?>
+                        <?php  ;
+                    endif ?>
                     </ul>
                 </li>
                 <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
+            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+
+            ?>
                 <li>
                     <a href="#employeeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-solid fa-user"></i>
@@ -242,19 +251,20 @@
                     </a>
                     <ul class="collapse list-unstyled" id="employeeSubmenu">
                         <li>
-                            <a href="<?=base_url()?>/adduser">Add Employee</a>
+                            <a href="<?= base_url() ?>/adduser">Add Employee</a>
                         </li>
                         <li>
-                            <a href="<?=base_url()?>/employeelist">Employee List</a>
+                            <a href="<?= base_url() ?>/employeelist">Employee List</a>
                         </li>
                     </ul>
                 </li>
-                <?php ; endif?>
+                <?php ;
+            endif ?>
 
                 <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
+            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+
+            ?>
 
                 <li>
                     <a href="#prescriptionSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -263,25 +273,26 @@
                     </a>
                     <ul class="collapse list-unstyled" id="prescriptionSubmenu">
                         <li>
-                            <a href="<?=base_url()?>/addcasestudy">Add Patient Case Study</a>
+                            <a href="<?= base_url() ?>/addcasestudy">Add Patient Case Study</a>
                         </li>
                         <li>
-                            <a href="<?=base_url()?>/casestudylist">Patient Case Study list</a>
+                            <a href="<?= base_url() ?>/casestudylist">Patient Case Study list</a>
                         </li>
                         <li>
-                            <a href="<?=base_url()?>/addprescription">Add Prescription</a>
+                            <a href="<?= base_url() ?>/addprescription">Add Prescription</a>
                         </li>
                         <li>
-                            <a href=" <?=base_url()?>/prescriptionlist">Prescription List</a>
+                            <a href=" <?= base_url() ?>/prescriptionlist">Prescription List</a>
                         </li>
                     </ul>
                 </li>
-                <?php ; endif?>
+                <?php ;
+            endif ?>
 
                 <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
+            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+
+            ?>
                 <li>
                     <a href="#bedSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -289,10 +300,10 @@
                     </a>
                     <ul class="collapse list-unstyled" id="bedSubmenu">
                         <li>
-                            <a href="<?=base_url()?>/addbed">Add Bed</a>
+                            <a href="<?= base_url() ?>/addbed">Add Bed</a>
                         </li>
                         <li>
-                            <a href="<?=base_url()?>/bedlist">Bed List</a>
+                            <a href="<?= base_url() ?>/bedlist">Bed List</a>
                         </li>
                         <li>
                             <a href="assignbed">Bed Assign</a>
@@ -302,12 +313,14 @@
                         </li>
 
                     </ul>
-                </li> <?php ; endif?>
+                </li>
+                <?php ;
+            endif ?>
 
                 <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
+            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+
+            ?>
                 <li>
                     <a href="#billSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -340,12 +353,13 @@
                         </li>
                     </ul>
                 </li>
-                <?php ; endif?>
+                <?php ;
+            endif ?>
 
                 <?php
-                    if (($userrole==1)||($userrole==2)||($userrole==3)):
-                     
-                    ?>
+            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+
+            ?>
                 <li>
                     <a href="#AMSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
@@ -374,7 +388,9 @@
                             <a href="#">Account Report</a>
                         </li>
                     </ul>
-                </li> <?php ; endif?>
+                </li>
+                <?php ;
+            endif ?>
 
 
                 <li>
@@ -385,13 +401,13 @@
                     </a>
                     <ul class="collapse list-unstyled" id="MessageSubmenu">
                         <li>
-                            <a href="#">New Message</a>
+                            <a href="<?=base_url()?>/newmessage">Send Message</a>
                         </li>
                         <li>
-                            <a href="#">Inbox</a>
+                            <a href="<?=base_url()?>/inbox">Inbox</a>
                         </li>
                         <li>
-                            <a href="#">Sent</a>
+                            <a href="<?=base_url()?>/sent">Sent</a>
                         </li>
                     </ul>
                 </li>
@@ -427,7 +443,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="<?=base_url()?>/logout">logout</a>
+                                <a class="nav-link" href="<?= base_url() ?>/logout">logout</a>
                             </li>
                             <!-- <li class="nav-item">
                                 <a class="nav-link" href="#">Page</a>

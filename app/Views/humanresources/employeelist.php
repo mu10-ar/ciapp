@@ -3,6 +3,14 @@
     <h2>Employees List </h2>
 </div>
 <div class="container">
+
+<?php
+$session=session();
+            if ($session->getFlashdata('success')) {
+                echo  $session->getFlashdata('success');
+               
+            }
+            ?>
     <table id="myTable" class="table table-striped">
         <thead>
             <tr>

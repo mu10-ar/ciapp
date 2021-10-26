@@ -8,127 +8,117 @@ use App\models\UserModel;
 class User extends BaseController
 {
 
-     
+
     public function index()
     {
-        $session=session();
+        $session = session();
         if (!$session->get('logged_in')) {
-            return redirect()->to(base_url().'/login');
-             
+            return redirect()->to(base_url() . '/login');
         }
-        
-          echo view('partials/sidebar');
-         echo view('doctor/dashboard');
-         echo view('partials/footer');
-      
-       
-       
-      
+
+        echo view('partials/sidebar');
+        echo view('doctor/dashboard');
+        echo view('partials/footer');
     }
 
 
 
-       public function adduser()
+    public function adduser()
     {
-         $data=[];
-        $session=session();
-        $session=session();
+        $data = [];
+        $session = session();
+        $session = session();
         if (!$session->get('logged_in')) {
-           return redirect()->to(base_url().'/login');
-             
+            return redirect()->to(base_url() . '/login');
         }
-        
+        if ($session->get('user_role') == 4) {
+            return redirect()->to(base_url() . '/login');
+        }
+
         helper('form');
-        if ($this->request->getMethod()=='post') {
-            $users=new UserModel();
-            
-
-        $input=$this->validate([
-               'firstname'=> 'required',
-               'lastname'=> 'required',
-                'email'=> 'required|valid_email|is_unique[users.email]',
-                'password'=> 'required|min_length[10]',
-                'user_role'=> 'required'
-               
-
-           ]);
+        if ($this->request->getMethod() == 'post') {
+            $users = new UserModel();
 
 
-           
-           
-           if ($input==true) {
-               
-               $users->save([
-                'firstname'=> $this->request->getPost('firstname'),
-                'lastname' => $this->request->getPost('lastname'),
-                'email' => $this->request->getPost('email'),
-                'password' => $this->request->getPost('password'),
-                'address' => $this->request->getPost('address'),
-                'specialist' => $this->request->getPost('specialist'),
-                'mobile_no' => $this->request->getPost('mobile_no'),
-                'sex' => $this->request->getPost('sex'),
-                'designation' => $this->request->getPost('designation'),
-                'department_name' => $this->request->getPost('department_name'),
-                'birthday' => $this->request->getPost('birthday'),
-                'blood_group' => $this->request->getPost('blood_group'),
-                'user_role'=>  $this->request->getPost('user_role')
-                
+            $input = $this->validate([
+                'firstname' => 'required',
+                'lastname' => 'required',
+                'email' => 'required|valid_email|is_unique[users.email]',
+                'password' => 'required|min_length[10]',
+                'user_role' => 'required'
+
+
             ]);
-             $success =true;
-              return  redirect()->to('employeelist');
-           }
-           else {
-                  $data['validation']=$this->validator;
-           }
+
+
+
+
+            if ($input == true) {
+
+                $users->save([
+                    'firstname' => $this->request->getPost('firstname'),
+                    'lastname' => $this->request->getPost('lastname'),
+                    'email' => $this->request->getPost('email'),
+                    'password' => $this->request->getPost('password'),
+                    'address' => $this->request->getPost('address'),
+                    'specialist' => $this->request->getPost('specialist'),
+                    'mobile_no' => $this->request->getPost('mobile_no'),
+                    'sex' => $this->request->getPost('sex'),
+                    'designation' => $this->request->getPost('designation'),
+                    'department_name' => $this->request->getPost('department_name'),
+                    'birthday' => $this->request->getPost('birthday'),
+                    'blood_group' => $this->request->getPost('blood_group'),
+                    'user_role' =>  $this->request->getPost('user_role')
+
+                ]);
+                $session->setFlashdata('Success','User Added Successfullu');
+                return  redirect()->to('employeelist');
+            } else {
+                $data['validation'] = $this->validator;
+            }
         }
 
-            
-        $department= new DepartmentModel();
-        $data['department']=$department->getDepartmentRecord();
-        
-          echo view('partials/sidebar',$data);
-         echo view('humanresources/addemployee');
-         echo view('partials/footer');
-      
-       
-       
-      
-    }
-         public function employeelist()
-        { $session=session();
-        if (!$session->get('logged_in')) {
-           return redirect()->to(base_url().'/login');
-             
-        }
-        
-        $users=new UserModel();
-         $data['users']=$users->getAlluser();
-         
-         echo view('partials/sidebar',$data);
-         echo view('humanresources/employeelist');
-         echo view('partials/footer');
-      
-       
-       
-      
-    }
 
-        public function deleteemployee($id)
+        $department = new DepartmentModel();
+        $data['department'] = $department->getDepartmentRecord();
+
+        echo view('partials/sidebar', $data);
+        echo view('humanresources/addemployee');
+        echo view('partials/footer');
+    }
+    public function employeelist()
     {
-         $session=session();
+        $session = session();
         if (!$session->get('logged_in')) {
-           return redirect()->to(base_url().'/login');
-             
+            return redirect()->to(base_url() . '/login');
         }
-       
 
-        $users=new UserModel();
-        $data['checking']=$users->getUserRecord($id);
+        $users = new UserModel();
+        $data['users'] = $users->getAlluser();
+
+        echo view('partials/sidebar', $data);
+        echo view('humanresources/employeelist');
+        echo view('partials/footer');
+    }
+
+    public function deleteemployee($id)
+    {
+        $session = session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url() . '/login');
+        }
+        if ($session->get('user_role') == 4) {
+            return redirect()->to(base_url() . '/login');
+        }
+
+
+        $users = new UserModel();
+        $data['checking'] = $users->getUserRecord($id);
         $users->deleteUser($id);
-        
 
 
-        
+
+
         return redirect()->to(base_url('employeelist'));
     }
 
@@ -136,69 +126,77 @@ class User extends BaseController
 
     public function updateEmployee($id)
     {
-       $session=session();
+        $session = session();
         if (!$session->get('logged_in')) {
-           return redirect()->to(base_url().'/login');
-             
+            return redirect()->to(base_url() . '/login');
         }
-                $data=[];
-                helper('form');
-                $model= new UserModel ();
-                $user=$model->getRow($id);
-                $data['user']=$user;
-               
+        if ($session->get('user_role') == 4) {
+            return redirect()->to(base_url() . '/login');
+        }
+        $data = [];
+        helper('form');
+        $model = new UserModel();
+        $user = $model->getRow($id);
+        $data['user'] = $user;
 
-        if( $this->request->getMethod()=='post'){
-               $input=$this->validate([
-               'firstname'=> 'required',
-               'lastname'=> 'required',
-               'email'=> 'required|valid_email',
-                
 
-               ]);
+        if ($this->request->getMethod() == 'post') {
+            $input = $this->validate([
+                'firstname' => 'required',
+                'lastname' => 'required',
+                'email' => 'required|valid_email',
 
-               
-           
-        
-             
-           if ($input==true) {
-               
-                    $model= new UserModel();
-                    $model->update($id,[
-                         'firstname'=> $this->request->getPost('firstname'),
-                'lastname' => $this->request->getPost('lastname'),
-                'email' => $this->request->getPost('email'),
-                'password' => $this->request->getPost('password'),
-                'address' => $this->request->getPost('address'),
-                'specialist' => $this->request->getPost('specialist'),
-                'mobile_no' => $this->request->getPost('mobile_no'),
-                'sex' => $this->request->getPost('sex'),
-                'designation' => $this->request->getPost('designation'),
-                'department_name' => $this->request->getPost('department_name'),
-                'birthday' => $this->request->getPost('birthday'),
-                'blood_group' => $this->request->getPost('blood_group'),
-                'user_role'=>  $this->request->getPost('user_role')
-                    ]);
-                    $userrole=$this->request->getVar('user_role');
-                    // $session->setFlashdata('success','winner winner chicken dinner , record updated');
+
+            ]);
+
+
+
+
+
+            if ($input == true) {
+
+                $model = new UserModel();
+                $model->update($id, [
+                    'firstname' => $this->request->getPost('firstname'),
+                    'lastname' => $this->request->getPost('lastname'),
+                    'email' => $this->request->getPost('email'),
+                    'password' => $this->request->getPost('password'),
+                    'address' => $this->request->getPost('address'),
+                    'specialist' => $this->request->getPost('specialist'),
+                    'mobile_no' => $this->request->getPost('mobile_no'),
+                    'sex' => $this->request->getPost('sex'),
+                    'designation' => $this->request->getPost('designation'),
+                    'department_name' => $this->request->getPost('department_name'),
+                    'birthday' => $this->request->getPost('birthday'),
+                    'blood_group' => $this->request->getPost('blood_group'),
+                    'user_role' =>  $this->request->getPost('user_role')
+                ]);
+                $userrole = $this->request->getVar('user_role');
+                // $session->setFlashdata('success','winner winner chicken dinner , record updated');
                 //    if ($userrole==3) {
-                       return  redirect()->to(base_url('employeelist'));
+                return  redirect()->to(base_url('employeelist'));
                 //    }
-                    
-                    
-               
-           }
-           else {
-                         $data['validation']=$this->validator;
-                    }
+
+
+
+            } else {
+                $data['validation'] = $this->validator;
+            }
         }
-        
-        $department=new DepartmentModel();
-        $data['department']=$department->getDepartmentRecord();
+
+        $department = new DepartmentModel();
+        $data['department'] = $department->getDepartmentRecord();
 
 
-        echo view('partials/sidebar',$data);
-         echo view('humanresources/updateemployee');
-         echo view('partials/footer');
+        echo view('partials/sidebar', $data);
+        echo view('humanresources/updateemployee');
+        echo view('partials/footer');
+    }
+
+    public function norecord()
+    {
+        echo view('partials/sidebar');
+        echo view('errors/norecord');
+        echo view('partials/footer');
     }
 }

@@ -59,6 +59,10 @@ class UserModel extends Model{
         return $this->where('id',$id)->first();
     }
 
+    public function getAllUserRecord(){
+        return $this->orderBy('id','DESC')->findAll();
+    }
+
    
     
 }

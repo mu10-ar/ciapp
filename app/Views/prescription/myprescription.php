@@ -16,7 +16,7 @@
                             <th scope="col">Diagnosis Instructions</th>
                             <th scope="col">Visiting Fees</th>
                             <th scope="col"> Patient Notes</th>
-                            <th scope="col">Action</th>
+                            
                         </tr>
                            
                             
@@ -41,10 +41,7 @@
                             <td><?=$prescription['diagnosis_instruction']?></td>
                             <td><?=$prescription['visiting_fee']?></td>
                             <td><?=$prescription['patient_notes']?></td>
-                            <td>
-                        <a href="deleteprescription/<?=$prescription['prescription_id']?>" class="btn btn-danger">delete</a>
-
-                            </td>
+                           
                         </tr>
                         <?php $id++;
                              endforeach;
