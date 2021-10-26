@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2021 at 12:02 PM
+-- Generation Time: Oct 25, 2021 at 07:38 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -29,19 +29,42 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `appointments` (
   `appointment_id` int(99) NOT NULL,
-  `id` int(99) NOT NULL,
-  `doctor_name` varchar(255) NOT NULL,
+  `patient_id` int(99) NOT NULL,
   `appointment_date` datetime NOT NULL,
   `problem` varchar(255) NOT NULL,
-  `department_name` varchar(255) NOT NULL
+  `department_name` varchar(255) NOT NULL,
+  `status` int(1) NOT NULL,
+  `doctor_id` int(99) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `appointments`
 --
 
-INSERT INTO `appointments` (`appointment_id`, `id`, `doctor_name`, `appointment_date`, `problem`, `department_name`) VALUES
-(3, 49, 'doctor1', '2021-10-13 13:53:00', 'problem', 'Psychiatry.');
+INSERT INTO `appointments` (`appointment_id`, `patient_id`, `appointment_date`, `problem`, `department_name`, `status`, `doctor_id`) VALUES
+(15, 49, '2021-10-18 02:19:00', 'problem', 'Psychiatry.', 1, 47),
+(17, 49, '2021-10-13 02:20:00', 'mudassar', 'Orthopaedics', 1, 52);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `beds`
+--
+
+CREATE TABLE `beds` (
+  `bed_id` int(99) NOT NULL,
+  `department_id` int(11) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `status` int(99) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `beds`
+--
+
+INSERT INTO `beds` (`bed_id`, `department_id`, `description`, `status`) VALUES
+(1, 12, NULL, 1),
+(2, 11, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -156,7 +179,9 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `addres
 (47, 'doctor', '1', 'doctor1@doctor.com', 'doctor12345', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'arthopedist', 2147483647, 'male', 'senior doctor', 'Orthopaedics', NULL, '2021-10-13', 'ab-', 2, NULL, '2021-10-21'),
 (48, 'nurse ', '1', 'nurse1@nurse.com', 'nurse12345', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 2147483647, 'female', NULL, 'Psychiatry.', NULL, '2021-10-14', 'ab+', 3, NULL, '2021-10-21'),
 (49, 'patient', '1', 'patient1@patient.com', 'patient12345', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 2147483647, 'male', NULL, 'Psychiatry.', NULL, '2021-09-26', 'b-', 4, NULL, '2021-10-21'),
-(50, 'acountant', '1', 'accountant@accountant.com', 'accountant12345', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'none', 2147483647, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-13', 'b+', 5, NULL, '2021-10-21');
+(50, 'acountant', '1', 'accountant@accountant.com', 'accountant12345', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'none', 2147483647, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-13', 'b+', 5, NULL, '2021-10-21'),
+(52, 'mudassar', 'hussain', 'adil@adil.com', 'ad987iladil', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', '', 2147483647, 'male', '', 'Psychiatry.', NULL, '2021-10-22', 'b+', 2, NULL, '2021-10-23'),
+(54, 'dsg', 'dfsdgf', 'admin@admin.comssss', 'adminadminsssssss', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'none', 312, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-13', 'ab+', 2, NULL, '2021-10-25');
 
 --
 -- Indexes for dumped tables
@@ -167,7 +192,15 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `addres
 --
 ALTER TABLE `appointments`
   ADD PRIMARY KEY (`appointment_id`),
-  ADD KEY `appointments_ibfk_1` (`id`);
+  ADD KEY `appointments_ibfk_1` (`patient_id`),
+  ADD KEY `appointments_ibfk_2` (`doctor_id`);
+
+--
+-- Indexes for table `beds`
+--
+ALTER TABLE `beds`
+  ADD PRIMARY KEY (`bed_id`),
+  ADD KEY `department_id` (`department_id`);
 
 --
 -- Indexes for table `case_study`
@@ -202,7 +235,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `appointment_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `appointment_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `beds`
+--
+ALTER TABLE `beds`
+  MODIFY `bed_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `case_study`
@@ -226,7 +265,7 @@ ALTER TABLE `medicine`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- Constraints for dumped tables
@@ -236,7 +275,14 @@ ALTER TABLE `users`
 -- Constraints for table `appointments`
 --
 ALTER TABLE `appointments`
-  ADD CONSTRAINT `appointments_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `appointments_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `appointments_ibfk_2` FOREIGN KEY (`doctor_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `beds`
+--
+ALTER TABLE `beds`
+  ADD CONSTRAINT `beds_ibfk_1` FOREIGN KEY (`department_id`) REFERENCES `departments` (`department_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `case_study`
