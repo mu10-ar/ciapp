@@ -54,6 +54,14 @@ class UserModel extends Model{
     {
        return $this->where('email',$email)->where('password',$password)->where('user_role',$userrole)->first();
     }
+    public function getuserid($id)      
+    {
+        return $this->where('id',$id)->first();
+    }
+
+    public function getAllUserRecord(){
+        return $this->orderBy('id','DESC')->findAll();
+    }
 
    
     

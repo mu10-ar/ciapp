@@ -33,7 +33,11 @@ class CaseStudyModel extends Model{
     }
   
 
+    public function  mycasestudy($id){
+        return $this->join('users','id=patient_id')->where('patient_id',$id)->first();
+    }
 
+   
 
    
     

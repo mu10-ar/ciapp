@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use App\Controllers\Prescription;
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -28,54 +30,84 @@ $routes->setAutoRoute(true);
  * Route Definitions
  * --------------------------------------------------------------------
  */
+#home routes 
 
-// route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');
 $routes->add('/auth', 'Login::index');
 $routes->add('/logout', 'Login::logout');
+
+
+
+
+
+// User Routes
 $routes->add('/createuser', 'doctor::index');
+$routes->add('/norecord', 'user::norecord');
 $routes->add('/addnurse', 'nurse::addnurse');
 $routes->add('/nurselist', 'nurse::nurselist');
-$routes->add('/department', 'departmentController::index');
-$routes->add('/createdepartment', 'departmentController::createDepartment');
 $routes->add('/doctorslist', 'doctor::doctorslist');
-// $routes->add('/message/(:num)', 'doctor::message/$1');
 $routes->add('/delete/(:num)', 'doctor::deleteuser/$1');
 $routes->add('/update/(:num)', 'doctor::updateuser/$1');
 $routes->add('/profile/(:num)', 'doctor::userprofile/$1');
-$routes->add('/editdepartment/(:num)', 'departmentController::updatedepartment/$1');
-$routes->add('/deletedepartment/(:num)', 'departmentController::deletedepartment/$1');
+$routes->add('/updatepatient/(:num)', 'patient::updatepatient/$1');
+$routes->add('/deletepatient/(:num)', 'patient::deletepatient/$1');
+$routes->add('/adduser', 'user::adduser');
+$routes->add('/employeelist', 'user::employeelist');
+$routes->add('/addpatient', 'patient::addpatient');
+$routes->add('/patientlist', 'patient::patientlist');
+$routes->add('/updateemployee/(:num)', 'user::updateemployee/$1');
+$routes->add('/deleteemployee/(:num)', 'user::deleteemployee/$1');
+
+// Appointment Routes
+$routes->add('/approve/(:num)/(:num)', 'appointment::approve/$1/$2');
+$routes->add('/decline/(:num)', 'appointment::decline/$1');
+$routes->add('/addappointment', 'appointment::addappointment');
+$routes->add('/appointments', 'appointment::appointments');
+
+// Medicine Routes
 $routes->add('/editmedicine/(:num)', 'medicinecontroller::editmedicine/$1');
 $routes->add('/deletemedicine/(:num)', 'medicinecontroller::deletemedicine/$1');
 $routes->add('/viewmedicine/(:num)', 'medicinecontroller::viewmedicine/$1');
-$routes->add('/updatepatient/(:num)', 'patient::updatepatient/$1');
-$routes->add('/deletepatient/(:num)', 'patient::deletepatient/$1');
-$routes->add('/approve/(:num)', 'appointment::approve/$1');
-$routes->add('/decline/(:num)', 'appointment::decline/$1');
+$routes->add('/addmedicine', 'medicinecontroller::addmedicine');
+$routes->add('/medicinelist', 'medicinecontroller::medicinelist');
+
+// Department Routes
+$routes->add('/department', 'departmentController::index');
+$routes->add('/createdepartment', 'departmentController::createDepartment');
+$routes->add('/editdepartment/(:num)', 'departmentController::updatedepartment/$1');
+$routes->add('/deletedepartment/(:num)', 'departmentController::deletedepartment/$1');
+
+// Case Study Routes 
 $routes->add('/editcasestudy/(:num)', 'prescription::editcasestudy/$1');
 $routes->add('/deletecasestudy/(:num)', 'prescription::deletecasestudy/$1');
 $routes->add('/viewcasestudy/(:num)', 'prescription::casestudyinfo/$1');
-$routes->add('/updateemployee/(:num)', 'user::updateemployee/$1');
-$routes->add('/deleteemployee/(:num)', 'user::deleteemployee/$1');
-$routes->add('/addpatient', 'patient::addpatient');
-$routes->add('/patientlist', 'patient::patientlist');
-$routes->add('/adduser', 'user::adduser');
-$routes->add('/employeelist', 'user::employeelist');
-$routes->add('/nurselist', 'nurse::nurselist');
-$routes->add('/addappointment', 'appointment::addappointment');
-$routes->add('/appointments', 'appointment::appointments');
-$routes->add('/addmedicine', 'medicinecontroller::addmedicine');
-$routes->add('/medicinelist', 'medicinecontroller::medicinelist');
+$routes->add('/mycasestudy/(:num)', 'prescription::mycasestudy/$1');
 $routes->add('/addcasestudy', 'prescription::addcasestudy');
 $routes->add('/casestudylist', 'prescription::casestudylist');
-$routes->add('/addprescription', 'prescription::addprescription');
+
+
+// Bed Roautes
 $routes->add('/addbed', 'BedController::addbed');
 $routes->add('/bedlist', 'bedcontroller::bedlist');
 $routes->add('/assignbed', 'bedcontroller::assignbed');
 $routes->add('/assignedbed', 'bedcontroller::assignedbed');
 
+// Message Routes 
+$routes->add('/inbox', 'messages::inbox');
+$routes->add('/sent', 'messages::sent');
+$routes->add('/newmessage', 'messages::newmessage');
+$routes->add('/deletemessage/(:num)', 'messages::delete/$1');
 
+
+// Prescription Routes 
+$routes->add('/addprescription', 'prescription::addprescription');
+$routes->add('/prescriptionlist', 'prescription::prescriptionlist');
+$routes->add('/deleteprescription/(:num)', 'prescription::delete/$1');
+$routes->add('/myprescription/(:num)', 'prescription::myprescription/$1');
+
+//  Notification Routes 
+$routes->add('/deletenotification/(:num)', 'notifications::deletenotification/$1');
+$routes->add('/notifications', 'notifications::notifications');
 
 
 /*

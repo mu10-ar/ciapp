@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\models\CaseStudyModel;
+use App\models\NotificationModel;
+use App\models\PrescriptionModel;
 use App\models\UserModel;
 
 class Prescription extends BaseController
@@ -25,7 +27,13 @@ class Prescription extends BaseController
             
 
         $input=$this->validate([
-               'patient_id'=> 'required|is_unique[case_study.patient_id]'
+            'patient_id'=> [
+                'rules'=>'required|is_unique[case_study.patient_id]',
+                'errors'=>[ 
+                    'required'=>'please select the patient',
+                    'is_unique'=>'case study for this user already exists'
+                    
+                ]]
                
                
 
@@ -59,6 +67,13 @@ class Prescription extends BaseController
                 
                 
             ]);
+            $patient=$this->request->getPost('patient_id');
+
+            $notification = new NotificationModel();
+                $notification->save([
+                    'message' => 'A case study has Benn Addes to your Profile <a class="text-primary" href="mycasestudy/'.$patient.'"> click to view</a>',
+                    'user_id' => $this->request->getPost('patient_id')
+                ]);
              $success =true;
               return  redirect()->to('casestudylist');
            }
@@ -86,7 +101,15 @@ class Prescription extends BaseController
     }
 
     public function caseStudylist()
-    {$data=[];
+    {
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
+        
+        
+        $data=[];
          $casestudy= new CaseStudyModel();
          $data['casestudy']=$casestudy->getCaseStudy();
          
@@ -99,7 +122,11 @@ class Prescription extends BaseController
     }
 
     public function editcasestudy($id)
-    {
+    { $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
         $casestudy= new CaseStudyModel();
         $data['casestudy']=$casestudy->getCaseStudySingle($id);
 
@@ -164,10 +191,14 @@ class Prescription extends BaseController
 
     public function deletecasestudy($id)
 
-    {
+    { $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
      $casestudy=new CaseStudyModel();
      $casestudy->delete($id);
-     return redirect()->to(base_url().'/scasestudylist');}
+     return redirect()->to(base_url().'/casestudylist');}
 
 
 
@@ -181,6 +212,11 @@ class Prescription extends BaseController
 
      public function casestudyinfo($id)
      {
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
          
         $data=[];
         $casestudy= new CaseStudyModel();
@@ -203,16 +239,127 @@ class Prescription extends BaseController
 
       public function addprescription()
      {
-         
+        $session=session();
+        if (!$session->get('logged_in')) {
+           return redirect()->to(base_url().'/login');
+             
+        }
+                $data=[];
+                helper('form');
+        if( $this->request->getMethod()=='post'){
+               $input=$this->validate([
+                'patient_id'=> [
+                   'rules'=>'required',
+                   'errors'=>[ 
+                       'required'=>'Please choose the Patient'
+                      
+                   ]],
+        'blood_pressure'=> [
+                   'rules'=>'required',
+                   'errors'=>[ 
+                       'required'=>'please enter patient`s Blood Pressure'
+                       
+                 ]],
+        'date'=> [
+                   'rules'=>'required',
+                   'errors'=>[ 
+                       'required'=>'please provide date',
+                      
+ 
+
+                
+
+        ]]]);
+
+               
+           
         
-        
-      
+             
+           if ($input==true) {
+               
+                    $model= new PrescriptionModel();
+                    $model->save([
+                         'patient_id'=> $this->request->getPost('patient_id'),
+                'blood_pressure' => $this->request->getPost('blood_pressure'),
+                'weight' => $this->request->getPost('weight'),
+                'date' => $this->request->getPost('date'),
+                'medicine' => $this->request->getPost('medicine'),
+                'medicine_days' => $this->request->getPost('medicine_days'),
+                'diagnosis' => $this->request->getPost('diagnosis'),
+                'diagnosis_instruction' => $this->request->getPost('diagnosis_instruction'),
+                'visiting_fee' => $this->request->getPost('visiting_fee'),
+                'patient_notes' => $this->request->getPost('patient_notes'),
+                
+                    ]);
 
-
-
-       
-         echo view('partials/sidebar',);
+                    redirect()->to(base_url()."/addprescription");
+                    
+                 
+                    
+                    
+               
+           }
+           else {
+                         $data['validation']=$this->validator;
+                    }
+        }      
+        $patient= new UserModel();
+        $data['patient']=$patient->getpatientRecord();
+         echo view('partials/sidebar',$data);
          echo view('prescription/addprescription');
          echo view('partials/footer');
+     }
+
+
+
+     public function prescriptionlist()
+     {
+         $data=[];
+         $prescrption= new PrescriptionModel();
+         $data['prescription']=$prescrption->getAllPrescription();
+         
+
+
+        echo view('partials/sidebar',$data);
+        echo view('prescription/prescriptionlist');
+        echo view('partials/footer');
+     }
+
+     public function delete($id)
+     {
+         $prescription= new PrescriptionModel();
+         $prescription->delete($id);
+         return redirect()->to(base_url()."/prescriptionlist");
+     }
+
+     public function myprescription($id)
+     {
+        $data=[];
+        $prescrption= new PrescriptionModel();
+        $data['prescription']=$prescrption->getSinglePrescription($id);
+        if ($data['prescription']==null) {
+            return redirect()->to(base_url()."/norecord");
+        }
+    
+
+
+       echo view('partials/sidebar',$data);
+       echo view('prescription/myprescription');
+       echo view('partials/footer'); 
+     }
+
+     public function mycasestudy($id)
+     {
+         $casestudy = new CaseStudyModel();
+         $data['casestudy']= $casestudy->mycasestudy($id);
+         if ($data['casestudy']==null) {
+            return redirect()->to(base_url()."/norecord");
+        }
+        
+         echo view('partials/sidebar',$data);
+         echo view('prescription/casestudyinfo');
+         echo view('partials/footer');
+
+
      }
 }
