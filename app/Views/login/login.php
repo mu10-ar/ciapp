@@ -106,7 +106,7 @@ a {
 
 }
 .tt{
-    text-shadow: 2px 2px 8px #00C49A;
+    text-shadow: 2px 2px 16px #00C49A;
     color: #007bff;
 }
 </style>
