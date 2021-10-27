@@ -41,18 +41,7 @@
                                     placeholder="Service Description">
                             </div>
 
-                            <div class="form-group ml-1">
-                                <label for="rate">Rate</label>
-                                <input type="text" class="form-control"
-                                    name="rate" id="rate"
-                                    placeholder="Rate">
-                            </div>
-                            <div class="form-group ml-1">
-                                <label for="quantity">Quantity</label>
-                                <input type="text" class="form-control"
-                                    name="quantity" id="quantity"
-                                    placeholder="Quantity">
-                            </div>
+                         
                             <div class="form-group ml-1">
                                 <label for="price">Price</label>
                                 <input type="text" class="form-control"
@@ -61,24 +50,9 @@
                             </div>
                         </div>
                         </div>
-                        <div class="container">
-                        <div class="form-group col-md-4 ">
-                            <label for="total">Total</label>
-                            <input type="number" class="form-control" id="total"
-                                placeholder="$0000">
-                        </div>
-                        <div class="form-group col-md-4     ">
-                            <label for="amountpaid">Paid</label>
-                            <input type="number" class="form-control" name="paid" id="paid"
-                                placeholder="$0000">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="due">Due</label>
-                            <input type="number" class="form-control" id="due"
-                                placeholder="$0000">
-                        </div>
+                        <button type="submit" name="button" class="btn btn-primary p-2  ">Add Bill</button>
                     </div>
-                    <button type="submit" name="button" class="btn btn-primary btn-sm float-right m-1">AddBill</button>
+                   
                     </form>
                 </div>
             </div>
