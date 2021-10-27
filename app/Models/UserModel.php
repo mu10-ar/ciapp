@@ -18,6 +18,7 @@ class UserModel extends Model{
         'blood_group',
         'user_role',
         'specialist',
+        'bill',
         'department_name'
 
     ];
@@ -30,6 +31,12 @@ class UserModel extends Model{
     }
      public function getpatientRecord(){
         return $this->where('user_role',4)->findall();
+    }
+     public function getBillRecord(){
+        return $this->where('user_role',4)->where('bill',1)->findall();
+    }
+     public function getPaidBillRecord(){
+        return $this->where('user_role',4)->where('bill',2  )->findall();
     }
      public function getUserRecord($id){
         return $this->where('user_role',$id)->findall();

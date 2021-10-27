@@ -24,12 +24,7 @@
                     <td><?=$patient['firstname'].' '.$patient['lastname']?></td>
                   
                     <td>
-                    <a href="<?=base_url()?>/viewbill/<?=$patient['id']?>" class="btn btn-primary"> view Bill</a>
-                    <a href="<?=base_url()?>/markaspaid/<?=$patient['id']?>" class="btn btn-primary"> mark as paid</a>
-
-
-
-
+                    <a href="<?=base_url()?>/viewpaidbill/<?=$patient['id']?>" class="btn btn-primary"> view Bill</a>
                     </td>
                 </tr>
                 <?php $id++; endforeach ?>

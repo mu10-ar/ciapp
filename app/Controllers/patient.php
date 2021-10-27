@@ -61,21 +61,6 @@ class Patient extends BaseController
                       
 
                    ]],
-        'specialist'=> [
-                   'rules'=>'alpha_numeric_space',
-                   'errors'=>[ 
-                       'alpha_numeric_space'=>"please insert your specialization"
-                   ]],
-        'career_title'=> [
-                   'rules'=>'alpha_numeric_space',
-                   'errors'=>[ 
-                       'alpha_numeric_space'=>"please insert career title"
-                   ]],
-        'designation'=> [
-                   'rules'=>'alpha_numeric_space',
-                   'errors'=>[ 
-                       'alpha_numeric_space'=>"please insert your designation"
-                   ]],
         'sex'=> [
                    'rules'=>'required',
                    'errors'=>[ 

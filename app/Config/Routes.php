@@ -112,7 +112,11 @@ $routes->add('/notifications', 'notifications::notifications');
 
 //  Billing routes
 $routes->add('/addbill', 'BillingController::addbill');
-// $routes->add('/notifications', 'notifications::notifications');
+$routes->add('/billlist', 'BillingController::billlist');
+$routes->add('/viewbill/(:num)', 'BillingController::viewbill/$1');
+$routes->add('/markaspaid/(:num)', 'BillingController::markaspaid/$1');
+$routes->add('/viewpaidbill/(:num)', 'BillingController::viewpaidbill/$1');
+$routes->add('/paidbill', 'BillingController::paidbill');
 
 
 
