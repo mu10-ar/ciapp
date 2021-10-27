@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2021 at 07:38 AM
+-- Generation Time: Oct 26, 2021 at 09:17 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -43,7 +43,14 @@ CREATE TABLE `appointments` (
 
 INSERT INTO `appointments` (`appointment_id`, `patient_id`, `appointment_date`, `problem`, `department_name`, `status`, `doctor_id`) VALUES
 (15, 49, '2021-10-18 02:19:00', 'problem', 'Psychiatry.', 1, 47),
-(17, 49, '2021-10-13 02:20:00', 'mudassar', 'Orthopaedics', 1, 52);
+(17, 49, '2021-10-13 02:20:00', 'mudassar', 'Orthopaedics', 1, 52),
+(18, 49, '2021-10-18 22:58:00', 'mudassar', 'medical', 1, 47),
+(19, 49, '2021-10-25 23:58:00', 'doctor 1', 'Psychiatry.', 1, 47),
+(20, 49, '2021-09-27 01:57:00', 'doctor 1', 'Psychiatry.', 0, 52),
+(21, 49, '2021-10-01 12:03:00', 'doctor 1', 'Orthopaedics', 1, 47),
+(22, 49, '2021-10-01 12:03:00', 'doctor 1', 'Orthopaedics', 1, 47),
+(24, 49, '2021-10-14 12:10:00', 'doctor 1', 'Psychiatry.', 1, 47),
+(25, 49, '2021-09-28 12:08:00', 'new problem', 'Orthopaedics', 0, 52);
 
 -- --------------------------------------------------------
 
@@ -97,7 +104,7 @@ CREATE TABLE `case_study` (
 --
 
 INSERT INTO `case_study` (`case_study_id`, `patient_id`, `food_allergies`, `tendency_bleed`, `heart_disease`, `high_bp`, `diabetic`, `surgery`, `accident`, `others`, `family_medical_history`, `current_medication`, `pragnency`, `breast_feeding`, `health_insurance`, `low_income`, `reference`) VALUES
-(15, 49, 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', NULL, 'yes', 'yes', 'yes', 'yes');
+(16, 49, 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', NULL, 'yes', 'yes', 'yes', 'yes');
 
 -- --------------------------------------------------------
 
@@ -147,6 +154,78 @@ INSERT INTO `medicine` (`medicine_id`, `medicine_name`, `medicine_category`, `me
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `message_id` int(99) NOT NULL,
+  `sender_id` int(99) NOT NULL,
+  `reciever_id` int(99) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `sent_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`message_id`, `sender_id`, `reciever_id`, `subject`, `message`, `sent_at`) VALUES
+(5, 13, 52, 'ff', 'mudassar', '2021-10-25 15:44:40'),
+(8, 13, 52, 'Admission date query', 'message', '2021-10-25 16:12:50'),
+(12, 49, 52, 'Admission date query', 'message', '2021-10-26 11:57:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notifications`
+--
+
+CREATE TABLE `notifications` (
+  `notification_id` int(99) NOT NULL,
+  `user_id` int(99) NOT NULL,
+  `message` varchar(355) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `notifications`
+--
+
+INSERT INTO `notifications` (`notification_id`, `user_id`, `message`) VALUES
+(1, 47, 'you have an appointment to approve <a class=\"text-primary\" href=\"appointments\"> click to view</a>'),
+(2, 52, 'you have an appointment to approve <a class=\"text-primary\" href=\"appointments\"> click to view</a>'),
+(8, 49, 'A case study has Benn Addes to your Profile <a class=\"text-primary\" href=\"mycasestudy/49\"> click to view</a>');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prescriptions`
+--
+
+CREATE TABLE `prescriptions` (
+  `prescription_id` int(99) NOT NULL,
+  `patient_id` int(99) NOT NULL,
+  `blood_pressure` varchar(255) NOT NULL,
+  `weight` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `medicine` varchar(255) NOT NULL,
+  `medicine_days` varchar(255) NOT NULL,
+  `diagnosis` varchar(255) NOT NULL,
+  `diagnosis_instruction` varchar(255) NOT NULL,
+  `visiting_fee` int(99) NOT NULL,
+  `patient_notes` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `prescriptions`
+--
+
+INSERT INTO `prescriptions` (`prescription_id`, `patient_id`, `blood_pressure`, `weight`, `date`, `medicine`, `medicine_days`, `diagnosis`, `diagnosis_instruction`, `visiting_fee`, `patient_notes`) VALUES
+(2, 49, '122', '2', '2021-09-29', 'meds', '', 'meds', '32', 987, '8');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -181,7 +260,11 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `addres
 (49, 'patient', '1', 'patient1@patient.com', 'patient12345', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 2147483647, 'male', NULL, 'Psychiatry.', NULL, '2021-09-26', 'b-', 4, NULL, '2021-10-21'),
 (50, 'acountant', '1', 'accountant@accountant.com', 'accountant12345', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'none', 2147483647, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-13', 'b+', 5, NULL, '2021-10-21'),
 (52, 'mudassar', 'hussain', 'adil@adil.com', 'ad987iladil', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', '', 2147483647, 'male', '', 'Psychiatry.', NULL, '2021-10-22', 'b+', 2, NULL, '2021-10-23'),
-(54, 'dsg', 'dfsdgf', 'admin@admin.comssss', 'adminadminsssssss', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'none', 312, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-13', 'ab+', 2, NULL, '2021-10-25');
+(54, 'dsg', 'dfsdgf', 'admin@admin.comssss', 'adminadminsssssss', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'none', 312, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-13', 'ab+', 2, NULL, '2021-10-25'),
+(55, 'dsg', 'dfsdgf', 'admsain@admsain.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'sasa', 312, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-13', 'ab+', 7, NULL, '2021-10-25'),
+(56, 'dsg', 'dfsdgf', 'aadmin@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'dsd', 312, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-21', 'ab+', 7, NULL, '2021-10-25'),
+(57, 'dsg', 'dfsdgf', 'adaamin@admin.com', 'adminadminaaa', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'dsd', 312, 'male', 'senior doctor', 'Orthopaedics', NULL, '2021-10-08', 'ab+', 6, NULL, '2021-10-25'),
+(58, 'dsg', 'dfsdgf', 'admin@qadmin.com', 'adminadminqq', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'none', 312, 'male', 'senior doctor', 'Orthopaedics', NULL, '2021-10-22', 'ab+', 5, NULL, '2021-10-25');
 
 --
 -- Indexes for dumped tables
@@ -222,6 +305,28 @@ ALTER TABLE `medicine`
   ADD PRIMARY KEY (`medicine_id`);
 
 --
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`message_id`),
+  ADD KEY `reciever_id` (`reciever_id`),
+  ADD KEY `sender_id` (`sender_id`);
+
+--
+-- Indexes for table `notifications`
+--
+ALTER TABLE `notifications`
+  ADD PRIMARY KEY (`notification_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `prescriptions`
+--
+ALTER TABLE `prescriptions`
+  ADD PRIMARY KEY (`prescription_id`),
+  ADD KEY `patient_id` (`patient_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -235,7 +340,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `appointment_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `appointment_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `beds`
@@ -247,7 +352,7 @@ ALTER TABLE `beds`
 -- AUTO_INCREMENT for table `case_study`
 --
 ALTER TABLE `case_study`
-  MODIFY `case_study_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `case_study_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `departments`
@@ -262,10 +367,28 @@ ALTER TABLE `medicine`
   MODIFY `medicine_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `message_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `notifications`
+--
+ALTER TABLE `notifications`
+  MODIFY `notification_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `prescriptions`
+--
+ALTER TABLE `prescriptions`
+  MODIFY `prescription_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- Constraints for dumped tables
@@ -289,6 +412,25 @@ ALTER TABLE `beds`
 --
 ALTER TABLE `case_study`
   ADD CONSTRAINT `case_study_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `messages`
+--
+ALTER TABLE `messages`
+  ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`reciever_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `messages_ibfk_2` FOREIGN KEY (`sender_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `notifications`
+--
+ALTER TABLE `notifications`
+  ADD CONSTRAINT `notifications_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `prescriptions`
+--
+ALTER TABLE `prescriptions`
+  ADD CONSTRAINT `prescriptions_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
