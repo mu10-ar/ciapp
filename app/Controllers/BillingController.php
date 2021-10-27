@@ -32,7 +32,7 @@ class BillingController extends BaseController
      
           
         if ($input==true) {
-            
+                $patient=new UserModel();
                  $bill= new BillingModel();
                  $bill->save([
                       'status'=> $this->request->getPost('status'),
@@ -42,6 +42,11 @@ class BillingController extends BaseController
                       'services_description'=> $this->request->getPost('services_description'),
                       'patient_id'=> $this->request->getPost('patient_id'),
                       'date'=> $this->request->getPost('date'),
+                 ]);
+
+                 $id = $this->request->getVar('patient_id');
+                 $patient->update($id,[
+                    'bill'=>'1'
                  ]);
 
                  return redirect()->to(base_url().'/billlist');
@@ -64,5 +69,67 @@ class BillingController extends BaseController
         echo view("partials/sidebar",$data);
         echo view("billing/addbill");
         echo view("partials/footer");
+    }
+
+
+
+    public function Billlist()
+    {
+        $data=[];
+        $patient=new UserModel();
+        $data['patient']=$patient->getBillRecord();
+        echo view("partials/sidebar",$data);
+        echo view("billing/billlist");
+        echo view("partials/footer");
+    }
+
+
+    public function paidbill()
+    {
+        $data=[];
+        $patient=new UserModel();
+        $data['patient']=$patient->getPaidBillRecord();
+        echo view("partials/sidebar",$data);
+        echo view("billing/paidbill");
+        echo view("partials/footer");
+    }
+
+
+
+
+
+    public function viewbill($id)
+    {
+        $data=[];
+        $bill= new BillingModel();
+        $data['bill']=$bill->billview($id);
+        echo view("partials/sidebar",$data);
+        echo view("billing/billview");
+        echo view("partials/footer");
+    }
+    public function viewpaidbill($id)
+    {
+        $data=[];
+        $bill= new BillingModel();
+        $data['bill']=$bill->paidbillview($id);
+        echo view("partials/sidebar",$data);
+        echo view("billing/billview");
+        echo view("partials/footer");
+    }
+
+
+
+
+
+    public function markaspaid($id)
+    {
+        $bill= new BillingModel();
+        $patient= new UserModel();
+
+        $bill->whereIn('patient_id',[$id])->set(['status' => 1])->update();
+        $patient->whereIn('id',[$id])->set(['bill' => 2])->update();
+        return redirect()->to(base_url()."/billlist");
+
+      
     }
 }

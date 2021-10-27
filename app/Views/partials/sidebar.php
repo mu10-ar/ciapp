@@ -346,10 +346,13 @@
                             <a href="#">Patient Admission List</a> -->
                         <!-- </li> -->
                         <li>
-                            <a href="addbill">Add Bill</a>
+                            <a href="<?=base_url()?>/addbill">Add Bill</a>
                         </li>
                         <li>
-                            <a href="billlist">Bill List</a>
+                            <a href="<?=base_url()?>/billlist">Bill List</a>
+                        </li>
+                        <li>
+                            <a href="<?=base_url()?>/paidbill">paid bill</a>
                         </li>
                     </ul>
                 </li>
