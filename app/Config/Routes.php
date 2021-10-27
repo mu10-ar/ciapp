@@ -110,6 +110,14 @@ $routes->add('/myprescription/(:num)', 'prescription::myprescription/$1');
 $routes->add('/deletenotification/(:num)', 'notifications::deletenotification/$1');
 $routes->add('/notifications', 'notifications::notifications');
 
+//  Billing routes
+$routes->add('/addbill', 'BillingController::addbill');
+// $routes->add('/notifications', 'notifications::notifications');
+
+
+
+
+
 
 /*
  * --------------------------------------------------------------------
