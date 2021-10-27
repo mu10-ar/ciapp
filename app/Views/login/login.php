@@ -105,15 +105,20 @@ a {
     margin-top: 20px;
 
 }
+.tt{
+    text-shadow: 2px 2px 8px #00C49A;
+    color: #007bff;
+}
 </style>
 
 <body>
     <div class="container  center">
         <form class="col-md-3 center" action="<?=base_url()?>/auth" method="post">
 
-            <h1 class="h">Login Here!</h1>
+            <!-- <h1 class="h">Login Here!</h1> -->
             <div class="imgcontainer">
-                <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                <img src="<?=base_url()?>/assets/pngegg.png" alt="Avatar" class="avatar">
+                <h5 class="tt">Arkham Asylum</h5>
             </div>
 
             <div class="container">
