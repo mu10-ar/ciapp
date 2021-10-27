@@ -327,7 +327,7 @@
                         Billing
                     </a>
                     <ul class="collapse list-unstyled" id="billSubmenu">
-                        <li>
+                        <!-- <li>
                             <a href="#">Add Service</a>
                         </li>
                         <li>
@@ -343,8 +343,8 @@
                             <a href="#">Add Patient Admission</a>
                         </li>
                         <li>
-                            <a href="#">Patient Admission List</a>
-                        </li>
+                            <a href="#">Patient Admission List</a> -->
+                        <!-- </li> -->
                         <li>
                             <a href="#">Add Bill</a>
                         </li>
@@ -360,7 +360,7 @@
             if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
 
             ?>
-                <li>
+                <!-- <li>
                     <a href="#AMSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
                         Account Manager
@@ -388,7 +388,7 @@
                             <a href="#">Account Report</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <?php ;
             endif ?>
 

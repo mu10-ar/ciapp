@@ -91,6 +91,7 @@ $routes->add('/addbed', 'BedController::addbed');
 $routes->add('/bedlist', 'bedcontroller::bedlist');
 $routes->add('/assignbed', 'bedcontroller::assignbed');
 $routes->add('/assignedbed', 'bedcontroller::assignedbed');
+$routes->add('/discharge/(:num)', 'bedcontroller::discharge/$1');
 
 // Message Routes 
 $routes->add('/inbox', 'messages::inbox');
