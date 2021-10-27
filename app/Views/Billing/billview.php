@@ -4,6 +4,19 @@
         <h1 style="text-align: center; margin:  4px;">Bills Here!</h1>
 
     </div>
+    <script>
+        function printDiv() {
+            var divContents = document.getElementById("bill").innerHTML;
+            var a = window.open('', '', 'height=500, width=500');
+            a.document.write('<html>');
+            a.document.write('<body > <h1>Div contents are <br>');
+            a.document.write(divContents);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
+        }
+    </script>
+    <div id="bill">
     <div class="container">
         <table class="table">
             <thead>
@@ -48,7 +61,10 @@
 
             </tbody>
         </table>
+       
+
+        </div>
         <h3 >grand total: <?=$total?></h3>
-        <a class="btn btn-primary" href="<?=base_url()?>/printbill/<?=$bill['patient_id']?>">printbill</a>
+        <a onclick="printDiv()" class="btn btn-primary" href="#">printbill</a>
     </div>
 </div>

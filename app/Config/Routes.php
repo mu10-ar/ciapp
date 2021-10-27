@@ -116,6 +116,7 @@ $routes->add('/billlist', 'BillingController::billlist');
 $routes->add('/viewbill/(:num)', 'BillingController::viewbill/$1');
 $routes->add('/markaspaid/(:num)', 'BillingController::markaspaid/$1');
 $routes->add('/viewpaidbill/(:num)', 'BillingController::viewpaidbill/$1');
+$routes->add('/printbill/(:num)', 'BillingController::printbill/$1');
 $routes->add('/paidbill', 'BillingController::paidbill');
 
 
