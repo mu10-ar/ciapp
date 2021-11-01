@@ -17,7 +17,7 @@ class Appointment extends BaseController
         $data = [];
         $session = session();
 
-        if ((!$session->get('logged_in')) || ($session->get('user_role' == 4))) {
+        if (!$session->get('logged_in')) {
             return redirect()->to(base_url() . '/login');
         }
 
