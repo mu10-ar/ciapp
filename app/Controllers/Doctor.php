@@ -182,7 +182,9 @@ class Doctor extends BaseController
 
         $users = new UserModel();
         $data['checking'] = $users->getUserRecord($id);
+
         $users->deleteUser($id);
+        $session->setFlashdata('success', ' REcord deleted successfully');
     }
 
 
@@ -286,7 +288,7 @@ class Doctor extends BaseController
 
 
 
-
+            $session->setFlashdata('success', ' Updated Record successfully');
             if ($input == true) {
 
                 $model = new UserModel();

@@ -9,6 +9,8 @@ class Patient extends BaseController
 
        public function addpatient()
     {
+        $session = \Config\Services::session();
+        $data['session'] = $session;
       
         $data=[];
         $session=session();
@@ -106,7 +108,7 @@ class Patient extends BaseController
                 'user_role'=>  $this->request->getPost('user_role')
                 
             ]);
-             $success =true;
+            $session->setFlashdata('success', '  Patient Added Successfully');
               return  redirect()->to('patientlist');
            }
            else {
@@ -233,6 +235,7 @@ class Patient extends BaseController
                    
                     // $session->setFlashdata('success','winner winner chicken dinner , record updated');
                 //    if ($userrole==3) {
+                    $session->setFlashdata('success', '  Patient Updated Successfully');
                        return  redirect()->to(base_url('patientlist'));
                 //    }
                     
@@ -269,7 +272,7 @@ class Patient extends BaseController
         
 
 
-        
+        $session->setFlashdata('success', '  Patient Deleted  Successfully');
         return redirect()->to(base_url('patientlist'));
     }
 
