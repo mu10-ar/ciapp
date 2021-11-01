@@ -18,8 +18,6 @@
                         
                         foreach ($department as $department) {?>
 
-
-
                 <option value="<?=$department['department_id']?>"><?=$department['department_name']?>
                 </option>
                 <?php ;}?>
