@@ -57,10 +57,7 @@ class UserModel extends Model{
     public function deleteUser($id){
         return $this->delete($id);
     }
-    public function auth($email,$password,$userrole)
-    {
-       return $this->where('email',$email)->where('password',$password)->where('user_role',$userrole)->first();
-    }
+   
     public function getuserid($id)      
     {
         return $this->where('id',$id)->first();

@@ -129,6 +129,11 @@ class Appointment extends BaseController
 
     public function decline($id)
     {
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
         $appointment = new AppointmentModel();
         $appointment->delete($id);
         return redirect()->to(base_url('/appointments'));

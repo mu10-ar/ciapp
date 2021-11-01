@@ -160,7 +160,6 @@ class User extends BaseController
                     'firstname' => $this->request->getPost('firstname'),
                     'lastname' => $this->request->getPost('lastname'),
                     'email' => $this->request->getPost('email'),
-                    'password' => $this->request->getPost('password'),
                     'address' => $this->request->getPost('address'),
                     'specialist' => $this->request->getPost('specialist'),
                     'mobile_no' => $this->request->getPost('mobile_no'),

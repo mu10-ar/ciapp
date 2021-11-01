@@ -23,6 +23,12 @@ class Notifications extends BaseController
     }
     public function deletenotification($id)
     {
+
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
         $notification = new NotificationModel();
         $notification->delete($id);
         return redirect()->to(base_url('notifications'));

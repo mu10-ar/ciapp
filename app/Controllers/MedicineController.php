@@ -149,6 +149,11 @@ class MedicineController extends BaseController
 
     public function deletemedicine($id)
     {
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
         $medicine=new MedicineModel();
          $data['medicine']=$medicine->getRow($id);
          $medicine->delete($id);
@@ -158,6 +163,11 @@ class MedicineController extends BaseController
 
     public function viewmedicine($id)
     {
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
         $medicine=new MedicineModel();
          $data['medicine']=$medicine->getRow($id);
         
