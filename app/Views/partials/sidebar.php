@@ -289,6 +289,27 @@
                 <?php ;
             endif ?>
 
+
+              <?php   if ($userrole == 4) :
+
+?>
+
+    <li>
+        <a href="#prescriptionSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-home"></i>
+            Prescription
+        </a>
+        <ul class="collapse list-unstyled" id="prescriptionSubmenu">
+            <li>
+                <a href="<?= base_url() ?>/myprescription/<?=$session->get('user_id')?>">My Prescription</a>
+            </li>
+          
+            </li>
+        </ul>
+    </li>
+                    <?php 
+                endif ?>
+
                 <?php
             if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
 

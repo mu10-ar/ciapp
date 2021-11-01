@@ -103,6 +103,7 @@ $routes->add('/deletemessage/(:num)', 'messages::delete/$1');
 // Prescription Routes 
 $routes->add('/addprescription', 'prescription::addprescription');
 $routes->add('/prescriptionlist', 'prescription::prescriptionlist');
+
 $routes->add('/deleteprescription/(:num)', 'prescription::delete/$1');
 $routes->add('/myprescription/(:num)', 'prescription::myprescription/$1');
 
