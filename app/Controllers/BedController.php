@@ -17,6 +17,11 @@ class BedController extends BaseController
     public function addbed()
                 {
                     $data=[];
+                    $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
 
 
 
@@ -69,7 +74,11 @@ class BedController extends BaseController
 
     public function bedlist()
     {
-
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
         $data=[];
         $bed= new bedModel();
         // $data['bed']= $bed->getAvailableBeds();
@@ -162,7 +171,12 @@ class BedController extends BaseController
 
 
     public function assignedbed()
-    {
+    {   
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
         $data=[];
         $bed= new AssignBedmodel();
         $data['bed']=$bed->getAssignedBed();
@@ -174,6 +188,11 @@ class BedController extends BaseController
     
     public function discharge($id)
     {
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
           $bed = new AssignBedmodel();
           $bed->where('assigned_bed',$id)->delete();
           $updatebed= new bedModel();

@@ -88,6 +88,12 @@ class Messages extends BaseController
 
 public function delete($id)
 {
+
+    $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
    $message= new MessageModel();
    $message->delete($id);
    return redirect()->to(base_url().

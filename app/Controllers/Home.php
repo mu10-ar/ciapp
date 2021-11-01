@@ -10,8 +10,7 @@ class Home extends BaseController
      
     public function index()
     {
-        $session=session();
-    $session->destroy();
+     
         $session=session();
         if (!$session->get('logged_in')) {
             return redirect()->to(base_url().'/login');
@@ -29,9 +28,11 @@ class Home extends BaseController
 
     public function login()
     {
+        
         $session=session();
 
         $user= new LoginModel();
+        $session->logged_in=false;
         $data=[];
         $data['password_error']=false;
         $data['email_error']=false;
@@ -43,22 +44,17 @@ class Home extends BaseController
             $data['email_error']=$user->CheckPassword( $email);
             $data['user_role_error']=$user->CheckPassword( $userrole);
 
-            if ( $data['password_error']) {
+            if ( !$data['password_error']) {
                 
-                $data['password_error']=false;
-            }
-            else {
                 $data['password_error']=true;
             }
+          
 
-
-            if ( $data['email_error']) {
+            if (!$data['email_error']) {
                 
-                $data['email_error']=false;
-            }
-            else {
                 $data['email_error']=true;
             }
+            
 
          
 
@@ -86,6 +82,7 @@ class Home extends BaseController
 
 
          echo view('login/login',$data);
+         
        
     }
    

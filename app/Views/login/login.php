@@ -124,28 +124,19 @@ a {
             <div class="container">
                 <label for="uname"><b>email</b></label>
                 <input type="text" placeholder="Enter Username" name="email" required>
-                <?php
-                if ($email_error==true):
-                ?>
-                <span style="color:red">Your email is Incorrect</span>
-
-                <?php
-                endif
-                ?>
-                <br>
+               
 
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="password" required>
                 <?php
                 if ($password_error==true):
                 ?>
-                <span style="color:red">Your Password is Incorrect</span>
+                <span style="color:red">Your Email, Password or Role is Incorrect</span>
 
                 <?php
                 endif
                 ?>
                 <br>
-
                 <label for="contorl"><b>Role</b></label>
                 <!-- <div class="container"> -->
                 <select id="inputemployee" name="user_role" class="form-control">

@@ -15,7 +15,13 @@ use CodeIgniter\Database\Query;
 
 class BillingController extends BaseController
 {
-    public function addbill(){ $data=[];
+    public function addbill(){ 
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
+        $data=[];
 
 
 
@@ -75,6 +81,11 @@ class BillingController extends BaseController
 
     public function Billlist()
     {
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
         $data=[];
         $patient=new UserModel();
         $data['patient']=$patient->getBillRecord();
@@ -86,6 +97,12 @@ class BillingController extends BaseController
 
     public function paidbill()
     {
+
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
         $data=[];
         $patient=new UserModel();
         $data['patient']=$patient->getPaidBillRecord();
@@ -100,6 +117,12 @@ class BillingController extends BaseController
 
     public function viewbill($id)
     {
+
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
         $data=[];
         $bill= new BillingModel();
         $data['bill']=$bill->billview($id);
@@ -109,6 +132,12 @@ class BillingController extends BaseController
     }
     public function viewpaidbill($id)
     {
+
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
         $data=[];
         $bill= new BillingModel();
         $data['bill']=$bill->paidbillview($id);
@@ -123,6 +152,11 @@ class BillingController extends BaseController
 
     public function markaspaid($id)
     {
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
         $bill= new BillingModel();
         $patient= new UserModel();
 
