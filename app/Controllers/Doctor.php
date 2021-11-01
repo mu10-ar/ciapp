@@ -180,10 +180,6 @@ class Doctor extends BaseController
         $data['checking']=$users->getUserRecord($id);
         $users->deleteUser($id);
         
-
-
-        
-        return redirect()->to(base_url('/doctorslist'));
             
 
     }
