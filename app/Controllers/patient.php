@@ -170,20 +170,10 @@ class Patient extends BaseController
                        'alpha_space'=>'name can contain only letters'
                  ]],
         'email'=> [
-                   'rules'=>'required|valid_email|is_unique[users.email]',
+                   'rules'=>'required|valid_email',
                    'errors'=>[ 
                        'required'=>'please provide your email',
-                       'valid_email'=>'Please enter a valid Email',
-                       'is_unique'=>'This Email is Already Registered'
-
-                   ]],
-        'password'=> [
-                   'rules'=>'required|min_length[10]',
-                   'errors'=>[ 
-                       'required'=>'Create an Passwrod',
-                       'min_length'=>'Your Password is too Shot'
-                      
-
+                       'valid_email'=>'Please enter a valid Email'                      
                    ]],
         'address'=> [
                    'rules'=>'required|max_length[255]|alpha_numeric_space',
@@ -193,21 +183,6 @@ class Patient extends BaseController
                        'alpha_numeric_space'=>"Address Can't Contain Special Characters`"
                       
 
-                   ]],
-        'specialist'=> [
-                   'rules'=>'alpha_numeric_space',
-                   'errors'=>[ 
-                       'alpha_numeric_space'=>"please insert your specialization"
-                   ]],
-        'career_title'=> [
-                   'rules'=>'alpha_numeric_space',
-                   'errors'=>[ 
-                       'alpha_numeric_space'=>"please insert career title"
-                   ]],
-        'designation'=> [
-                   'rules'=>'alpha_numeric_space',
-                   'errors'=>[ 
-                       'alpha_numeric_space'=>"please insert your designation"
                    ]],
         'sex'=> [
                    'rules'=>'required',

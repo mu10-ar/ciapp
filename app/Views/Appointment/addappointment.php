@@ -89,7 +89,7 @@
                 <input type="datetime-local" class="form-control" id="appointmentdate" name="appointment_date">
                 <span class="red">
                     <?php 
-                                if (isset($validation)&& $validation->hasError('appintment_date')) {
+                                if (isset($validation)&& $validation->hasError('appointment_date')) {
 
                                     echo $validation->getError('appointment_date');
                                 }?>
@@ -112,10 +112,10 @@
             </div>
             <input type="hidden" name="status" value="0">
 
-            <?php if($session->get('user_role')==4):?>
-            <input type="hidden" name="patient_id" value="<?= $session->get('user_id')?>">
-
-            <?php ; endif ?>
+            
+            <input type="hidden" name="patient_id" value=" <?= $session->get('user_id')?>">
+        
+        
 
 
 

@@ -15,6 +15,7 @@ class Appointment extends BaseController
     {
 
         $data = [];
+        
         $session = session();
 
         if (!$session->get('logged_in')) {
@@ -73,7 +74,7 @@ class Appointment extends BaseController
 
 
 
-
+   
 
         echo view('partials/sidebar', $data);
         echo view('appointment/addappointment');

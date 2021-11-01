@@ -15,7 +15,9 @@
          </thead>
          <tbody>
              <?php
-             $session= session();
+           
+
+             
             
             $id=1;
             foreach($appointment as $appointment){?>
@@ -37,6 +39,6 @@
              </tr>
              <?php $id++;}?>
          </tbody>
-         <?=$session->get('user_id')?>
+        
      </table>
  </div>
