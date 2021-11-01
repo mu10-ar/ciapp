@@ -5,7 +5,7 @@
         <form action="" method="post">
 
             <div class="form-group ">
-                <label for="inputemployee">User Role</label>
+                <label for="inputemployee">User Role<i class="text-danger">*</i></label>
                 <select id="inputemployee" name="user_role" class="form-control">
                     <option selected>Choose...</option>
                     <option value="5">Accountant</option>
@@ -16,7 +16,7 @@
                 </select>
                 <div class="form-row">
                     <div class="col">
-                        <label for="Firstname">First Name</label>
+                        <label for="Firstname">First Name<i class="text-danger">*</i></label>
                         <input type="text" name="firstname" class="form-control"
                             value="<?php echo $user['firstname']; ?>">
                         <span class="red">
@@ -31,7 +31,7 @@
 
                     </div>
                     <div class="col">
-                        <label for="Firstname">Last Name</label>
+                        <label for="Firstname">Last Name<i class="text-danger">*</i></label>
                         <input type="text" name="lastname" value="<?php echo $user['lastname']; ?>" class="form-control"
                             placeholder="Last name">
                         <span class="red">
@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
+                        <label for="inputEmail4">Email<i class="text-danger">*</i></label>
                         <input type="email" value="<?php echo $user['email']; ?>" class="form-control" id="inputEmail4"
                             name="email" placeholder="Email">
                         <span class="red">
@@ -59,7 +59,7 @@
 
                 </div>
                 <div class="form-group">
-                    <label for="inputAddress">Address</label>
+                    <label for="inputAddress">Address<i class="text-danger">*</i></label>
                     <input type="text" class="form-control" id="inputAddress" name="address"
                         value="<?php echo $user['address']; ?>" placeholder="1234 Main St">
                     <span class="red">
@@ -96,7 +96,7 @@
                     </span>
                 </div>
                 <div class="form-group">
-                    <label for="mobile">Enter a mobile number:</label>
+                    <label for="mobile">Enter a mobile number:<i class="text-danger">*</i></label>
                     <input type="mobile" class="form-control" id="mobile" name="mobile_no"
                         value="<?php echo $user['mobile_no']; ?>" placeholder="0300-1234567">
                     <span class="red">
@@ -108,7 +108,7 @@
                     </span>
                 </div>
                 <div class="form-group">
-                    Sex: <br>
+                    Sex:<i class="text-danger">*</i> <br>
                     <input type="radio" checked name="sex" value="male"> Male<br>
                     <input type="radio" name="sex" value="female"> Female<br>
                     <input type="radio" name="sex" value="other"> Other.
@@ -135,7 +135,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="inputdepartment">Department</label>
+                        <label for="inputdepartment">Department<i class="text-danger">*</i></label>
                         <select id="inputdepartment" class="form-control"
                             value="<?php echo $user['department_name']; ?>" name="department_name">
                             <option selected>Choose...</option>
@@ -164,7 +164,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="birthday">Birthday:</label>
+                        <label for="birthday">Birthday:<i class="text-danger">*</i></label>
                         <input type="date" value="<?php echo $user['birthday']; ?> class=" form-control" id="birthday"
                             name="birthday">
                         <span class="red">
@@ -177,7 +177,7 @@
                     </div>
                     <input type="hidden" value="2" name="user_role">
                     <div class="form-group col-md-6">
-                        <label for="inputbloodgroup">BloodGroup</label>
+                        <label for="inputbloodgroup">BloodGroup<i class="text-danger">*</i></label>
                         <select value="<?php echo $user['blood_group']; ?> id=" inputbloodgroup" name="blood_group"
                             class="form-control">
                             <option selected>Choose...</option>

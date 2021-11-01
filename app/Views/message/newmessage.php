@@ -4,7 +4,7 @@
     <form action="" method="post">
         
         <div class="form-group mb-3">
-            <label for="reciever" class="form-labe">Send To</label>
+            <label for="reciever" class="form-labe">Send To<i class="text-danger">*</i></label>
             <select id="reciever" class="form-control" name="reciever_id">
 
             <?php
@@ -26,7 +26,7 @@
                         </span>
         </div>
         <div class="form-group mb-3">
-            <label for="subject" class="form-label"> Subject</label>
+            <label for="subject" class="form-label"> Subject<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
             <span class="red">
                             <?php 
