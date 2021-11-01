@@ -7,7 +7,7 @@
             <div class="mb-3">
         <?php
             $session=session();?>
-                <label for="patientname">Patient Name</label>
+                <label for="patientname">Patient Name<i class="text-danger">*</i></label>
                 <select id="patientname" name="patient_id" class="form-control">
                     
                     <span class="red">
@@ -32,7 +32,7 @@
                 </select>
         </div>
                     <div class="form-group">
-                        <label for="date">Date</label>
+                        <label for="date">Date<i class="text-danger">*</i></label>
                         <input type="date" class="form-control" id="date"
                             placeholder="Date" name="date">
                             <span class="red">
@@ -49,7 +49,7 @@
 
 
                             <div class="form-group ml-4">
-                                <label for="services">Services</label>
+                                <label for="services">Services<i class="text-danger">*</i></label>
                                 <input type="text" class="form-control"
                                     name="services" id="services"
                                     placeholder="Services">
@@ -64,7 +64,7 @@
 
 
                             <div class="form-group ml-1">
-                                <label for="description">Description</label>
+                                <label for="description">Description<i class="text-danger">*</i></label>
                                 <input type="text" class="form-control"
                                     name="services_description" id="description"
                                     placeholder="Service Description">
@@ -79,7 +79,7 @@
 
                          
                             <div class="form-group ml-1">
-                                <label for="price">Price</label>
+                                <label for="price">Price<i class="text-danger">*</i></label>
                                 <input type="number" class="form-control"
                                     name="price" id="price"
                                     placeholder="Price">
@@ -92,7 +92,7 @@
                     </span>
                             </div>
                             <div class="form-group ml-1">
-                                <label for="price">paid</label>
+                                <label for="price">paid<i class="text-danger">*</i></label>
                                 <input type="number" class="form-control"
                                     name="paid" id="price"
                                     placeholder="Price">

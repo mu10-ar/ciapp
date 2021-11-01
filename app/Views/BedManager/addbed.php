@@ -4,7 +4,7 @@
     <form action="" method="post">
 
         <div class="form-group">
-            <label for="inputdepartmentname">Department Name</label>
+            <label for="inputdepartmentname">Department Name<i class="text-danger">*</i></label>
             <select id="inputdepartmentname" name="department_id" class="form-control">
                 <span class="red">
                     <?php 
@@ -29,15 +29,10 @@
 
 
         <div class="mb-3">
-            <label for="description" class="form-label">Description:</label>
+            <label for="description" class="form-label">Description:<i class="text-danger">*</i></label>
             <textarea class="form-control" id="description" rows="3"></textarea>
         </div>
-        <div class="">
-            <label for="status" class="form-label">Status: </label> <br>
-
-            available <input name="status" type="radio" value="1" class="" id="radio-inline"> <br>
-            not available <input name="status" type="radio" class="0" id="radio-inline">
-        </div>
+       
         <button type="submit" class="btn btn-primary">Add</button>
     </form>
 </div>

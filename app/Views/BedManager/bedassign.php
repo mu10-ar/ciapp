@@ -6,7 +6,7 @@
         <div class="mb-3">
         <?php
             $session=session();?>
-                <label for="patientname">Patient Name</label>
+                <label for="patientname">Patient Name<i class="text-danger">*</i></label>
                 <select id="patientname" name="patient_id" class="form-control">
                     
                     <span class="red">
@@ -33,7 +33,7 @@
         <div class="mb-3">
         <?php
             $session=session();?>
-                <label for="patientname">Bed No</label>
+                <label for="patientname">Bed No<i class="text-danger">*</i></label>
                 <select id="patientname" name="assigned_bed" class="form-control">
                     
                     <span class="red">
@@ -62,7 +62,7 @@
         
 
         <div class="mb-3">
-            <label for="description" class="form-label">Description:</label>
+            <label for="description" class="form-label">Description:<i class="text-danger">*</i></label>
             <textarea name="description" class="form-control" id="description" rows="3"></textarea>
         </div>
      

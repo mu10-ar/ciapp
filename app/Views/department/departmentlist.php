@@ -1,6 +1,27 @@
 <h1 style="text-align: center; margin-bottom:  6px;"> Department List</h1>
 <div class="container">
-    <table id="myTable" class="table table-striped">
+<div class="col-md-12">
+       <?php
+       if(!empty($session->getFlashdata('success'))){
+           ?>
+           <div class="alert alert-success">
+               <?php echo $session->getFlashdata('success') ?>
+           </div>
+           <?php
+       }
+       if(!empty($session->getFlashdata('error'))){
+           ?>
+           <div class="alert alert-danger">
+               <?php echo $session->getFlashdata('error') ?>
+           </div>
+           
+           <?php
+           
+
+       }   
+       ?>  
+        </div>    
+<table id="myTable" class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">#</th>

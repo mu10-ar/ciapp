@@ -7,7 +7,7 @@
         <div class="form-row">
             <div class="col-md-4">
             <div class="form-group">
-            <label for="patient_id">Patient Name</label>
+            <label for="patient_id">Patient Name<i class="text-danger">*</i></label>
             <select id="patientname" name="patient_id" class="form-control">
                 <option selected>Choose...</option>
 
