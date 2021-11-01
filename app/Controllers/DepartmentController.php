@@ -88,6 +88,7 @@ class DepartmentController extends BaseController
                 'department_description' => $this->request->getPost('department_description'),
                 
             ]);
+            $session->setFlashdata('success', '  Department Updated Successfully');
              $success =true;
               return  redirect()->to('department');
            }
