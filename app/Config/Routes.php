@@ -33,7 +33,7 @@ $routes->setAutoRoute(true);
 #home routes 
 
 $routes->get('/login', 'Home::login');
-$routes->add('/auth', 'Login::index');
+$routes->add('/auth', 'home::login');
 $routes->add('/logout', 'Login::logout');
 
 
