@@ -9,6 +9,9 @@ class DepartmentController extends BaseController
 
        public function index()
     {
+      $session = \Config\Services::session();
+      $data['session'] = $session;
+
          $session=session();
         if (!$session->get('logged_in')) {
            return redirect()->to(base_url().'/login');
@@ -47,6 +50,7 @@ class DepartmentController extends BaseController
                 'department_description' => $this->request->getPost('department_description'),
                 
             ]);
+            $session->setFlashdata('success', 'Department Added, Data Saved Successfully');
              $success =true;
               return  redirect()->to('department');
            }
@@ -113,7 +117,7 @@ class DepartmentController extends BaseController
       $department = new DepartmentModel();
       $deleted= $department->delete($id);
       if ($deleted) {
-
+         $session->setFlashdata('success', ' You deleted Department Record successfully');
         return redirect()->to('department');
           # code...
       }

@@ -7,7 +7,7 @@
         <form action="" method="post">
 
             <div class="form-group">
-                <label for="patientname">Patient Name</label>
+                <label for="patientname">Patient Name<i class="text-danger">*</i></label>
                 <select id="patientname" name="id" class="form-control">
                     <option selected>Choose...</option>
                     <span class="red">
@@ -31,7 +31,7 @@
             </div>
 
             <div class="form-group">
-                <label for="inputdepartmentname">Department Name</label>
+                <label for="inputdepartmentname">Department Name<i class="text-danger">*</i></label>
                 <select id="inputdepartmentname" name="department_name" class="form-control">
                     <span class="red">
                         <?php 
@@ -54,7 +54,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="doctorname">Doctor Name</label>
+                <label for="doctorname">Doctor Name<i class="text-danger">*</i></label>
                 <select name="doctor_name" id="doctorname" class="form-control">
                     <span class="red">
                         <?php 
@@ -80,7 +80,7 @@
 
 
             <div class="form-group ">
-                <label for="appointmentdate">Appointment Date:</label>
+                <label for="appointmentdate">Appointment Date:<i class="text-danger">*</i></label>
                 <input type="datetime-local" class="form-control" value="" id="appointmentdate" name="appointment_date">
                 <span class="red">
                     <?php 
@@ -94,7 +94,7 @@
 
             <div class="form-group">
                 <div class="form-group">
-                    <label for="problem">Problem</label>
+                    <label for="problem">Problem<i class="text-danger">*</i></label>
                     <input type="text" name="problem" class="form-control" placeholder="Problems Here!">
                     <span class="red">
                         <?php 

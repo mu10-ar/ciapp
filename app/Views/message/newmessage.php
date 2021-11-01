@@ -38,7 +38,7 @@
         </div>
 
         <div class="form-group mb-3">
-            <label for="message" class="form-label">Message</label>
+            <label for="message" class="form-label">Message<i class="text-danger">*</i></label>
             <textarea class="form-control" id="message" name="message" rows="3"></textarea>
             <span class="red">
                             <?php 

@@ -6,7 +6,7 @@
 
     <form method="post" action="">
         <div class="form-group">
-            <label for="patient_id">Patient ID</label>
+            <label for="patient_id">Patient ID<i class="text-danger">*</i></label>
             <select id="patientname" name="patient_id" class="form-control">
                 <option selected>Choose...</option>
 
@@ -30,69 +30,69 @@
             </span>
         </div>
         <div class="form-group">
-            <label for="food_allergy">Food Allergies</label>
+            <label for="food_allergy">Food Allergies<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="food_allergy" name="food_allergies" placeholder="food_allergy">
 
         </div>
         <div class="form-group">
-            <label for="tendency_bleed">Tendency Bleed</label>
+            <label for="tendency_bleed">Tendency Bleed<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="tendency_bleed" name="tendency_bleed"
                 placeholder="tendency_bleed">
         </div>
         <div class="form-group">
-            <label for="heart_disease">Heart Disease</label>
+            <label for="heart_disease">Heart Disease<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="heart_disease" name="heart_disease" placeholder="heart_disease">
         </div>
         <div class="form-group">
-            <label for="high_bp">High Blood Pressure</label>
+            <label for="high_bp">High Blood Pressure<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="high_bp" name="high_bp" placeholder="high_bp">
         </div>
         <div class="form-group">
-            <label for="diabetic">Diabetic</label>
+            <label for="diabetic">Diabetic<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="diabetic" name="diabetic" placeholder="Diabetic">
         </div>
         <div class="form-group">
-            <label for="surgery">Surgery</label>
+            <label for="surgery">Surgery<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="surgery" name="surgery" placeholder="surgery">
         </div>
         <div class="form-group">
-            <label for="accident">Accident</label>
+            <label for="accident">Accident<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="accident" name="accident" placeholder="Accident">
         </div>
         <div class="form-group">
-            <label for="others">Others</label>
+            <label for="others">Others<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="others" name="others" placeholder="Others">
         </div>
         <div class="form-group">
-            <label for="f_m_h">Family Medical History</label>
+            <label for="f_m_h">Family Medical History<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="f_m_h" name="family_medical_history"
                 placeholder="Family Medical History">
         </div>
         <div class="form-group">
-            <label for="current_medication">Current Medication</label>
+            <label for="current_medication">Current Medication<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="current_medication" name="current_medication"
                 placeholder="current_medication">
         </div>
         <div class="form-group">
-            <label for="female_pragnancy">Pragnancy</label>
+            <label for="female_pragnancy">Pragnancy<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="female_pragnancy" name="pragnancy" placeholder=" Pragnancy">
         </div>
         <div class="form-group">
-            <label for="breast_feeding">Breast Feeding</label>
+            <label for="breast_feeding">Breast Feeding<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="breast_feeding" name="breast_feeding"
                 placeholder="Breast Feeding">
         </div>
         <div class="form-group">
-            <label for="health_insurance">Health Insurance</label>
+            <label for="health_insurance">Health Insurance<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="health_insurance" name="health_insurance"
                 placeholder="Health Insurance">
         </div>
         <div class="form-group">
-            <label for="low_income">Low Income</label>
+            <label for="low_income">Low Income<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="low_income" name="low_income" placeholder="Low Income">
         </div>
         <div class="form-group">
-            <label for="refference">Refference</label>
+            <label for="refference">Refference<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="refference" name="reference" placeholder="reference">
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
