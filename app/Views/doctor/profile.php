@@ -24,8 +24,17 @@
                     <dl class="dl-horizontal">
                         <dt>Email Address</dt>
                         <dd><?=$user['email']?></dd>
+                        <?php if ($user['id']!=4):  ?>
                         <dt>Designation</dt>
+                       
+                 
+            
                         <dd><?=$user['designation']?></dd>
+                        <dt>Specialist</dt>
+                        <dd><?=$user['specialist']?></dd>
+
+
+                        <?php endif ?>
                         <dt>Department</dt>
                         <dd><?=$user['department_name']?></dd>
                         <dt>Address</dt>
@@ -33,14 +42,15 @@
 
                         <dt>Mobile No</dt>
                         <dd><?=$user['mobile_no']?></dd>
-                        <dt>Specialist</dt>
-                        <dd></dd>
+                      
                         <dt>Date of Birth</dt>
                         <dd><?=$user['birthday']?></dd>
                         <dt>Sex</dt>
                         <dd><?=$user['sex']?></dd>
+                        <?php if ($user['id']!=4):  ?>
                         <dt>joined Date</dt>
                         <dd><?=$user['created_at']?></dd>
+                        <?php endif ?>
                        
     
                         <?php
