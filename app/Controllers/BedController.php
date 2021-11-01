@@ -56,7 +56,7 @@ class BedController extends BaseController
                 
             ]);
             $session->setFlashdata('success', '  Bed Added Successfully');
-              return  redirect()->to('bedlists');
+              return  redirect()->to('bedlist');
            }
            else {
                   $data['validation']=$this->validator;

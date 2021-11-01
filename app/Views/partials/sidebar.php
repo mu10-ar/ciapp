@@ -69,6 +69,12 @@
                         Dashboard
                     </a>
                 </li>
+                <li>
+                    <a href="<?= base_url() ?>/profile/<?=$session->get('user_id')?>">
+                        <i class="fas fa-image"></i>
+My Profile
+                    </a>
+                </li>
 
 
                 <li>
@@ -226,9 +232,16 @@
                         Appointment
                     </a>
                     <ul class="collapse list-unstyled" id="appointmentSubmenu">
+
+                    <?php
+                    if ($userrole == 4) :
+
+                    ?>
                         <li>
                             <a href="<?= base_url() ?>/addappointment">Add Appointment</a>
                         </li>
+                        <?php  ;
+                    endif ?>
                         <?php
                     if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
 
