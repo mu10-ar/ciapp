@@ -39,7 +39,7 @@ class Patient extends BaseController
                        'alpha_space'=>'name can contain only letters'
                  ]],
         'email'=> [
-                   'rules'=>'required|valid_email|is_unique[users.email]',
+                   'rules'=>'required|valid_email',
                    'errors'=>[ 
                        'required'=>'please provide your email',
                        'valid_email'=>'Please enter a valid Email',

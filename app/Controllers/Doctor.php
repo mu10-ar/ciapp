@@ -72,19 +72,19 @@ class Doctor extends BaseController
                     ]
                 ],
                 'specialist' => [
-                    'rules' => 'alpha_numeric_space',
+                    'rules' => 'alpha_numeric_space|permit_empty',
                     'errors' => [
                         'alpha_numeric_space' => "please insert your specialization"
                     ]
                 ],
                 'career_title' => [
-                    'rules' => 'alpha_numeric_space',
+                    'rules' => 'alpha_numeric_space|permit_empty',
                     'errors' => [
                         'alpha_numeric_space' => "please insert career title"
                     ]
                 ],
                 'designation' => [
-                    'rules' => 'alpha_numeric_space',
+                    'rules' => 'alpha_numeric_space|permit_empty',
                     'errors' => [
                         'alpha_numeric_space' => "please insert your designation"
                     ]
@@ -244,17 +244,22 @@ class Doctor extends BaseController
                     ]
                 ],
                 'specialist' => [
-                    'rules' => 'alpha_numeric_space',
+                    'rules' => 'alpha_numeric_space|permit_empty',
                     'errors' => [
                         'alpha_numeric_space' => "please insert your specialization"
                     ]
                 ],
                 'career_title' => [
-                    'rules' => 'alpha_numeric_space',
+                    'rules' => 'alpha_numeric_space|permit_empty',
                     'errors' => [
                         'alpha_numeric_space' => "please insert career title"
                     ]
                 ],
+                'designation' => [
+                    'rules' => 'alpha_numeric_space|permit_empty',
+                    'errors' => [
+                        'alpha_numeric_space' => "please insert your designation"
+                    ],
                
                 'sex' => [
                     'rules' => 'required',
@@ -279,11 +284,9 @@ class Doctor extends BaseController
                     'errors' => [
                         'required' => "Please select your blood group"
                     ]
-                ],
+                ]
 
-
-
-            ]);
+            ]]);
 
 
 
