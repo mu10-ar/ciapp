@@ -109,7 +109,7 @@ class Nurse extends BaseController
                 'user_role'=>  $this->request->getPost('user_role')
                 
             ]);
-             $success =true;
+            $session->setFlashdata('success', ' Nurse Added Successfully');
               return  redirect()->to(base_url().'/nurselist');
            }
            else {

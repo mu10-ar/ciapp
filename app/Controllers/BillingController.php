@@ -54,7 +54,7 @@ class BillingController extends BaseController
                  $patient->update($id,[
                     'bill'=>'1'
                  ]);
-
+                 $session->setFlashdata('success', ' Bill Added Successfully');
                  return redirect()->to(base_url().'/billlist');
                                 
         }

@@ -13,10 +13,14 @@ class Appointment extends BaseController
 
     public function addappointment()
     {
+        $session = \Config\Services::session();
+        $data['session'] = $session;
+      
 
         $data = [];
         
         $session = session();
+
 
         if (!$session->get('logged_in')) {
             return redirect()->to(base_url() . '/login');
@@ -57,7 +61,8 @@ class Appointment extends BaseController
                     'message' => 'you have an appointment to approve <a class="text-primary" href="appointments"> click to view</a>',
                     'user_id' => $this->request->getPost('doctor_id')
                 ]);
-                $success = true;
+                
+                $session->setFlashdata('success', 'Appointment Added Successfully');;
                
             } else {
                 $data['validation'] = $this->validator;

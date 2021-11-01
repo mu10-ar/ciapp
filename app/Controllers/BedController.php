@@ -16,6 +16,10 @@ class BedController extends BaseController
 {
     public function addbed()
                 {
+
+                    $session = \Config\Services::session();
+                    $data['session'] = $session;
+                    
                     $data=[];
                     $session=session();
         if (!$session->get('logged_in')) {
@@ -51,7 +55,7 @@ class BedController extends BaseController
                 
                 
             ]);
-             $success =true;
+            $session->setFlashdata('success', '  Bed Added Successfully');
               return  redirect()->to('bedlists');
            }
            else {
@@ -199,6 +203,8 @@ class BedController extends BaseController
           $updatebed->update($id,[
               'status'=>'1'
           ]);
+
+          $session->setFlashdata('success', '  Discharged Successfully');
           return redirect()->to(base_url().'/assignedbed');
     }
 

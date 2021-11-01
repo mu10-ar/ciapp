@@ -89,7 +89,7 @@ class DepartmentController extends BaseController
                 
             ]);
             $session->setFlashdata('success', '  Department Updated Successfully');
-             $success =true;
+            
               return  redirect()->to('department');
            }
            
@@ -118,7 +118,7 @@ class DepartmentController extends BaseController
       $department = new DepartmentModel();
       $deleted= $department->delete($id);
       if ($deleted) {
-         $session->setFlashdata('success', ' You deleted Department Record successfully');
+         $session->setFlashdata('success', 'deleted Record successfully');
         return redirect()->to('department');
           # code...
       }

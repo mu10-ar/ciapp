@@ -1,4 +1,26 @@
-<div style="text-align: center;">
+<div class="container">
+<?php
+       $session=session();
+       if(!empty($session->getFlashdata('success'))){
+           ?>
+           <div class="alert alert-success">
+               <?php echo $session->getFlashdata('success') ?>
+           </div>
+           <?php
+       }
+       if(!empty($session->getFlashdata('error'))){
+           ?>
+           <div class="alert alert-danger">
+               <?php echo $session->getFlashdata('error') ?>
+           </div>
+           
+           <?php
+           
+
+       }   
+       ?>  
+        </div>  
+        <div style="text-align: center;">
     <h2 class="my-4">Add Appointment</h2>
 </div>
 <div class="row">

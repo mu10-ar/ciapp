@@ -1,5 +1,6 @@
  <h1 style="text-align: center; margin:  4px;">Appointment List</h1>
  <div class="container">
+ <div class="col-md-12">
      <table class="table">
          <thead>
              <tr>

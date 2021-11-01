@@ -32,6 +32,7 @@
             <label for="description" class="form-label">Description:<i class="text-danger">*</i></label>
             <textarea class="form-control" id="description" rows="3"></textarea>
         </div>
+        <input type="hidden" value="1" name="status">
        
         <button type="submit" class="btn btn-primary">Add</button>
     </form>
