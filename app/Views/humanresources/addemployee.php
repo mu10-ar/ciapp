@@ -2,7 +2,7 @@
     <h2>Add User </h2>
 </div>
 <div class="row">
-    <!-- Form For Adding Doctor -->
+    <!-- Form For Adding User -->
     <div class="container">
         <form action="" method="post">
 

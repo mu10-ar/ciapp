@@ -1,6 +1,6 @@
-<h1 style="text-align: center; margin:  4px;"> Update Doctor</h1>
+<h1 style="text-align: center; margin:  4px;"> Update User</h1>
 <div class="row">
-    <!-- Form For Adding Doctor -->
+    <!-- Form For Adding User -->
     <div class="container">
         <form action="" method="post">
 
@@ -10,7 +10,8 @@
                     <option selected>Choose...</option>
                     <option value="5">Accountant</option>
                     <option value="6">Bed Manager</option>
-                    <option value="7">Receptionist</option>
+                    <option value="7">pharmacist</option>
+                    <option value="8">lab Technician</option>
 
                 </select>
                 <div class="form-row">

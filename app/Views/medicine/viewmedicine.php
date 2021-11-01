@@ -1,7 +1,5 @@
-<!-- Doctor Information Page -->
-<div style="text-align: center; margin:  4px;">
-    <h2> Medicine View</h2>
-</div>   
+<!-- Medicine Information Page -->
+  
 <div class="col-sm-12" id="PrintMe">
     <div class="panel panel-default thumbnail">
 
@@ -10,14 +8,14 @@
             <div class="row">
 
                 <div class="col-sm-12" align="center">
-                    <h1>medicine information</h1>
+                    <h1>Medicine Information</h1>
                     <br>
                 </div>
 
                 <div class="col-md-3 col-lg-3 " align="center">
                     <img alt="Picture" class="img-thumbnail img-responsive"
                         src="https://image.made-in-china.com/202f0j00bCoUIgqRgFcY/90cc-Square-Plastic-HDPE-Medicine-Food-Products-Packaging-Bottle.jpg">
-                    <h1>medicine name</h1>
+                    <h2>Medicine Name</h2>
                     <h3>
                         <?= $medicine['medicine_name']?>
                     </h3>
@@ -25,9 +23,9 @@
 
                 <div class="col-md-7 col-lg-7 ">
                     <dl class="dl-horizontal">
-                        <dt>medicine category</dt>
+                        <dt>Medicine category</dt>
                         <dd><?=$medicine['medicine_category']?></dd>
-                        <dt>price</dt>
+                        <dt>Price</dt>
                         <dd><?=$medicine['medicine_price']?></dd>
                         <dt>Quantity</dt>
                         <dd><?=$medicine['medicine_stock']?></dd>
