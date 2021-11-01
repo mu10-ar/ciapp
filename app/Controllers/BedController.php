@@ -19,6 +19,7 @@ class BedController extends BaseController
 
                     $session = \Config\Services::session();
                     $data['session'] = $session;
+                    
                     $data=[];
                     $session=session();
         if (!$session->get('logged_in')) {

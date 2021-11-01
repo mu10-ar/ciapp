@@ -10,6 +10,10 @@ class MedicineController extends BaseController
      
     public function addmedicine()
     {
+        
+        $session = \Config\Services::session();
+        $data['session'] = $session;
+
         $session=session();
         if (!$session->get('logged_in')) {
             return redirect()->to(base_url().'/login');
@@ -158,7 +162,7 @@ class MedicineController extends BaseController
         $medicine=new MedicineModel();
          $data['medicine']=$medicine->getRow($id);
          $medicine->delete($id);
-         $session->setFlashdata('success', '  Medicine Record Successfully');
+         $session->setFlashdata('success', '  Medicine Record Deleted Successfully');
          return redirect()->to(base_url()."/medicinelist");  
         
     }

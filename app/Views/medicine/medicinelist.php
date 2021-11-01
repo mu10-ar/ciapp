@@ -2,6 +2,28 @@
 <h1>Medicine List</h1>
 </div>
 <div class="container">
+<div class="col-md-12">
+       <?php
+       $session=session();
+       if(!empty($session->getFlashdata('success'))){
+           ?>
+           <div class="alert alert-success">
+               <?php echo $session->getFlashdata('success') ?>
+           </div>
+           <?php
+       }
+       if(!empty($session->getFlashdata('error'))){
+           ?>
+           <div class="alert alert-danger">
+               <?php echo $session->getFlashdata('error') ?>
+           </div>
+           
+           <?php
+           
+
+       }   
+       ?>  
+        </div>    
      <table class="table">
          <thead>
              <tr>
