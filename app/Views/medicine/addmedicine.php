@@ -25,15 +25,15 @@
           <textarea class="form-control" id="description" rows="3"></textarea>
         </div> -->
         <div class="form-group">
-            <label for="quantity">Quantity</label>
+            <label for="quantity">Quantity<i class="text-danger">*</i></label>
             <input type="number" class="form-control" id="quantity" name="medicine_stock" placeholder="Quantity">
         </div>
         <div class="form-group">
-            <label for="price">Price</label>
+            <label for="price">Price<i class="text-danger">*</i></label>
             <input type="number" class="form-control" id="price" name="medicine_price" placeholder="Price">
         </div>
         <div class="form-group">
-            <label for="manufactured_by">Manufactured By</label>
+            <label for="manufactured_by">Manufactured By<i class="text-danger">*</i></label>
             <input type="text" class="form-control" id="manufactured_by" name="manufactured_by"
                 placeholder="company name">
         </div>

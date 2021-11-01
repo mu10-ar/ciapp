@@ -7,7 +7,7 @@
         <form action="" method="post">
             <div class="form-row">
                 <div class="col">
-                    <label for="Firstname">First Name</label>
+                    <label for="Firstname">First Name<i class="text-danger">*</i></label>
                     <input type="text" name="firstname" class="form-control" placeholder="First name"
                         value="<?=$user['firstname']?>">
                     <span class="red">
@@ -19,7 +19,7 @@
                     </span>
                 </div>
                 <div class="col">
-                    <label for="Firstname">Last Name</label>
+                    <label for="Firstname">Last Name<i class="text-danger">*</i></label>
                     <input type="text" name="lastname" class="form-control" placeholder="Last name"
                         value="<?=$user['lastname']?>">
                     <span class="red">
@@ -33,7 +33,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
+                    <label for="inputEmail4">Email<i class="text-danger">*</i></label>
                     <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email"
                         value="<?=$user['email']?>">
                     <span class="red">
@@ -47,7 +47,7 @@
 
             </div>
             <div class="form-group">
-                <label for="inputAddress">Address</label>
+                <label for="inputAddress">Address<i class="text-danger">*</i></label>
                 <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St"
                     value="<?=$user['address']?>">
                 <span class="red">
@@ -60,7 +60,7 @@
             </div>
 
             <div class="form-group">
-                <label for="mobile">Enter a mobile number:</label>
+                <label for="mobile">Enter a mobile number:<i class="text-danger">*</i></label>
                 <input type="mobile" class="form-control" id="mobile" name="mobile_no" placeholder="0300-1234567"
                     value="<?=$user['mobile_no']?>">
                 <span class="red">
@@ -72,7 +72,7 @@
                 </span>
             </div>
             <div class="form-group">
-                Sex: <br>
+                Sex:<i class="text-danger">*</i> <br>
                 <input type="radio" checked name="sex" value="male"> Male<br>
                 <input type="radio" name="sex" value="female"> Female<br>
                 <input type="radio" name="sex" value="other"> Other.
@@ -91,7 +91,7 @@
                       <input type="text" class="form-control" id="inputdesignation">
                   </div> -->
                 <div class="form-group col-md-4">
-                    <label for="inputdepartment">Department</label>
+                    <label for="inputdepartment">Department<i class="text-danger">*</i></label>
                     <select id="inputdepartment" class="form-control" name="department_name"
                         value="<?=$user['department_name']?>">
                         <span class="red">
@@ -126,7 +126,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="birthday">Birthday:</label>
+                    <label for="birthday">Birthday:<i class="text-danger">*</i></label>
                     <input type="date" class="form-control" id="birthday" name="birthday"
                         value="<?=$user['birthday']?>">
                     <span class="red">
@@ -138,7 +138,7 @@
                     </span>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputbloodgroup">BloodGroup</label>
+                    <label for="inputbloodgroup">BloodGroup<i class="text-danger">*</i></label>
                     <select id="inputbloodgroup" name="blood_group" class="form-control" value="<?=$user['birthday']?>">
                         <span class="red">
                             <?php 
