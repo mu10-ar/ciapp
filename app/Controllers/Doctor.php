@@ -179,6 +179,7 @@ class Doctor extends BaseController
         $users=new UserModel();
         $data['checking']=$users->getUserRecord($id);
         $users->deleteUser($id);
+        return redirect()->to(base_url()."/doctorslist");
         
             
 
@@ -235,21 +236,6 @@ class Doctor extends BaseController
                        'alpha_numeric_space'=>"Address Can't Contain Special Characters`"
                       
 
-                   ]],
-        'specialist'=> [
-                   'rules'=>'alpha_numeric_space',
-                   'errors'=>[ 
-                       'alpha_numeric_space'=>"please insert your specialization"
-                   ]],
-        'career_title'=> [
-                   'rules'=>'alpha_numeric_space',
-                   'errors'=>[ 
-                       'alpha_numeric_space'=>"please insert career title"
-                   ]],
-        'designation'=> [
-                   'rules'=>'alpha_numeric_space',
-                   'errors'=>[ 
-                       'alpha_numeric_space'=>"please insert your designation"
                    ]],
         'sex'=> [
                    'rules'=>'required',
