@@ -126,14 +126,14 @@ class BedController extends BaseController
 
             $notification= new NotificationModel();
             $notification->save([
-                'message' => 'bed No'.$bed_id.' has been assigned to you',
+                'message' => 'bed No '.$bed_id.' has been assigned to you',
                     'user_id' => $this->request->getPost('patient_id')
 
             ]);
 
             $updatestatus= new bedModel();
            
-            $updatestatus->update($bed_id,[
+            $updatestatus->update($this->request->getPost('assigned_bed'),[
                 'status' => '0'
             ]);
              

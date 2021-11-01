@@ -26,7 +26,8 @@ class Home extends BaseController
 
     public function login()
     {
-       
+        $session=session();
+        $session->destroy();
          echo view('login/login');
        
     }

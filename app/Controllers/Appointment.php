@@ -58,7 +58,7 @@ class Appointment extends BaseController
                     'user_id' => $this->request->getPost('doctor_id')
                 ]);
                 $success = true;
-                return  redirect()->to(base_url()."appointments");
+               
             } else {
                 $data['validation'] = $this->validator;
             }
@@ -123,7 +123,7 @@ class Appointment extends BaseController
             'user_id' => $patient
         ]);
         $success = true;
-        return redirect()->to('appointments');
+        return redirect()->to(base_url().'/appointments');
     }
 
 
