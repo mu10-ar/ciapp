@@ -139,7 +139,7 @@ class Doctor extends BaseController
 
                 ]);
                
-                $success = true;
+            
                  $session->setFlashdata('success', 'Doctor Added, Data Saved Successfully');
                 return  redirect()->to('doctorslist');
             } else {
