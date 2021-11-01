@@ -30,7 +30,14 @@
 
         <div class="mb-3">
             <label for="description" class="form-label">Description:<i class="text-danger">*</i></label>
-            <textarea class="form-control" id="description" rows="3"></textarea>
+            <textarea class="form-control"   name ="bed_description"id="description" rows="3"></textarea>
+            <span class="red">
+                        <?php 
+                                if (isset($validation)&& $validation->hasError('bed_description')) {
+
+                                    echo $validation->getError('bed_description');
+                                }?>
+                    </span>
         </div>
         <input type="hidden" value="1" name="status">
        

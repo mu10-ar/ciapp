@@ -19,6 +19,13 @@
                   <input type="text" class="form-control" required id="department_description"
                       value="<?= $department['department_description']?>" name="department_description"
                       placeholder="department description">
+                      <span class="red">
+                        <?php 
+                                if (isset($validation)&& $validation->hasError('department_description')) {
+
+                                    echo $validation->getError('paid');
+                                }?>
+                    </span>
               </div>
               <button type="submit" class="btn btn-primary">update</button>
           </form>

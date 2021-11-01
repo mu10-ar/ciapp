@@ -46,14 +46,6 @@ class Nurse extends BaseController
                        'is_unique'=>'This Email is Already Registered'
 
                    ]],
-        'password'=> [
-                   'rules'=>'required|min_length[10]',
-                   'errors'=>[ 
-                       'required'=>'Create an Passwrod',
-                       'min_length'=>'Your Password is too Shot'
-                      
-
-                   ]],
         'address'=> [
                    'rules'=>'required|max_length[255]|alpha_numeric_space',
                    'errors'=>[ 
