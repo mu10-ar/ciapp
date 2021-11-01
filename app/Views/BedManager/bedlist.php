@@ -9,8 +9,7 @@
                 <th scope="col">Department Name</th>
                 <th scope="col">Bed Number</th>
                 <th scope="col">Description</th>
-                <th scope="col">Status</th>
-                <th scope="col">Action</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -22,15 +21,8 @@
                 <td><?=$beds['department_name']?></td>
                 <td><?=$beds['bed_id']?></td>
                 <td><?=$beds['description']?></td>
-                <td>
-                    <?php
-                    if ($beds['status']==0) {
-                        echo 'not available';
-                    }else{
-                        echo 'available';
-                    }?>
-                </td>
-                <td>Edit/DElete/View</td>
+              
+                
             </tr>
             <?php $id++; endforeach?>
 
