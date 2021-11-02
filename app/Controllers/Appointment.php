@@ -143,4 +143,18 @@ class Appointment extends BaseController
         $appointment->delete($id);
         return redirect()->to(base_url('/appointments'));
     }
+    public function myschedule($id)
+    {
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
+        $appointment = new AppointmentModel();
+        $data['appointment']=$appointment->getschedule($id);
+        echo view('partials/sidebar', $data);
+        echo view('appointment/schedule');
+        echo view('partials/footer');
+        
+    }
 }

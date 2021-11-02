@@ -45,7 +45,10 @@ $routes->add('/createuser', 'doctor::index');
 $routes->add('/norecord', 'user::norecord');
 $routes->add('/addnurse', 'nurse::addnurse');
 $routes->add('/nurselist', 'nurse::nurselist');
+$routes->add('/assignnurse', 'nurse::assignnurse');
+$routes->add('/assignednurse', 'nurse::assignednurse');
 $routes->add('/doctorslist', 'doctor::doctorslist');
+$routes->add('/unassign/(:num)', 'nurse::unassign/$1');
 $routes->add('/delete/(:num)', 'doctor::deleteuser/$1');
 $routes->add('/deletenurse/(:num)', 'nurse::deleteuser/$1');
 $routes->add('/update/(:num)', 'doctor::updateuser/$1');
@@ -63,6 +66,7 @@ $routes->add('/deleteemployee/(:num)', 'user::deleteemployee/$1');
 // Appointment Routes
 $routes->add('/approve/(:num)/(:num)', 'appointment::approve/$1/$2');
 $routes->add('/decline/(:num)', 'appointment::decline/$1');
+$routes->add('/myschedule/(:num)', 'appointment::myschedule/$1');
 $routes->add('/addappointment', 'appointment::addappointment');
 $routes->add('/appointments', 'appointment::appointments');
 

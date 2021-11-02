@@ -2,8 +2,10 @@
 
 namespace App\Controllers;
 
+use App\models\AssignNurseModel;
 use App\models\UserModel;
 use App\models\DepartmentModel;
+use App\models\NotificationModel;
 
 class Nurse extends BaseController
 {
@@ -296,5 +298,87 @@ class Nurse extends BaseController
         $users->deleteUser($id);
         $session->setFlashdata('success', ' REcord deleted successfully');
         return redirect()->to(base_url()."/nurselist");
+    }
+    public function assignnurse()
+    {
+        $session = session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url() . '/login');
+        }
+        $user=new UserModel();
+        $data['patient']=$user->getpatientRecord();
+        $data['nurse']=$user->getNurseRecord();
+
+        if ($this->request->getMethod() == 'post') {
+            $input = $this->validate([
+                'patient_id' => "required", 
+                'nurse_id' => "required", 
+                  
+
+            ]);
+
+
+               
+           
+            if ($input == true) {
+
+                $model = new AssignNurseModel();
+                $model->save( [
+                    'nurse_id' => $this->request->getPost('nurse_id'),
+                    'patient_id' => $this->request->getPost('patient_id'),
+                    'notes' => $this->request->getPost('notes'),
+                  
+                   
+                ]);
+                $notification = new NotificationModel();
+                $notification->save([
+                    'message' => 'a nurse has assigned to you <a class="text-primary" href="profile/'.$this->request->getPost('nurse_id').'"> click to view</a>',
+                    'user_id' => $this->request->getPost('patient_id')
+                ]);
+                $notification->save([
+                    'message' => 'you have been assigned to a patient <a class="text-primary" href="profile/'.$this->request->getPost('patient').'"> click to view</a>',
+                    'user_id' => $this->request->getPost('patient_id')
+                ]);
+                $session->setFlashdata('success', ' Nurse Assigned successfully');
+                return redirect()->to(base_url()."/assignednurse");
+
+
+            } else {
+                $data['validation'] = $this->validator;
+                var_dump($input);
+            }
+        }
+
+
+        echo view('partials/sidebar',$data);
+        echo view('nurse/assignnurse');
+        echo view('partials/footer');
+        
+    }
+
+    public function assignednurse()
+    {
+        $session=session();
+        if (!$session->get('logged_in')) {
+           return redirect()->to(base_url().'/login');
+             
+        }
+         $department=new DepartmentModel();
+        $data['department']=$department->getDepartmentRecord();
+        
+        $users=new AssignNurseModel();
+         $data['users']=$users->getAssignedRecord();
+         echo view('partials/sidebar',$data);
+         echo view('nurse/assignednurse');
+         echo view('partials/footer');
+    }
+
+    public function unassign($id)
+    {$session = session();
+      $model = new AssignNurseModel();
+      $model->delete($id);
+      $session->setFlashdata('success', ' Nurse UnAssigned successfully');
+                return redirect()->to(base_url()."/assignednurse");
+
     }
 }

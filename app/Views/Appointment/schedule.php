@@ -5,11 +5,12 @@
          <thead>
              <tr>
                  <th scope="col">#</th>
+                 <th scope="col">Serial_no</th>
                  <th scope="col">Patient_id</th>
                  <th scope="col">Department Name</th>
 
                  <th scope="col">Appointment Date</th>
-                 <th scope="col">Serial_no</th>
+                
                  <th scope="col">Problems</th>
                  <th scope="col">Action</th>
              </tr>
@@ -25,15 +26,15 @@
              <tr>
 
                  <th scope="row"><?=$id?></th>
+                 <td><?=$appointment['appointment_id']?></td>
                  <td><?=$appointment['patient_id']?></td>
                  <td><?=$appointment['department_name']?></td>
                  <td><?=$appointment['appointment_date']?></td>
-                 <td><?=$appointment['appointment_id']?></td>
+                
                  <td><?=$appointment['problem']?></td>
-                 <td> <a href="<?=base_url()?>/approve/<?=$appointment['appointment_id']?>/<?=$appointment['patient_id']?>"
-                         class="btn btn-primary btn-sm">approve</a>
+                 <td> 
                      <a href="<?=base_url()?>/decline/<?=$appointment['appointment_id']?>"
-                         class="btn btn-danger btn-sm">decline</a>
+                         class="btn btn-danger btn-sm">delete</a>
 
 
                  </td>

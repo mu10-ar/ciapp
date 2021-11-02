@@ -171,6 +171,9 @@ My Profile
                         <li>
                             <a href="<?= base_url() ?>/addnurse">Add Nurse</a>
                         </li>
+                        <li>
+                            <a href="<?= base_url() ?>/assignnurse">assign Nurse</a>
+                        </li>
                         <?php ;
                         endif ?>
                         <li>

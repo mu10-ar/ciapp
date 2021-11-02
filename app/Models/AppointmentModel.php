@@ -17,6 +17,10 @@ class AppointmentModel extends Model{
         $session=session();
         return $this->orderBy('appointment_id','DESC')->Where('status','0')->where('doctor_id',$session->get('user_id'))->findAll();
     }
+    public function getschedule(){
+        $session=session();
+        return $this->orderBy('appointment_id','DESC')->Where('status','1')->where('doctor_id',$session->get('user_id'))->findAll();
+    }
     public function getAppointmentNumber(){
         $session=session();
         return $this->orderBy('appointment_id','DESC')->findAll();
