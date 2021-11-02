@@ -126,6 +126,142 @@ class Nurse extends BaseController
 
 
 
+    public function updateuser($id)
+
+    {
+        $session = session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url() . '/login');
+        }
+        $data = [];
+        helper('form');
+        $model = new UserModel();
+        $user = $model->getRow($id);
+        $data['user'] = $user;
+
+
+        if ($this->request->getMethod() == 'post') {
+            $input = $this->validate([
+                'firstname' => [
+                    'rules' => 'required|alpha_space',
+                    'errors' => [
+                        'required' => 'name must be filled',
+                        'alpha_space' => 'name can contain only letters'
+                    ]
+                ],
+                'lastname' => [
+                    'rules' => 'required|alpha_space',
+                    'errors' => [
+                        'required' => 'last name must be filled',
+                        'alpha_space' => 'name can contain only letters'
+                    ]
+                ],
+                'email' => [
+                    'rules' => 'required|valid_email',
+                    'errors' => [
+                        'required' => 'please provide your email',
+                        'valid_email' => 'Please enter a valid Email'
+                      
+
+                    ]
+                ],
+            
+               
+                'address' => [
+                    'rules' => 'required|max_length[255]|alpha_numeric_space',
+                    'errors' => [
+                        'required' => 'Please provide your address',
+                        'max_length' => 'Your Address is to long',
+                        'alpha_numeric_space' => "Address Can't Contain Special Characters`"
+
+
+                    ]
+                ],
+                'specialist' => [
+                    'rules' => 'alpha_numeric_space|permit_empty',
+                    'errors' => [
+                        'alpha_numeric_space' => "please insert your specialization"
+                    ]
+                ],
+                'career_title' => [
+                    'rules' => 'alpha_numeric_space|permit_empty',
+                    'errors' => [
+                        'alpha_numeric_space' => "please insert career title"
+                    ]
+                ],
+                'designation' => [
+                    'rules' => 'alpha_numeric_space|permit_empty',
+                    'errors' => [
+                        'alpha_numeric_space' => "please insert your designation"
+                    ],
+               
+                'sex' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your gender"
+                    ]
+                ],
+                'department_name' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your department"
+                    ]
+                ],
+                'birthday' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your Date od Birth"
+                    ]
+                ],
+                'blood_group ' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your blood group"
+                    ]
+                ]
+
+            ]]);
+
+
+               
+           
+            if ($input == true) {
+
+                $model = new UserModel();
+                $model->update($id, [
+                    'firstname' => $this->request->getPost('firstname'),
+                    'lastname' => $this->request->getPost('lastname'),
+                    'email' => $this->request->getPost('email'),
+                    'address' => $this->request->getPost('address'),
+                    'specialist' => $this->request->getPost('specialist'),
+                    'mobile_no' => $this->request->getPost('mobile_no'),
+                    'sex' => $this->request->getPost('sex'),
+                    'designation' => $this->request->getPost('designation'),
+                    'department_name' => $this->request->getPost('department_name'),
+                    'birthday' => $this->request->getPost('birthday'),
+                    'blood_group' => $this->request->getPost('blood_group'),
+                   
+                ]);
+                $session->setFlashdata('success', ' Updated Record successfully');
+                return redirect()->to(base_url()."/nurselist");
+
+
+            } else {
+                $data['validation'] = $this->validator;
+            }
+        }
+
+        $department = new DepartmentModel();
+        $data['department'] = $department->getDepartmentRecord();
+
+
+        echo view('partials/sidebar', $data);
+        echo view('doctor/updatedoctor');
+        echo view('partials/footer');
+    }
+
+
+
 
      public function nurselist()
     {
@@ -144,5 +280,21 @@ class Nurse extends BaseController
          echo view('partials/footer');
                 
 
+    }
+
+    public function deleteuser($id)
+    {
+        $session = session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url() . '/login');
+        }
+
+
+        $users = new UserModel();
+        $data['checking'] = $users->getUserRecord($id);
+
+        $users->deleteUser($id);
+        $session->setFlashdata('success', ' REcord deleted successfully');
+        return redirect()->to(base_url()."/nurselist");
     }
 }

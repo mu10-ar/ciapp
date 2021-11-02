@@ -26,7 +26,7 @@
                         <?php 
                                 if (isset($validation)&& $validation->hasError('lastname')) {
 
-                                    echo $validation->getError('lastname');
+                                    var_dump( $validation->getError());
                                 }?>
                     </span>
                 </div>

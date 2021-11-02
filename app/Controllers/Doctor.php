@@ -185,6 +185,7 @@ class Doctor extends BaseController
 
         $users->deleteUser($id);
         $session->setFlashdata('success', ' REcord deleted successfully');
+        return redirect()->to(base_url()."/doctorslist");
     }
 
 
@@ -237,7 +238,7 @@ class Doctor extends BaseController
                     'rules' => 'required|max_length[255]|alpha_numeric_space',
                     'errors' => [
                         'required' => 'Please provide your address',
-                        'max_length' => 'Your Password is too Shot',
+                        'max_length' => 'Your Address is to long',
                         'alpha_numeric_space' => "Address Can't Contain Special Characters`"
 
 
@@ -289,9 +290,8 @@ class Doctor extends BaseController
             ]]);
 
 
-
-
-            $session->setFlashdata('success', ' Updated Record successfully');
+               
+           
             if ($input == true) {
 
                 $model = new UserModel();
@@ -299,7 +299,6 @@ class Doctor extends BaseController
                     'firstname' => $this->request->getPost('firstname'),
                     'lastname' => $this->request->getPost('lastname'),
                     'email' => $this->request->getPost('email'),
-                    'password' => $this->request->getPost('password'),
                     'address' => $this->request->getPost('address'),
                     'specialist' => $this->request->getPost('specialist'),
                     'mobile_no' => $this->request->getPost('mobile_no'),
@@ -308,8 +307,12 @@ class Doctor extends BaseController
                     'department_name' => $this->request->getPost('department_name'),
                     'birthday' => $this->request->getPost('birthday'),
                     'blood_group' => $this->request->getPost('blood_group'),
-                    'user_role' =>  $this->request->getPost('user_role')
+                   
                 ]);
+                $session->setFlashdata('success', ' Updated Record successfully');
+                return redirect()->to(base_url()."/doctorslist");
+
+
             } else {
                 $data['validation'] = $this->validator;
             }

@@ -271,21 +271,21 @@ class User extends BaseController
                         'required'=>"Please select your blood group"
                     ]],
          'specialist '=> [
-                    'rules'=>'required|permit_empty|alpha_numeric_space',
+                    'rules'=>'permit_empty|alpha_numeric_space',
                     'errors'=>[ 
-                        'required'=>"Please select your blood group",
+                       
                         'alpha_numeric_space'=>"special characters not allowed"
                     ]],
          'designation '=> [
-                    'rules'=>'required|permit_empty|alpha_numeric_space',
+                    'rules'=>'permit_empty|alpha_numeric_space',
                     'errors'=>[ 
-                        'required'=>"Please select your blood group",
+                       
                         'alpha_numeric_space'=>"special characters not allowed"
                     ]],
          'career_title '=> [
-                    'rules'=>'required|permit_empty|alpha_numeric_space',
+                    'rules'=>'permit_empty|alpha_numeric_space',
                     'errors'=>[ 
-                        'required'=>"Please select your blood group",
+                       
                         'alpha_numeric_space'=>"special characters not allowed"
                         
                     ]],
