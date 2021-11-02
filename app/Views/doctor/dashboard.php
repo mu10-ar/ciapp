@@ -1,6 +1,9 @@
 <div class="container">
 <div class="row">
     <!-- welcome message -->
+ <?
+ $session=session();
+ if ($session->get("user_role")!=4): ?>
 
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
         <div class="info-box bg-olive">
@@ -112,6 +115,7 @@
 </div>
 </div>
 </div>
+<?php endif ?>
 <div class="container">
     <h2>Coming Soon!</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
