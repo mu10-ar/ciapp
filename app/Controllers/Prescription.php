@@ -242,7 +242,10 @@ class Prescription extends BaseController
 
 
       public function addprescription()
+
      {
+        $session = \Config\Services::session();
+        $data['session'] = $session;
         $session=session();
         if (!$session->get('logged_in')) {
            return redirect()->to(base_url().'/login');

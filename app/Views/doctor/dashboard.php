@@ -100,7 +100,7 @@
         <span class="info-box-icon"><i class="fab fa-accessible-icon"></i></span>
 
         <div class="info-box-content">
-            <span class="info-box-text">Discharged</span>
+            <span class="info-box-text">Nurse</span>
             <span class="info-box-number">0</span>
 
 
