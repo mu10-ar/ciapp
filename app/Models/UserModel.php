@@ -55,7 +55,7 @@ class UserModel extends Model{
     //     return $this->where('user_role',6)->findall();
     // }
      public function getAlluser(){
-        return $this->where('user_role',6)->orWhere('user_role',7)->orWhere('user_role',5)->findall();
+        return $this->where('user_role',6)->orWhere('user_role',7)->orWhere('user_role',8)->orWhere('user_role',5)->findall();
     }
 
 
