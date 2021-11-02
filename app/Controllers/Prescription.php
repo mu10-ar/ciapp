@@ -292,7 +292,7 @@ class Prescription extends BaseController
                 
                     ]);
 
-                    redirect()->to(base_url()."/prescriptionlist");
+                     return redirect()->to(base_url()."/prescriptionlist");
                     
                  
                     

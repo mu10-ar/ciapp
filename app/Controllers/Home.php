@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
+use App\models\bedModel;
 use App\models\LoginModel;
+use App\models\PrescriptionModel;
 use App\models\UserModel;
 
 class Home extends BaseController
@@ -19,7 +21,8 @@ class Home extends BaseController
         }
         $data=[];
         $patient= new UserModel();
-        $patient= new UserModel();
+        $prescription= new PrescriptionModel();
+        $bed= new bedModel();
 
         
           echo view('partials/sidebar');
