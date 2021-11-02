@@ -12,8 +12,8 @@ class User extends BaseController
     public function index()
     {
         $session = \Config\Services::session();
-                    $data['session'] = $session;
-                    
+        $data['session'] = $session;
+
         $session = session();
         if (!$session->get('logged_in')) {
             return redirect()->to(base_url() . '/login');
@@ -44,88 +44,100 @@ class User extends BaseController
 
 
             $input = $this->validate([
-                'firstname'=> [
-                    'rules'=>'required|alpha_space',
-                    'errors'=>[ 
-                        'required'=>'name must be filled',
-                        'alpha_space'=>'name can contain only letters'
-                    ]],
-         'lastname'=> [
-                    'rules'=>'required|alpha_space',
-                    'errors'=>[ 
-                        'required'=>'last name must be filled',
-                        'alpha_space'=>'name can contain only letters'
-                  ]],
-         'email'=> [
-                    'rules'=>'required|valid_email',
-                    'errors'=>[ 
-                        'required'=>'please provide your email',
-                        'valid_email'=>'Please enter a valid Email'
-                    
- 
-                    ]],
-         'password'=> [
-                    'rules'=>'required|min_length[10]',
-                    'errors'=>[ 
-                        'required'=>'Create an Passwrod',
-                        'min_length'=>'Your Password is too Shot'
-                       
- 
-                    ]],
-         'address'=> [
-                    'rules'=>'required|max_length[255]|alpha_numeric_space',
-                    'errors'=>[ 
-                        'required'=>'Please provide your address',
-                        'max_length'=>'Your Password is too Shot',
-                        'alpha_numeric_space'=>"Address Can't Contain Special Characters`"
-                       
- 
-                    ]],
-         'sex'=> [
-                    'rules'=>'required',
-                    'errors'=>[ 
-                        'required'=>"Please select your gender"
-                    ]],
-          'department_name'=> [
-                    'rules'=>'required',
-                    'errors'=>[ 
-                        'required'=>"Please select your department"
-                    ]],
-         'birthday'=> [
-                    'rules'=>'required',
-                    'errors'=>[ 
-                        'required'=>"Please select your Date od Birth"
-                    ]],
-         'blood_group '=> [
-                    'rules'=>'required',
-                    'errors'=>[ 
-                        'required'=>"Please select your blood group"
-                    ]],
-         'specialist '=> [
-                    'rules'=>'required|permit_empty|alpha_numeric_space',
-                    'errors'=>[ 
-                        'required'=>"Please select your blood group",
-                        'alpha_numeric_space'=>"special characters not allowed"
-                    ]],
-         'designation '=> [
-                    'rules'=>'required|permit_empty|alpha_numeric_space',
-                    'errors'=>[ 
-                        'required'=>"Please select your blood group",
-                        'alpha_numeric_space'=>"special characters not allowed"
-                    ]],
-         'career_title '=> [
-                    'rules'=>'required|permit_empty|alpha_numeric_space',
-                    'errors'=>[ 
-                        'required'=>"Please select your blood group",
-                        'alpha_numeric_space'=>"special characters not allowed"
-                        
-                    ]],
-                
- 
+                'firstname' => [
+                    'rules' => 'required|alpha_space',
+                    'errors' => [
+                        'required' => 'name must be filled',
+                        'alpha_space' => 'name can contain only letters'
+                    ]
+                ],
+                'lastname' => [
+                    'rules' => 'required|alpha_space',
+                    'errors' => [
+                        'required' => 'last name must be filled',
+                        'alpha_space' => 'name can contain only letters'
+                    ]
+                ],
+                'email' => [
+                    'rules' => 'required|valid_email',
+                    'errors' => [
+                        'required' => 'please provide your email',
+                        'valid_email' => 'Please enter a valid Email'
+
+
+                    ]
+                ],
+                'password' => [
+                    'rules' => 'required|min_length[10]',
+                    'errors' => [
+                        'required' => 'Create an Passwrod',
+                        'min_length' => 'Your Password is too Shot'
+
+
+                    ]
+                ],
+                'address' => [
+                    'rules' => 'required|max_length[255]|alpha_numeric_space',
+                    'errors' => [
+                        'required' => 'Please provide your address',
+                        'max_length' => 'Your Password is too Shot',
+                        'alpha_numeric_space' => "Address Can't Contain Special Characters`"
+
+
+                    ]
+                ],
+                'sex' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your gender"
+                    ]
+                ],
+                'department_name' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your department"
+                    ]
+                ],
+                'birthday' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your Date od Birth"
+                    ]
+                ],
+                'blood_group ' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your blood group"
+                    ]
+                ],
+                'specialist ' => [
+                    'rules' => 'required|permit_empty|alpha_numeric_space',
+                    'errors' => [
+                        'required' => "Please select your blood group",
+                        'alpha_numeric_space' => "special characters not allowed"
+                    ]
+                ],
+                'designation ' => [
+                    'rules' => 'required|permit_empty|alpha_numeric_space',
+                    'errors' => [
+                        'required' => "Please select your blood group",
+                        'alpha_numeric_space' => "special characters not allowed"
+                    ]
+                ],
+                'career_title ' => [
+                    'rules' => 'required|permit_empty|alpha_numeric_space',
+                    'errors' => [
+                        'required' => "Please select your blood group",
+                        'alpha_numeric_space' => "special characters not allowed"
+
+                    ]
+                ],
+
+
             ]);
 
 
-          
+
 
 
 
@@ -148,7 +160,7 @@ class User extends BaseController
                     'user_role' =>  $this->request->getPost('user_role')
 
                 ]);
-                $session->setFlashdata('Success','User Added Successfullu');
+                $session->setFlashdata('Success', 'User Added Successfullu');
                 return  redirect()->to('employeelist');
             } else {
                 $data['validation'] = $this->validator;
@@ -195,7 +207,7 @@ class User extends BaseController
 
 
 
-
+        $session->setFlashdata('success','deleted succesfullly');
         return redirect()->to(base_url('employeelist'));
     }
 
@@ -218,79 +230,90 @@ class User extends BaseController
 
 
         if ($this->request->getMethod() == 'post') {
-            $input=$this->validate([
-                'firstname'=> [
-                    'rules'=>'required|alpha_space',
-                    'errors'=>[ 
-                        'required'=>'name must be filled',
-                        'alpha_space'=>'name can contain only letters'
-                    ]],
-         'lastname'=> [
-                    'rules'=>'required|alpha_space',
-                    'errors'=>[ 
-                        'required'=>'last name must be filled',
-                        'alpha_space'=>'name can contain only letters'
-                  ]],
-         'email'=> [
-                    'rules'=>'required|valid_email',
-                    'errors'=>[ 
-                        'required'=>'please provide your email',
-                        'valid_email'=>'Please enter a valid Email'
-                    
- 
-                    ]],
-        
- 
-         'address'=> [
-                    'rules'=>'required|max_length[255]|alpha_numeric_space',
-                    'errors'=>[ 
-                        'required'=>'Please provide your address',
-                        'max_length'=>'Your Password is too Shot',
-                        'alpha_numeric_space'=>"Address Can't Contain Special Characters`"
-                       
- 
-                    ]],
-         'sex'=> [
-                    'rules'=>'required',
-                    'errors'=>[ 
-                        'required'=>"Please select your gender"
-                    ]],
-          'department_name'=> [
-                    'rules'=>'required',
-                    'errors'=>[ 
-                        'required'=>"Please select your department"
-                    ]],
-         'birthday'=> [
-                    'rules'=>'required',
-                    'errors'=>[ 
-                        'required'=>"Please select your Date od Birth"
-                    ]],
-         'blood_group '=> [
-                    'rules'=>'required',
-                    'errors'=>[ 
-                        'required'=>"Please select your blood group"
-                    ]],
-         'specialist '=> [
-                    'rules'=>'permit_empty|alpha_numeric_space',
-                    'errors'=>[ 
-                       
-                        'alpha_numeric_space'=>"special characters not allowed"
-                    ]],
-         'designation '=> [
-                    'rules'=>'permit_empty|alpha_numeric_space',
-                    'errors'=>[ 
-                       
-                        'alpha_numeric_space'=>"special characters not allowed"
-                    ]],
-         'career_title '=> [
-                    'rules'=>'permit_empty|alpha_numeric_space',
-                    'errors'=>[ 
-                       
-                        'alpha_numeric_space'=>"special characters not allowed"
-                        
-                    ]],
-                
- 
+            $input = $this->validate([
+                'firstname' => [
+                    'rules' => 'required|alpha_space',
+                    'errors' => [
+                        'required' => 'name must be filled',
+                        'alpha_space' => 'name can contain only letters'
+                    ]
+                ],
+                'lastname' => [
+                    'rules' => 'required|alpha_space',
+                    'errors' => [
+                        'required' => 'last name must be filled',
+                        'alpha_space' => 'name can contain only letters'
+                    ]
+                ],
+                'email' => [
+                    'rules' => 'required|valid_email',
+                    'errors' => [
+                        'required' => 'please provide your email',
+                        'valid_email' => 'Please enter a valid Email'
+
+
+                    ]
+                ],
+
+
+                'address' => [
+                    'rules' => 'required|max_length[255]|alpha_numeric_space',
+                    'errors' => [
+                        'required' => 'Please provide your address',
+                        'max_length' => 'Your Password is too Shot',
+                        'alpha_numeric_space' => "Address Can't Contain Special Characters`"
+
+
+                    ]
+                ],
+                'sex' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your gender"
+                    ]
+                ],
+                'department_name' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your department"
+                    ]
+                ],
+                'birthday' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your Date od Birth"
+                    ]
+                ],
+                'blood_group ' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your blood group"
+                    ]
+                ],
+                'specialist ' => [
+                    'rules' => 'permit_empty|alpha_numeric_space',
+                    'errors' => [
+
+                        'alpha_numeric_space' => "special characters not allowed"
+                    ]
+                ],
+                'designation ' => [
+                    'rules' => 'permit_empty|alpha_numeric_space',
+                    'errors' => [
+
+                        'alpha_numeric_space' => "special characters not allowed"
+                    ]
+                ],
+                'career_title ' => [
+                    'rules' => 'permit_empty|alpha_numeric_space',
+                    'errors' => [
+
+                        'alpha_numeric_space' => "special characters not allowed"
+
+                    ]
+                ],
+
+
             ]);
 
 
@@ -314,7 +337,7 @@ class User extends BaseController
                     'user_role' =>  $this->request->getPost('user_role')
                 ]);
                 $userrole = $this->request->getVar('user_role');
-                // $session->setFlashdata('success','winner winner chicken dinner , record updated');
+                $session->setFlashdata('success',' , record updated');
                 //    if ($userrole==3) {
                 return  redirect()->to(base_url('employeelist'));
                 //    }

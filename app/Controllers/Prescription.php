@@ -13,6 +13,9 @@ class Prescription extends BaseController
      
     public function addcasestudy()
     {
+        $session = \Config\Services::session();
+        $data['session'] = $session;
+        
         $data=[];
         $session=session();
         if (!$session->get('logged_in')) {
@@ -74,7 +77,7 @@ class Prescription extends BaseController
                     'message' => 'A case study has Benn Addes to your Profile <a class="text-primary" href="mycasestudy/'.$patient.'"> click to view</a>',
                     'user_id' => $this->request->getPost('patient_id')
                 ]);
-             $success =true;
+                $session->setFlashdata('success', ' Added Successfully');;
               return  redirect()->to('casestudylist');
            }
            else {
@@ -171,7 +174,7 @@ class Prescription extends BaseController
                 
                 
             ]);
-             $success =true;
+            $session->setFlashdata('success', 'Updated Successfully');;
               return  redirect()->to('casestudylist');
            }
            else {
@@ -198,6 +201,7 @@ class Prescription extends BaseController
         }
      $casestudy=new CaseStudyModel();
      $casestudy->delete($id);
+     $session->setFlashdata('success', 'Deleted Successfully');;
      return redirect()->to(base_url().'/casestudylist');}
 
 
@@ -291,7 +295,7 @@ class Prescription extends BaseController
                 'patient_notes' => $this->request->getPost('patient_notes'),
                 
                     ]);
-
+                    $session->setFlashdata('success', 't Added Successfully');;
                      return redirect()->to(base_url()."/prescriptionlist");
                     
                  
