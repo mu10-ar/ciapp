@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\models\LoginModel;
+use App\models\UserModel;
 
 class Home extends BaseController
 {
@@ -16,6 +17,10 @@ class Home extends BaseController
             return redirect()->to(base_url().'/login');
              
         }
+        $data=[];
+        $patient= new UserModel();
+        $patient= new UserModel();
+
         
           echo view('partials/sidebar');
          echo view('doctor/dashboard');
