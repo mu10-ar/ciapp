@@ -150,7 +150,7 @@ class BedController extends BaseController
                 'status' => '0'
             ]);
              
-              return  redirect()->to('assignbed');
+              return  redirect()->to(base_url().'/assignedbed');
            
            }
            else {
