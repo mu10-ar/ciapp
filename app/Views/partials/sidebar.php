@@ -255,6 +255,9 @@ My Profile
                         <li>
                             <a href="<?= base_url() ?>/appointments"> Appointment List</a>
                         </li>
+                        <li>
+                            <a href="<?= base_url() ?>/myschedule/<?=$session->get('user_id')?>"> My Schedule</a>
+                        </li>
                         <?php  ;
                     endif ?>
                     </ul>
