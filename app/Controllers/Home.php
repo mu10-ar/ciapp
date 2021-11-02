@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\models\AppointmentModel;
 use App\models\bedModel;
 use App\models\LoginModel;
 use App\models\PrescriptionModel;
@@ -21,11 +22,21 @@ class Home extends BaseController
         }
         $data=[];
         $patient= new UserModel();
+        $doctor= new UserModel();
+        $nurse= new UserModel();
         $prescription= new PrescriptionModel();
+        $appointment= new AppointmentModel();
         $bed= new bedModel();
+        $data['patient']=count($patient->getPatientNumber());
+        $data['bed']=count($bed->getBedNumber());
+        $data['doctor']=count($doctor->getDoctorNumber());
+        $data['nurse']=count($nurse->getNurseNumber());
+        $data['prescription']=count($prescription->getPrescriptionNumber());
+        $data['appointment']=count($appointment->getAppointmentNumber());
+      
 
-        
-          echo view('partials/sidebar');
+
+          echo view('partials/sidebar',$data);
          echo view('doctor/dashboard');
          echo view('partials/footer');
       

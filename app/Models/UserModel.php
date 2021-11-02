@@ -32,6 +32,16 @@ class UserModel extends Model{
      public function getpatientRecord(){
         return $this->where('user_role',4)->findall();
     }
+     public function getPatientNumber(){
+        return $this->where('user_role',4)->findall();
+    }
+     public function getDoctorNumber(){
+        return $this->where('user_role',2)->findall();
+    }
+     public function getNurseNumber(){
+        return $this->where('user_role',3)->findall();
+    }
+  
      public function getBillRecord(){
         return $this->where('user_role',4)->where('bill',1)->findall();
     }

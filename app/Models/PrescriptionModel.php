@@ -20,6 +20,10 @@ class PrescriptionModel extends Model{
                         {
                             return $this->orderby('prescription_id','desc')->findall();
                         }
+            function getPrescriptionNumber()       
+                        {
+                            return $this->orderby('prescription_id','desc')->findall();
+                        }
             function getMyPrescription()       
                         {
                             $session=session();

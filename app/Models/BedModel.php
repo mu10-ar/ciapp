@@ -14,6 +14,10 @@ class bedModel extends Model{
     {
        return $this->where('status',1)->orderBy('bed_id', 'desc')->findall();
     }
+    public function getBednumber()
+    {
+       return $this->where('status',1)->orderBy('bed_id', 'desc')->findall();
+    }
    
 
 

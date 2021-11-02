@@ -1,9 +1,7 @@
 <div class="container">
 <div class="row">
     <!-- welcome message -->
- <?
- $session=session();
- if ($session->get("user_role")!=4): ?>
+ 
 
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
         <div class="info-box bg-olive">
@@ -11,7 +9,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Appointment</span>
-                <span class="info-box-number">2</span>
+                <span class="info-box-number"><?=$appointment?></span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: 50%"></div>
@@ -29,7 +27,7 @@
 
         <div class="info-box-content">
             <span class="info-box-text">Patient</span>
-            <span class="info-box-number">1</span>
+            <span class="info-box-number"><?=$patient?></span>
 
             <div class="progress">
                 <div class="progress-bar" style="width: 50%"></div>
@@ -65,7 +63,7 @@
 
         <div class="info-box-content">
             <span class="info-box-text">Doctor</span>
-            <span class="info-box-number">2</span>
+            <span class="info-box-number"><?=$doctor?></span>
 
             <div class="progress">
                 <div class="progress-bar" style="width: 50%"></div>
@@ -83,7 +81,7 @@
 
         <div class="info-box-content">
             <span class="info-box-text">Free bed list</span>
-            <span class="info-box-number">9</span>
+            <span class="info-box-number"><?=$bed?></span>
 
             <div class="progress">
                 <div class="progress-bar" style="width: 50%"></div>
@@ -101,7 +99,7 @@
 
         <div class="info-box-content">
             <span class="info-box-text">Discharged</span>
-            <span class="info-box-number">0</span>
+            <span class="info-box-number"><?=$nurse?></span>
 
 
             <div class="progress">
@@ -115,7 +113,7 @@
 </div>
 </div>
 </div>
-<?php endif ?>
+
 <div class="container">
     <h2>Coming Soon!</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
