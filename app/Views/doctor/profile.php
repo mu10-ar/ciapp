@@ -19,12 +19,12 @@
                         <?= $user['firstname'].' '.$user['lastname']?>
                     </h3>
                 </div>
-
+<?php $session=session();?>
                 <div class="col-md-7 col-lg-7 ">
                     <dl class="dl-horizontal">
                         <dt>Email Address</dt>
                         <dd><?=$user['email']?></dd>
-                        <?php if ($user['id']!=4):  ?>
+                        <?php if ($session->get('user_role')!=4):  ?>
                         <dt>Designation</dt>
                        
                  
@@ -37,11 +37,11 @@
                         <?php endif ?>
                         <dt>Department</dt>
                         <dd><?=$user['department_name']?></dd>
-                        <?php if ($user['id']!=4):  ?>
+                        <?php if ($session->get('user_role')!=4):  ?>
                         <dt>Address</dt>
                         <dd><?=$user['address']?></dd>
                         <?php endif ?>
-                        <?php if ($user['id']!=4):  ?>
+                        <?php if ($session->get('user_role')!=4):  ?>
                         <dt>Mobile No</dt>
                         <dd><?=$user['mobile_no']?></dd>
                         <?php endif ?>
@@ -49,7 +49,7 @@
                         <dd><?=$user['birthday']?></dd>
                         <dt>Sex</dt>
                         <dd><?=$user['sex']?></dd>
-                        <?php if ($user['id']!=4):  ?>
+                        <?php if ($session->get('user_role')!=4):  ?>
                         <dt>joined Date</dt>
                         <dd><?=$user['created_at']?></dd>
                         <?php endif ?>
