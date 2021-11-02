@@ -2,8 +2,10 @@
 <div class="row">
     <!-- welcome message -->
  
-
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+<?php 
+$session= session();
+if($session->get('user_role')!=4):?>
+    <div class="col;-xs-12 col-sm-6 col-md-6 col-lg-4">
         <div class="info-box bg-olive">
             <span class="info-box-icon"><i class="fa fa-edit"></i></span>
 
@@ -15,11 +17,12 @@
                     <div class="progress-bar" style="width: 50%"></div>
                 </div>
                 <span class="progress-description">
-                    14 October, 2021 </span>
+                <?=date("Y.m.d") ?> </span>
             </div>
             <!-- /.info-box-content -->
         </div>
     </div>
+   
 
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" "="">
                     <div class=" info-box bg-blue">
@@ -33,7 +36,7 @@
                 <div class="progress-bar" style="width: 50%"></div>
             </div>
             <span class="progress-description">
-                14 October, 2021 </span>
+            <?=date("Y.m.d") ?> </span>
         </div>
         <!-- /.info-box-content -->
     </div>
@@ -51,7 +54,7 @@
                 <div class="progress-bar" style="width: 50%"></div>
             </div>
             <span class="progress-description">
-                14 October, 2021 </span>
+            <?=date("Y.m.d") ?> </span>
         </div>
         <!-- /.info-box-content -->
     </div>
@@ -69,7 +72,7 @@
                 <div class="progress-bar" style="width: 50%"></div>
             </div>
             <span class="progress-description">
-                14 October, 2021 </span>
+            <?=date("Y.m.d") ?> </span>
         </div>
         <!-- /.info-box-content -->
     </div>
@@ -87,7 +90,7 @@
                 <div class="progress-bar" style="width: 50%"></div>
             </div>
             <span class="progress-description">
-                14 October, 2021 </span>
+            <?=date("Y.m.d") ?> </span>
         </div>
         <!-- /.info-box-content -->
     </div>
@@ -98,7 +101,7 @@
         <span class="info-box-icon"><i class="fab fa-accessible-icon"></i></span>
 
         <div class="info-box-content">
-            <span class="info-box-text">Discharged</span>
+            <span class="info-box-text">Nurse</span>
             <span class="info-box-number"><?=$nurse?></span>
 
 
@@ -106,14 +109,14 @@
                 <div class="progress-bar" style="width: 50%"></div>
             </div>
             <span class="progress-description">
-                14 October, 2021 </span>
+               <?=date("Y.m.d") ?> </span>
         </div>
         <!-- /.info-box-content -->
     </div>
 </div>
 </div>
 </div>
-
+<?php endif?>
 <div class="container">
     <h2>Coming Soon!</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
