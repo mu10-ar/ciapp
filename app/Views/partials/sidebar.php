@@ -226,11 +226,17 @@ My Profile
                 </li>
                 <?php ;
             endif ?>
+                 <?php
+            if (($userrole == 1) || ($userrole == 2) || ($userrole == 4)) :
+
+            ?>
                 <li>
                     <a href="#appointmentSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
                         Appointment
                     </a>
+                    <?php ;
+            endif ?>
                     <ul class="collapse list-unstyled" id="appointmentSubmenu">
 
                     <?php
