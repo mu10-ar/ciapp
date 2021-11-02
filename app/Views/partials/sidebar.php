@@ -187,7 +187,7 @@ My Profile
             endif ?>
 
                 <?php
-            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)|| ($userrole == 7)) :
 
             ?>
                 <li>
@@ -287,7 +287,7 @@ My Profile
             endif ?>
 
                 <?php
-            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)|| ($userrole == 7)|| ($userrole == 8)) :
 
             ?>
 
@@ -364,7 +364,7 @@ My Profile
             endif ?>
 
                 <?php
-            if (($userrole == 1) || ($userrole == 2) ) :
+            if (($userrole == 1) || ($userrole == 2)|| ($userrole == 5) ) :
 
             ?>
                 <li>
