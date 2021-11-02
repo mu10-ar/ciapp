@@ -37,12 +37,14 @@
                         <?php endif ?>
                         <dt>Department</dt>
                         <dd><?=$user['department_name']?></dd>
+                        <?php if ($user['id']!=4):  ?>
                         <dt>Address</dt>
                         <dd><?=$user['address']?></dd>
-
+                        <?php endif ?>
+                        <?php if ($user['id']!=4):  ?>
                         <dt>Mobile No</dt>
                         <dd><?=$user['mobile_no']?></dd>
-                      
+                        <?php endif ?>
                         <dt>Date of Birth</dt>
                         <dd><?=$user['birthday']?></dd>
                         <dt>Sex</dt>
