@@ -35,9 +35,16 @@ class Home extends BaseController
         $data['appointment']=count($appointment->getAppointmentNumber());
       
 
+        $users = new UserModel();
+        $data['users'] = $users->getDoctorRecord();
 
-          echo view('partials/sidebar',$data);
-         echo view('doctor/dashboard');
+         echo view('partials/sidebar',$data);
+         if($session->get('user_role')==4){
+            echo view('doctor/doctorslist');
+         }else {
+            echo view('doctor/dashboard');
+         }
+         
          echo view('partials/footer');
       
        

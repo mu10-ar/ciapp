@@ -49,6 +49,7 @@ $routes->add('/assignnurse', 'nurse::assignnurse');
 $routes->add('/assignednurse', 'nurse::assignednurse');
 $routes->add('/doctorslist', 'doctor::doctorslist');
 $routes->add('/unassign/(:num)', 'nurse::unassign/$1');
+$routes->add('/accountsetting/(:num)', 'user::accountsetting/$1');
 $routes->add('/delete/(:num)', 'doctor::deleteuser/$1');
 $routes->add('/deletenurse/(:num)', 'nurse::deleteuser/$1');
 $routes->add('/update/(:num)', 'doctor::updateuser/$1');

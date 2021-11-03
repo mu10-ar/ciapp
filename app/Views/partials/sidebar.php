@@ -60,7 +60,11 @@
                 <strong>AS</strong>
             </div>
 
+
+
+
             <ul class="list-unstyled components">
+                <?php if($session->get('user_role')!=4):?>
 
                 <li>
                     <a href="<?= base_url() ?>">
@@ -69,6 +73,9 @@
                         Dashboard
                     </a>
                 </li>
+                <?php endif?>
+
+
                 <li>
                     <a href="<?= base_url() ?>/profile/<?=$session->get('user_id')?>">
                         <i class="fas fa-image"></i>
@@ -459,6 +466,14 @@ My Profile
                             <a href="<?=base_url()?>/sent">Sent</a>
                         </li> -->
                     </ul>
+                </li>
+                <li>
+                    <a href="<?=base_url()."/accountsetting/".$session->get('user_id')?>" >
+                        <i class="fas fa-info"></i>
+
+                        Account Settings
+                    </a>
+                
                 </li>
 
             </ul>

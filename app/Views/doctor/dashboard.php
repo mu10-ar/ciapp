@@ -2,6 +2,31 @@
 <div class="row">
     <!-- welcome message -->
  
+
+  
+    <div class="col-md-12">
+       <?php
+       $session=session();
+       if(!empty($session->getFlashdata('success'))){
+           ?>
+           <div class="alert alert-success">
+               <?php echo $session->getFlashdata('success') ?>
+           </div>
+           <?php
+       }
+       if(!empty($session->getFlashdata('error'))){
+           ?>
+           <div class="alert alert-danger">
+               <?php echo $session->getFlashdata('error') ?>
+           </div>
+           
+           <?php
+           
+
+       }   
+       ?>  
+        </div>   
+
 <?php 
 $session= session();
 if($session->get('user_role')!=4):?>

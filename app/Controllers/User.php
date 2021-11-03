@@ -364,4 +364,162 @@ class User extends BaseController
         echo view('errors/norecord');
         echo view('partials/footer');
     }
+
+
+
+
+
+    public function accountsetting($id)     
+    {
+
+        $session=session();
+        if ($this->request->getMethod() == 'post') {
+            $input = $this->validate([
+                'firstname' => [
+                    'rules' => 'required|alpha_space',
+                    'errors' => [
+                        'required' => 'name must be filled',
+                        'alpha_space' => 'name can contain only letters'
+                    ]
+                ],
+                'lastname' => [
+                    'rules' => 'required|alpha_space',
+                    'errors' => [
+                        'required' => 'last name must be filled',
+                        'alpha_space' => 'name can contain only letters'
+                    ]
+                ],
+                'email' => [
+                    'rules' => 'required|valid_email',
+                    'errors' => [
+                        'required' => 'please provide your email',
+                        'valid_email' => 'Please enter a valid Email'
+
+
+                    ]
+                ],
+                'password' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'please provide your password'
+                     
+
+
+                    ]
+                ],
+
+
+                'address' => [
+                    'rules' => 'required|max_length[255]|alpha_numeric_space',
+                    'errors' => [
+                        'required' => 'Please provide your address',
+                        'max_length' => 'Your Password is too Shot',
+                        'alpha_numeric_space' => "Address Can't Contain Special Characters`"
+
+
+                    ]
+                ],
+                'sex' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your gender"
+                    ]
+                ],
+                'department_name' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your department"
+                    ]
+                ],
+                'birthday' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your Date od Birth"
+                    ]
+                ],
+                'blood_group ' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => "Please select your blood group"
+                    ]
+                ],
+                'specialist ' => [
+                    'rules' => 'permit_empty|alpha_numeric_space',
+                    'errors' => [
+
+                        'alpha_numeric_space' => "special characters not allowed"
+                    ]
+                ],
+                'designation ' => [
+                    'rules' => 'permit_empty|alpha_numeric_space',
+                    'errors' => [
+
+                        'alpha_numeric_space' => "special characters not allowed"
+                    ]
+                ],
+                'career_title ' => [
+                    'rules' => 'permit_empty|alpha_numeric_space',
+                    'errors' => [
+
+                        'alpha_numeric_space' => "special characters not allowed"
+
+                    ]
+                ],
+
+
+            ]);
+
+
+
+
+            if ($input == true) {
+
+                $model = new UserModel();
+                $model->update($id, [
+                    'firstname' => $this->request->getPost('firstname'),
+                    'lastname' => $this->request->getPost('lastname'),
+                    'email' => $this->request->getPost('email'),
+                    'password' => $this->request->getPost('password'),
+                    'address' => $this->request->getPost('address'),
+                    'specialist' => $this->request->getPost('specialist'),
+                    'mobile_no' => $this->request->getPost('mobile_no'),
+                    'sex' => $this->request->getPost('sex'),
+                    'designation' => $this->request->getPost('designation'),
+                    'department_name' => $this->request->getPost('department_name'),
+                    'birthday' => $this->request->getPost('birthday'),
+                    'blood_group' => $this->request->getPost('blood_group'),
+                    'user_role' =>  $this->request->getPost('user_role')
+                ]);
+                $userrole = $this->request->getVar('user_role');
+                $session->setFlashdata('success','Account setting changed successfully');
+                //    if ($userrole==3) {
+                return  redirect()->to('/');
+                //    }
+
+
+
+            } else {
+                $data['validation'] = $this->validator;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+        $model = new UserModel();
+        $user = $model->getRow($id);
+        $data['user'] = $user;
+        $department = new DepartmentModel();
+        $data['department'] = $department->getDepartmentRecord();
+        echo view('partials/sidebar',$data);
+        echo view('settings/settings');
+        echo view('partials/footer');
+    }
 }
