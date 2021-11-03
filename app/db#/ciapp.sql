@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: Oct 26, 2021 at 09:17 AM
-=======
--- Generation Time: Oct 22, 2021 at 12:02 PM
->>>>>>> parent of e194939 (Merge branch 'main' of https://github.com/mu10-ar/ciapp)
+-- Generation Time: Nov 03, 2021 at 09:19 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -33,28 +29,71 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `appointments` (
   `appointment_id` int(99) NOT NULL,
-  `id` int(99) NOT NULL,
-  `doctor_name` varchar(255) NOT NULL,
+  `patient_id` int(99) NOT NULL,
   `appointment_date` datetime NOT NULL,
   `problem` varchar(255) NOT NULL,
-  `department_name` varchar(255) NOT NULL
+  `department_name` varchar(255) NOT NULL,
+  `status` int(1) NOT NULL,
+  `doctor_id` int(99) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `appointments`
 --
 
-<<<<<<< HEAD
 INSERT INTO `appointments` (`appointment_id`, `patient_id`, `appointment_date`, `problem`, `department_name`, `status`, `doctor_id`) VALUES
-(15, 49, '2021-10-18 02:19:00', 'problem', 'Psychiatry.', 1, 47),
 (17, 49, '2021-10-13 02:20:00', 'mudassar', 'Orthopaedics', 1, 52),
-(18, 49, '2021-10-18 22:58:00', 'mudassar', 'medical', 1, 47),
-(19, 49, '2021-10-25 23:58:00', 'doctor 1', 'Psychiatry.', 1, 47),
 (20, 49, '2021-09-27 01:57:00', 'doctor 1', 'Psychiatry.', 0, 52),
-(21, 49, '2021-10-01 12:03:00', 'doctor 1', 'Orthopaedics', 1, 47),
-(22, 49, '2021-10-01 12:03:00', 'doctor 1', 'Orthopaedics', 1, 47),
-(24, 49, '2021-10-14 12:10:00', 'doctor 1', 'Psychiatry.', 1, 47),
-(25, 49, '2021-09-28 12:08:00', 'new problem', 'Orthopaedics', 0, 52);
+(25, 49, '2021-09-28 12:08:00', 'new problem', 'Orthopaedics', 0, 52),
+(34, 49, '2021-11-02 00:59:00', 'ghf', 'Orthopaedics', 0, 78),
+(35, 49, '2021-11-02 12:03:00', 'ggg', 'Orthopaedics', 2, 69),
+(36, 49, '2021-11-10 12:34:00', 'fdsgg', 'test', 2, 69);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assigned_bed`
+--
+
+CREATE TABLE `assigned_bed` (
+  `assigned_bed` int(99) NOT NULL,
+  `patient_id` int(99) NOT NULL,
+  `assigned_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `assigned_id` int(11) NOT NULL,
+  `description` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `assigned_bed`
+--
+
+INSERT INTO `assigned_bed` (`assigned_bed`, `patient_id`, `assigned_at`, `assigned_id`, `description`) VALUES
+(2, 49, '2021-11-01 10:43:14', 11, 'ggg'),
+(1, 49, '2021-11-01 10:43:15', 12, ''),
+(2, 49, '2021-11-01 11:35:41', 13, 'b'),
+(2, 49, '2021-11-01 11:41:17', 14, 'b'),
+(1, 49, '2021-11-01 11:41:19', 15, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assign_nurse`
+--
+
+CREATE TABLE `assign_nurse` (
+  `assign_id` int(99) NOT NULL,
+  `patient_id` int(99) NOT NULL,
+  `nurse_id` int(99) NOT NULL,
+  `assign_date` date NOT NULL DEFAULT current_timestamp(),
+  `notes` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `assign_nurse`
+--
+
+INSERT INTO `assign_nurse` (`assign_id`, `patient_id`, `nurse_id`, `assign_date`, `notes`) VALUES
+(2, 52, 58, '2021-11-02', '');
 
 -- --------------------------------------------------------
 
@@ -66,20 +105,54 @@ CREATE TABLE `beds` (
   `bed_id` int(99) NOT NULL,
   `department_id` int(11) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
-  `status` int(99) NOT NULL DEFAULT 1
+  `status` int(99) NOT NULL DEFAULT 1,
+  `patient_id` int(99) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `beds`
 --
 
-INSERT INTO `beds` (`bed_id`, `department_id`, `description`, `status`) VALUES
-(1, 12, NULL, 1),
-(2, 11, NULL, 1);
-=======
-INSERT INTO `appointments` (`appointment_id`, `id`, `doctor_name`, `appointment_date`, `problem`, `department_name`) VALUES
-(3, 49, 'doctor1', '2021-10-13 13:53:00', 'problem', 'Psychiatry.');
->>>>>>> parent of e194939 (Merge branch 'main' of https://github.com/mu10-ar/ciapp)
+INSERT INTO `beds` (`bed_id`, `department_id`, `description`, `status`, `patient_id`) VALUES
+(1, 12, NULL, 0, NULL),
+(2, 11, NULL, 0, NULL),
+(3, 12, NULL, 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bill`
+--
+
+CREATE TABLE `bill` (
+  `bill_id` int(99) NOT NULL,
+  `patient_id` int(99) NOT NULL,
+  `services` varchar(255) DEFAULT NULL,
+  `services_description` varchar(255) DEFAULT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp(),
+  `status` int(2) NOT NULL,
+  `paid` int(99) NOT NULL,
+  `price` int(99) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bill`
+--
+
+INSERT INTO `bill` (`bill_id`, `patient_id`, `services`, `services_description`, `date`, `status`, `paid`, `price`) VALUES
+(12, 49, 'nn', 'gg', '2021-10-12', 1, 45, 54),
+(13, 49, 'nn', 'gg', '2021-10-09', 1, 17, 87),
+(14, 49, 'nn', 'gg', '2021-10-08', 1, 45, 54),
+(15, 49, 'nn', 'gg', '2021-10-20', 1, 21, 34),
+(16, 52, 'nn', 'gg', '2021-10-14', 1, 45, 80000),
+(17, 49, 'nn', 'gg', '2021-10-06', 1, 45, 54),
+(18, 52, 'nn', 'gg', '2021-10-21', 1, 45, 54),
+(19, 52, 'nn', 'gg', '2021-10-14', 1, 45, 54),
+(20, 52, 'nn', 'gg', '2021-10-13', 1, 45, 54),
+(21, 52, 'nn', 'gg', '2021-10-03', 1, 45, 54),
+(22, 52, 'nn', 'gg', '2021-10-12', 1, 45, 80),
+(23, 52, 'nn', 'gg', '2021-10-14', 1, 35, 0),
+(24, 60, 'swed', 'sd', '2021-11-17', 0, 32, 32);
 
 -- --------------------------------------------------------
 
@@ -134,7 +207,20 @@ CREATE TABLE `departments` (
 INSERT INTO `departments` (`department_id`, `department_name`, `department_description`, `created_at`) VALUES
 (10, 'medical', 'this department is related to medical ', '2021-10-21 13:38:22'),
 (11, 'Orthopaedics', 'this department is related to Orthopaedics', '2021-10-21 13:39:28'),
-(12, 'Psychiatry.', 'this department is related to mental health', '2021-10-21 13:40:04');
+(12, 'Psychiatry.', 'this department is related to mental health', '2021-10-21 13:40:04'),
+(14, 'test', 'testing', '2021-11-02 13:33:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `event_id` int(99) NOT NULL,
+  `event_name` varchar(255) NOT NULL,
+  `event_description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -157,7 +243,8 @@ CREATE TABLE `medicine` (
 --
 
 INSERT INTO `medicine` (`medicine_id`, `medicine_name`, `medicine_category`, `medicine_price`, `medicine_stock`, `manufactured_by`, `created_at`) VALUES
-(9, 'panadol', '1', 99, 42324, 'md', '2021-10-21 13:51:20');
+(9, 'panadol', '1', 99, 42324, 'md', '2021-10-21 13:51:20'),
+(11, 'surbex', '2', 64, 213, 'ass', '2021-11-02 13:36:58');
 
 -- --------------------------------------------------------
 
@@ -181,7 +268,9 @@ CREATE TABLE `messages` (
 INSERT INTO `messages` (`message_id`, `sender_id`, `reciever_id`, `subject`, `message`, `sent_at`) VALUES
 (5, 13, 52, 'ff', 'mudassar', '2021-10-25 15:44:40'),
 (8, 13, 52, 'Admission date query', 'message', '2021-10-25 16:12:50'),
-(12, 49, 52, 'Admission date query', 'message', '2021-10-26 11:57:04');
+(12, 49, 52, 'Admission date query', 'message', '2021-10-26 11:57:04'),
+(14, 49, 57, 'number chaiye', 'kindly share your number.', '2021-11-01 17:12:18'),
+(15, 55, 13, 'Admission date query', 'message', '2021-11-02 16:24:08');
 
 -- --------------------------------------------------------
 
@@ -200,9 +289,30 @@ CREATE TABLE `notifications` (
 --
 
 INSERT INTO `notifications` (`notification_id`, `user_id`, `message`) VALUES
-(1, 47, 'you have an appointment to approve <a class=\"text-primary\" href=\"appointments\"> click to view</a>'),
 (2, 52, 'you have an appointment to approve <a class=\"text-primary\" href=\"appointments\"> click to view</a>'),
-(8, 49, 'A case study has Benn Addes to your Profile <a class=\"text-primary\" href=\"mycasestudy/49\"> click to view</a>');
+(8, 49, 'A case study has Benn Addes to your Profile <a class=\"text-primary\" href=\"mycasestudy/49\"> click to view</a>'),
+(9, 49, 'bed No has been assigned to you'),
+(14, 49, 'bed No1 has been assigned to you'),
+(15, 49, 'bed No2 has been assigned to you'),
+(16, 49, 'bed No1 has been assigned to you'),
+(18, 49, 'bed No 2 has been assigned to you'),
+(19, 49, 'bed No 2 has been assigned to you'),
+(20, 49, 'bed No 1 has been assigned to you'),
+(28, 52, 'a nurse has assigned to you <a class=\"text-primary\" href=\"profile/58\"> click to view</a>'),
+(29, 52, 'you have been assigned to a patient <a class=\"text-primary\" href=\"profile/\"> click to view</a>'),
+(30, 49, 'a nurse has assigned to you <a class=\"text-primary\" href=\"profile/58\"> click to view</a>'),
+(31, 49, 'you have been assigned to a patient <a class=\"text-primary\" href=\"profile/\"> click to view</a>'),
+(32, 49, 'a nurse has assigned to you <a class=\"text-primary\" href=\"profile/58\"> click to view</a>'),
+(33, 49, 'you have been assigned to a patient <a class=\"text-primary\" href=\"profile/\"> click to view</a>'),
+(34, 69, 'you have an appointment to approve <a class=\"text-primary\" href=\"appointments\"> click to view</a>'),
+(35, 55, 'you have an appointment to have been edited <a class=\"text-primary\" href=\"myschedule\"> click to view</a>'),
+(36, 78, 'you have an appointment to have been edited <a class=\"text-primary\" href=\"myschedule\"> click to view</a>'),
+(37, 69, 'you have an appointment to approve <a class=\"text-primary\" href=\"appointments\"> click to view</a>'),
+(38, 69, 'you have an appointment to have been edited <a class=\"text-primary\" href=\"myschedule\"> click to view</a>'),
+(39, 49, 'your appointment has been approved <a class=\"text-primary\" href=\"myappointments\"> click to view</a>'),
+(40, 69, 'you have an appointment to approve <a class=\"text-primary\" href=\"appointments\"> click to view</a>'),
+(41, 49, 'your appointment has been approved <a class=\"text-primary\" href=\"myappointments\"> click to view</a>'),
+(42, 49, 'your appointment has been approved <a class=\"text-primary\" href=\"myappointments\"> click to view</a>');
 
 -- --------------------------------------------------------
 
@@ -254,29 +364,33 @@ CREATE TABLE `users` (
   `blood_group` varchar(21) NOT NULL,
   `user_role` int(99) NOT NULL,
   `career_title` varchar(200) DEFAULT NULL,
-  `created_at` date NOT NULL DEFAULT current_timestamp()
+  `created_at` date NOT NULL DEFAULT current_timestamp(),
+  `bill` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `address`, `specialist`, `mobile_no`, `sex`, `designation`, `department_name`, `department_id`, `birthday`, `blood_group`, `user_role`, `career_title`, `created_at`) VALUES
-(13, 'mudassar', 'hussain', 'admin@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 0, '', NULL, NULL, NULL, NULL, '', 1, NULL, '2021-10-18'),
-(47, 'doctor', '1', 'doctor1@doctor.com', 'doctor12345', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'arthopedist', 2147483647, 'male', 'senior doctor', 'Orthopaedics', NULL, '2021-10-13', 'ab-', 2, NULL, '2021-10-21'),
-(48, 'nurse ', '1', 'nurse1@nurse.com', 'nurse12345', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 2147483647, 'female', NULL, 'Psychiatry.', NULL, '2021-10-14', 'ab+', 3, NULL, '2021-10-21'),
-(49, 'patient', '1', 'patient1@patient.com', 'patient12345', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 2147483647, 'male', NULL, 'Psychiatry.', NULL, '2021-09-26', 'b-', 4, NULL, '2021-10-21'),
-<<<<<<< HEAD
-(50, 'acountant', '1', 'accountant@accountant.com', 'accountant12345', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'none', 2147483647, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-13', 'b+', 5, NULL, '2021-10-21'),
-(52, 'mudassar', 'hussain', 'adil@adil.com', 'ad987iladil', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', '', 2147483647, 'male', '', 'Psychiatry.', NULL, '2021-10-22', 'b+', 2, NULL, '2021-10-23'),
-(54, 'dsg', 'dfsdgf', 'admin@admin.comssss', 'adminadminsssssss', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'none', 312, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-13', 'ab+', 2, NULL, '2021-10-25'),
-(55, 'dsg', 'dfsdgf', 'admsain@admsain.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'sasa', 312, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-13', 'ab+', 7, NULL, '2021-10-25'),
-(56, 'dsg', 'dfsdgf', 'aadmin@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'dsd', 312, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-21', 'ab+', 7, NULL, '2021-10-25'),
-(57, 'dsg', 'dfsdgf', 'adaamin@admin.com', 'adminadminaaa', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'dsd', 312, 'male', 'senior doctor', 'Orthopaedics', NULL, '2021-10-08', 'ab+', 6, NULL, '2021-10-25'),
-(58, 'dsg', 'dfsdgf', 'admin@qadmin.com', 'adminadminqq', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'none', 312, 'male', 'senior doctor', 'Orthopaedics', NULL, '2021-10-22', 'ab+', 5, NULL, '2021-10-25');
-=======
-(50, 'acountant', '1', 'accountant@accountant.com', 'accountant12345', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'none', 2147483647, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-13', 'b+', 5, NULL, '2021-10-21');
->>>>>>> parent of e194939 (Merge branch 'main' of https://github.com/mu10-ar/ciapp)
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `address`, `specialist`, `mobile_no`, `sex`, `designation`, `department_name`, `department_id`, `birthday`, `blood_group`, `user_role`, `career_title`, `created_at`, `bill`) VALUES
+(13, 'admin', 'admin', 'admin@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'none', 0, 'male', 'none', 'test', 'none', '2021-12-01', 'ab+', 1, 'none', '2021-10-18', 0),
+(49, 'patient', 'one', 'patient1@patient.com', 'patient12345', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 2147483647, 'male', NULL, 'Choose...', NULL, '2021-09-26', 'Choose...', 4, NULL, '2021-10-21', 0),
+(52, 'mudassar', 'hussain', 'adil@adil.com', 'ad987iladil', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', '', 2147483647, 'male', '', 'Psychiatry.', NULL, '2021-10-22', 'b+', 4, NULL, '2021-10-23', 2),
+(55, 'dsg', 'dfsdgf', 'admsain@admsain.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'Cardiologist', 312, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-13', 'ab+', 2, NULL, '2021-10-25', 0),
+(56, 'dsg', 'dfsdgf', 'aadmin@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'dsd', 312, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-10-21', 'ab+', 7, NULL, '2021-10-25', 0),
+(57, 'dsg', 'dfsdgf', 'adaamin@admin.com', 'adminadminaaa', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'dsd', 312, 'male', 'senior doctor', 'Orthopaedics', NULL, '2021-10-08', 'ab+', 6, NULL, '2021-10-25', 0),
+(58, 'dsg', 'dfsdgf', 'mudassan0544@gmail.com', '', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'noneent', 312, 'male', 'senior doctor', 'Psychiatry.', NULL, '2021-11-16', 'ab-', 3, NULL, '2021-10-25', 0),
+(60, 'mudassar', 'hussain', 'adm3in@admin.com', 'adminadmin', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', NULL, 2147483647, 'male', NULL, 'Psychiatry.', NULL, '2021-10-03', 'b+', 4, NULL, '2021-10-27', 1),
+(69, 'testing', 'doctor', 'doctor@doctor.com', 'testdoctor', '123 mian as', 'as', 300, 'male', 's', 'test', NULL, '2020-12-01', 'a+', 2, NULL, '2021-11-02', 0),
+(70, 'testing ', 'nurse', 'nurse@nurse.com', 'testnurse', '123 mIN SS', NULL, 300, 'male', NULL, 'test', NULL, '2006-12-01', 'a+', 3, NULL, '2021-11-02', 0),
+(71, 'testing', 'patient', 'patient@patient.com', 'testpatient', '3322 mIN AA', NULL, 300, 'male', NULL, 'test', NULL, '1982-12-01', 'b+', 4, NULL, '2021-11-02', 0),
+(72, 'test', 'accountant', 'accountant@test.com', 'testaccountant', '12 main as', 'ent', 2147483647, 'male', 'as', 'test', NULL, '1990-12-02', 'b+', 5, NULL, '2021-11-02', 0),
+(73, 'test ', 'bed manager', 'bedm@test.com', 'testingbed', '21 sa as', 'ent', 300, 'male', 'sa', 'test', NULL, '1999-01-01', 'b+', 6, NULL, '2021-11-02', 0),
+(74, 'test', 'pharmacist', 'pharmacist@test.com', 'testpharmacist', '123 mian as', 'ent', 300, 'male', 'aa', 'test', NULL, '2004-12-02', 'b+', 7, NULL, '2021-11-02', 0),
+(75, 'test', 'labtech', 'lab@test.com', 'testlabtechnician', '123 sad', 'e', 333, 'male', 's', 'test', NULL, '2010-01-01', 'a-', 8, NULL, '2021-11-02', 0),
+(76, 'lab', 'tech', 'lab@admin.com', 'adminadminff', 'dfdf', 'fdsf', 4543543, 'male', 'ssd', 'test', NULL, '2021-11-18', 'ab+', 8, NULL, '2021-11-02', 0),
+(77, 'mudassar', 'hussain', 'adgfmin@admigfn.com', 'adminadmingfgfgf', 'VPO Bohrian Dulyal tehsil Dina distt Jhelum', 'ent', 2147483647, 'male', 's', 'test', NULL, '2021-11-16', 'ab+', 2, NULL, '2021-11-03', 0),
+(78, 'new ', 'dddd', 'adddmin@adddmin.com', 'adminadmindddd', 'dfdf', 'arthopedic', 243, 'female', '4323', 'Psychiatry.', NULL, '2021-11-24', 'o+', 2, NULL, '2021-11-03', 0);
 
 --
 -- Indexes for dumped tables
@@ -287,7 +401,39 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `addres
 --
 ALTER TABLE `appointments`
   ADD PRIMARY KEY (`appointment_id`),
-  ADD KEY `appointments_ibfk_1` (`id`);
+  ADD KEY `appointments_ibfk_1` (`patient_id`),
+  ADD KEY `appointments_ibfk_2` (`doctor_id`);
+
+--
+-- Indexes for table `assigned_bed`
+--
+ALTER TABLE `assigned_bed`
+  ADD PRIMARY KEY (`assigned_id`),
+  ADD KEY `patient_id` (`patient_id`),
+  ADD KEY `assigned_bed` (`assigned_bed`);
+
+--
+-- Indexes for table `assign_nurse`
+--
+ALTER TABLE `assign_nurse`
+  ADD PRIMARY KEY (`assign_id`),
+  ADD KEY `nurse_id` (`nurse_id`),
+  ADD KEY `patient_id` (`patient_id`);
+
+--
+-- Indexes for table `beds`
+--
+ALTER TABLE `beds`
+  ADD PRIMARY KEY (`bed_id`),
+  ADD KEY `department_id` (`department_id`),
+  ADD KEY `patient_id` (`patient_id`);
+
+--
+-- Indexes for table `bill`
+--
+ALTER TABLE `bill`
+  ADD PRIMARY KEY (`bill_id`),
+  ADD KEY `patient_id` (`patient_id`);
 
 --
 -- Indexes for table `case_study`
@@ -301,6 +447,12 @@ ALTER TABLE `case_study`
 --
 ALTER TABLE `departments`
   ADD PRIMARY KEY (`department_id`);
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`event_id`);
 
 --
 -- Indexes for table `medicine`
@@ -344,17 +496,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-<<<<<<< HEAD
-  MODIFY `appointment_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `appointment_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- AUTO_INCREMENT for table `assigned_bed`
+--
+ALTER TABLE `assigned_bed`
+  MODIFY `assigned_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `assign_nurse`
+--
+ALTER TABLE `assign_nurse`
+  MODIFY `assign_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `beds`
 --
 ALTER TABLE `beds`
-  MODIFY `bed_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-=======
-  MODIFY `appointment_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
->>>>>>> parent of e194939 (Merge branch 'main' of https://github.com/mu10-ar/ciapp)
+  MODIFY `bed_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `bill`
+--
+ALTER TABLE `bill`
+  MODIFY `bill_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `case_study`
@@ -366,25 +532,31 @@ ALTER TABLE `case_study`
 -- AUTO_INCREMENT for table `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `department_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `department_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `event_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `medicine`
 --
 ALTER TABLE `medicine`
-  MODIFY `medicine_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `medicine_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `message_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `message_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `notification_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `notification_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `prescriptions`
@@ -396,11 +568,7 @@ ALTER TABLE `prescriptions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-<<<<<<< HEAD
-  MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
-=======
-  MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
->>>>>>> parent of e194939 (Merge branch 'main' of https://github.com/mu10-ar/ciapp)
+  MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- Constraints for dumped tables
@@ -410,7 +578,35 @@ ALTER TABLE `users`
 -- Constraints for table `appointments`
 --
 ALTER TABLE `appointments`
-  ADD CONSTRAINT `appointments_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `appointments_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `appointments_ibfk_2` FOREIGN KEY (`doctor_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `assigned_bed`
+--
+ALTER TABLE `assigned_bed`
+  ADD CONSTRAINT `assigned_bed_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `assigned_bed_ibfk_2` FOREIGN KEY (`assigned_bed`) REFERENCES `beds` (`bed_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `assign_nurse`
+--
+ALTER TABLE `assign_nurse`
+  ADD CONSTRAINT `assign_nurse_ibfk_1` FOREIGN KEY (`nurse_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `assign_nurse_ibfk_2` FOREIGN KEY (`patient_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `beds`
+--
+ALTER TABLE `beds`
+  ADD CONSTRAINT `beds_ibfk_1` FOREIGN KEY (`department_id`) REFERENCES `departments` (`department_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `beds_ibfk_2` FOREIGN KEY (`patient_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `bill`
+--
+ALTER TABLE `bill`
+  ADD CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `case_study`
