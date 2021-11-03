@@ -110,9 +110,16 @@ My Profile
                             if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
 
                             ?>
+                             <?php
+                        if ($userrole == 1) :
+
+                        ?>
                         <li>
                             <a href="<?= base_url() ?>/createdepartment">Add Department</a>
                         </li>
+                        <?php
+                       endif
+                        ?>
                         <?php ;
                             endif ?>
                         <li>
@@ -139,9 +146,17 @@ My Profile
                         if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
 
                         ?>
+                         <?php
+                        if ($userrole == 1) :
+
+                        ?>
                         <li>
                             <a href="<?php echo base_url(); ?>/createuser">Add Doctor</a>
                         </li>
+                        <?php
+                       endif
+
+                        ?>
                         <?php ;
                         endif ?>
                         <li>
@@ -175,9 +190,17 @@ My Profile
 
                         ?>
 
+                        <?php
+                        if ($userrole == 1) :
+
+                        ?>
+
+
                         <li>
                             <a href="<?= base_url() ?>/addnurse">Add Nurse</a>
                         </li>
+                        <?php ;
+                        endif ?>
                         <li>
                             <a href="<?= base_url() ?>/assignnurse">assign Nurse</a>
                         </li>
