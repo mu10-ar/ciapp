@@ -118,7 +118,7 @@ My Profile
                             <a href="<?= base_url() ?>/createdepartment">Add Department</a>
                         </li>
                         <?php
-                       endif
+                        endif
                         ?>
                         <?php ;
                             endif ?>
@@ -315,9 +315,17 @@ My Profile
                         HR
                     </a>
                     <ul class="collapse list-unstyled" id="employeeSubmenu">
+                    <?php
+                        if ($userrole == 1) :
+
+                        ?>
                         <li>
                             <a href="<?= base_url() ?>/adduser">Add Employee</a>
                         </li>
+                        <?php
+                        endif
+
+                        ?>
                         <li>
                             <a href="<?= base_url() ?>/employeelist">Employee List</a>
                         </li>
