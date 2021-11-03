@@ -57,15 +57,20 @@
     
                         <?php
                         $session=session();
+                        if ($user['user_role']==4):
+                         
+                    
+
                         if ($session->get('user_id')==$user['id']) {
-                            echo  '<a href="'.base_url().'/myprescription/'.$user["id"].'" class="btn btn-primary">My Prescription</a>';
+                            echo  '<a href="'.base_url().'/myprescription/'.$user["id"].'" class="btn btn-primary">Prescription</a>';
                         }
                         if ($session->get('user_id')==$user['id']) {
                             echo  '<a href="'.base_url().'/mycasestudy/'.$user["id"].'" class="btn btn-primary">case study</a>';
                         }
-                        // if ($session->get('user_role')==5) {
-                        //     echo  '<a href="'.base_url().'/printbill/'.$user["id"].'" class="btn btn-primary">Print Bill</a>';
-                        // }
+                        if (($session->get('user_role')==5)||($session->get('user_role')==1)) {
+                            echo  '<a href="'.base_url().'/printbill/'.$user["id"].'" class="btn btn-primary">Print Bill</a>';
+                        }
+                        endif
                         
                         ?>
                     </dl>
