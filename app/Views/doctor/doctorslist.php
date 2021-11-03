@@ -47,7 +47,9 @@
             <th scope="col">lastname</th>
             <th scope="col">email</th>
             <th scope="col">address</th>
+     
             <th scope="col">action</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -67,7 +69,10 @@
 
 
                 <td>
-                    <?php if (!(($userrole == 4) || ($userrole == 5) || ($userrole == 6) || ($userrole == 7) || ($userrole == 8))) :
+                    <?php     
+                     
+                     if ($session->get('user_role')==1):
+              ?>
                     ?> <a href="<?= base_url() ?>/update/<?= $user['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
                         <a href="<?= base_url() ?>/delete/<?= $user['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
                     <?php

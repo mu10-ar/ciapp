@@ -41,7 +41,9 @@
                 <th scope="col">email</th>
                 <th scope="col">address</th>
                 <th scope="col">Role</th>
+            
                 <th scope="col">action</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -72,8 +74,16 @@
 
 
                         ?></td>
-                    <td> <a href="<?= base_url() ?>/updateemployee/<?= $user['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
+                    <td> 
+                    <?php     
+                     
+                     if ($session->get('user_role')==1):
+              ?><a href="<?= base_url() ?>/updateemployee/<?= $user['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
                         <a href="<?= base_url() ?>/deleteemployee/<?= $user['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
+                        <?php     
+                     
+                   endif
+              ?>
                         <a href="<?= base_url() ?>/profile/<?= $user['id'] ?>" class="btn btn-warning btn-sm">profile</a>
                     </td>
                 </tr>

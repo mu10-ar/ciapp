@@ -38,7 +38,12 @@
 
                 ?>
                 <th scope="col">address</th>
+               
+                     
+              
                 <th scope="col">action</th>
+
+                
                 <?php endif ?>
             </tr>
         </thead>
@@ -63,7 +68,7 @@
                     <?php
                         $session = session();
                         $userrole = $session->get('user_role');
-                        if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+                        if (($userrole == 1) ) :
 
                         ?><a href="<?= base_url() ?>/updatenurse/<?= $user['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
                     <a href="<?= base_url() ?>/deletenurse/<?= $user['id'] ?>" class="btn btn-danger btn-sm">Delete</a>

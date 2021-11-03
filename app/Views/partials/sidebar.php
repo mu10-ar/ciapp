@@ -265,9 +265,19 @@ My Profile
                         <li>
                             <a href="<?= base_url() ?>/appointments"> Appointment List</a>
                         </li>
+                        <?php  ;
+                    endif ?>
+                        <?php
+                    if (($userrole == 1) || ($userrole == 2) || ($userrole == 4)) :
+
+                    ?>
                         <li>
                             <a href="<?= base_url() ?>/myschedule/<?=$session->get('user_id')?>"> My Schedule</a>
                         </li>
+                        <li>
+                            <a href="<?= base_url() ?>/history/<?=$session->get('user_id')?>"> History</a>
+                        </li>
+                       
                         <?php  ;
                     endif ?>
                     </ul>
@@ -449,27 +459,50 @@ My Profile
             endif ?>
 
 
-                <li>
-                    <a href="#MessageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-info"></i>
+<li>
+    <li>
+        <a href="#MessageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-info"></i>
 
-                        Message
-                    </a>
-                    <ul class="collapse list-unstyled" id="MessageSubmenu">
-                        <li>
-                            <a href="<?=base_url()?>/newmessage">Send Message</a>
-                        </li>
-                        <li>
-                            <a href="<?=base_url()?>/inbox">Inbox</a>
-                        </li>
-                        <!-- <li>
-                            <a href="<?=base_url()?>/sent">Sent</a>
-                        </li> -->
-                    </ul>
-                </li>
-                <li>
-                    <a href="<?=base_url()."/accountsetting/".$session->get('user_id')?>" >
-                        <i class="fas fa-info"></i>
+            Message
+        </a>
+        <ul class="collapse list-unstyled" id="MessageSubmenu">
+            <li>
+                <a href="<?=base_url()?>/newmessage">Send Message</a>
+            </li>
+            <li>
+                <a href="<?=base_url()?>/inbox">Inbox</a>
+            </li>
+            <!-- <li>
+                <a href="<?=base_url()?>/sent">Sent</a>
+            </li> -->
+        </ul>
+    </li>
+    <li>
+        <a href="#events" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-info"></i>
+events
+        </a>
+        <ul class="collapse list-unstyled" id="events">
+        <?php
+                     
+                     if ($session->get('user_role')==1):
+              ?>
+            <li>
+                <a href="<?=base_url()?>/addevent">add event</a>
+            </li>
+            <?php
+                     
+                    endif
+              ?>
+            <li>
+                <a href="<?=base_url()?>/eventslist">event list</a>
+            </li>
+           
+        </ul>
+    </li>
+    <a href="<?=base_url()."/accountsetting/".$session->get('user_id')?>" >
+                        <i cladd="fas fa-info"></i>
 
                         Account Settings
                     </a>

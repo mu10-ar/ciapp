@@ -1,3 +1,26 @@
+<div class="container">
+<?php
+       $session=session();
+       if(!empty($session->getFlashdata('success'))){
+           ?>
+           <div class="alert alert-success">
+               <?php echo $session->getFlashdata('success') ?>
+           </div>
+           <?php
+       }
+       if(!empty($session->getFlashdata('error'))){
+           ?>
+           <div class="alert alert-danger">
+               <?php echo $session->getFlashdata('error') ?>
+           </div>
+           
+           <?php
+           
+
+       }   
+       ?>  
+        </div> 
+
 <div style="text-align: center;">
     <h2>update Appointment</h2>
 </div>
@@ -6,29 +29,8 @@
     <div class="container" style="display: flex;">
         <form action="" method="post">
 
-            <div class="form-group">
-                <label for="patientname">Patient Name<i class="text-danger">*</i></label>
-                <select id="patientname" name="id" class="form-control">
-                    <option selected>Choose...</option>
-                    <span class="red">
-                        <?php 
-                                if (isset($validation)&& $validation->hasError('id')) {
-
-                                    echo $validation->getError('id');
-                                }?>
-                    </span>
-                    <?php
-                        
-                        foreach ($patient as $patient) {?>
-
-
-
-                    <option value="<?=$patient['id']?>"><?=$patient['firstname'].' '.$patient['lastname']?>
-                    </option>
-                    <?php ;}?>
-
-                </select>
-            </div>
+    
+               
 
             <div class="form-group">
                 <label for="inputdepartmentname">Department Name<i class="text-danger">*</i></label>
@@ -55,7 +57,7 @@
             </div>
             <div class="form-group">
                 <label for="doctorname">Doctor Name<i class="text-danger">*</i></label>
-                <select name="doctor_name" id="doctorname" class="form-control">
+                <select name="doctor_id" id="doctorname" class="form-control">
                     <span class="red">
                         <?php 
                                 if (isset($validation)&& $validation->hasError('doctor_name')) {
@@ -70,7 +72,7 @@
 
 
 
-                    <option value="<?=$doctor['firstname'].''.$doctor['lastname']?>">
+                    <option value="<?=$doctor['id']?>">
                         <?=$doctor['firstname'].' '.$doctor['lastname']?>
                     </option>
                     <?php ;}?>
@@ -92,19 +94,7 @@
             </div>
 
 
-            <div class="form-group">
-                <div class="form-group">
-                    <label for="problem">Problem<i class="text-danger">*</i></label>
-                    <input type="text" name="problem" class="form-control" placeholder="Problems Here!">
-                    <span class="red">
-                        <?php 
-                                if (isset($validation)&& $validation->hasError('problem')) {
-
-                                    echo $validation->getError('problem');
-                                }?>
-                    </span>
-                </div>
-            </div>
+ 
 
 
 

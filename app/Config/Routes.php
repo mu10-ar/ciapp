@@ -69,6 +69,9 @@ $routes->add('/deleteemployee/(:num)', 'user::deleteemployee/$1');
 $routes->add('/approve/(:num)/(:num)', 'appointment::approve/$1/$2');
 $routes->add('/decline/(:num)', 'appointment::decline/$1');
 $routes->add('/myschedule/(:num)', 'appointment::myschedule/$1');
+$routes->add('/history/(:num)', 'appointment::history/$1');
+$routes->add('/editappointment/(:num)', 'appointment::editappointment/$1');
+$routes->add('/markaschecked/(:num)', 'appointment::markaschecked/$1');
 $routes->add('/addappointment', 'appointment::addappointment');
 $routes->add('/appointments', 'appointment::appointments');
 
@@ -127,6 +130,13 @@ $routes->add('/markaspaid/(:num)', 'BillingController::markaspaid/$1');
 $routes->add('/viewpaidbill/(:num)', 'BillingController::viewpaidbill/$1');
 $routes->add('/printbill/(:num)', 'BillingController::printbill/$1');
 $routes->add('/paidbill', 'BillingController::paidbill');
+
+// events routes
+$routes->add('/addevent', 'eventscontroller::addevent');
+$routes->add('/eventslist', 'eventscontroller::eventslist');
+$routes->add('/deleteevent/(:num)', 'eventscontroller::deleteevent/$1');
+
+
 
 
 

@@ -1,5 +1,5 @@
 <div style="text-align: center; margin:  4px;">
-<h1>Medicine List</h1>
+<h1>event List</h1>
 </div>
 <div class="container">
 <div class="col-md-12">
@@ -28,48 +28,45 @@
          <thead>
              <tr>
                  <th scope="col">#</th>
-                 <th scope="col">MEdicine Name</th>
-                 <th scope="col">Medicine Category</th>
-                 <th scope="col">Price</th>
-                 <?php     
+                 <th scope="col">event  Name</th>
+                 <th scope="col">event description</th>
+                 <?php
                      
                      if ($session->get('user_role')==1):
               ?>
                  <th scope="col">Action</th>
-                 <?php     
+                 <?php
                      
-                   endif
+                    endif
               ?>
              </tr>
          </thead>
          <tbody>
              <?php
                     $id=1;
-                    foreach($medicine as $medicine){
+                    foreach($event as $event){
 
 
                     
                     ?>
              <tr>
                  <th scope="row"><?=$id?></th>
-                 <td><?=$medicine['medicine_name'];?></td>
-                 <td><?=$medicine['medicine_category'];?></td>
-                 <td><?=$medicine['medicine_price'];?></td>
-                 <?php
+                 <td><?=$event['event_name'];?></td>
+                 <td><?=$event['event_description'];?></td>
+       
+                 <td>
+                     <a href="<?=base_url()?>/deleteevent/<?=$event['event_id']?>"
+
+                     <?php
                      
-                     if ($session->get('user_role')==1||$session->get('user_role')==7):
+                     if ($session->get('user_role')==1):
               ?>
-                 <td> <a href="<?=base_url()?>/editmedicine/<?=$medicine['medicine_id']?>"
-                         class="btn btn-primary btn-sm">Edit</a>
-                     <a href="<?=base_url()?>/deletemedicine/<?=$medicine['medicine_id']?>"
                          class="btn btn-danger btn-sm">Delete</a>
-                     <a href="<?=base_url()?>/viewmedicine/<?=$medicine['medicine_id']?>"
-                         class="btn btn-warning btn-sm">view</a>
-                 </td>
-                 <?php
+                         <?php
                      
-                     endif
+                    endif
               ?>
+                 </td>
              </tr>
              <?php $id++;}?>
 

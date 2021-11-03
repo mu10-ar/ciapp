@@ -19,7 +19,11 @@ class AppointmentModel extends Model{
     }
     public function getschedule(){
         $session=session();
-        return $this->orderBy('appointment_id','DESC')->Where('status','1')->where('doctor_id',$session->get('user_id'))->findAll();
+        return $this->orderBy('appointment_id','DESC')->Where('status','1')->where('doctor_id',$session->get('user_id'))->orwhere('patient_id',$session->get('user_id'))->where('status','2')->findAll();
+    }
+    public function gethistory(){
+        $session=session();
+        return $this->orderBy('appointment_id','DESC')->Where('status','2')->where('doctor_id',$session->get('user_id'))->orwhere('patient_id',$session->get('user_id'))->where('status','2')->findAll();
     }
     public function getAppointmentNumber(){
         $session=session();
