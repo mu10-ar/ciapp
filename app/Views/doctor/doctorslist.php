@@ -1,7 +1,7 @@
 <!-- Doctors List -->
 <h1 style="text-align: center; margin:  4px;"> Doctors List</h1>
 
-<div class="container">
+
 <div class="col-md-12">
        <?php
        $session=session();
@@ -24,6 +24,21 @@
        }   
        ?>  
         </div>   
+        <div class="row">
+
+       
+<div class="col-md-3">
+        <ul class="list-group list-group-flush">
+  <li class="h4 list-group-item">Specializations</li>
+  <li class="list-group-item"><a href="<?=base_url()?>/doctorscategory/arthopedic">arthopedic</a></li>
+  <li class="list-group-item"><a href="<?=base_url()?>/doctorscategory/Cardiologist">Cardiologist</a></li>
+  <li class="list-group-item"><a href="<?=base_url()?>/doctorscategory/ent">ENT Specialist</a></li>
+  <li class="list-group-item"><a href="<?=base_url()?>/doctorscategory/Medical">Medical Specialistt</a></li>
+  
+</ul>
+</div>
+
+<div class="col-md-9">
 <table id="myTable" class="table table- table-striped">
     <thead>
         <tr>
@@ -65,4 +80,6 @@
         } ?>
    </tbody>
 </table>
+</div>
+
 </div>

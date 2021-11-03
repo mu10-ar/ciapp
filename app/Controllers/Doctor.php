@@ -129,6 +129,7 @@ class Doctor extends BaseController
                     'password' => $this->request->getPost('password'),
                     'address' => $this->request->getPost('address'),
                     'specialist' => $this->request->getPost('specialist'),
+                    'career_title' => $this->request->getPost('career_title'),
                     'mobile_no' => $this->request->getPost('mobile_no'),
                     'sex' => $this->request->getPost('sex'),
                     'designation' => $this->request->getPost('designation'),
@@ -301,6 +302,7 @@ class Doctor extends BaseController
                     'email' => $this->request->getPost('email'),
                     'address' => $this->request->getPost('address'),
                     'specialist' => $this->request->getPost('specialist'),
+                    'career_title' => $this->request->getPost('career_title'),
                     'mobile_no' => $this->request->getPost('mobile_no'),
                     'sex' => $this->request->getPost('sex'),
                     'designation' => $this->request->getPost('designation'),
@@ -342,4 +344,19 @@ class Doctor extends BaseController
         echo view('doctor/profile.php');
         echo view('partials/footer');
     }
+
+    public function doctorscategory($id)
+    {
+        $session = session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url() . '/login');
+        }
+
+        $users = new UserModel();
+        $data['users'] = $users->getSpecialDoctorRecord($id);
+        echo view('partials/sidebar', $data);
+        echo view('doctor/doctorslist');
+        echo view('partials/footer');
+    }
+    
 }

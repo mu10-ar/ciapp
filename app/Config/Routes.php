@@ -56,6 +56,7 @@ $routes->add('/update/(:num)', 'doctor::updateuser/$1');
 $routes->add('/updatenurse/(:num)', 'nurse::updateuser/$1');
 $routes->add('/profile/(:num)', 'doctor::userprofile/$1');
 $routes->add('/updatepatient/(:num)', 'patient::updatepatient/$1');
+$routes->add('/doctorscategory/(:any)', 'doctor::doctorscategory/$1');
 $routes->add('/deletepatient/(:num)', 'patient::deletepatient/$1');
 $routes->add('/adduser', 'user::adduser');
 $routes->add('/employeelist', 'user::employeelist');

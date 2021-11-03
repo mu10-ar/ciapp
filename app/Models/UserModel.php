@@ -25,6 +25,9 @@ class UserModel extends Model{
     public function getDoctorRecord(){
         return $this->where('user_role',2)->findall();
     }
+    public function getSpecialDoctorRecord($id){
+        return $this->where('user_role',2)->where('specialist',$id)->findall();
+    }
 
      public function getNurseRecord(){
         return $this->where('user_role',3)->findall();

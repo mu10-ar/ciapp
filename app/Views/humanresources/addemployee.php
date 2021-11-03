@@ -78,17 +78,22 @@
                     </span>
                 </div>
                 <div class="form-group">
-                    <label for="inputspecialist">Specialist</label>
-                    <input type="text" class="form-control" id="inputspeaclist" name="specialist"
-                        placeholder="ENT(asddf)">
-                    <span class="red">
-                        <?php 
+                <label for="inputspecialist">Specialist</label>
+                <select id="inputdepartment" class="form-control" name="specialist">
+
+                        <option selected value="arthopedic">arthopedic</option>     
+                        <option value="Cardiologist">Cardiologist</option>     
+                        <option  value="ent">ENT Specialist</option>     
+                        <option  value="medical">Medical Specialistt</option>     
+                    </select>
+                <span class="red">
+                    <?php 
                                 if (isset($validation)&& $validation->hasError('specialist')) {
 
                                     echo $validation->getError('specialist');
                                 }?>
-                    </span>
-                </div>
+                </span>
+            </div>
 
                 <div class="form-group">
                     <label for="inputcareertitle">Career title</label>
