@@ -14,10 +14,12 @@
                                 <form action="" id="createform" method="post">
                                   
                                     <div class="form-group">
-                                        <label for="employee_id">Employee Id<i class="text-danger">*</i></label>
+                                        <label for="employee_id">Employee name<i class="text-danger">*</i></label>
                                         <select type="number" id="employee_id" name="employee_id" class="form-control">
+                                            <?php foreach ($employee as  $employee): ?>
                                        
-                                            <option value=""> </option>
+                                            <option value="<?=$employee['id']?>"><?=$employee['firstname']?> <?=$employee['lastname']?> </option>
+                                            <?php endforeach ?>
                                             
                                             </select>
                                     </div>
@@ -34,20 +36,20 @@
                                     
                                     <div class="form-group">
                                         <label for="salary_month">Salary Month<i class="text-danger">*</i></label>
-                                        <select type="text" id="salary_month" name="salary_month" class="form-control">
+                                        <select type="text" id="salary_month" name="sallary_month" class="form-control">
                                        
-                                            <optio>Jan</optio>
-                                            <optio>Feb</optio>
-                                            <optio>Mar</optio>
-                                            <optio>Apr</optio>
-                                            <optio>MAy</optio>
-                                            <optio>JUne</optio>
-                                            <optio>July</optio>
-                                            <optio>Aug</optio>
-                                            <optio>Sep</optio>
-                                            <optio>Oct</optio>
-                                            <optio>NOv</optio>
-                                            <optio>Dec</optio>                                            
+                                            <option value="jan">Jan</option>
+                                            <option value="feb">Feb</option>
+                                            <option value="mar">Mar</option>
+                                            <option value="apr">Apr</option>
+                                            <option value="may">MAy</option>
+                                            <option value="jun">Jun</option>
+                                            <option value="jul">Jul</option>
+                                            <option value="aug">Aug</option>
+                                            <option value="sep">Sep</option>
+                                            <option value="oct">Oct</option>
+                                            <option value="nov">NOv</option>
+                                            <option value="dec">Dec</option>                                            
                                             </select>
                                     </div>
 
