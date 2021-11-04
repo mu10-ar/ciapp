@@ -470,7 +470,10 @@ My Profile
                             <a >Pharmacy Accounts</a>
                         </li> -->
                         <li>
-                            <a href="<?=base_url()?>/salaries">Salaries</a>
+                            <a href="<?=base_url()?>/salaries">pay Sallary</a>
+                        </li>
+                        <li>
+                            <a href="<?=base_url()?>/sallarylist">paid sallary</a>
                         </li>
                         <li>
                             <a href="#">Income $ Expenses</a>
