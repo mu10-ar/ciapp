@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2021 at 09:19 AM
+-- Generation Time: Nov 04, 2021 at 09:31 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -152,7 +152,9 @@ INSERT INTO `bill` (`bill_id`, `patient_id`, `services`, `services_description`,
 (21, 52, 'nn', 'gg', '2021-10-03', 1, 45, 54),
 (22, 52, 'nn', 'gg', '2021-10-12', 1, 45, 80),
 (23, 52, 'nn', 'gg', '2021-10-14', 1, 35, 0),
-(24, 60, 'swed', 'sd', '2021-11-17', 0, 32, 32);
+(24, 60, 'swed', 'sd', '2021-11-17', 0, 32, 32),
+(25, 49, 'surbex', NULL, '2021-11-04', 0, 0, 128),
+(26, 52, 'panadol', 'qty 4', '2021-11-04', 0, 0, 396);
 
 -- --------------------------------------------------------
 
@@ -213,6 +215,32 @@ INSERT INTO `departments` (`department_id`, `department_name`, `department_descr
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dispatched_medicine`
+--
+
+CREATE TABLE `dispatched_medicine` (
+  `dispatch_id` int(99) NOT NULL,
+  `patient_id` int(99) NOT NULL,
+  `medicine_id` int(99) NOT NULL,
+  `qty` int(99) NOT NULL,
+  `price` int(99) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `dispatched_medicine`
+--
+
+INSERT INTO `dispatched_medicine` (`dispatch_id`, `patient_id`, `medicine_id`, `qty`, `price`) VALUES
+(2, 49, 11, 1, 0),
+(3, 49, 11, 1, 0),
+(4, 49, 11, 2, 22),
+(5, 49, 11, 3, 33),
+(6, 49, 11, 4, 44),
+(7, 49, 11, 4, 256);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `events`
 --
 
@@ -220,6 +248,19 @@ CREATE TABLE `events` (
   `event_id` int(99) NOT NULL,
   `event_name` varchar(255) NOT NULL,
   `event_description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `income`
+--
+
+CREATE TABLE `income` (
+  `income_id` int(99) NOT NULL,
+  `income_source` varchar(255) NOT NULL,
+  `income_description` varchar(255) NOT NULL,
+  `income_amount` int(99) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -344,6 +385,26 @@ INSERT INTO `prescriptions` (`prescription_id`, `patient_id`, `blood_pressure`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sallary`
+--
+
+CREATE TABLE `sallary` (
+  `Transaction_id` int(99) NOT NULL,
+  `employee_id` int(99) NOT NULL,
+  `amount` int(99) NOT NULL,
+  `sallary_month` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sallary`
+--
+
+INSERT INTO `sallary` (`Transaction_id`, `employee_id`, `amount`, `sallary_month`) VALUES
+(1, 13, 1, '0');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -449,10 +510,24 @@ ALTER TABLE `departments`
   ADD PRIMARY KEY (`department_id`);
 
 --
+-- Indexes for table `dispatched_medicine`
+--
+ALTER TABLE `dispatched_medicine`
+  ADD PRIMARY KEY (`dispatch_id`),
+  ADD KEY `patient_id` (`patient_id`),
+  ADD KEY `medicine_id` (`medicine_id`);
+
+--
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`event_id`);
+
+--
+-- Indexes for table `income`
+--
+ALTER TABLE `income`
+  ADD PRIMARY KEY (`income_id`);
 
 --
 -- Indexes for table `medicine`
@@ -481,6 +556,13 @@ ALTER TABLE `notifications`
 ALTER TABLE `prescriptions`
   ADD PRIMARY KEY (`prescription_id`),
   ADD KEY `patient_id` (`patient_id`);
+
+--
+-- Indexes for table `sallary`
+--
+ALTER TABLE `sallary`
+  ADD PRIMARY KEY (`Transaction_id`),
+  ADD KEY `employee_id` (`employee_id`);
 
 --
 -- Indexes for table `users`
@@ -520,7 +602,7 @@ ALTER TABLE `beds`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `bill_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `bill_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `case_study`
@@ -535,10 +617,22 @@ ALTER TABLE `departments`
   MODIFY `department_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT for table `dispatched_medicine`
+--
+ALTER TABLE `dispatched_medicine`
+  MODIFY `dispatch_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
   MODIFY `event_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `income`
+--
+ALTER TABLE `income`
+  MODIFY `income_id` int(99) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `medicine`
@@ -563,6 +657,12 @@ ALTER TABLE `notifications`
 --
 ALTER TABLE `prescriptions`
   MODIFY `prescription_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `sallary`
+--
+ALTER TABLE `sallary`
+  MODIFY `Transaction_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -613,6 +713,13 @@ ALTER TABLE `bill`
 --
 ALTER TABLE `case_study`
   ADD CONSTRAINT `case_study_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `dispatched_medicine`
+--
+ALTER TABLE `dispatched_medicine`
+  ADD CONSTRAINT `dispatched_medicine_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `dispatched_medicine_ibfk_2` FOREIGN KEY (`medicine_id`) REFERENCES `medicine` (`medicine_id`);
 
 --
 -- Constraints for table `messages`

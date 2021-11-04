@@ -1,6 +1,6 @@
 <!-- Salaries View -->
 <div class="container-fluid">
-    <h1 style="text-align: center; margin:4px;">sallaries</h1>
+    <h1 style="text-align: center; margin:4px;">Sallaries</h1>
 </div>
 <div class="container">
 
@@ -34,8 +34,8 @@
         </div>
             <div class="col-md-12 ">
                 <div class="card">
-                    <div class="card-header bg-purple text-white">
-                        <div class="card-header-title">Books</div>
+                    <div style="background-color: #007bff" class="card-header text-white">
+                        <div class="card-header-title">Sallary</div>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped">
@@ -44,7 +44,7 @@
                                 <th>ID</th>
                                 <th>Amount</th>
                                 <th>Reciever ID</th>
-                                <th>Salary Month</th>
+                                <th>Sallary Month</th>
                                 <th >Action</th>
                             </tr>
                             </thead>
