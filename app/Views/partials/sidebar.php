@@ -477,19 +477,19 @@ My Profile
                         </li>
                         <li>
                             <a href="#">Income $ Expenses</a>
-                        <!-- </li>
-                        <li>
-                            <a href="#">Contra Voucher</a>
                         </li>
                         <li>
-                            <a href="#">Journal Voucher</a>
+                            <a href="#">Add Income </a>
                         </li>
                         <li>
-                            <a href="#">Voucher Approval</a>
+                            <a href="#">Income List</a>
                         </li>
                         <li>
-                            <a href="#">Account Report</a>
-                        </li> -->
+                            <a href="#">Add Expenses </a>
+                        </li>
+                        <li>
+                            <a href="#">Expense List</a>
+                        </li>
                     </ul>
                 </li>
                 <?php ;

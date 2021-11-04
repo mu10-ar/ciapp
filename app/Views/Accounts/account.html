@@ -15,13 +15,14 @@
     </head>
     <body>
         <div class="container-fluid">
-            <h1 style="text-align:center">Sallary</h1>
+            <h1 style="text-align:center">Expense</h1>
+        </div>
             <div class="container mt-4">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
-                                <div class="card-header-title">Add Sallary</div>
+                            <div style="background-color: #007bff ;" class="card-header">
+                                <div   class="card-header-title text-white">Add Expenses</div>
                             </div>
 
                             <div class="card-body">
@@ -29,41 +30,25 @@
                                 <form action="" id="createform" method="post">
                                   
                                     <div class="form-group">
-                                        <label for="employee_id">Employee Id<i class="text-danger">*</i></label>
-                                        <select type="number" id="employee_id" name="employee_id" class="form-control">
-                                       
-                                            <option value=""> </option>
-                                            
-                                            </select>
+                                        <label for="expense_source">Expense Source<i class="text-danger">*</i></label>
+                                        <input type="text" id="expense_source" name="expense_source" class="form-control" placeholder="expense_source">
+
                                     </div>
 
                                     
                                     <div class="form-group">
-                                        <label for="amount"> Amount</label>
+                                        <label for="expense_description">Expense Description<i class="text-danger">*</i></label>
+                                        <input  type="text" id="expense_description" name="expense_description" class="form-control" placeholder="expense_description">
+
+                                    </div>
+
+                                    
+                                    <div class="form-group">
+                                        <label for="expense_amount">Expense Amount <i class="text-danger">*</i></label>
                                         <input type="number"
-                                            placeholder="amount."
-                                            name="amount" id="amount"
+                                            placeholder="expense_amount"
+                                            name="expense_amount" id="expense_amount"
                                             class="form-control" value="">
-                                    </div>
-
-                                    
-                                    <div class="form-group">
-                                        <label for="salary_month">Salary Month<i class="text-danger">*</i></label>
-                                        <select type="text" id="salary_month" name="salary_month" class="form-control">
-                                       
-                                            <optio>Jan</optio>
-                                            <optio>Feb</optio>
-                                            <optio>Mar</optio>
-                                            <optio>Apr</optio>
-                                            <optio>MAy</optio>
-                                            <optio>JUne</optio>
-                                            <optio>July</optio>
-                                            <optio>Aug</optio>
-                                            <optio>Sep</optio>
-                                            <optio>Oct</optio>
-                                            <optio>NOv</optio>
-                                            <optio>Dec</optio>                                            
-                                            </select>
                                     </div>
 
                                     <button  type="submit" class="btn
@@ -76,7 +61,86 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+            <!-- Expenses List -->
+<div class="container-fluid">
+    <h1 style="text-align: center; margin:4px;">Expense</h1>
+</div>
+<div class="container">
+
+
+
+  
+    <div class="container mt-4">
+        <div class="row">
+
+        <div class="col-md-12">
+       <?php
+       $session= session();
+       if(!empty($session->getFlashdata('success'))){
+           ?>
+           <div class="alert alert-success">
+               <?php echo $session->getFlashdata('success') ?>
+           </div>
+           <?php
+       }
+       if(!empty($session->getFlashdata('error'))){
+           ?>
+           <div class="alert alert-danger">
+               <?php echo $session->getFlashdata('error') ?>
+           </div>
+           
+           <?php
+           
+
+       }   
+       ?>  
         </div>
+            <div class="col-md-12 ">
+                <div class="card">
+                    <div style="background-color: #007bff ;" class="card-header  text-white">
+                        <div class="card-header-title">Expense</div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                        <thead>   
+                        <tr>
+                                <th>ID</th>
+                                <th>Expense Source</th>
+                                <th>Expense Description</th>
+                                <th>Expense Amount</th>
+                                <th >Action</th>
+                            </tr>
+                            </thead>
+                            
+                            
+                            <tbody>
+                            
+                                <tr>
+                                <td>#</td>
+                                <td>#</td>
+                                <td>#</td>
+                                <td>#</td>
+                                <td>
+                                    <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                            </tr>
+                                
+
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+      
         <!-- Optional JavaScript; choose one of the two! -->
 
         <!-- Option 1: Bootstrap Bundle with Popper -->
