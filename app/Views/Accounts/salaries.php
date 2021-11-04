@@ -55,9 +55,10 @@
                             foreach ($sallary as $sallary): ?>
                                 <tr>
                                 <td><?=$id?></td>
+                                <td><?=$sallary['amount']?></td>
                                 <td><?=$sallary['employee_id']?></td>
                                 <td><?=$sallary['sallary_month']?></td>
-                                <td><?=$sallary['amount']?></td>
+                               
                               
                                 
                                 <td>
