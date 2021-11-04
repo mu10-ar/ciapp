@@ -475,9 +475,7 @@ My Profile
                         <li>
                             <a href="<?=base_url()?>/sallarylist">paid sallary</a>
                         </li>
-                        <li>
-                            <a href="#">Income $ Expenses</a>
-                        </li>
+                        
                         <li>
                             <a href="addincome">Add Income </a>
                         </li>
