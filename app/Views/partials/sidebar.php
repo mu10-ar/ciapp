@@ -235,6 +235,9 @@ My Profile
                         <li>
                             <a href="<?= base_url() ?>/dispatch">Dispatch Medicine</a>
                         </li>
+                        <li>
+                            <a href="<?= base_url() ?>/dispatchlist">Dispatched Medicine</a>
+                        </li>
 
                     </ul>
                 </li>
@@ -457,7 +460,7 @@ My Profile
             endif ?>
 
                 <?php
-            if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
+            if (($userrole == 1) || ($userrole == 5)) :
 
             ?>
                 <li>
@@ -487,6 +490,9 @@ My Profile
                         </li>
                         <li>
                             <a href="<?=base_url()?>/expenselist">Expense List</a>
+                        </li>
+                        <li>
+                            <a href="<?=base_url()?>/budget">expenses and income</a>
                         </li>
                     </ul>
                 </li>

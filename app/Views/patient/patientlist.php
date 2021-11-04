@@ -48,8 +48,16 @@
                 <td><?=$user['id']?></td>
                 <td><?=$user['email']?></td>
                 <td><?=$user['address']?></td>
-                <td> <a href="<?=base_url()?>/updatepatient/<?=$user['id']?>" class="btn btn-primary btn-sm">Edit</a>
+              
+                <td>  <?php
+                if ($session->get('user_role')==1):
+            
+                ?> <a href="<?=base_url()?>/updatepatient/<?=$user['id']?>" class="btn btn-primary btn-sm">Edit</a>
                     <a href="<?=base_url()?>/deletepatient/<?=$user['id']?>" class="btn btn-danger btn-sm">Delete</a>
+                    <?php
+               endif
+            
+                ?>
                     <a href="<?=base_url()?>/profile/<?=$user['id']?>" class="btn btn-warning btn-sm">profile</a>
                 </td>
             </tr>

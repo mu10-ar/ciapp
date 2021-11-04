@@ -151,6 +151,34 @@ class ExpenseController extends BaseController
 
 
     }
+    public function budget()
+    {$data=[];
+        $totalexpense=0;
+        $totalincome=0;
+        $income=new IncomeModel();
+        $expense=new ExpenseModel();
+        $income=$income->getincome();
+        $expense=$expense->getexpense();
+        foreach ($expense as $expense) {
+            $totalexpense=$totalexpense+$expense['expense_amount'];
+        }
+        foreach ($income as $income) {
+            $totalincome=$totalincome+$income['income_amount'];
+        }
+
+
+        echo view('partials/sidebar',$data);
+        
+        echo "<h3> total income is </h3>".$totalincome;
+        echo"<br><br><br><br>";
+        echo "<h3> total expense is </h3>".$totalexpense;
+        echo"<br><br><br><br>";
+        echo "<h3> net income is </h3>".$totalincome-$totalexpense;
+
+        
+
+        echo view('partials/footer');
+    }
 
 
 }
