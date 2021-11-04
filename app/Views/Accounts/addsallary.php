@@ -5,8 +5,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div  style="background-color: #007bff class="card-header">
-                                <div class="card-header-title">Add Sallary</div>
+                            <div  style="background-color: #007bff" class="card-header">
+                                <div class="card-header-title text-white">Add Sallary</div>
                             </div>
 
                             <div class="card-body">
