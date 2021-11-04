@@ -460,21 +460,21 @@ My Profile
             if (($userrole == 1) || ($userrole == 2) || ($userrole == 3)) :
 
             ?>
-                <!-- <li>
+                <li>
                     <a href="#AMSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
                         Account Manager
                     </a>
                     <ul class="collapse list-unstyled" id="AMSubmenu">
+                        <!-- <li>
+                            <a >Pharmacy Accounts</a>
+                        </li> -->
                         <li>
-                            <a href="#">Chart of Account</a>
+                            <a href="#">Salaries</a>
                         </li>
                         <li>
-                            <a href="#">Debit Voucher</a>
-                        </li>
-                        <li>
-                            <a href="#">Credit Voucher</a>
-                        </li>
+                            <a href="#">Income $ Expenses</a>
+                        <!-- </li>
                         <li>
                             <a href="#">Contra Voucher</a>
                         </li>
@@ -486,9 +486,9 @@ My Profile
                         </li>
                         <li>
                             <a href="#">Account Report</a>
-                        </li>
+                        </li> -->
                     </ul>
-                </li> -->
+                </li>
                 <?php ;
             endif ?>
 
