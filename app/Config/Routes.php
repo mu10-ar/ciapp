@@ -132,7 +132,7 @@ $routes->add('/viewbill/(:num)', 'BillingController::viewbill/$1');
 $routes->add('/markaspaid/(:num)', 'BillingController::markaspaid/$1');
 $routes->add('/viewpaidbill/(:num)', 'BillingController::viewpaidbill/$1');
 $routes->add('/printbill/(:num)', 'BillingController::printbill/$1');
-$routes->add('/paidbill', 'BillingController::paidbill');
+$routes->add('/paidbill', 'SallaryController::paidbill');
 
 // events routes
 $routes->add('/addevent', 'eventscontroller::addevent');
@@ -142,6 +142,7 @@ $routes->add('/deleteevent/(:num)', 'eventscontroller::deleteevent/$1');
 // Sallary Routes
 $routes->add('/salaries', 'SallaryController::addsallary');
 $routes->add('/sallarylist', 'SallaryController::sallarylist');
+$routes->add('/deleltesallary/(:num)', 'SallaryController::deleltesallary/$1');
 
 
 

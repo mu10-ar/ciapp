@@ -45,24 +45,26 @@
                                 <th>Amount</th>
                                 <th>Reciever ID</th>
                                 <th>Salary Month</th>
-                        
-                               
                                 <th >Action</th>
                             </tr>
                             </thead>
                             
                             
                             <tbody>
-                            
+                            <?php $id=1;
+                            foreach ($sallary as $sallary): ?>
                                 <tr>
-                                <td>#</td>
-                                <td>#</td>
-                                <td>#</td>
-                                <td>#</td>
+                                <td><?=$id?></td>
+                                <td><?=$sallary['employee_id']?></td>
+                                <td><?=$sallary['sallary_month']?></td>
+                                <td><?=$sallary['amount']?></td>
+                              
+                                
                                 <td>
-                                    <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="<?=base_url()?>/deleltesallary/<?=$sallary['Transaction_id']?>" class="btn btn-danger btn-sm">Delete Transaction</a>
                                 </td>
+                                <?php $id++;
+                          endforeach?>
                             </tr>
                                 
 
