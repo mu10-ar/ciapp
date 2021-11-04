@@ -232,6 +232,9 @@ My Profile
                         <li>
                             <a href="<?= base_url() ?>/medicinelist">Medicine List</a>
                         </li>
+                        <li>
+                            <a href="<?= base_url() ?>/dispatch">Dispatch Medicine</a>
+                        </li>
 
                     </ul>
                 </li>

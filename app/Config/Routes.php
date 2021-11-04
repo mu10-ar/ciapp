@@ -81,6 +81,7 @@ $routes->add('/deletemedicine/(:num)', 'medicinecontroller::deletemedicine/$1');
 $routes->add('/viewmedicine/(:num)', 'medicinecontroller::viewmedicine/$1');
 $routes->add('/addmedicine', 'medicinecontroller::addmedicine');
 $routes->add('/medicinelist', 'medicinecontroller::medicinelist');
+$routes->add('/dispatch', 'medicinecontroller::dispatch');
 
 // Department Routes
 $routes->add('/department', 'departmentController::index');

@@ -182,5 +182,20 @@ class MedicineController extends BaseController
          echo view('partials/footer'); 
          
     }
+    public function dispatch($id)
+    {
+        $session=session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to(base_url().'/login');
+             
+        }
+        $medicine=new MedicineModel();
+         $data['medicine']=$medicine->getRow($id);
+        
+         echo view('partials/sidebar',$data);
+         echo view('medicine/viewmedicine');
+         echo view('partials/footer'); 
+         
+    }
    
 }
