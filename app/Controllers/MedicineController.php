@@ -249,5 +249,33 @@ class MedicineController extends BaseController
          echo view('partials/footer'); 
          
     }
+   public function dispatchlist()
+   {
+    $session=session();
+    if (!$session->get('logged_in')) {
+       return redirect()->to(base_url().'/login');
+         
+    }
+    
+    $medicine=new DispatchMedicineModel();
+     $data['medicine']=$medicine->getDispatchedMedicine();
+     echo view('partials/sidebar',$data);
+     echo view('medicine/dispatchlist');
+     echo view('partials/footer');
+   }
+
+   public function deletedispatch($id)
+   {
+    $session=session();
+    if (!$session->get('logged_in')) {
+        return redirect()->to(base_url().'/login');
+         
+    }
+    $medicine=new DispatchMedicineModel();
    
+     $medicine->delete($id);
+     $session->setFlashdata('success', '  Medicine Record Deleted Successfully');
+     return redirect()->to(base_url()."/dispatchlist");  
+       
+   }
 }

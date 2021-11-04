@@ -13,4 +13,8 @@ class DispatchMedicineModel extends Model{
         'patient_id', 
         'price', 
     ];
+    public function getDispatchedMedicine()
+    {
+        return $this->orderBy('dispatch_id','DESC')->findAll();
+    }
 }
