@@ -477,16 +477,16 @@ My Profile
                         </li>
                         
                         <li>
-                            <a href="addincome">Add Income </a>
+                            <a href="<?=base_url()?>/addincome">Add Income </a>
                         </li>
                         <li>
-                            <a href="incomelist">Income List</a>
+                            <a href="<?=base_url()?>/incomelist">Income List</a>
                         </li>
                         <li>
-                            <a href="addexpense">Add Expenses </a>
+                            <a href="<?=base_url()?>/addexpense">Add Expenses </a>
                         </li>
                         <li>
-                            <a href="expenselist">Expense List</a>
+                            <a href="<?=base_url()?>/expenselist">Expense List</a>
                         </li>
                     </ul>
                 </li>

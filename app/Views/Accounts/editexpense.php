@@ -16,14 +16,14 @@
                                   
                                     <div class="form-group">
                                         <label for="expense_source">Expense Source<i class="text-danger">*</i></label>
-                                        <input value="" type="text" id="expense_source" name="expense_source" class="form-control" placeholder="expense_source">
+                                        <input value=" <?=$expense['expense_source']?>" type="text" id="expense_source" name="expense_source" class="form-control" placeholder="expense_source">
 
                                     </div>
 
                                     
                                     <div class="form-group">
                                         <label for="expense_description">Expense Description<i class="text-danger">*</i></label>
-                                        <input  type="text" id="expense_description" name="expense_description" class="form-control" placeholder="expense_description">
+                                        <input  value="<?=$expense['expense_description']?>" type="text" id="expense_description" name="expense_description" class="form-control" placeholder="expense_description">
 
                                     </div>
 
@@ -33,7 +33,8 @@
                                         <input type="number"
                                             placeholder="expense_amount"
                                             name="expense_amount" id="expense_amount"
-                                            class="form-control" >
+                                            class="form-control"
+                                            value="<?=$expense['expense_amount']?>" >
                                     </div>
 
                                     <button  type="submit" class="btn

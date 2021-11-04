@@ -18,14 +18,14 @@
                                   
                                     <div class="form-group">
                                         <label for="income_source">Income Source<i class="text-danger">*</i></label>
-                                        <input type="text" id="income_source" " name="income_source" class="form-control" placeholder="income_source">
+                                        <input type="text" id="income_source" value=" <?=$singleincome['income_source']?>" name="income_source" class="form-control" placeholder="income_source">
 
                                     </div>
 
                                     
                                     <div class="form-group">
                                         <label for="income_description">Income Description<i class="text-danger">*</i></label>
-                                        <input  type="text"   id="income_description" name="income_description" class="form-control" placeholder="income_description">
+                                        <input  type="text" value=" <?=$singleincome['income_description']?>"  id="income_description" name="income_description" class="form-control" placeholder="income_description">
 
                                     </div>
 
@@ -33,15 +33,16 @@
                                     <div class="form-group">
                                         <label for="income_amount">Income Amount <i class="text-danger">*</i></label>
                                         <input type="number"
-                                        value="" 
+                                        value="<?=$singleincome['income_amount']?>" 
                                             placeholder="income_amount"
                                             name="income_amount" id="income_amount"
-                                            class="form-control">
+                                            class="form-control" >
                                     </div>
 
                                     <button  type="submit" class="btn
                                         btn-primary m-2">Submit</button>
                                 </form>
+                               
 
                             </div>
 

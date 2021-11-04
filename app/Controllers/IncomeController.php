@@ -102,6 +102,8 @@ class IncomeController extends BaseController
             return redirect()->to(base_url().'/login');
              
         }
+        $singleincome=new IncomeModel();
+        $data['singleincome']=$singleincome->getsingleincome($id);
 
         if ($this->request->getMethod()=='post') {
             $income=new IncomeModel();
@@ -137,8 +139,7 @@ class IncomeController extends BaseController
            } 
 
         }
-        $singleincome=new IncomeModel();
-        $data['income']=$singleincome->getsingleincome($id);
+       
       
         
         echo view('partials/sidebar',$data);

@@ -20,6 +20,6 @@ class ExpenseModel extends Model{
                         } 
     function getsingleexpense($id)       
                         {
-                            return $this->orderby('expense_id','desc')->where('expense_id',$id)->findall();
+                            return $this->orderby('expense_id','desc')->where('expense_id',$id)->first();
                         } 
 }

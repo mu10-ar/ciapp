@@ -20,6 +20,6 @@ class IncomeModel extends Model{
                         } 
     function getsingleincome($id)       
                         {
-                            return $this->orderby('income_id','desc')->where('income_id',$id)->findall();
+                            return $this->orderby('income_id','desc')->where('income_id',$id)->first();
                         } 
 }
