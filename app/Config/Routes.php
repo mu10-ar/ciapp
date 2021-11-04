@@ -144,6 +144,13 @@ $routes->add('/salaries', 'SallaryController::addsallary');
 $routes->add('/sallarylist', 'SallaryController::sallarylist');
 $routes->add('/deleltesallary/(:num)', 'SallaryController::deleltesallary/$1');
 
+// income routes
+
+$routes->add('/addincome', 'Incomecontroller::addincome');
+$routes->add('/incomelist', 'Incomecontroller::incomelist');
+$routes->add('/deleteincome/(:num)', 'Incomecontroller::deleteincome/$1');
+$routes->add('/editincome/(:num)', 'Incomecontroller::editincome/$1');
+
 
 
 

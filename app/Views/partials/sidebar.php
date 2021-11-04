@@ -479,16 +479,16 @@ My Profile
                             <a href="#">Income $ Expenses</a>
                         </li>
                         <li>
-                            <a href="#">Add Income </a>
+                            <a href="addincome">Add Income </a>
                         </li>
                         <li>
-                            <a href="#">Income List</a>
+                            <a href="incomelist">Income List</a>
                         </li>
                         <li>
-                            <a href="#">Add Expenses </a>
+                            <a href="addexpense">Add Expenses </a>
                         </li>
                         <li>
-                            <a href="#">Expense List</a>
+                            <a href="expenselist">Expense List</a>
                         </li>
                     </ul>
                 </li>

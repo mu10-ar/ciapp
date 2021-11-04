@@ -53,14 +53,18 @@
                             <tbody>
                             
                                 <tr>
-                                <td>#</td>
-                                <td>#</td>
-                                <td>#</td>
-                                <td>#</td>
+                                    <?php $id=1;
+                                    foreach ($income as $income):?>
+                                <td><?=$id?></td>
+                                <td><?=$income['income_source']?></td>
+                                <td><?=$income['income_description']?></td>
+                                <td><?=$income['income_amount']?></td>
                                 <td>
-                                    <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="<?=base_url()?>/editincome/<?=$income['income_id']?>" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="<?=base_url()?>/deleteincome/<?=$income['income_id']?>" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
+                                <?php
+                                endforeach?>
                             </tr>
                                 
 
