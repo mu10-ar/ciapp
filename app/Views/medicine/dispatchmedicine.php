@@ -5,27 +5,35 @@
 
 <div class="container">
     <form action="" method="POST">
-        <div class="form-group">
-            <label for="patient_id">Patient Name<i class="text-danger">*</i></label>
-            <select id="patientname" name="patient_id" class="form-control">
-                <option selected>Choose...</option>
-            </select> <span class="red">
-                <?php
-                if (isset($validation) && $validation->hasError('patient_id')) {
-
-                    echo $validation->getError('patient_id');
-                } ?>
-            </span>
+    <div class="form-group">
+            <label for="category">Patient<i class="text-danger">*</i></label>
+            <select class="form-control" name="patient_id" id="category" aria-placeholder="choose...">
+            <?php foreach($patient as $patient):?>
+                <option value="<?=$patient['id']?>"><?=$patient['firstname']." ".$patient['lastname']?></option>
+                <?php endforeach?>
+            </select>
         </div>
         <div class="form-group">
             <label for="medicine_name">Medicine<i class="text-danger">*</i></label>
-            <select id="medicine_name" name="medicine_name" class="form-control">
-                <option selected>Choose...</option>
+            <select id="medicine_name" name="medicine_id" class="form-control">
+            <?php foreach($medicine as $medicine):?>
+                <option value="<?=$medicine['medicine_id']?>"><?=$medicine['medicine_name']?></option>
+                <?php endforeach?>
                 </select>
+                <?php
+                if (isset($validation) && $validation->hasError('medicine_id')) {
+
+                    echo $validation->getError('medicine_id');
+                } ?>
         </div>
         <div class="form-group">
             <label for="quantity">Quantity<i class="text-danger">*</i></label>
-            <input type="number" id="quantity" name="quantity" class="form-control">
+            <input type="number" id="quantity" name="qty" class="form-control">
+            <?php
+                if (isset($validation) && $validation->hasError('qty')) {
+
+                    echo $validation->getError('qty');
+                } ?>
          
         </div>
         <button type="submit" class="btn btn-primary">Add</button>

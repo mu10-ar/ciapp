@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Controllers;
-use App\models\MedicineModel;
 
+use App\models\BillingModel;
+use App\models\DispatchMedicineModel;
+use App\models\MedicineModel;
+use App\models\UserModel;
 
 class MedicineController extends BaseController
 {
@@ -186,13 +189,62 @@ class MedicineController extends BaseController
     {
         $session=session();
         if (!$session->get('logged_in')) {
-            return redirect()->to(base_url().'/login');
+           return redirect()->to(base_url().'/login');
              
         }
-        $medicine=new MedicineModel();
-        //  $data['medicine']=$medicine->getRow($id);
+                $data=[];
+                helper('form');
+                
+                   
+        if( $this->request->getMethod()=='post'){
+               $input=$this->validate([
+                'qty'=> 'required',
+                'patient_id'=> 'required',
+                'medicine_id'=> 'required'
+                
+               ]);
+
+                   if ($input==true) {
+               
+                    $dispatch= new DispatchMedicineModel();
+                    $medicinePrice=new MedicineModel();
+                    $id=$this->request->getPost('medicine_id');
+                    $qty=$this->request->getPost('qty');
+                    $medicinePrice=$medicinePrice->getRow($id);
+                    $price=$qty*$medicinePrice['medicine_price'];
+                    $bill =new BillingModel();
+                    $bill->save([
+                        'status'=> 0,
+                        'price'=> $price,
+                        'services'=> $medicinePrice['medicine_name'],
+                        'services_description'=> "qty ".$this->request->getPost('qty'),
+                        'patient_id'=> $this->request->getPost('patient_id'),
+                       
+
+
+                    ]);            
+                    $dispatch->save([
+                'medicine_id' => $this->request->getPost('medicine_id'),
+                'patient_id' => $this->request->getPost('patient_id'),
+                'qty' => $this->request->getPost('qty'),
+                'price' => $this->request->getPost('qty')*$medicinePrice['medicine_price'],
+                    ]);
+                    
+                 
+                    
+                    return redirect()->to(base_url()."/dispatchlist");
+               
+           }
+           else {
+                         $data['validation']=$this->validator;
+                    }
+        }
         
-         echo view('partials/sidebar');
+        $medicine=new MedicineModel();
+        $data['medicine']=$medicine->getMedicine();
+        $user=new UserModel();
+        $data['patient']=$user->getpatientRecord();
+         echo view('partials/sidebar',$data);
          echo view('medicine/dispatchmedicine');
          echo view('partials/footer'); 
          
