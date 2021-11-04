@@ -1,24 +1,18 @@
 <!-- Salaries View -->
 <div class="container-fluid">
-    <h1 style="text-align: center; margin:4px;">Salaries</h1>
+    <h1 style="text-align: center; margin:4px;">sallaries</h1>
 </div>
 <div class="container">
 
 
-<div class="container mt-4">
-        <div class="row">
-             <div class="col-md-12 text-right ">
-                 
-                 <a href="#" class="btn btn-primary">ADD</a>
-             </div>
-        </div>
-  </div>
+
   
     <div class="container mt-4">
         <div class="row">
 
         <div class="col-md-12">
        <?php
+       $session= session();
        if(!empty($session->getFlashdata('success'))){
            ?>
            <div class="alert alert-success">
@@ -48,13 +42,12 @@
                         <thead>   
                         <tr>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Department</th>
-                                <th>Salary</th>
+                                <th>Amount</th>
+                                <th>Reciever ID</th>
                                 <th>Salary Month</th>
-                                <th>Salary</th>
-                                <th>Date</th>
-                                <th width="150">Action</th>
+                        
+                               
+                                <th >Action</th>
                             </tr>
                             </thead>
                             
