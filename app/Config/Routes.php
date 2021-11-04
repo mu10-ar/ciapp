@@ -152,6 +152,14 @@ $routes->add('/deleteincome/(:num)', 'Incomecontroller::deleteincome/$1');
 $routes->add('/editincome/(:num)', 'Incomecontroller::editincome/$1');
 
 
+// expense routes
+$routes->add('/addexpense', 'expensecontroller::addexpense');
+$routes->add('/expenselist', 'expensecontroller::expenselist');
+$routes->add('/deleteexpense/(:num)', 'expensecontroller::deleteexpense/$1');
+$routes->add('/editexpense/(:num)', 'expensecontroller::editexpense/$1');
+
+
+
 
 
 

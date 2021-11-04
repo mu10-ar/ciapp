@@ -16,7 +16,7 @@
                                   
                                     <div class="form-group">
                                         <label for="expense_source">Expense Source<i class="text-danger">*</i></label>
-                                        <input type="text" id="expense_source" name="expense_source" class="form-control" placeholder="expense_source">
+                                        <input value="" type="text" id="expense_source" name="expense_source" class="form-control" placeholder="expense_source">
 
                                     </div>
 
