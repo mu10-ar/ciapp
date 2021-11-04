@@ -21,11 +21,12 @@
             <label for="medicine_name">Medicine<i class="text-danger">*</i></label>
             <select id="medicine_name" name="medicine_name" class="form-control">
                 <option selected>Choose...</option>
+                </select>
         </div>
         <div class="form-group">
             <label for="quantity">Quantity<i class="text-danger">*</i></label>
-            <select id="quantity" name="quantity" class="form-control">
-                <option selected>Choose...</option>
+            <input type="number" id="quantity" name="quantity" class="form-control">
+         
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
 

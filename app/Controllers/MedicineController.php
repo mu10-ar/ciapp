@@ -182,7 +182,7 @@ class MedicineController extends BaseController
          echo view('partials/footer'); 
          
     }
-    public function dispatch($id)
+    public function dispatch()
     {
         $session=session();
         if (!$session->get('logged_in')) {
@@ -190,10 +190,10 @@ class MedicineController extends BaseController
              
         }
         $medicine=new MedicineModel();
-         $data['medicine']=$medicine->getRow($id);
+        //  $data['medicine']=$medicine->getRow($id);
         
-         echo view('partials/sidebar',$data);
-         echo view('medicine/viewmedicine');
+         echo view('partials/sidebar');
+         echo view('medicine/dispatchmedicine');
          echo view('partials/footer'); 
          
     }
