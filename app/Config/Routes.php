@@ -136,6 +136,9 @@ $routes->add('/paidbill', 'BillingController::paidbill');
 $routes->add('/addevent', 'eventscontroller::addevent');
 $routes->add('/eventslist', 'eventscontroller::eventslist');
 $routes->add('/deleteevent/(:num)', 'eventscontroller::deleteevent/$1');
+// Account Manager Routes
+$routes->add('/salaries', 'accounts::salaries');
+
 
 
 
