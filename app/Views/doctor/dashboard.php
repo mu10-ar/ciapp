@@ -2,7 +2,82 @@
 <div class="row">
     <!-- welcome message -->
  
+    <?php
 
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://gw.fbr.gov.pk/imsp/v1/api/Live/PostData',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{ 
+   "InvoiceNumber":"",
+   "POSID":137796,
+   "USIN":"USIN0",
+   "DateTime":"2020-01-01 12:00:00",
+   "BuyerNTN":"1234567-8",
+   "BuyerCNIC":"12345-1234567-8",
+   "BuyerName":"Buyer Name",
+   "BuyerPhoneNumber":"0000-0000000",
+   "TotalBillAmount":0.0,
+   "TotalQuantity":0.0,
+   "TotalSaleValue":0.0,
+   "TotalTaxCharged":0.0,
+   "Discount":0.0,
+   "FurtherTax":0.0,
+   "PaymentMode":1,
+
+"RefUSIN":null,
+   "InvoiceType":1,
+   "Items":[ 
+      { 
+         "ItemCode":"IT_1011",
+         "ItemName":"Test Item",
+         "Quantity":1.0,
+         "PCTCode":"11001010",
+         "TaxRate":0.0,
+         "SaleValue":0.0,
+         "TotalAmount":0.0,
+         "TaxCharged":0.0,
+         "Discount":0.0,
+         "FurtherTax":0.0,
+         "InvoiceType":1,
+         "RefUSIN":null
+      },
+
+{ 
+         "ItemCode":"IT_1012",
+         "ItemName":"Test Item",
+         "Quantity":1.0,
+         "PCTCode":"11001010",
+         "TaxRate":0.0,
+         "SaleValue":0.0,
+         "TotalAmount":0.0,
+         "TaxCharged":0.0,
+         "Discount":0.0,
+         "FurtherTax":0.0,
+         "InvoiceType":1,
+         "RefUSIN":null
+      }
+
+   ]
+}',
+  CURLOPT_HTTPHEADER => array(
+    'Authorization: Bearer db77cfc7-efca-332b-9fa6-16e19c690211',
+    'Content-Type: application/json'
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+echo $response
+?>
   
     <div class="col-md-12">
        <?php
